@@ -161,7 +161,7 @@ plink \
 	--make-bed \
 	--biallelic-only \
 	--out merged1kp3
-#mv merged1kp3.* .
+#mv merged1kp3.* ../
 
 
 #bcftools concat -Oz 1000G/ALL.chr1.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz \

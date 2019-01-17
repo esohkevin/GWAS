@@ -15,7 +15,6 @@ plink1.9 \
 	--keep-allele-order \
 	--allow-no-sex \
 	--double-id \
-	--biallelic-only \
 	--out raw-camgwas
 cat raw-camgwas.log > all.log
 cp samples/raw-camgwas.sample .
@@ -239,6 +238,13 @@ plink1.9 \
 	--set-hh-missing \
 	--out autopseudo
 cat autopseudo.log >> all.log
+
+#########################################################################
+#                   Run Population Structure Script                     #
+#########################################################################
+echo -e "\nNow running script to generate population structure data. Please wait..."
+
+./popstruct.sh
 
 ### Association tests including covariats to account for population structure
 # With PC1 and PC2

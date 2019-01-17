@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-#mv 1000G/merged1kp3 .
+cp 1000G/merged1kp3.bed .
+cp 1000G/merged1kp3.bim .
+cp 1000G/merged1kp3.fam .
+
 plink \
 	--bfile merged1kp3 \
 	--thin-indiv-count 360 \
@@ -94,7 +97,7 @@ plink \
 ##############################################################################################
 #					Generate Plots in R				     #
 ##############################################################################################
-echo "Now generating MDS and Population structure plots in R. Please wait... "
+echo -e "\nNow generating MDS and Population structure plots in R. Please wait... "
 
 R CMD BATCH popstruct.R
 
