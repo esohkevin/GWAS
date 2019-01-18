@@ -67,8 +67,11 @@ fi
 echo -e "\nNow concerting HAPS/SAMPLE to HAPS/LEGEND/SAMPLE format\n"
 
 # Convert HAPS/SAMPLE to HAPS/LEGEND/SAMPLE formats for IMPUTE2
-shapeit_v2 -convert \
-        --input-haps ${new_dir}${base}.phased \
-        --output-ref ${new_dir}${base}.phased.hap ${new_dir}${base}.phased.leg ${new_dir}${base}.phased.sam
-
+for i in $(seq 1 22);
+do
+	shapeit_v2 \
+		-convert \
+        	--input-haps ${new_dir}${base}${i}.phased \
+        	--output-ref ${new_dir}${base}${i}.phased.hap ${new_dir}${base}${i}.phased.leg ${new_dir}${base}${i}.phased.sam
+done
 }
