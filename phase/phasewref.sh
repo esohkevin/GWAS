@@ -1,6 +1,10 @@
 #!/bin/bash
 
 phase() {
+echo """
+usage:	0 - Phase without reference
+	1 - Phase with reference
+"""
 phasewref="$1"
 inclu_grp="AFR"
 base_dir="$HOME/GWAS/Git/GWAS/phase/"
@@ -64,14 +68,19 @@ else
 	echo -e "\n"
 fi
 
-echo -e "\nNow concerting HAPS/SAMPLE to HAPS/LEGEND/SAMPLE format\n"
+if [[ "$phasewref" == "0" || "$phasewref" == "1" ]]
+then
+	echo -e "\nNow concerting HAPS/SAMPLE to HAPS/LEGEND/SAMPLE format\n"
 
 # Convert HAPS/SAMPLE to HAPS/LEGEND/SAMPLE formats for IMPUTE2
-for i in $(seq 1 22);
-do
-	shapeit_v2 \
-		-convert \
-        	--input-haps ${new_dir}${base}${i}.phased \
-        	--output-ref ${new_dir}${base}${i}.phased.hap ${new_dir}${base}${i}.phased.leg ${new_dir}${base}${i}.phased.sam
-done
+	for i in $(seq 1 22);
+	do
+		shapeit_v2 \
+			-convert \
+        		--input-haps ${new_dir}${base}${i}.phased \
+        		--output-ref ${new_dir}${base}${i}.phased.hap ${new_dir}${base}${i}.phased.leg ${new_dir}${base}${i}.phased.sam
+	done
+else
+	echo -e "\nSorry we do not understand your choice. PLease enter "0" to phase without reference or "1" to phase with reference"
+fi
 }
