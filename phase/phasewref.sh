@@ -10,7 +10,7 @@ inclu_grp="AFR"
 base_dir="$HOME/GWAS/Git/GWAS/phase/"
 new_dir="$HOME/GWAS/Git/GWAS/phase/phasewref/"
 ref_dir="$HOME/GWAS/Git/GWAS/phase/1000GP_Phase3/"
-base="qc-camgwas.chr"
+base="qc-camgwas-updated-chr"
 
 if [[ "$phasewref" == "0" ]];
 then
