@@ -11,29 +11,29 @@ Matching to 1000G
 
 Position Matches
  ID matches 1000G 0
- ID Doesn't match 1000G 1685526
- Total Position Matches 1685526
+ ID Doesn't match 1000G 1684926
+ Total Position Matches 1684926
 ID Match
  Position different from 1000G 0
-No Match to 1000G 28294
-Skipped (XY, Y, MT) 298
-Total in bim file 1714118
-Total processed 1714118
+No Match to 1000G 28270
+Skipped (XY, Y, MT) 0
+Total in bim file 1713196
+Total processed 1713196
 
 Indels 0
 
-SNPs not changed 337305
-SNPs to change ref alt 1323318
-Strand ok 1660623
-Total Strand ok 1660623
+SNPs not changed 337144
+SNPs to change ref alt 1322893
+Strand ok 1660037
+Total Strand ok 1660037
 
 Strand to change 0
-Total checked 1685526
-Total checked Strand 1660623
+Total checked 1684926
+Total checked Strand 1660037
 Total removed for allele Frequency diff > 0.2 650
-Palindromic SNPs with Freq > 0.4 5910
+Palindromic SNPs with Freq > 0.4 5902
 
 
-Non Matching alleles 18993
-ID and allele mismatching 18993; where 1000G is . 0
+Non Matching alleles 18987
+ID and allele mismatching 18987; where 1000G is . 0
 Duplicates removed 0
