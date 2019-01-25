@@ -224,24 +224,6 @@ plink \
 	--set-hh-missing
 cat qc-camgwas-chrX.log >> all.log
 
-# Compute missing data stats
-plink1.9 \
-        --bfile qc-camgwas-chrX \
-        --missing \
-        --allow-no-sex \
-        --set-hh-missing \
-        --out raw-camgwas-chrX
-cat qc-camgwas-chrX.log >> all.log
-
-# Compute heterozygosity stats
-plink1.9 \
-        --bfile qc-camgwas-chrX \
-        --het \
-        --allow-no-sex \
-        --set-hh-missing \
-        --out raw-camgwas-chrX
-cat qc-camgwas-chrX.log >> all.log
-
 # Compute differential missingness
 plink1.9 \
         --bfile qc-camgwas-chrX \
@@ -251,13 +233,19 @@ plink1.9 \
         --out qc-camgwas-chrX
 cat qc-camgwas-chrX.log >> all.log
 
-# Compute missingness in R
+echo """
+#########################################################################
+#                          chrX per SNP QC in R                         #
+#########################################################################
+"""
+echo -e "\nPerforming ChrX per SNP QC in R. Please wait..."
 
+R CMD BATCH xsnpmissing.R
 
-# Now QC on chrX
+# Now remove SNPs that failed chrX QC
 plink1.9 \
-        --bfile qc-camgwas-updated-chrX \
-        --exclude fail-diffmiss.qc \
+        --bfile qc-camgwas-chrX \
+        --exclude fail-Xdiffmiss.qc \
         --allow-no-sex \
         --maf 0.01 \
         --hwe 1e-6 \
@@ -265,6 +253,15 @@ plink1.9 \
         --make-bed \
         --biallelic-only \
         --keep-allele-order \
+	--out qc-camgwas-chr23 
+
+# Merge autosome and chrX data sets again
+plink \
+	--bfile qc-camgwas-autosome \
+	--allow-no-sex \
+	--bmerge qc-camgwas-chr23 \
+	--set-hh-missing \
+	--out qc-camgwas
 
 # Run Association test with adjustment to assess the genomic control inflation factor (lambda)
 plink1.9 \
