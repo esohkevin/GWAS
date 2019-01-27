@@ -14,6 +14,7 @@ then
         vcfbase="$2"
         for i in $(seq 1 22);
         do
+		samtools faidx "${ref}"
                 echo "`checkVCF.py -r "$ref" -o out "${vcfbase}""${i}".vcf.gz`"
         done
 else
