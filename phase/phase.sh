@@ -12,6 +12,6 @@ base="qc-camgwas-updated-chr"
 cat phaseCommands.txt | xargs -P12 -n12 shapeit_v2 &
 
 # Convert HAPS/SAMPLE to HAPS/LEGEND/SAMPLE formats for IMPUTE2
-shapeit_v2 -convert \
-        --input-haps ${base}${i}.phased \
-        --output-ref ${base}${i}.phased.hap ${base}${i}.phased.leg ${base}${i}.phased.sam
+#shapeit_v2 -convert \
+#        --input-haps ${base}${i}.phased \
+#        --output-ref ${base}${i}.phased.hap ${base}${i}.phased.leg ${base}${i}.phased.sam

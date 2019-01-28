@@ -8,5 +8,7 @@ vcfCooker \
 	--ref ../human_g1k_v37.fasta \
 	--out ${base}${i}.vcf \
 	--write-vcf
-bgzip ${base}${i}.vcf
+bgzip -f ${base}${i}.vcf
 done
+cp qc-camgwas-updated-chr23.vcf.gz qc-camgwas-updated-chrX.vcf.gz
+

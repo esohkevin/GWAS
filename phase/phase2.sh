@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-#base="qc-camgwas-updated-chr"
+base="qc-camgwas-updated-chr"
 #rm phaseCommands2.txt
+seque="$(seq 1 23)"
 
 #for i in $(seq 13 23); do
 
@@ -12,6 +13,9 @@
 cat phaseCommands2.txt | xargs -P12 -n12 shapeit_v2 &
 
 # Convert HAPS/SAMPLE to HAPS/LEGEND/SAMPLE formats for IMPUTE2
-shapeit_v2 -convert \
-        --input-haps ${base}${i}.phased \
-        --output-ref ${base}${i}.phased.hap ${base}${i}.phased.leg ${base}${i}.phased.sam
+#for i in $seque; do
+#shapeit_v2 -convert \
+#        --input-haps ${base}${i}.phased \
+#        --output-ref ${base}${i}.phased.hap ${base}${i}.phased.leg ${base}${i}.phased.sam
+#	 -T 15
+#done
