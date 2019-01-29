@@ -6,10 +6,15 @@ if [[ "$res" == "yes" ]];
 then
         ref="../human_g1k_v37.fasta"
         vcfbase="qc-camgwas-updated-chr"
-        for i in $(seq 1 22);
+
+	for i in $(seq 1 23);
         do
-		echo "`tabix -p vcf "${vcfbase}""${i}".vcf.gz`"
-		echo "`bcftools sort "${vcfbase}""${i}".vcf.gz -Oz -o "${vcfbase}""${i}".vcf.gz`"
+                echo "`tabix -p vcf "${vcfbase}""${i}".vcf.gz`"
+                echo "`bcftools sort "${vcfbase}""${i}".vcf.gz -Oz -o "${vcfbase}""${i}".vcf.gz`"
+        done
+
+        for i in $(seq 1 23);
+        do
                 echo "`checkVCF.py -r "$ref" -o out "${vcfbase}""${i}".vcf.gz`"
         done
 elif [[ "$res" == "no" ]];
