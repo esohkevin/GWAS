@@ -1,0 +1,30 @@
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --data raw-camgwas
+  --list-duplicate-vars ids-only suppress-first
+  --out dups
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS
+Start time: Thu Jan 17 20:38:14 2019
+
+Random number seed: 1547746694
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+--data: dups-temporary.bed + dups-temporary.bim + dups-temporary.fam written.
+2368677 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 1256941 het. haploid genotypes present (see dups.hh ); many commands
+treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953835.
+2368677 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+--list-duplicate-vars report written to dups.dupvar .
+
+End time: Thu Jan 17 20:44:28 2019

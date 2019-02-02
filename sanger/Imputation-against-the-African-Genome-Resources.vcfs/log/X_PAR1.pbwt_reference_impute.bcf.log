@@ -1,0 +1,16 @@
+user	0.000000	system	0.000000	max_RSS	0	Memory	279146
+read genotypes from - with 631 sample names and 24 sites on chromosome X: M, N are 1262, 24
+user	0.004000	system	0.000000	max_RSS	640	Memory	1788796
+user	0.000000	system	0.000000	max_RSS	0	Memory	1788796
+impute against reference resources/refs/imputation/agr/pbwt/X_PAR1.minAC1
+read pbwt PBW3 file with 4458677 bytes: M, N are 9912, 95072
+read 95072 sites on chromosome X from file
+24 sites selected from 95072, 0 missing sites, pbwt size for 9912 haplotypes is 22853
+built reverse PBWT - size 3253
+24 sites selected from 24, 0 missing sites, pbwt size for 1262 haplotypes is 801
+Imputation preliminaries: user	1.180074	system	0.024001	max_RSS	10656	Memory	23700642
+Reference impute using maximal matches: Average number of best matches including alternates 2536.3, Average length 24.0, Av number per position 2536.3
+9723710 times where no overlapping matches because query does not match any reference - set imputed value to 0
+user	2985.858604	system	0.060004	max_RSS	60924	Memory	121993169
+written vcf file: 95072 records, 631 samples, and 1262 haplotypes
+user	38.022376	system	0.088005	max_RSS	0	Memory	122075308

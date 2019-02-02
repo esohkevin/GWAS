@@ -1,0 +1,32 @@
+glm(formula = as.factor(pcastat2[, 14]) ~ pcastat2[, 4] + pcastat2[, 
+    5] + pcastat2[, 6] + pcastat2[, 7] + pcastat2[, 8] + pcastat2[, 
+    9] + pcastat2[, 10] + pcastat2[, 11] + pcastat2[, 12] + pcastat2[, 
+    13], family = "binomial")
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.7048  -1.1846   0.8365   1.0775   2.1248  
+
+Coefficients:
+               Estimate Std. Error z value Pr(>|z|)    
+(Intercept)      0.1558     0.0580   2.686  0.00724 ** 
+pcastat2[, 4]   48.9853    10.7195   4.570 4.88e-06 ***
+pcastat2[, 5]    9.5091    10.0900   0.942  0.34598    
+pcastat2[, 6]    0.4331    12.4046   0.035  0.97215    
+pcastat2[, 7]  -21.8200    25.4389  -0.858  0.39104    
+pcastat2[, 8]  -53.8981    12.1039  -4.453 8.47e-06 ***
+pcastat2[, 9]  -21.4236    11.7781  -1.819  0.06892 .  
+pcastat2[, 10] -31.8154    16.7357  -1.901  0.05730 .  
+pcastat2[, 11]  41.2234    24.2710   1.698  0.08942 .  
+pcastat2[, 12]  37.8674    14.9492   2.533  0.01131 *  
+pcastat2[, 13]   3.9524    15.6528   0.253  0.80065    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 1788.9  on 1294  degrees of freedom
+Residual deviance: 1717.7  on 1284  degrees of freedom
+AIC: 1739.7
+
+Number of Fisher Scoring iterations: 5

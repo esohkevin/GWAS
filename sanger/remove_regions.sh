@@ -1,0 +1,7 @@
+#!/bin/bash
+bcftools view -t ^X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560,X:154931044-155270560 qc-camgwas-updated.vcf.gz -o qc-camgwas-updated-2.vcf
+bgzip qc-camgwas-updated-2.vcf
+tabix -p vcf qc-camgwas-updated-2.vcf.gz
+mv qc-camgwas-updated-2.vcf.gz qc-camgwas-updated.vcf.gz
+mv qc-camgwas-updated-2.vcf.gz.tbi qc-camgwas-updated.vcf.gz.tbi
+

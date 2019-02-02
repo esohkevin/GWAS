@@ -1,0 +1,38 @@
+
+R version 3.5.0 (2018-04-23) -- "Joy in Playing"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> #!/usr/bin/env R
+> 
+> # Extract palindromic SNPs
+> bim = read.table("qc-camgwas.bim", header=F, as.is=T)
+> # Get indices of A/T and G/C SNPs
+> w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="A" & bim$V6=="T") | (bim$V5=="A" & bim$V6=="T"))
+> 
+> # Extract A/T and G/C SNPs
+> at.cg.snps = bim[w,]
+> 
+> # Save A/T and G/C snps into a file at-cg.snps
+> write.table(at.cg.snps$V2, file="at-cg.snps", row.names=F, col.names=F, quote=F)
+> 
+> 
+> proc.time()
+   user  system elapsed 
+ 87.558   1.008  88.703 
