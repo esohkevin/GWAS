@@ -1,0 +1,1 @@
+chunk_14_0000000001_0020000000 (Snps: 2, Reference overlap: 1.0, low sample call rates: false)
