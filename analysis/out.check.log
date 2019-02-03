@@ -1,180 +1,19 @@
-02-03 04:03 checkVCF.py -- check validity of VCF file for meta-analysis
-02-03 04:03 version 1.4 (20140115)
-02-03 04:03 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
-02-03 04:03 Python version is [ 2.7.12.final.0 ] 
-02-03 04:03 Begin checking vcfFile [ qc-camgwas-updated.vcf.gz ]
-02-03 04:04 [ 10000 ] lines processed 
-02-03 04:04 [ 20000 ] lines processed 
-02-03 04:05 [ 30000 ] lines processed 
-02-03 04:05 [ 40000 ] lines processed 
-02-03 04:06 [ 50000 ] lines processed 
-02-03 04:06 [ 60000 ] lines processed 
-02-03 04:07 [ 70000 ] lines processed 
-02-03 04:07 [ 80000 ] lines processed 
-02-03 04:08 [ 90000 ] lines processed 
-02-03 04:08 [ 100000 ] lines processed 
-02-03 04:09 [ 110000 ] lines processed 
-02-03 04:09 [ 120000 ] lines processed 
-02-03 04:10 [ 130000 ] lines processed 
-02-03 04:10 [ 140000 ] lines processed 
-02-03 04:11 [ 150000 ] lines processed 
-02-03 04:11 [ 160000 ] lines processed 
-02-03 04:12 [ 170000 ] lines processed 
-02-03 04:12 [ 180000 ] lines processed 
-02-03 04:13 [ 190000 ] lines processed 
-02-03 04:13 [ 200000 ] lines processed 
-02-03 04:14 [ 210000 ] lines processed 
-02-03 04:14 [ 220000 ] lines processed 
-02-03 04:15 [ 230000 ] lines processed 
-02-03 04:15 [ 240000 ] lines processed 
-02-03 04:16 [ 250000 ] lines processed 
-02-03 04:16 [ 260000 ] lines processed 
-02-03 04:17 [ 270000 ] lines processed 
-02-03 04:17 [ 280000 ] lines processed 
-02-03 04:18 [ 290000 ] lines processed 
-02-03 04:18 [ 300000 ] lines processed 
-02-03 04:19 [ 310000 ] lines processed 
-02-03 04:19 [ 320000 ] lines processed 
-02-03 04:20 [ 330000 ] lines processed 
-02-03 04:20 [ 340000 ] lines processed 
-02-03 04:21 [ 350000 ] lines processed 
-02-03 04:21 [ 360000 ] lines processed 
-02-03 04:22 [ 370000 ] lines processed 
-02-03 04:23 [ 380000 ] lines processed 
-02-03 04:23 [ 390000 ] lines processed 
-02-03 04:24 [ 400000 ] lines processed 
-02-03 04:24 [ 410000 ] lines processed 
-02-03 04:25 [ 420000 ] lines processed 
-02-03 04:25 [ 430000 ] lines processed 
-02-03 04:26 [ 440000 ] lines processed 
-02-03 04:26 [ 450000 ] lines processed 
-02-03 04:27 [ 460000 ] lines processed 
-02-03 04:27 [ 470000 ] lines processed 
-02-03 04:28 [ 480000 ] lines processed 
-02-03 04:28 [ 490000 ] lines processed 
-02-03 04:29 [ 500000 ] lines processed 
-02-03 04:29 [ 510000 ] lines processed 
-02-03 04:30 [ 520000 ] lines processed 
-02-03 04:30 [ 530000 ] lines processed 
-02-03 04:31 [ 540000 ] lines processed 
-02-03 04:31 [ 550000 ] lines processed 
-02-03 04:32 [ 560000 ] lines processed 
-02-03 04:32 [ 570000 ] lines processed 
-02-03 04:33 [ 580000 ] lines processed 
-02-03 04:33 [ 590000 ] lines processed 
-02-03 04:34 [ 600000 ] lines processed 
-02-03 04:34 [ 610000 ] lines processed 
-02-03 04:35 [ 620000 ] lines processed 
-02-03 04:35 [ 630000 ] lines processed 
-02-03 04:36 [ 640000 ] lines processed 
-02-03 04:36 [ 650000 ] lines processed 
-02-03 04:37 [ 660000 ] lines processed 
-02-03 04:37 [ 670000 ] lines processed 
-02-03 04:38 [ 680000 ] lines processed 
-02-03 04:38 [ 690000 ] lines processed 
-02-03 04:39 [ 700000 ] lines processed 
-02-03 04:39 [ 710000 ] lines processed 
-02-03 04:40 [ 720000 ] lines processed 
-02-03 04:41 [ 730000 ] lines processed 
-02-03 04:41 [ 740000 ] lines processed 
-02-03 04:42 [ 750000 ] lines processed 
-02-03 04:42 [ 760000 ] lines processed 
-02-03 04:43 [ 770000 ] lines processed 
-02-03 04:43 [ 780000 ] lines processed 
-02-03 04:44 [ 790000 ] lines processed 
-02-03 04:44 [ 800000 ] lines processed 
-02-03 04:45 [ 810000 ] lines processed 
-02-03 04:45 [ 820000 ] lines processed 
-02-03 04:46 [ 830000 ] lines processed 
-02-03 04:46 [ 840000 ] lines processed 
-02-03 04:47 [ 850000 ] lines processed 
-02-03 04:47 [ 860000 ] lines processed 
-02-03 04:48 [ 870000 ] lines processed 
-02-03 04:48 [ 880000 ] lines processed 
-02-03 04:49 [ 890000 ] lines processed 
-02-03 04:49 [ 900000 ] lines processed 
-02-03 04:50 [ 910000 ] lines processed 
-02-03 04:50 [ 920000 ] lines processed 
-02-03 04:51 [ 930000 ] lines processed 
-02-03 04:51 [ 940000 ] lines processed 
-02-03 04:52 [ 950000 ] lines processed 
-02-03 04:52 [ 960000 ] lines processed 
-02-03 04:53 [ 970000 ] lines processed 
-02-03 04:53 [ 980000 ] lines processed 
-02-03 04:54 [ 990000 ] lines processed 
-02-03 04:54 [ 1000000 ] lines processed 
-02-03 04:55 [ 1010000 ] lines processed 
-02-03 04:55 [ 1020000 ] lines processed 
-02-03 04:56 [ 1030000 ] lines processed 
-02-03 04:56 [ 1040000 ] lines processed 
-02-03 04:57 [ 1050000 ] lines processed 
-02-03 04:57 [ 1060000 ] lines processed 
-02-03 04:58 [ 1070000 ] lines processed 
-02-03 04:59 [ 1080000 ] lines processed 
-02-03 04:59 [ 1090000 ] lines processed 
-02-03 05:00 [ 1100000 ] lines processed 
-02-03 05:00 [ 1110000 ] lines processed 
-02-03 05:01 [ 1120000 ] lines processed 
-02-03 05:01 [ 1130000 ] lines processed 
-02-03 05:02 [ 1140000 ] lines processed 
-02-03 05:02 [ 1150000 ] lines processed 
-02-03 05:03 [ 1160000 ] lines processed 
-02-03 05:03 [ 1170000 ] lines processed 
-02-03 05:04 [ 1180000 ] lines processed 
-02-03 05:04 [ 1190000 ] lines processed 
-02-03 05:05 [ 1200000 ] lines processed 
-02-03 05:05 [ 1210000 ] lines processed 
-02-03 05:06 [ 1220000 ] lines processed 
-02-03 05:06 [ 1230000 ] lines processed 
-02-03 05:07 [ 1240000 ] lines processed 
-02-03 05:07 [ 1250000 ] lines processed 
-02-03 05:08 [ 1260000 ] lines processed 
-02-03 05:08 [ 1270000 ] lines processed 
-02-03 05:09 [ 1280000 ] lines processed 
-02-03 05:09 [ 1290000 ] lines processed 
-02-03 05:10 [ 1300000 ] lines processed 
-02-03 05:10 [ 1310000 ] lines processed 
-02-03 05:11 [ 1320000 ] lines processed 
-02-03 05:11 [ 1330000 ] lines processed 
-02-03 05:12 [ 1340000 ] lines processed 
-02-03 05:12 [ 1350000 ] lines processed 
-02-03 05:13 [ 1360000 ] lines processed 
-02-03 05:13 [ 1370000 ] lines processed 
-02-03 05:14 [ 1380000 ] lines processed 
-02-03 05:14 [ 1390000 ] lines processed 
-02-03 05:15 [ 1400000 ] lines processed 
-02-03 05:15 [ 1410000 ] lines processed 
-02-03 05:16 [ 1420000 ] lines processed 
-02-03 05:16 [ 1430000 ] lines processed 
-02-03 05:17 [ 1440000 ] lines processed 
-02-03 05:18 [ 1450000 ] lines processed 
-02-03 05:18 [ 1460000 ] lines processed 
-02-03 05:19 [ 1470000 ] lines processed 
-02-03 05:19 [ 1480000 ] lines processed 
-02-03 05:20 [ 1490000 ] lines processed 
-02-03 05:20 [ 1500000 ] lines processed 
-02-03 05:21 [ 1510000 ] lines processed 
-02-03 05:21 [ 1520000 ] lines processed 
-02-03 05:22 [ 1530000 ] lines processed 
-02-03 05:22 [ 1540000 ] lines processed 
-02-03 05:23 [ 1550000 ] lines processed 
-02-03 05:23 [ 1560000 ] lines processed 
-02-03 05:24 [ 1570000 ] lines processed 
-02-03 05:24 [ 1580000 ] lines processed 
-02-03 05:25 [ 1590000 ] lines processed 
-02-03 05:25 [ 1600000 ] lines processed 
-02-03 05:26 [ 1610000 ] lines processed 
-02-03 05:26 [ 1620000 ] lines processed 
-02-03 05:27 [ 1630000 ] lines processed 
-02-03 05:27 [ 1640000 ] lines processed 
+02-03 05:26 checkVCF.py -- check validity of VCF file for meta-analysis
+02-03 05:26 version 1.4 (20140115)
+02-03 05:26 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
+02-03 05:26 Python version is [ 2.7.12.final.0 ] 
+02-03 05:26 Begin checking vcfFile [ qc-camgwas-updated-chr23.vcf.gz ]
+02-03 05:27 [ 10000 ] lines processed 
+02-03 05:27 [ 20000 ] lines processed 
+02-03 05:28 [ 30000 ] lines processed 
 02-03 05:28 ---------------     REPORT     ---------------
-02-03 05:28 Total [ 1644612 ] lines processed
-02-03 05:28 Examine [ 32 ] VCF header lines, [ 1644580 ] variant sites, [ 1295 ] samples
+02-03 05:28 Total [ 36822 ] lines processed
+02-03 05:28 Examine [ 10 ] VCF header lines, [ 36812 ] variant sites, [ 1295 ] samples
 02-03 05:28 [ 0 ] duplicated sites
 02-03 05:28 [ 0 ] NonSNP site are outputted to [ out.check.nonSnp ]
 02-03 05:28 [ 0 ] Inconsistent reference sites are outputted to [ out.check.ref ]
 02-03 05:28 [ 0 ] Variant sites with invalid genotypes are outputted to [ out.check.geno ]
-02-03 05:28 [ 333397 ] Alternative allele frequency > 0.5 sites are outputted to [ out.check.af ]
+02-03 05:28 [ 9221 ] Alternative allele frequency > 0.5 sites are outputted to [ out.check.af ]
 02-03 05:28 [ 0 ] Monomorphic sites are outputted to [ out.check.mono ]
 02-03 05:28 ---------------     ACTION ITEM     ---------------
 02-03 05:28 * No error found by checkVCF.py, thank you for cleanning VCF file.
