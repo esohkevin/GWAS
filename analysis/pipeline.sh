@@ -6,7 +6,7 @@
 #			from: 
 
 #runplink1.9() {
-mkdir -p images
+mkdir -p ../images
 #read -p 'Please provide your genotype vcf file: ' vcf
 
 plink1.9 \
@@ -17,7 +17,7 @@ plink1.9 \
 	--double-id \
 	--out raw-camgwas
 cat raw-camgwas.log > all.log
-cp samples/raw-camgwas.sample .
+cp ../samples/raw-camgwas.sample .
 
 #	Sample: 	raw-camgwas.sample
 
@@ -314,14 +314,15 @@ cat autopseudo.log >> all.log
 #                   Run Population Structure Script                     #
 #########################################################################
 echo -e "\nNow running script to generate population structure data. Please wait..."
-
+cd ../popstruct/
 ./popstruct.sh
+cd ../analysis/
 
 ### Association tests including covariats to account for population structure
 # With PC1 and PC2
 plink \
 	--bfile qc-camgwas \
-	--covar ps-data.mds \
+	--covar ../popstruct/ps-data.mds \
 	--covar-name C1 C2 \
 	--autosome \
 	--allow-no-sex \
@@ -333,7 +334,7 @@ cat ps-qc-camgwas.log >> all.log
 # With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
 plink \
         --bfile qc-camgwas \
-        --covar ps-data.mds \
+        --covar ../popstruct/ps-data.mds \
         --covar-name C1 C5 C9 \
         --allow-no-sex \
 	--autosome \
@@ -345,7 +346,7 @@ cat ps1-qc-camgwas.log >> all.log
 # With all PCs
 plink \
         --bfile qc-camgwas \
-        --covar ps-data.mds \
+        --covar ../popstruct/ps-data.mds \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
 	--autosome \
@@ -364,6 +365,6 @@ R CMD BATCH assocplot.R
 
 #done
 
-mv *.png images/
+mv *.png ../images/
 rm -r raw-camGwas.*
 #}

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-cp 1000G/merged1kp3.bed .
-cp 1000G/merged1kp3.bim .
-cp 1000G/merged1kp3.fam .
+cp ../1000G/merged1kp3.bed .
+cp ../1000G/merged1kp3.bim .
+cp ../1000G/merged1kp3.fam .
 
 plink \
 	--bfile merged1kp3 \
@@ -17,7 +17,7 @@ plink \
 cut -f2 1kGp3.bim > thinned.rs.ids
 
 plink \
-	--bfile qc-camgwas \
+	--bfile ../analysis/qc-camgwas \
 	--make-bed \
 	--biallelic-only \
 	--extract thinned.rs.ids \
@@ -71,24 +71,24 @@ grep -f 3601kGp3.ids igsr_phase3.samples | cut -f1,4 >> merge.txt
 
 # Also obtain the ids of the remaining dataset in qc-data.fam and corresponding status in the large sample bfile
 cut -f1 -d' ' qc-data.fam > qc-data.ids
-grep -f qc-data.ids tmp/Cameroon_GWAS-2.5M_b37_release.sample | cut -f1,9 -d' ' >> merge.txt
+grep -f qc-data.ids ../tmp/Cameroon_GWAS-2.5M_b37_release.sample | cut -f1,9 -d' ' >> merge.txt
 
 # Now Compute 10 axes of genetic variation to determine pop structure
 plink \
-	--bfile qc-camgwas \
+	--bfile ../analysis/qc-camgwas \
 	--autosome \
 	--indep-pairwise 50 5 0.2 \
 	--out qc-data
 
 plink \
-	--bfile qc-camgwas \
+	--bfile ../analysis/qc-camgwas \
 	--autosome \
 	--extract qc-data.prune.in \
 	--genome \
 	--out qc-data
 
 plink \
-	--bfile qc-camgwas \
+	--bfile ../analysis/qc-camgwas \
 	--read-genome qc-data.genome \
 	--cluster \
 	--mds-plot 10 \
