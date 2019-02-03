@@ -7,3 +7,5 @@ do
 	git add -f ${i}
 done
 
+git commit -m "update"
+git push -u origin master
