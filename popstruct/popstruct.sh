@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
-cp ../1000G/merged1kp3.bed .
-cp ../1000G/merged1kp3.bim .
-cp ../1000G/merged1kp3.fam .
+#cp ../1000G/merged1kp3.bed .
+#cp ../1000G/merged1kp3.bim .
+#cp ../1000G/merged1kp3.fam .
 
 plink \
-	--bfile merged1kp3 \
+	--vcf ../1000G/my-merged-p3.vcf.gz \
 	--thin-indiv-count 360 \
 	--autosome \
 	--make-bed \
 	--exclude-snp rs16959560 \
-	--keep-allele-order \
 	--biallelic-only \
 	--out 1kGp3
+cat 1kGp3.log > log.file
 
 cut -f2 1kGp3.bim > thinned.rs.ids
 
@@ -24,6 +24,7 @@ plink \
 	--autosome \
 	--allow-no-sex \
 	--out qc-data
+cat qc-data.log >> log.file
 
 plink \
 	--bfile qc-data \
@@ -33,6 +34,7 @@ plink \
 	--biallelic-only \
 	--allow-no-sex \
 	--out merge
+cat merge.log >> log.file
 
 plink \
 	--bfile merge \
@@ -40,6 +42,7 @@ plink \
 	--allow-no-sex \
 	--biallelic-only \
 	--out merge
+cat merge.log >> log.file
 
 plink \
 	--bfile merge \
@@ -48,12 +51,14 @@ plink \
 	--genome \
 	--biallelic-only \
 	--out merge
+cat merge.log >> log.file
 
 plink \
 	--bfile merge \
 	--read-genome merge.genome \
 	--cluster --mds-plot 2 \
 	--out mds-data
+cat mds-data.log >> log.file
 
 # Retrieve the 1000Genome Phase sample bfile from the website by visiting
 # http://www.internationalgenome.org/data-portal/sample
@@ -79,6 +84,7 @@ plink \
 	--autosome \
 	--indep-pairwise 50 5 0.2 \
 	--out qc-data
+cat qc-data.log >> log.file
 
 plink \
 	--bfile ../analysis/qc-camgwas \
@@ -86,6 +92,7 @@ plink \
 	--extract qc-data.prune.in \
 	--genome \
 	--out qc-data
+cat qc-data.log >> log.file
 
 plink \
 	--bfile ../analysis/qc-camgwas \
@@ -93,6 +100,7 @@ plink \
 	--cluster \
 	--mds-plot 10 \
 	--out ps-data
+cat ps-data.log >> log.file
 
 ##############################################################################################
 #					Generate Plots in R				     #
