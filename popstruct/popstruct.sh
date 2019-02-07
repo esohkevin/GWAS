@@ -109,4 +109,4 @@ echo -e "\nNow generating MDS and Population structure plots in R. Please wait..
 
 R CMD BATCH popstruct.R
 
-
+mv *.png ../images/

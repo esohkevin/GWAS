@@ -1,0 +1,616 @@
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 1
+  --make-bed
+  --out qc-camgwas.chr1
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:16 2019
+
+Random number seed: 1547755516
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+130616 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995391.
+130616 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr1.bed + qc-camgwas.chr1.bim + qc-camgwas.chr1.fam
+... done.
+
+End time: Thu Jan 17 20:05:17 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 2
+  --make-bed
+  --out qc-camgwas.chr2
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:17 2019
+
+Random number seed: 1547755517
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+143274 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995739.
+143274 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr2.bed + qc-camgwas.chr2.bim + qc-camgwas.chr2.fam
+... done.
+
+End time: Thu Jan 17 20:05:17 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 3
+  --make-bed
+  --out qc-camgwas.chr3
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:17 2019
+
+Random number seed: 1547755517
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+122148 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.99591.
+122148 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr3.bed + qc-camgwas.chr3.bim + qc-camgwas.chr3.fam
+... done.
+
+End time: Thu Jan 17 20:05:18 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 4
+  --make-bed
+  --out qc-camgwas.chr4
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:18 2019
+
+Random number seed: 1547755518
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+114851 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995962.
+114851 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr4.bed + qc-camgwas.chr4.bim + qc-camgwas.chr4.fam
+... done.
+
+End time: Thu Jan 17 20:05:18 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 5
+  --make-bed
+  --out qc-camgwas.chr5
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:18 2019
+
+Random number seed: 1547755518
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+108187 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995894.
+108187 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr5.bed + qc-camgwas.chr5.bim + qc-camgwas.chr5.fam
+... done.
+
+End time: Thu Jan 17 20:05:19 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 6
+  --make-bed
+  --out qc-camgwas.chr6
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:19 2019
+
+Random number seed: 1547755519
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+114168 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995711.
+114168 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr6.bed + qc-camgwas.chr6.bim + qc-camgwas.chr6.fam
+... done.
+
+End time: Thu Jan 17 20:05:19 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 7
+  --make-bed
+  --out qc-camgwas.chr7
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:19 2019
+
+Random number seed: 1547755519
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+93292 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995683.
+93292 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr7.bed + qc-camgwas.chr7.bim + qc-camgwas.chr7.fam
+... done.
+
+End time: Thu Jan 17 20:05:20 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 8
+  --make-bed
+  --out qc-camgwas.chr8
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:20 2019
+
+Random number seed: 1547755520
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+93341 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995878.
+93341 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr8.bed + qc-camgwas.chr8.bim + qc-camgwas.chr8.fam
+... done.
+
+End time: Thu Jan 17 20:05:21 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 9
+  --make-bed
+  --out qc-camgwas.chr9
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:21 2019
+
+Random number seed: 1547755521
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+73844 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995603.
+73844 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr9.bed + qc-camgwas.chr9.bim + qc-camgwas.chr9.fam
+... done.
+
+End time: Thu Jan 17 20:05:21 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 10
+  --make-bed
+  --out qc-camgwas.chr10
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:21 2019
+
+Random number seed: 1547755521
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+86364 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995351.
+86364 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr10.bed + qc-camgwas.chr10.bim +
+qc-camgwas.chr10.fam ... done.
+
+End time: Thu Jan 17 20:05:22 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 11
+  --make-bed
+  --out qc-camgwas.chr11
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:22 2019
+
+Random number seed: 1547755522
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+82699 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.99551.
+82699 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr11.bed + qc-camgwas.chr11.bim +
+qc-camgwas.chr11.fam ... done.
+
+End time: Thu Jan 17 20:05:22 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 12
+  --make-bed
+  --out qc-camgwas.chr12
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:22 2019
+
+Random number seed: 1547755522
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+81801 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995623.
+81801 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr12.bed + qc-camgwas.chr12.bim +
+qc-camgwas.chr12.fam ... done.
+
+End time: Thu Jan 17 20:05:23 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 13
+  --make-bed
+  --out qc-camgwas.chr13
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:23 2019
+
+Random number seed: 1547755523
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+63109 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995941.
+63109 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr13.bed + qc-camgwas.chr13.bim +
+qc-camgwas.chr13.fam ... done.
+
+End time: Thu Jan 17 20:05:23 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 14
+  --make-bed
+  --out qc-camgwas.chr14
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:23 2019
+
+Random number seed: 1547755523
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+56156 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.99566.
+56156 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr14.bed + qc-camgwas.chr14.bim +
+qc-camgwas.chr14.fam ... done.
+
+End time: Thu Jan 17 20:05:24 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 15
+  --make-bed
+  --out qc-camgwas.chr15
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:24 2019
+
+Random number seed: 1547755524
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+53555 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995262.
+53555 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr15.bed + qc-camgwas.chr15.bim +
+qc-camgwas.chr15.fam ... done.
+
+End time: Thu Jan 17 20:05:24 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 16
+  --make-bed
+  --out qc-camgwas.chr16
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:24 2019
+
+Random number seed: 1547755524
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+52068 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.994866.
+52068 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr16.bed + qc-camgwas.chr16.bim +
+qc-camgwas.chr16.fam ... done.
+
+End time: Thu Jan 17 20:05:25 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 17
+  --make-bed
+  --out qc-camgwas.chr17
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:25 2019
+
+Random number seed: 1547755525
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+42189 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.994053.
+42189 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr17.bed + qc-camgwas.chr17.bim +
+qc-camgwas.chr17.fam ... done.
+
+End time: Thu Jan 17 20:05:25 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 18
+  --make-bed
+  --out qc-camgwas.chr18
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:25 2019
+
+Random number seed: 1547755525
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+52595 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995819.
+52595 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr18.bed + qc-camgwas.chr18.bim +
+qc-camgwas.chr18.fam ... done.
+
+End time: Thu Jan 17 20:05:26 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 19
+  --make-bed
+  --out qc-camgwas.chr19
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:26 2019
+
+Random number seed: 1547755526
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+27708 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.992963.
+27708 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr19.bed + qc-camgwas.chr19.bim +
+qc-camgwas.chr19.fam ... done.
+
+End time: Thu Jan 17 20:05:26 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 20
+  --make-bed
+  --out qc-camgwas.chr20
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:26 2019
+
+Random number seed: 1547755526
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+40293 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.994985.
+40293 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr20.bed + qc-camgwas.chr20.bim +
+qc-camgwas.chr20.fam ... done.
+
+End time: Thu Jan 17 20:05:27 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 21
+  --make-bed
+  --out qc-camgwas.chr21
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:27 2019
+
+Random number seed: 1547755527
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+23133 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.99529.
+23133 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr21.bed + qc-camgwas.chr21.bim +
+qc-camgwas.chr21.fam ... done.
+
+End time: Thu Jan 17 20:05:27 2019
+PLINK v1.90b3.31 64-bit (3 Feb 2016)
+Options in effect:
+  --allow-no-sex
+  --bfile ../qc-camgwas
+  --chr 22
+  --make-bed
+  --out qc-camgwas.chr22
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/phase
+Start time: Thu Jan 17 20:05:27 2019
+
+Random number seed: 1547755527
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+19705 variants loaded from .bim file.
+1295 people (764 males, 531 females) loaded from .fam.
+1295 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked.
+Before main variant filters, 1295 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.992917.
+19705 variants and 1295 people pass filters and QC.
+Among remaining phenotypes, 602 are cases and 693 are controls.
+--make-bed to qc-camgwas.chr22.bed + qc-camgwas.chr22.bim +
+qc-camgwas.chr22.fam ... done.
+
+End time: Thu Jan 17 20:05:28 2019
