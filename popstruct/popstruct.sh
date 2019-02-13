@@ -1,21 +1,30 @@
 #!/usr/bin/env bash
 
-#cp ../1000G/merged1kp3.bed .
-#cp ../1000G/merged1kp3.bim .
-#cp ../1000G/merged1kp3.fam .
+# Obtain rsIDs of the study dataset for subsequent extraction from the 1000G Phase 3 dataset
+cut -f2 ../analysis/qc-camgwas.bim > qc-rs.ids
 
+# Extract from 1000G Phase dataset only rsIDs present in the study dataset with 1% missing genotype and MAF > 0.35,
+# While thinning it to obtain 780 individuals with at most 10% missingness.
+# Also exclude any SNPs that case plink to error out.
 plink \
-	--vcf ../1000G/my-merged-p3.vcf.gz \
-	--thin-indiv-count 360 \
+	--vcf ../1000G/Phase3_merged.vcf.gz \
+	--thin-indiv-count 780 \
 	--autosome \
+	--extract qc-rs.ids \
+	--mind 0.1 \
+        --maf 0.35 \
+        --geno 0.01 \
+	--allow-no-sex \
 	--make-bed \
 	--exclude-snp rs16959560 \
 	--biallelic-only \
 	--out 1kGp3
 cat 1kGp3.log > log.file
 
+# Obtain the rsIDs of the thinned 1000G dataset for subsequent extraction from the study dataset
 cut -f2 1kGp3.bim > thinned.rs.ids
 
+# Extract the thinned rsIDs of the from the study dataset to be sure we'll be working on the same set of SNPs in the study and the 1000G dataset for MDS and Population structure
 plink \
 	--bfile ../analysis/qc-camgwas \
 	--make-bed \
@@ -26,6 +35,7 @@ plink \
 	--out qc-data
 cat qc-data.log >> log.file
 
+# Merge the thinned dataset and the study dataset together
 plink \
 	--bfile qc-data \
 	--bmerge 1kGp3 \
@@ -36,6 +46,7 @@ plink \
 	--out merge
 cat merge.log >> log.file
 
+# Prune the merged dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
 plink \
 	--bfile merge \
 	--indep-pairwise 50 5 0.2 \
@@ -44,6 +55,7 @@ plink \
 	--out merge
 cat merge.log >> log.file
 
+# Generate an IBD report with the pruned set
 plink \
 	--bfile merge \
 	--extract merge.prune.in \
@@ -53,6 +65,7 @@ plink \
 	--out merge
 cat merge.log >> log.file
 
+# Use the IBD report to perform MDS with two (2) axes of genetic variation
 plink \
 	--bfile merge \
 	--read-genome merge.genome \
@@ -67,7 +80,7 @@ cat mds-data.log >> log.file
 # Replace gaps in the list with underscore '_'
 sed 's/ /_/g' igsr_samples.tsv > igsr_phase3.samples
 
-# Extract ids of the 360 randomly generated phase 3 samples
+# Extract ids of the thinned 1000G Phase 3 samples
 cut -f1 -d' ' 1kGp3.fam > 3601kGp3.ids
 
 # Now obtain the ids and their corresponding populations in the igsr_phase3.samples file
@@ -102,10 +115,12 @@ plink \
 	--out ps-data
 cat ps-data.log >> log.file
 
+echo """
 ##############################################################################################
-#					Generate Plots in R				     #
+#			Generate MDS and Pop Structure Plots in R			     #
 ##############################################################################################
-echo -e "\nNow generating MDS and Population structure plots in R. Please wait... "
+"""
+echo "Now generating MDS and Population structure plots in R. Please wait..."
 
 R CMD BATCH popstruct.R
 

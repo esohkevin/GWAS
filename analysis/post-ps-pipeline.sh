@@ -44,4 +44,9 @@ echo -e "\nNow generating association plots in R. Please wait..."
 
 R CMD BATCH post-ps-assoc.R
 
-
+# Filter association results to obtain SNPs with p-val 1e-5
+for i in ps*-qc-camgwas.assoc.logistic; 
+do 
+	head -1 ${i} > ${i/-qc-camgwas.assoc.logistic/-assoc.results}; 
+	awk '$9<1e-5' ${i} >> ${i/-qc-camgwas.assoc.logistic/-assoc.results}; 
+done

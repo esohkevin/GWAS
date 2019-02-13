@@ -1,7 +1,7 @@
 Options Set:
 Reference Panel:             1000G
 Bim filename:                qc-camgwas.bim
-Reference filename:          phase/1000GP_Phase3/1000GP_Phase3_combined.legend.gz
+Reference filename:          1000GP_Phase3/1000GP_Phase3_combined.legend.gz
 Allele frequencies filename: qc-camgwas.frq
 Allele frequency threshold:  0.2
 Population for 1000G:        AFR

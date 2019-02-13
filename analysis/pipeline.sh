@@ -309,10 +309,11 @@ plink1.9 \
 	--set-hh-missing \
 	--out autopseudo
 cat autopseudo.log >> all.log
-
+echo """
 #########################################################################
 #                        Plot Association in R                          #
 #########################################################################
+"""
 echo -e "\nNow generating association plots in R. Please wait..."
 
 R CMD BATCH assocplot.R
@@ -322,4 +323,12 @@ R CMD BATCH assocplot.R
 
 mv *.png ../images/
 rm -r raw-camGwas.*
+
+echo """
+#########################################################################
+#                     Run Imputation Prep Script                        #
+#########################################################################
+"""
+./imputePrep.sh
+
 #}
