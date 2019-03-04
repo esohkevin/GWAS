@@ -26,7 +26,7 @@ cut -f2 1kGp3.bim > thinned.rs.ids
 
 # Extract the thinned rsIDs of the from the study dataset to be sure we'll be working on the same set of SNPs in the study and the 1000G dataset for MDS and Population structure
 plink \
-	--bfile ../analysis/qc-camgwas \
+	--bfile ../analysis/qc-camgwas-updated-autosome \
 	--make-bed \
 	--biallelic-only \
 	--extract thinned.rs.ids \
@@ -93,14 +93,14 @@ grep -f qc-data.ids ../tmp/Cameroon_GWAS-2.5M_b37_release.sample | cut -f1,9 -d'
 
 # Now Compute 10 axes of genetic variation to determine pop structure
 plink \
-	--bfile ../analysis/qc-camgwas \
+	--bfile ../analysis/qc-camgwas-updated-autosome \
 	--autosome \
 	--indep-pairwise 50 5 0.2 \
 	--out qc-data
 cat qc-data.log >> log.file
 
 plink \
-	--bfile ../analysis/qc-camgwas \
+	--bfile ../analysis/qc-camgwas-updated-autosome \
 	--autosome \
 	--extract qc-data.prune.in \
 	--genome \
@@ -108,7 +108,7 @@ plink \
 cat qc-data.log >> log.file
 
 plink \
-	--bfile ../analysis/qc-camgwas \
+	--bfile ../analysis/qc-camgwas-updated-autosome \
 	--read-genome qc-data.genome \
 	--cluster \
 	--mds-plot 10 \

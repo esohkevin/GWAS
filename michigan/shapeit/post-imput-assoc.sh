@@ -83,3 +83,5 @@ plink \
 
 # Produce manhattan plots in R
 R CMD BATCH post-imput-assoc.R
+
+mv *.png ../../images/
