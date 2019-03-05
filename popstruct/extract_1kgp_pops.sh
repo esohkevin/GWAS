@@ -21,6 +21,7 @@ plink \
 	--vcf ../1000G/Phase3_merged.vcf.gz \
 	--allow-no-sex \
 	--autosome \
+	--make-bed \
 	--biallelic-only \
 	--double-id \
 	--exclude-snp rs16959560 \

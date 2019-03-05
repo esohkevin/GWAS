@@ -125,3 +125,15 @@ echo "Now generating MDS and Population structure plots in R. Please wait..."
 R CMD BATCH popstruct.R
 
 mv *.png ../images/
+
+################ Fst Estimates #######################
+# For 1KGP3 populations
+plink \
+	--bfile 1kgp3_ps-data \
+	--extract 1kgp3_ps-data.prune.in \
+	--fst \
+	--within 1kgp3-cluster.txt \
+	--make-bed \
+	--double-id \
+	--out fst
+
