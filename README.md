@@ -2,7 +2,7 @@
 
 ## Genome-wide Screening of Candidate Markers Associated with Severe Malaria in Three Malaria-Endemic Regions of Cameroon
 
-## Abstract
+## Introduction
 Severe *Plasmodium falciparum* malaria is a life-threatening disease that accounts for more than 
 90% of malaria deaths world wide. Africans, particular children below the age of 5 are the most 
 vulnerable. With increasing antimalarial and insecticide resistance, and no effective vaccine 
