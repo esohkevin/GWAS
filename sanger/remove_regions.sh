@@ -16,7 +16,7 @@ for i in "$@"; do
         	bgzip -f "${2/.vcf*/.vcf}"
         	tabix -p vcf "${2/.vcf*/.vcf.gz}"
 	else
-		echo "Please select "0" for Sanger or "1" for Michigan"
+		echo "Please enter "0" for Sanger or "1" for Michigan"
 	fi
 done
 }
