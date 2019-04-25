@@ -37,39 +37,39 @@ snptest_v2.5.4-beta3 \
         -o snptest-sma-assoc.txt
 #cut -f1-6,42,44,46-47 -d' ' chr"${i}"-sma-imputed-assoc.txt | sed s/NA/"${i}"/g > chr"${i}"-sma-imputed-assoc-truncated.txt
 
-# Extract columns that for different tests into separate files
-cut -f1-6,42,44 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fadd-assoc.txt
-cut -f1-6,46,48 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fdom-assoc.txt
-cut -f1-6,50,52 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-frec-assoc.txt
-cut -f1-6,54,56 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fgen-assoc.txt
-cut -f1-6,60,62 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fhet-assoc.txt
-cut -f1-6,64,65 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-badd-assoc.txt
-cut -f1-6,67,68 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bdom-assoc.txt
-cut -f1-6,70,71 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-brec-assoc.txt
-cut -f1-6,73,74 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bgen-assoc.txt
-cut -f1-6,78,79 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bhet-assoc.txt
+# Extract columns for different tests into separate files for snptest-assoc.txt
+cut -f1-6,42,44 -d' ' snptest-assoc.txt > snptest-assoc-fadd.txt
+cut -f1-6,46,48 -d' ' snptest-assoc.txt > snptest-assoc-fdom.txt
+cut -f1-6,50,52 -d' ' snptest-assoc.txt > snptest-assoc-frec.txt
+cut -f1-6,54,56 -d' ' snptest-assoc.txt > snptest-assoc-fgen.txt
+cut -f1-6,60,62 -d' ' snptest-assoc.txt > snptest-assoc-fhet.txt
+cut -f1-6,64,65 -d' ' snptest-assoc.txt > snptest-assoc-badd.txt
+cut -f1-6,67,68 -d' ' snptest-assoc.txt > snptest-assoc-bdom.txt
+cut -f1-6,70,71 -d' ' snptest-assoc.txt > snptest-assoc-brec.txt
+cut -f1-6,73,74 -d' ' snptest-assoc.txt > snptest-assoc-bgen.txt
+cut -f1-6,78,79 -d' ' snptest-assoc.txt > snptest-assoc-bhet.txt
 
-# Extract columns that for different tests into separate files
-cut -f1-6,42,44 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fadd-assoc.txt
-cut -f1-6,46,48 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fdom-assoc.txt
-cut -f1-6,50,52 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-frec-assoc.txt
-cut -f1-6,54,56 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fgen-assoc.txt
-cut -f1-6,60,62 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fhet-assoc.txt
-cut -f1-6,64,65 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-badd-assoc.txt
-cut -f1-6,67,68 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bdom-assoc.txt
-cut -f1-6,70,71 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-brec-assoc.txt
-cut -f1-6,73,74 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bgen-assoc.txt
-cut -f1-6,78,79 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bhet-assoc.txt
+# Extract columns for different tests into separate files for snptest-cm-assoc.txt
+cut -f1-6,42,44 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-fadd.txt
+cut -f1-6,46,48 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-fdom.txt
+cut -f1-6,50,52 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-frec.txt
+cut -f1-6,54,56 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-fgen.txt
+cut -f1-6,60,62 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-fhet.txt
+cut -f1-6,64,65 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-badd.txt
+cut -f1-6,67,68 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-bdom.txt
+cut -f1-6,70,71 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-brec.txt
+cut -f1-6,73,74 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-bgen.txt
+cut -f1-6,78,79 -d' ' snptest-cm-assoc.txt > snptest-cm-assoc-bhet.txt
 
-# Extract columns that for different tests into separate files
-cut -f1-6,42,44 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fadd-assoc.txt
-cut -f1-6,46,48 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fdom-assoc.txt
-cut -f1-6,50,52 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-frec-assoc.txt
-cut -f1-6,54,56 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fgen-assoc.txt
-cut -f1-6,60,62 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-fhet-assoc.txt
-cut -f1-6,64,65 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-badd-assoc.txt
-cut -f1-6,67,68 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bdom-assoc.txt
-cut -f1-6,70,71 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-brec-assoc.txt
-cut -f1-6,73,74 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bgen-assoc.txt
-cut -f1-6,78,79 -d' ' auto-imputed-allmodels-assoc.txt > auto-imputed-bhet-assoc.txt
+# Extract columns for different tests into separate files for snptest-sma-assoc.txt
+cut -f1-6,42,44 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-fadd.txt
+cut -f1-6,46,48 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-fdom.txt
+cut -f1-6,50,52 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-frec.txt
+cut -f1-6,54,56 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-fgen.txt
+cut -f1-6,60,62 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-fhet.txt
+cut -f1-6,64,65 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-badd.txt
+cut -f1-6,67,68 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-bdom.txt
+cut -f1-6,70,71 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-brec.txt
+cut -f1-6,73,74 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-bgen.txt
+cut -f1-6,78,79 -d' ' snptest-sma-assoc.txt > snptest-sma-assoc-bhet.txt
 
