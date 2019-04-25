@@ -37,6 +37,29 @@ plink \
         --out ps2-qc-camgwas
 cat ps2-qc-camgwas.log >> all.log
 
+# With all PCs and different MOI
+plink \
+        --bfile qc-camgwas \
+        --covar ../popstruct/ps-data.mds \
+        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+        --allow-no-sex \
+        --autosome \
+        --hide-covar \
+        --model \
+        --out ps3-qc-camgwas
+cat ps3-qc-camgwas.log >> all.log
+
+# With all PCs and hethom MOI
+plink \
+        --bfile qc-camgwas \
+        --covar ../popstruct/ps-data.mds \
+        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+        --allow-no-sex \
+        --autosome \
+        --hide-covar \
+        --logistic hethom \
+        --out ps4-qc-camgwas
+cat ps4-qc-camgwas.log >> all.log
 #########################################################################
 #                        Plot Association in R                          #
 #########################################################################
