@@ -77,7 +77,7 @@ for chr in $(seq 1 22); do
                 -method score \
                 -pheno pheno1 \
                 -o chr"${chr}"-impute-allmodels-assoc.txt
-	sed s/NA/"${chr}"/g > chr"${chr}"-impute-allmodels-assoc.txt > chr"${chr}"-imputed-allmodels-assoc.txt
+	sed s/NA/"${chr}"/g chr"${chr}"-impute-allmodels-assoc.txt > chr"${chr}"-imputed-allmodels-assoc.txt
 	rm chr"${chr}"-impute-allmodels-assoc.txt
 done
 
