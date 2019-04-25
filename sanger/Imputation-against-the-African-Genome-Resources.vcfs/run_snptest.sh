@@ -76,11 +76,15 @@ for chr in $(seq 1 22); do
                 -bayesian 1 2 3 4 5 \
                 -method score \
                 -pheno pheno1 \
-                -o chr"${chr}"-imputed-allmodels-assoc.txt
+                -o chr"${chr}"-impute-allmodels-assoc.txt
+	sed s/NA/"${chr}"/g > chr"${chr}"-impute-allmodels-assoc.txt > chr"${chr}"-imputed-allmodels-assoc.txt
+	rm chr"${chr}"-impute-allmodels-assoc.txt
 done
+
 
 # Make a file of the header section of heading line of the association result files in order to combine the results
 grep "^#" chr1-imputed-allmodels-assoc.txt > auto-imputed-allmodels-assoc.txt
+grep -v "^#" chr1-imputed-allmodels-assoc.txt | head -1 >> auto-imputed-allmodels-assoc.txt
 
 # Now combine the association results into a single file (as created above)
 for chr in $(seq 1 22); do
