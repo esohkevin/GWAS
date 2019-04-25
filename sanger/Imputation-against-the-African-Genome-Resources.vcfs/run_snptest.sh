@@ -8,6 +8,7 @@ for i in $(seq 1 22); do
 		-bayesian 1 \
 		-method score \
 		-pheno pheno1 \
+		-cov_all \
 		-o chr"${i}"-imputed-assoc.txt
 	cut -f1-6,42,44,46-47 -d' ' chr"${i}"-imputed-assoc.txt | sed s/NA/"${i}"/g > chr"${i}"-imputed-assoc-truncated.txt
 done
@@ -30,6 +31,7 @@ for i in $(seq 1 22); do
                 -bayesian 1 \
                 -method score \
                 -pheno pheno1 \
+                -cov_all \
 		-include_samples ../../samples/qc-smacon-sample.ids \
                 -o chr"${i}"-sma-imputed-assoc.txt
         cut -f1-6,42,44,46-47 -d' ' chr"${i}"-sma-imputed-assoc.txt | sed s/NA/"${i}"/g > chr"${i}"-sma-imputed-assoc-truncated.txt
@@ -53,6 +55,7 @@ for i in $(seq 1 22); do
                 -bayesian 1 \
                 -method score \
                 -pheno pheno1 \
+                -cov_all \
 		-include_samples ../../samples/qc-cmcon-sample.ids \
                 -o chr"${i}"-cm-imputed-assoc.txt
         cut -f1-6,42,44,46-47 -d' ' chr"${i}"-cm-imputed-assoc.txt | sed s/NA/"${i}"/g > chr"${i}"-cm-imputed-assoc-truncated.txt
@@ -76,6 +79,7 @@ for chr in $(seq 1 22); do
                 -bayesian 1 2 3 4 5 \
                 -method score \
                 -pheno pheno1 \
+                -cov_all \
                 -o chr"${chr}"-impute-allmodels-assoc.txt
 	sed s/NA/"${chr}"/g chr"${chr}"-impute-allmodels-assoc.txt > chr"${chr}"-imputed-allmodels-assoc.txt
 	rm chr"${chr}"-impute-allmodels-assoc.txt
