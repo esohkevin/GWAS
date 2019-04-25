@@ -1,87 +1,78 @@
-################# Post Imputation GWAS Analysis ###################
+#!/bin/bash
 
-# Chech duplicate positions (snps) to exclude from downstream analyses
-zgrep -v "^#" merge.filtered.vcf.gz | cut -f3 | sort | uniq -d > merge.filtered.dups
-zgrep -v "^#" chrX.auto.filtered.vcf.gz | cut -f3 | sort | uniq -d > chrX.auto.filtered.dups
-zgrep -v "^#" chrX.no.auto_female.filtered.vcf.gz | cut -f3 | sort | uniq -d > chrX.no.auto_female.filtered.dups
-
-# Covert autosomal imputed and filtered genotypes to plink binary format 
+# Run Post Imputation Associations with Covars to account for population structure
+# With PC1 and PC2
 plink \
-	--vcf merge.filtered.vcf.gz \
-	--exclude merge.filtered.dups \
+        --bfile merge.filtered-updated \
+        --covar ../../popstruct/ps-data.mds \
+        --covar-name C1 C2 \
+        --autosome \
         --allow-no-sex \
-        --make-bed \
-	--vcf-min-gp 0.9 \
-        --biallelic-only \
-	--keep-allele-order \
-	--double-id \
-        --out merge.filtered
+        --hide-covar \
+        --logistic \
+        --out post-impc1c2
+cat post-impc1c2.log >> post-imp-assoc-all.log
 
-# Convert non-autosomal imputed and filtered genotypes to plink binary format
+# With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
 plink \
-        --vcf chrX.auto.filtered.vcf.gz \
+        --bfile merge.filtered-updated \
+        --covar ../../popstruct/ps-data.mds \
+        --covar-name C1 C5 C9 \
         --allow-no-sex \
-	--exclude chrX.auto.filtered.dups \
-        --make-bed \
-	--keep-allele-order \
-        --double-id \
-	--vcf-min-gp 0.9 \
-        --biallelic-only \
-        --out chrX.auto.filtered
+        --autosome \
+        --hide-covar \
+        --logistic \
+        --out post-impc1c5c9
+cat post-impc1c5c9.log >> post-imp-assoc-all.log
 
+# With all PCs
 plink \
-	--vcf chrX.no.auto_female.filtered.vcf.gz \
-	--allow-no-sex \
-	--exclude chrX.no.auto_female.filtered.dups \
-	--make-bed \
-	--keep-allele-order \
-        --double-id \
-	--vcf-min-gp 0.9 \
-	--biallelic-only \
-	--out chrX.no.auto_female.filtered
-
-# Update the dataset with casecontrol status from sample files
-plink \
-	--bfile merge.filtered \
-	--allow-no-sex \
-	--pheno update-camgwas.phe \
-	--1 \
-	--update-name update-ucsc.ids 2 1 \
-	--update-sex update-camgwas.sex \
-	--maf 0.01 \
-	--geno 0.1 \
-	--hwe 1e-6 \
-	--make-bed \
-	--out merge.filtered-updated
-
-plink \
-        --bfile chrX.auto.filtered \
+        --bfile merge.filtered-updated \
+        --covar ../../popstruct/ps-data.mds \
+        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
-	--pheno update-camgwas.phe \
-	--1 \
-        --update-name update-ucsc.ids 2 1 \
-        --update-sex update-camgwas.sex \
-        --maf 0.01 \
-        --geno 0.1 \
-        --hwe 1e-6 \
-        --make-bed \
-        --out chrX.auto.filtered-updated
+        --autosome \
+        --hide-covar \
+        --logistic \
+        --out post-impc1-c10
+cat post-impc1-c10.log >> post-imp-assoc-all.log
 
+# With all PCs and different MOI
 plink \
-        --bfile chrX.no.auto_female.filtered \
+        --bfile merge.filtered-updated \
+        --covar ../../popstruct/ps-data.mds \
+        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
-	--pheno update-camgwas.phe \
-	--1 \
-        --update-name update-ucsc.ids 2 1 \
-        --update-sex update-camgwas.sex \
-        --maf 0.01 \
-        --geno 0.1 \
-        --hwe 1e-6 \
-        --make-bed \
-        --out chrX.no.auto_female.filtered-updated
+        --autosome \
+        --hide-covar \
+        --model \
+        --out post-impc1-c10-model
+cat post-impc1-c10-model.log >> post-imp-assoc-all.log
 
+# With all PCs and hethom MOI
+plink \
+        --bfile merge.filtered-updated \
+        --covar ../../popstruct/ps-data.mds \
+        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+        --allow-no-sex \
+        --autosome \
+        --hide-covar \
+        --logistic hethom \
+        --out post-impc1-c10-hethom
+cat post-impc1-c10-hethom.log >> post-imp-assoc-all.log
+#########################################################################
+#                        Plot Association in R                          #
+#########################################################################
+
+# Filter association results to obtain SNPs with p-val 1e-5
+#for i in ps*-qc-camgwas.assoc.logistic; 
+#do 
+#	head -1 ${i} > ${i/-qc-camgwas.assoc.logistic/-assoc.results}; 
+#	awk '$9<1e-5' ${i} >> ${i/-qc-camgwas.assoc.logistic/-assoc.results}; 
+#done
 
 # Produce manhattan plots in R
-R CMD BATCH post-imput-assoc.R
+#R CMD BATCH post-imput-assoc.R
 
-mv *.png ../../images/
+#mv *.png ../../images/
+

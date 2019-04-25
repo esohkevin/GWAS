@@ -1,6 +1,6 @@
-#for i in chr*.filtered.vcf.gz; do
-#echo "`tabix -f -p vcf ${i}`"
-#done
+for i in chr*.filtered.vcf.gz; do
+echo "`tabix -f -p vcf ${i}`"
+done
 
 
 bcftools concat -a -d snps -Oz \
