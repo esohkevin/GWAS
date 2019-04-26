@@ -3,7 +3,7 @@
 # Run SNPTEST Association for entire dataset using casecontrol status (each chr at a time)
 for i in $(seq 1 22); do
 	snptest_v2.5.4-beta3 \
-		-data chr"${i}"-sanger-imputed.gen.gz ../../samples/qc-camgwas_nosex.sample \
+		-data chr"${i}"-sanger-imputed.gen.gz ../../samples/merge.filtered-updated.sample \
 		-frequentist 1 \
 		-bayesian 1 \
 		-method score \
@@ -26,7 +26,7 @@ done
 # Run association for only SMA Vs Controls (bu including only control+SMA samples from analysis)
 for i in $(seq 1 22); do
 	snptest_v2.5.4-beta3 \
-                -data chr"${i}"-sanger-imputed.gen.gz ../../samples/qc-camgwas_nosex.sample \
+                -data chr"${i}"-sanger-imputed.gen.gz ../../samples/merge.filtered-updated.sample \
                 -frequentist 1 \
                 -bayesian 1 \
                 -method score \
@@ -50,7 +50,7 @@ done
 # Run association for only CM Vs Controls (by including only control+CM samples from analysis)
 for i in $(seq 1 22); do
         snptest_v2.5.4-beta3 \
-                -data chr"${i}"-sanger-imputed.gen.gz ../../samples/qc-camgwas_nosex.sample \
+                -data chr"${i}"-sanger-imputed.gen.gz ../../samples/merge.filtered-updated.sample \
                 -frequentist 1 \
                 -bayesian 1 \
                 -method score \
@@ -74,7 +74,7 @@ done
 # Run SNPTEST Association for entire dataset using casecontrol status (each chr at a time) testing for all modes of inheritance
 for chr in $(seq 1 22); do
         snptest_v2.5.4-beta3 \
-                -data chr"${chr}"-sanger-imputed.gen.gz ../../samples/qc-camgwas_nosex.sample \
+                -data chr"${chr}"-sanger-imputed.gen.gz ../../samples/merge.filtered-updated.sample \
                 -frequentist 1 2 3 4 5 \
                 -bayesian 1 2 3 4 5 \
                 -method score \

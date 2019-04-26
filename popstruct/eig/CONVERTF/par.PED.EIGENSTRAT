@@ -1,0 +1,11 @@
+genotypename:    qc-camgwas.ped
+snpname:         qc-camgwas.map # or example.map, either works 
+indivname:       qc-camgwas.ped # or example.ped, either works
+outputformat:    EIGENSTRAT
+genotypeoutname: qc-camgwas.eigenstratgeno
+snpoutname:      qc-camgwas.snp
+indivoutname:    qc-camgwas.ind
+xregionname:	 high-ld-regions.b37
+pordercheck:	 YES
+strandcheck:	 YES
+familynames:     NO

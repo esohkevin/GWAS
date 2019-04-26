@@ -1,0 +1,7 @@
+genotypename:    qc-camgwas.ancestrymapgeno
+snpname:         qc-camgwas.snp
+indivname:       qc-camgwas.ind
+outputformat:    EIGENSTRAT
+genotypeoutname: qc-camgwas.eigenstratgeno
+snpoutname:      qc-camgwas.snp
+indivoutname:    qc-camgwas.ind
