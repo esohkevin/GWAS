@@ -9,3 +9,4 @@ indivoutname:    qc-camgwas.pedind
 pordercheck:	 YES
 strandcheck:	 YES
 familynames:     NO
+#numthreads:	 16

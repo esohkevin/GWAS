@@ -1,6 +1,6 @@
 genotypename:    ../CONVERTF/qc-camgwas.ped
-snpname:         ../CONVERTF/qc-camgwas.map
-indivname:       ../CONVERTF/qc-camgwas.ped
+snpname:         ../CONVERTF/qc-camgwas.pedsnp
+indivname:       ../CONVERTF/qc-camgwas.pedind
 evecoutname:     qc-camgwas.evec
 evaloutname:     qc-camgwas.eval
 altnormstyle:    NO 
