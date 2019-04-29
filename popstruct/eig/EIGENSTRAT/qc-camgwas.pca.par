@@ -28,7 +28,6 @@ snpweightoutname: qc-camgwas.snpwts			# snp weightings per pc
 #chrom: 						# SNPs on this chromosome.
 #lopos: 						# SNPs with physical position >= this value.
 #hipos: 						# SNPs with physical position <= this value.
-#qtmode: NO						# qtative trait
 #fstonly: YES						# skip pca and only calculate fst
 #killr2: YES						# eliminate snps in LD with nearby snps
 #r2thresh: 0.2 						# kill pairs of snps with r^2 0.2
