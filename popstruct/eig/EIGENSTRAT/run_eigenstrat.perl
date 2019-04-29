@@ -32,3 +32,8 @@ system("$command");
 $command = "gc.perl qc-camgwas-chisq qc-camgwas-chisq.GC";
 print("$command\n");
 system("$command");
+
+$command = "evec2pca.perl 10 qc-camgwas.evec ../CONVERTF/qc-camgwas.ind qc-camgwas.pca";
+print("$command\n");
+system("$command");
+

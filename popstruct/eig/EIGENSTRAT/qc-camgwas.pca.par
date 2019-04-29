@@ -4,7 +4,7 @@
 genotypename: ../CONVERTF/qc-camgwas.eigenstratgeno 	# input genotype file
 snpname: ../CONVERTF/qc-camgwas.snp			# input SNP file
 indivname: ../CONVERTF/qc-camgwas.ind			# input individual file
-evecoutname: qc-camgwas.pca.evec			# output eigenvectors file
+evecoutname: qc-camgwas.evec				# output eigenvectors file
 evaloutname: qc-camgwas.eval				# output eigenvalues file
 usenorm: YES						# normalize each snp
 altnormstyle: NO					# alternative normaliza style
