@@ -5,7 +5,7 @@ evecoutname:     qc-camgwas.evec
 evaloutname:     qc-camgwas.eval
 altnormstyle:    NO 
 #numoutevec:      10
-outlieroutname:	 outlier.log
+outlieroutname:	 smartpca-fst.outlier
 familynames:     NO
 #grmoutname:      qc-camgwas-grm
 #grmbinary:	 YES

@@ -34,4 +34,10 @@ snpweightoutname: qc-camgwas.snpwts			# snp weightings per pc
 #xregionname: file.txt					# file with regiomns of genome to exclu
 #hwfilt: 						# hw filter. Not used for admixed pops
 #deletesnpoutname: file.txt				# file in which all deleted snps are listed with reason for deletion
-#
+# numthreads:   10					# to use multithreads
+# To get output of the filtered dataset
+#outputformat:    ANCESTRYMAP,  EIGENSTRAT, PED, PACKEDPED or PACKEDANCESTRYMAP
+#genotypeoutname: output genotype file
+#snpoutname:      output snp file
+#indivoutname:    output indiv file
+#outputgroup:
