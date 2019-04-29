@@ -14,7 +14,7 @@ numoutlierevec: 10					# # of pcs along which to remove eigvecs
 outliersigmathresh: 6.0					# # SDs beyond which to remove outliers
 qtmode: 0						#
 outlieroutname: qc-camgwas.outliers			# list of outliers removed
-#missingmode: NO						# do pca on whether each point is missing or nonmissing (informaive missingness)
+#missingmode: NO					# do pca on whether each point is missing or nonmissing (informaive missingness)
 #ldregress: 0						# if desired, 200 is recommended
 grmoutname: qc-camgwas.grm				# genetic related matrix input for gcta
 grmbinary: YES						# to ouput grm as binary file
@@ -25,10 +25,14 @@ phylipoutname: qc-camgwas.phy				# fst matrix, phylip input
 #badsnpname: list.txt					# snps to exclude, same format as .snp file
 #popsizelimit: <positive interger>			# randomly select indivs from all pops
 snpweightoutname: qc-camgwas.snpwts			# snp weightings per pc
-#chrom: 							# SNPs on this chromosome.
+#chrom: 						# SNPs on this chromosome.
 #lopos: 						# SNPs with physical position >= this value.
 #hipos: 						# SNPs with physical position <= this value.
 #qtmode: NO						# qtative trait
 #fstonly: YES						# skip pca and only calculate fst
 #killr2: YES						# eliminate snps in LD with nearby snps
-
+#r2thresh: 0.2 						# kill pairs of snps with r^2 0.2
+#xregionname: file.txt					# file with regiomns of genome to exclu
+#hwfilt: 						# hw filter. Not used for admixed pops
+#deletesnpoutname: file.txt				# file in which all deleted snps are listed with reason for deletion
+#
