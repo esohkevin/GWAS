@@ -12,7 +12,7 @@ pcastat2=merge(pca2, status, by.x="IID", all.x=T)
 #View(pcastat2)
 
 # Plot and produce and image of the mds plot
-png("mds-plot.png", res=1200, height=6, width=6, units="in")
+png("mds-plot.png", res=1200, height=5, width=5, units="in")
 par(xpd = T, mar = par()$mar + c(1,0,0,0))
 plot(pcastat[,4], pcastat[,5], xlab="PC1", ylab="PC2", type="n")
 for(i in 1:nrow(pcastat)){
@@ -52,7 +52,7 @@ dev.off()
 #identify(pcastat[,4], pcastat[,5], labels=pcastat[,2])
 
 # From the above plot, there is mild clustering of similar populations into different clusters. Check these
-png("mds-plot2.png", res=1200, height=6, width=6, units="in")
+png("mds-plot2.png", res=1200, height=5, width=5, units="in")
 par(xpd = T, mar = par()$mar + c(1,0,0,0))
 plot(pcastat[,4], pcastat[,5], xlab="PC1", ylab="PC2", type="n")
 for(i in 1:nrow(pcastat)){
@@ -114,7 +114,7 @@ dev.off()
 #dev.off()
 
 ### Population structure plot for case-control data loaded above as ps2data ###
-png("ps-plots.png", res=1200, height=6, width=6, units="in")
+png("ps-plots.png", res=1200, height=5, width=5, units="in")
 par(mfrow=c(3,2), no.readonly = F)
 par(xpd = T, mar = par()$mar + c(0,1,-3,1))
 
