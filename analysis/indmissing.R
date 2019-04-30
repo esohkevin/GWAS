@@ -1,3 +1,10 @@
+#!/usr/bin/Rscript
+
+# Check installation of qqman and load it if installed
+if (!requireNamespace("qqman"))
+        install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
+library(qqman)
+
 ############### Extract IDs of individuals that failed sex check from the .sexcheck file ##############
 sexcheck=read.table("fail-checksex.qc", header = F, as.is = T)
 write.table(sexcheck[,1:2], file = "fail-checksex.qc", col.names = F, row.names = F, quote = F, sep = "\t")
@@ -19,7 +26,7 @@ mishet=data.frame(FID=het$FID, IID=het$IID, het.rate=(het$N.NM. - het$O.HOM.)/he
 #hetlower=meanhet - sdhet*3
 
 # Plot the proportion of missing genotypes and the heterozygosity rate
-png("mishet.png", res = 1200, height = 5, width = 7, units = "in")
+png("mishet.png", res = 1200, height = 4, width = 5, units = "in")
 par(mfrow=c(1,1))
 plot(mishet$het.rate, mishet$mis.rate, xlab = "Heterozygous rate", ylab = "Proportion of missing genotype", pch=20)
 #abline(v=c(hetlower, hetupper), h=0.1, lty=2)

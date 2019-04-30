@@ -1,4 +1,10 @@
+#!/usr/bin/Rscript
+
+# Check installation of qqman and load it if installed
+if (!requireNamespace("qqman"))
+        install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
 library(qqman)
+
 ############################ Cameroon GWAS Data Analysis ##############################
 ############################### Prepare Sample File ###################################
 oldsam=read.table("raw-camgwas-data.sample", header = T, as.is = T)
@@ -40,7 +46,7 @@ mishet=data.frame(FID=het$FID, IID=het$IID, het.rate=(het$N.NM. - het$O.HOM.)/he
 #hetlower=meanhet - sdhet*3
 
 # Plot the proportion of missing genotypes and the heterozygosity rate
-png("mishet.png", res = 1200, height = 5, width = 7, units = "in")
+png("mishet.png", res = 1200, height = 4, width = 5, units = "in")
 par(mfrow=c(1,1))
 plot(mishet$het.rate, mishet$mis.rate, xlab = "Heterozygous rate", ylab = "Proportion of missing genotype", pch=20)
 #abline(v=c(hetlower, hetupper), h=0.1, lty=2)
@@ -73,7 +79,7 @@ var.ibd=((0 - mean_ibd)^2)*genome$Z0 +
 
 # Compute standard error
 se.ibd=sqrt(var.ibd)
-png("ibd_analysis.png", res=1200, height = 10, width = 10, units = "in")
+png("ibd_analysis.png", res=1200, height = 6, width = 7, units = "in")
 par(mfrow=c(2,1)) # Set parameters to plot ibd_analysis and ibd_se
 plot(mean_ibd, se.ibd, xlab = "Mean IBD", ylab = "SE IBD", pch=20, main = "SE IBD of Pairs with Pi HAT > 0.1875")
 plot(genome$Z0, genome$Z1, col=1, ylab = "Z1", xlab = "Z0", pch=20)
@@ -136,7 +142,7 @@ assoc2=read.table("qc-camgwas.assoc.logistic", header = T, as.is = T)
 #abline(h=7, col="red")
 
 snpsofinterest=assoc2[-log10(assoc2$P)>=7,]
-png("plinkassoc_qc.png", res = 1200, height = 7, width = 10, units = "in")
+png("plinkassoc_qc.png", res = 1200, height = 5, width = 8, units = "in")
 par(mfrow=c(1,1))
 manhattan(assoc2, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL, 
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T, 

@@ -1,3 +1,10 @@
+#!/usr/bin/Rscript
+
+# Check installation of qqman and load it if installed
+if (!requireNamespace("qqman"))
+        install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
+library(qqman)
+
 ################# IBD Calculation ###########################
 genome=read.table("caseconpruned.genome", header = T, as.is = T)
 genome=genome[genome$PI_HAT > 0.1875, ]
@@ -12,7 +19,7 @@ var.ibd=((0 - mean_ibd)^2)*genome$Z0 +
 
 # Compute standard error
 se.ibd=sqrt(var.ibd)
-png("ibd_analysis.png", res=1200, height = 10, width = 10, units = "in")
+png("ibd_analysis.png", res=1200, height = 5, width = 6, units = "in")
 par(mfrow=c(2,1)) # Set parameters to plot ibd_analysis and ibd_se
 plot(mean_ibd, se.ibd, xlab = "Mean IBD", ylab = "SE IBD", pch=20, main = "SE IBD of Pairs with Pi HAT > 0.1875")
 plot(genome$Z0, genome$Z1, col=1, ylab = "Z1", xlab = "Z0", pch=20)
@@ -26,7 +33,7 @@ write.table(duplicate2, file = "duplicates.txt", col.names = T, row.names = F, q
 sibs=genome[mean_ibd == 1, ]
 
 ### Color code IBD plot ###
-png("ibd_colcode.png", res=1200, height = 10, width = 10, units = "in")
+png("ibd_colcode.png", res=1200, height = 5, width = 6, units = "in")
 par(mfrow=c(1,1))
 with(genome, plot(Z0,Z1, xlim = c(0,1), ylim = c(0,1), type = "n", pch=20))
 with(subset(genome,RT=="FS"), points(Z0,Z1, col=3))
