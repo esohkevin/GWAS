@@ -114,7 +114,7 @@ dev.off()
 #dev.off()
 
 ### Population structure plot for case-control data loaded above as ps2data ###
-png("ps-plots.png", res=1200, height=5, width=5, units="in")
+png("ps-plots.png", res=1200, height=8, width=8, units="in")
 par(mfrow=c(3,2), no.readonly = F)
 par(xpd = T, mar = par()$mar + c(0,1,-3,1))
 
@@ -153,9 +153,11 @@ for(i in 1:nrow(pcastat2)){
   if(pcastat2[i,14]=='CONTROL') points(pcastat2[i,12], pcastat2[i,13], col=4, pch=16)
 }
 
-plot(x=c(0,1),y=c(0,1), legend("center", c("CASE","CONTROL"), pch=16, col = c(2,4), 
-       horiz=T, bty="n"))
-par(mar=c(5, 4, 4, 2) + 0.1)
+#plot(x=c(0,1),y=c(0,1), legend("center", c("CASE","CONTROL"), pch=16, col = c(2,4), 
+#       horiz=T, bty="n"))
+#par(mar=c(5, 4, 4, 2) + 0.1)
+
+legend("bottomright", c("CASE","CONTROL"), pch=16, col = c(2,4), horiz=T, bty="n")
 dev.off()
 
 ### Now test for association between disease and the first ten axes of genetic variation ###

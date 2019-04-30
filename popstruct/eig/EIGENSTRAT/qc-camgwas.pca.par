@@ -1,43 +1,11 @@
-# The list of parameters available for smartpca
-# Comment out and/or uncomment the parameters desired
-
-genotypename: ../CONVERTF/qc-camgwas.eigenstratgeno 	# input genotype file
-snpname: ../CONVERTF/qc-camgwas.snp			# input SNP file
-indivname: ../CONVERTF/qc-camgwas.ind			# input individual file
-evecoutname: qc-camgwas.evec				# output eigenvectors file
-evaloutname: qc-camgwas.eval				# output eigenvalues file
-usenorm: YES						# normalize each snp
-altnormstyle: NO					# alternative normaliza style
-numoutevec: 10						# number of eigvecs to output
-numoutlieriter: 5					# max # of outlier removal iterations
-numoutlierevec: 10					# # of pcs along which to remove eigvecs
-outliersigmathresh: 6.0					# # SDs beyond which to remove outliers
-qtmode: 0						#
-outlieroutname: qc-camgwas.outliers			# list of outliers removed
-#missingmode: NO					# do pca on whether each point is missing or nonmissing (informaive missingness)
-#ldregress: 0						# if desired, 200 is recommended
-grmoutname: qc-camgwas.grm				# genetic related matrix input for gcta
-grmbinary: YES						# to ouput grm as binary file
-#poplistname: list.txt					# infer eigvecs using only these indivs
-phylipoutname: qc-camgwas.phy				# fst matrix, phylip input
-#noxdata: YES						# all chrX SNPs are excluded
-#nomalexhet: YES					# male het genotypes set to missing
-#badsnpname: list.txt					# snps to exclude, same format as .snp file
-#popsizelimit: <positive interger>			# randomly select indivs from all pops
-snpweightoutname: qc-camgwas.snpwts			# snp weightings per pc
-#chrom: 						# SNPs on this chromosome.
-#lopos: 						# SNPs with physical position >= this value.
-#hipos: 						# SNPs with physical position <= this value.
-#fstonly: YES						# skip pca and only calculate fst
-#killr2: YES						# eliminate snps in LD with nearby snps
-#r2thresh: 0.2 						# kill pairs of snps with r^2 0.2
-#xregionname: file.txt					# file with regiomns of genome to exclu
-#hwfilt: 						# hw filter. Not used for admixed pops
-#deletesnpoutname: file.txt				# file in which all deleted snps are listed with reason for deletion
-# numthreads:   10					# to use multithreads
-# To get output of the filtered dataset
-#outputformat:    ANCESTRYMAP,  EIGENSTRAT, PED, PACKEDPED or PACKEDANCESTRYMAP
-#genotypeoutname: output genotype file
-#snpoutname:      output snp file
-#indivoutname:    output indiv file
-#outputgroup:
+genotypename: ../CONVERTF/qc-camgwas.eigenstratgeno
+snpname: ../CONVERTF/qc-camgwas.snp
+indivname: ../CONVERTF/qc-camgwas.ind
+evecoutname: qc-camgwas.pca.evec
+evaloutname: qc-camgwas.evec
+altnormstyle: NO
+numoutevec: 10
+numoutlieriter: 5
+numoutlierevec: 10
+outliersigmathresh: 6.0
+qtmode: 0
