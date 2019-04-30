@@ -10,7 +10,7 @@ median(qchisq(psassoc[,9], df=1, lower.tail = F), na.rm = T)/0.456  # 1.077156
 
 # Now produce association plot
 #snpsofinterest=assoc2[-log10(assoc2$P)>=7,]
-png("ps-assoc_qc.png", res = 1200, height = 7, width = 10, units = "in")
+png("ps-assoc_qc.png", res = 1200, height = 5, width = 8, units = "in")
 par(mfrow=c(1,1))
 manhattan(psassoc, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
@@ -25,7 +25,7 @@ median(qchisq(psassoc1[,9], df=1, lower.tail = F), na.rm = T)/0.456 # 1.061969
 
 # Now produce association plot
 #snpsofinterest=assoc2[-log10(assoc2$P)>=7,]
-png("ps1-assoc_qc.png", res = 1200, height = 7, width = 10, units = "in")
+png("ps1-assoc_qc.png", res = 1200, height = 5, width = 8, units = "in")
 par(mfrow=c(1,1))
 manhattan(psassoc1, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
@@ -40,7 +40,7 @@ median(qchisq(psassoc2[,9], df=1, lower.tail = F), na.rm = T)/0.456
 
 # Now produce association plot
 #snpsofinterest=assoc2[-log10(assoc2$P)>=7,]
-png("ps2-assoc_qc.png", res = 1200, height = 7, width = 10, units = "in")
+png("ps2-assoc_qc.png", res = 1200, height = 5, width = 8, units = "in")
 par(mfrow=c(1,1))
 manhattan(psassoc2, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
@@ -48,7 +48,7 @@ manhattan(psassoc2, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60")
 dev.off()
 
 # Plot a Q-Q plot for the association analysis
-png("qq_plots.png", res=1200, height=10, width=10, units="in")
+png("qq_plots.png", res=1200, height=8, width=8, units="in")
 par(mfrow=c(2,2))
 qq(psassoc$P, main="Q-Q plot after QC")
 qq(psassoc1$P, main="Q-Q plot after QC")
