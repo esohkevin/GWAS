@@ -17,7 +17,7 @@ median(qchisq(psassoc[,9], df=1, lower.tail = F), na.rm = T)/0.456  # 1.077156
 snpsofinterest=psassoc[-log10(psassoc$P)>=7,]
 #png("ps-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
 png(filename = "ps-assoc_qc.png", width = 750, height = 450, units = "px", pointsize = 12,
-    bg = "white",  res = NA, type = c("quartz"))
+    bg = "white",  res = NA)
 par(mfrow=c(1,1))
 manhattan(psassoc, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest$SNP, logp = T,
@@ -34,7 +34,7 @@ median(qchisq(psassoc1[,9], df=1, lower.tail = F), na.rm = T)/0.456 # 1.061969
 snpsofinterest=psassoc1[-log10(psassoc1$P)>=7,]
 #png("ps1-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
 png(filename = "ps1-assoc_qc.png", width = 750, height = 450, units = "px", pointsize = 12,
-    bg = "white",  res = NA, type = c("quartz"))
+    bg = "white",  res = NA)
 par(mfrow=c(1,1))
 manhattan(psassoc1, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest$SNP, logp = T,
@@ -51,7 +51,7 @@ median(qchisq(psassoc2[,9], df=1, lower.tail = F), na.rm = T)/0.456
 snpsofinterest=psassoc2[-log10(psassoc2$P)>=7,]
 #png("ps2-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
 png(filename = "ps2-assoc_qc.png", width = 750, height = 450, units = "px", pointsize = 12,
-    bg = "white",  res = NA, type = c("quartz"))
+    bg = "white",  res = NA)
 par(mfrow=c(1,1))
 manhattan(psassoc2, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest$SNP, logp = T,
@@ -61,7 +61,7 @@ dev.off()
 # Plot a Q-Q plot for the association analysis
 #png("qq_plots.png", res=1200, height=6, width=6, units="in")
 png(filename = "qq_plots.png", width = 700, height = 500, units = "px", pointsize = 12,
-    bg = "white",  res = NA, type = c("quartz"))
+    bg = "white",  res = NA)
 par(mfrow=c(2,2))
 qq(psassoc$P, main="Q-Q plot after QC")
 qq(psassoc1$P, main="Q-Q plot after QC")

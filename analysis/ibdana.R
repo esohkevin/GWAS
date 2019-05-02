@@ -21,7 +21,7 @@ var.ibd=((0 - mean_ibd)^2)*genome$Z0 +
 se.ibd=sqrt(var.ibd)
 #png("ibd_analysis.png", res=1200, height = 5, width = 6, units = "in")
 png(filename = "ibd_analysis.png", width = 480, height = 700, units = "px", pointsize = 12,
-    bg = "white",  res = NA, type = c("quartz"))
+    bg = "white",  res = NA)
 par(mfrow=c(2,1)) # Set parameters to plot ibd_analysis and ibd_se
 plot(mean_ibd, se.ibd, xlab = "Mean IBD", ylab = "SE IBD", pch=20, main = "SE IBD of Pairs with Pi HAT > 0.1875")
 plot(genome$Z0, genome$Z1, col=1, ylab = "Z1", xlab = "Z0", pch=20)
