@@ -18,7 +18,7 @@ snpsofinterest=imassoc[-log10(imassoc$P)>=7,]
 png(filename = "plink-imp-assocC1C2.png", width = 780, height = 480, units = "px", pointsize = 12, 
     bg = "white",  res = NA)
 par(mfrow=c(1,1))
-manhattan(fall, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"), 
+manhattan(imassoc, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"), 
 	  suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest$SNP, logp = T,
 	  annotatePval = 0.0000001, annotateTop = T, ylim = c(0, 9))
 dev.off()
@@ -35,7 +35,7 @@ snpsofinterest=imassoc1[-log10(imassoc1$P)>=7,]
 png(filename = "plink-imp-assocC1C5C9.png", width = 780, height = 480, units = "px", pointsize = 12,
     bg = "white",  res = NA)
 par(mfrow=c(1,1))
-manhattan(fall, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"),
+manhattan(imassoc1, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"),
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest$SNP, logp = T,
           annotatePval = 0.0000001, annotateTop = T, ylim = c(0, 9))
 dev.off()
@@ -52,7 +52,7 @@ snpsofinterest=imassoc2[-log10(imassoc2$P)>=7,]
 png(filename = "plink-imp-assocC1-C10.png", width = 780, height = 480, units = "px", pointsize = 12,
     bg = "white",  res = NA)
 par(mfrow=c(1,1))
-manhattan(fall, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"),
+manhattan(imassoc2, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"),
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest$SNP, logp = T,
           annotatePval = 0.0000001, annotateTop = T, ylim = c(0, 9))
 dev.off()
@@ -69,7 +69,7 @@ dev.off()
 #png(filename = "plink-imp-assoc-model.png", width = 780, height = 480, units = "px", pointsize = 12,
 #    bg = "white",  res = NA)
 #par(mfrow=c(1,1))
-#manhattan(fall, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"),
+#manhattan(imassoc3, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"),
 #          suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest$SNP, logp = T,
 #          annotatePval = 0.0000001, annotateTop = T, ylim = c(0, 9))
 #dev.off()
@@ -86,7 +86,7 @@ snpsofinterest=imassoc4[-log10(imassoc4$P)>=7,]
 png(filename = "plink-imp-assoc-hethom.png", width = 780, height = 480, units = "px", pointsize = 12,
     bg = "white",  res = NA)
 par(mfrow=c(1,1))
-manhattan(fall, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"),
+manhattan(imassoc4, chr = "CHR", bp = "BP", p = "P", col = c("blue4", "orange3"),
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest$SNP, logp = T,
           annotatePval = 0.0000001, annotateTop = T, ylim = c(0, 9))
 dev.off()
