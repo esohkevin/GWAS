@@ -1,0 +1,9 @@
+#!/usr/bin/Rscript
+
+# PLot heatmap with upper triangular matrix of ld analysis
+png(filename = "evec_with_ethn.png", width = 800, height = 600, units = "px", pointsize = 12,
+    bg = "white",  res = NA)
+ldMatrix <- as.matrix(read.table("chr6Mhc.ld", fill=T, skip = 0))
+#headmap(ldMatrix)
+image(lower.tri(ldMatrix))
+dev.off()
