@@ -12,8 +12,11 @@ pcastat2=merge(pca2, status, by.x="IID", all.x=T)
 #View(pcastat2)
 
 # Plot and produce and image of the mds plot
-png("mds-plot.png", res=1200, height=5, width=5, units="in")
-par(xpd = T, mar = par()$mar + c(1,0,0,0))
+#png("mds-plot.png", res=1200, height=5, width=5, units="in")
+#par(xpd = T, mar = par()$mar + c(1,0,0,0))
+png(filename = "mds-plot.png", width = 480, height = 600, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
+par(mfrow=c(1,1))
 plot(pcastat[,4], pcastat[,5], xlab="PC1", ylab="PC2", type="n")
 for(i in 1:nrow(pcastat)){
  if(pcastat[i,6]=='ACB') points(pcastat[i,4], pcastat[i,5], col=6, pch=16)
@@ -52,8 +55,11 @@ dev.off()
 #identify(pcastat[,4], pcastat[,5], labels=pcastat[,2])
 
 # From the above plot, there is mild clustering of similar populations into different clusters. Check these
-png("mds-plot2.png", res=1200, height=5, width=5, units="in")
-par(xpd = T, mar = par()$mar + c(1,0,0,0))
+#png("mds-plot2.png", res=1200, height=5, width=5, units="in")
+#par(xpd = T, mar = par()$mar + c(1,0,0,0))
+png(filename = "plinkassoc1_qc.png", width = 600, height = 480, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
+par(mfrow=c(1,1))
 plot(pcastat[,4], pcastat[,5], xlab="PC1", ylab="PC2", type="n")
 for(i in 1:nrow(pcastat)){
   if(pcastat[i,6]=='ACB') points(pcastat[i,4], pcastat[i,5], col=8, pch=16)
@@ -114,9 +120,11 @@ dev.off()
 #dev.off()
 
 ### Population structure plot for case-control data loaded above as ps2data ###
-png("ps-plots.png", res=1200, height=8, width=8, units="in")
-par(mfrow=c(3,2), no.readonly = F)
-par(xpd = T, mar = par()$mar + c(0,1,-3,1))
+#png("ps-plots.png", res=1200, height=8, width=8, units="in")
+png(filename = "plinkassoc1_qc.png", width = 780, height = 500, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
+par(mfrow=c(2,3))
+#par(xpd = T, mar = par()$mar + c(0,1,-3,1))
 
 # Pop struct based on PC1 and PC2
 plot(pcastat2[,4], pcastat2[,5], xlab = "PC1", ylab = "PC2", type = "n")

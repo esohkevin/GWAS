@@ -70,3 +70,14 @@ points(d$PC1, d$PC2, col=2, pch=20)
 legend("topleft", c("Case", "Control"), col=c(1,2), pch=20, bty="n")
 dev.off()
 
+# Import the data file containing ethnicity column
+evecthn=read.table("qc-camgwas-ethni.evec", header=T, as.is=T)
+
+## Plot First 2 evecs with ethnicity distinction
+png(filename = "evec_with_ethn.png", width = 510, height = 510, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
+plot(evecthn$PC1, evecthn$PC2, col=as.factor(evecthn$ethnicity), main="Eigenanalysis With Ethnicity", 
+     xlab="eigenvalue1", ylab="eigenvalue2", pch=20)
+legend("topleft", legend=levels(as.factor(evecthn$ethnicity)), 
+       col=1:length(levels(as.factor(evecthn$ethnicity))), pch=20)
+dev.off()
