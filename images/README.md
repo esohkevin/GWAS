@@ -12,6 +12,9 @@
 [MDS plot with details on populations of African descent](mds-plot2.png)
 [MDS plot of CaseControl and 1KG populations](mds-plot.png)
 ![Population Structure Plots Based on the first 10 PCs](eigenv1-v10.png)
+![Population Structure Plots Based on the first 10 PCs](eigenv1v2.png)
+![Population Structure Plots Based on the first 10 PCs](evec1vc2.png)
+![Population Structure Plots Based on the first 10 PCs](evec_with_ethn.png)
 [Association plot](plinkassoc_qc.png)
 [Pre-Pop-Struct Association Plot](plinkassoc1_qc.png)
 [Pre-Pop-Struct Association plot](plinkassoc2_qc.png)
@@ -20,7 +23,12 @@
 ![Post-Pop-Struct Association plot](ps2-assoc_qc.png)
 [Post-Pop-Struct Association plot](ps-assoc_qc.png)
 ![Post-Imputation Association plot](im-assoc_qc.png)
+![Post-Imputation Association plot](im-add_qc.png)
+![Post-Imputation Association plot](im-hethom-assoc_qc.png)
+![Post-Imputation Association plot](im2-assoc_qc.png)
+![SNPTEST Post-imputation Association](fall.png)
 [Population Structure Plot](ps-plot.png)
 [Q-Q plots from multiple association runs](qq_plots.png)
+
 
 
