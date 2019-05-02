@@ -11,7 +11,7 @@
 ![SNP Missing Proportion](snp_qc_missing.png)
 ![MDS plot with detaails on populations of African descent](mds-plot2.png)
 ![MDS plot of CaseControl and 1KG populations](mds-plot.png)
-![Population Structure Plots Based on the first 10 PCs](ps-plots.png)
+![Population Structure Plots Based on the first 10 PCs](eigenv1-v10.png)
 ![Association plot](plinkassoc_qc.png)
 ![Pre-Pop-Struct Association Plot](plinkassoc1_qc.png)
 ![Pre-Pop-Struct Association plot](plinkassoc2_qc.png)
@@ -22,4 +22,5 @@
 ![Post-Imputation Association plot](im-assoc_qc.png)
 ![Population Structure Plot](ps-plot.png)
 ![Q-Q plots from multiple association runs](qq_plots.png)
+
 
