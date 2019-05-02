@@ -2,20 +2,22 @@
 
 # Generate LD report for qc-camgwas-updated
 ## Outputting binary matrix format
-plink \
-	--bfile ../../analysis/qc-camgwas-updated \
-	--allow-no-sex \
-	--r2 bin triangle yes-really \
-	--autosome \
-	--out qc-camgwas-r2bin
+#plink \
+#	--bfile ../../analysis/qc-camgwas-updated \
+#	--allow-no-sex \
+#	--r2 bin triangle yes-really \
+#	--autosome \
+#	--out qc-camgwas-r2bin
 
 ## Outputting squared table format with D' and MAfs
 plink \
         --bfile ../../analysis/qc-camgwas-updated \
         --allow-no-sex \
-	--autosome \
-        --r2 inter-chr gz yes-really \
-        --out qc-camgwas-r2D
+	--chr 6 \
+	--from-bp 28477797 \
+	--to-bp 33448354 \
+        --r2 triangle yes-really \
+        --out chr6Mhc
 
 ## Outputting haplotype frequencies,r2 and D'
 #plink \
