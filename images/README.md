@@ -26,9 +26,13 @@
 ![Post-Imputation Association plot](im-add_qc.png)
 ![Post-Imputation Association plot](im-hethom-assoc_qc.png)
 ![Post-Imputation Association plot](im2-assoc_qc.png)
+![Post-Imputation Association plot](plink-imp-assocC1C2.png)
+![Post-Imputation Association plot](plink-imp-assocC1C5C9.png)
+![Post-Imputation Association plot](plink-imp-assocC1-C10.png)
+![Post-Imputation Association plot](plink-imp-assoc-hethom.png)
 ![SNPTEST Post-imputation Association](fall.png)
 [Population Structure Plot](ps-plot.png)
-[Q-Q plots from multiple association runs](qq_plots.png)
+![Q-Q plots from multiple association runs](qq-plink-assoc.png)
 
 
 
