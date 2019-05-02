@@ -1,4 +1,10 @@
+#!/usr/bin/Rscript
+
+# Check installation of qqman and load it if installed
+if (!requireNamespace("qqman"))
+        install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
 library(qqman)
+
 ###### Prepare sample files
 mysamfile=read.table("casecon.sample", header = T, as.is = T)
 oxfordsam=read.table("raw-camgwas-data.sample", header = T, as.is = T)

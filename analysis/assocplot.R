@@ -11,7 +11,9 @@ assoc=read.table("qc-camgwas.assoc.logistic", header = T, as.is = T)
 #abline(h=7, col="red")
 
 #snpsofinterest=assoc[-log10(assoc$P)>=7,]
-png("plinkassoc_qc.png", res = 1200, height = 7, width = 10, units = "in")
+#png("plinkassoc_qc.png", res = 1200, height = 7, width = 10, units = "in")
+png(filename = "plinkassoc_qc.png", width = 680, height = 400, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 manhattan(assoc, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL, 
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T, 
@@ -22,7 +24,9 @@ dev.off()
 # With --xchr-model 1
 assoc1=read.table("xchr1.assoc.logistic", header = T, as.is = T)
 #snpsofinterest=assoc1[-log10(assoc1$P)>=7,]
-png("plinkassoc1_qc.png", res = 1200, height = 7, width = 10, units = "in")
+#png("plinkassoc1_qc.png", res = 1200, height = 7, width = 10, units = "in")
+png(filename = "plinkassoc1_qc.png", width = 680, height = 400, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 manhattan(assoc1, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
@@ -32,7 +36,9 @@ dev.off()
 # With --xchr-model 2
 assoc2=read.table("xchr2.assoc.logistic", header = T, as.is = T)
 #snpsofinterest=assoc2[-log10(assoc2$P)>=7,]
-png("plinkassoc2_qc.png", res = 1200, height = 7, width = 10, units = "in")
+#png("plinkassoc2_qc.png", res = 1200, height = 7, width = 10, units = "in")
+png(filename = "plinkassoc2_qc.png", width = 680, height = 400, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 manhattan(assoc2, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
@@ -42,7 +48,9 @@ dev.off()
 # With --xchr-model 3
 assoc3=read.table("xchr3.assoc.logistic", header = T, as.is = T)
 #snpsofinterest=assoc3[-log10(assoc3$P)>=7,]
-png("plinkassoc3_qc.png", res = 1200, height = 7, width = 10, units = "in")
+#png("plinkassoc3_qc.png", res = 1200, height = 7, width = 10, units = "in")
+png(filename = "plinkassoc3_qc.png", width = 680, height = 400, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 manhattan(assoc1, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
           suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
@@ -50,7 +58,9 @@ manhattan(assoc1, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), 
 dev.off()
 
 # Plot a Q-Q plot for the association analysis
-png("qq_plots.png", res=1200, height=10, width=10, units="in")
+#png("qq_plots.png", res=1200, height=10, width=10, units="in")
+png(filename = "qq_plots.png", width = 680, height = 680, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(2,2))
 qq(assoc$P, main="Q-Q plot after QC")
 qq(assoc1$P, main="Q-Q plot after QC")

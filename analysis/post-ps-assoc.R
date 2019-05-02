@@ -14,12 +14,14 @@ psassoc=read.table("ps-qc-camgwas.assoc.logistic", header = T, as.is = T)
 median(qchisq(psassoc[,9], df=1, lower.tail = F), na.rm = T)/0.456  # 1.077156
 
 # Now produce association plot
-#snpsofinterest=assoc2[-log10(assoc2$P)>=7,]
-png("ps-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
+snpsofinterest=psassoc[-log10(psassoc$P)>=7,]
+#png("ps-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
+png(filename = "ps-assoc_qc.png", width = 700, height = 380, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 manhattan(psassoc, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
-          suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
-          annotatePval = NULL, annotateTop = T)
+          suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest, logp = T,
+          annotatePval = -log10(1e-06), annotateTop = T)
 dev.off()
 
 # Using PC1, PC5 and PC9
@@ -29,12 +31,14 @@ psassoc1=read.table("ps1-qc-camgwas.assoc.logistic", header = T, as.is = T)
 median(qchisq(psassoc1[,9], df=1, lower.tail = F), na.rm = T)/0.456 # 1.061969
 
 # Now produce association plot
-#snpsofinterest=assoc2[-log10(assoc2$P)>=7,]
-png("ps1-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
+snpsofinterest=psassoc1[-log10(psassoc1$P)>=7,]
+#png("ps1-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
+png(filename = "ps1-assoc_qc.png", width = 700, height = 380, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 manhattan(psassoc1, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
-          suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
-          annotatePval = NULL, annotateTop = T)
+          suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest, logp = T,
+          annotatePval = -log10(1e-06), annotateTop = T)
 dev.off()
 
 # Using all PCs
@@ -44,16 +48,20 @@ psassoc2=read.table("ps2-qc-camgwas.assoc.logistic", header = T, as.is = T)
 median(qchisq(psassoc2[,9], df=1, lower.tail = F), na.rm = T)/0.456
 
 # Now produce association plot
-#snpsofinterest=assoc2[-log10(assoc2$P)>=7,]
-png("ps2-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
+snpsofinterest=psassoc2[-log10(psassoc2$P)>=7,]
+#png("ps2-assoc_qc.png", res = 1200, height = 4, width = 7, units = "in")
+png(filename = "ps2-assoc_qc.png", width = 700, height = 380, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 manhattan(psassoc2, chr = "CHR", bp = "BP", p = "P", col = c("gray10", "gray60"), chrlabs = NULL,
-          suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = NULL, logp = T,
-          annotatePval = NULL, annotateTop = T)
+          suggestiveline = -log10(1e-05),  genomewideline = -log10(5e-08), highlight = snpsofinterest, logp = T,
+          annotatePval = -log10(1e-6), annotateTop = T)
 dev.off()
 
 # Plot a Q-Q plot for the association analysis
-png("qq_plots.png", res=1200, height=6, width=6, units="in")
+#png("qq_plots.png", res=1200, height=6, width=6, units="in")
+png(filename = "qq_plots.png", width = 600, height = 600, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(2,2))
 qq(psassoc$P, main="Q-Q plot after QC")
 qq(psassoc1$P, main="Q-Q plot after QC")

@@ -5,7 +5,7 @@
 plink \
 	--bfile ../../analysis/qc-camgwas-updated \
 	--allow-no-sex \
-	--r2 bin yes-really \
+	--r2 bin triangle yes-really \
 	--autosome \
 	--out qc-camgwas-r2bin
 

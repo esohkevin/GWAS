@@ -7,7 +7,9 @@ library(qqman)
 
 ################## SNP QC ####################
 lmiss=read.table("ind-qc-camgwas.lmiss", header = T, as.is = T)
-png("snp_qc_missing.png", res = 1200, height = 4, width = 4, units = "in")
+#png("snp_qc_missing.png", res = 1200, height = 4, width = 4, units = "in")
+png(filename = "snp_qc_missing.png", width = 480, height = 600, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 hist(log10(lmiss$F_MISS), ylab = "Number of SNPs", xlab = "Fraction of missing genotypes", main = "Fraction of missing data")
 abline(v=log10(0.04), lty=2) # placing a line at 4% missing data point
@@ -15,7 +17,9 @@ dev.off()
 
 # Examining minor allele frequency
 freq=read.table("ind-qc-camgwas.frq", header = T, as.is = T)
-png("snp_qc_maf.png", res = 1200, height = 4, width = 4, units = "in")
+#png("snp_qc_maf.png", res = 1200, height = 4, width = 4, units = "in")
+png(filename = "snp_qc_maf.png", width = 480, height = 600, units = "px", pointsize = 12,
+    bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 hist(freq$MAF, ylab = "Number of SNPs", xlab = "MAF", main = "Minor Allele Frequencies")
 # Include lines for 1% (0.01) and 5% (0.05) MAFs 
