@@ -93,7 +93,7 @@ dev.off()
 
 
 # Plot a Q-Q plot for the association analysis
-png("qq_plots.png", res=1200, height=7, width=7, units="in")
+png(filename = "qq-plink-assoc.png", width = 750, height = 800, units = "px", pointsize = 12, bg = "white",  res = NA)
 par(mfrow=c(2,2))
 qq(imassoc$P, main="Q-Q plot after QC")
 qq(imassoc1$P, main="Q-Q plot after QC")
