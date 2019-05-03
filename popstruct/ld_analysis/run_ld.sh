@@ -16,8 +16,18 @@ plink \
 	--chr 6 \
 	--from-bp 28477797 \
 	--to-bp 33448354 \
-        --r2 triangle yes-really \
-        --out chr6Mhc
+        --r2 bin4 square yes-really \
+        --out chr6Mhc-bin
+
+# A Square matrix
+plink \
+        --bfile ../../analysis/qc-camgwas-updated \
+        --allow-no-sex \
+        --chr 6 \
+        --from-bp 28477797 \
+        --to-bp 33448354 \
+        --r2 sqaure yes-really \
+        --out chr6Mhc-ld
 
 ## Outputting haplotype frequencies,r2 and D'
 #plink \
