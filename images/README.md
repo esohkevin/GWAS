@@ -12,6 +12,7 @@
 [MDS plot with details on populations of African descent](mds-plot2.png)
 [MDS plot of CaseControl and 1KG populations](mds-plot.png)
 ![Population Structure Plots Based on the first 10 PCs](eigenv1-v10.png)
+![Projection of Pop Groups and Ethnicity into the top 3 eigenvalues](eigenv-select.png)
 ![Population Structure Plots Based on the first 10 PCs](eigenv1v2.png)
 ![Population Structure Plots Based on the first 10 PCs](evec1vc2.png)
 ![Population Structure Plots Based on the first 10 PCs](evec_with_ethn.png)
