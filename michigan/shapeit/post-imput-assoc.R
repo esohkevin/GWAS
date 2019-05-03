@@ -13,7 +13,7 @@ imassoc=read.table("post-impc1c2.assoc.logistic", header = T, as.is = T)
 median(qchisq(imassoc[,9], df=1, lower.tail = F), na.rm = T)/0.456  
 
 # Now produce association plot
-snpsofinterest=imassoc[-log10(imassoc$P)>=7,]
+snpsofinterest=imassoc[-log10(imassoc$P)>=6,]
 snpsofinterest
 #png("im-assoc_qc.png", res = 1200, height =3, width = 6, units = "in")
 png(filename = "plink-imp-assocC1C2.png", width = 780, height = 480, units = "px", pointsize = 12, 
@@ -31,7 +31,7 @@ imassoc1=read.table("post-impc1c5c9.assoc.logistic", header = T, as.is = T)
 median(qchisq(imassoc1[,9], df=1, lower.tail = F), na.rm = T)/0.456
 
 # Now produce association plot
-snpsofinterest=imassoc1[-log10(imassoc1$P)>=7,]
+snpsofinterest=imassoc1[-log10(imassoc1$P)>=6,]
 snpsofinterest
 #png("im-assoc_qc.png", res = 1200, height =3, width = 6, units = "in")
 png(filename = "plink-imp-assocC1C5C9.png", width = 780, height = 480, units = "px", 
@@ -49,7 +49,7 @@ imassoc2=read.table("post-impc1-c10.assoc.logistic", header = T, as.is = T)
 median(qchisq(imassoc2[,9], df=1, lower.tail = F), na.rm = T)/0.456
 
 # Now produce association plot
-snpsofinterest=imassoc2[-log10(imassoc2$P)>=7,]
+snpsofinterest=imassoc2[-log10(imassoc2$P)>=6,]
 snpsofinterest
 #png("im-assoc_qc.png", res = 1200, height =3, width = 6, units = "in")
 png(filename = "plink-imp-assocC1-C10.png", width = 780, height = 480, units = "px", 
@@ -67,7 +67,7 @@ dev.off()
 #median(qchisq(imassoc3[,9], df=1, lower.tail = F), na.rm = T)/0.456
 
 # Now produce association plot
-#snpsofinterest=imassoc3[-log10(imassoc3$P)>=7,]
+#snpsofinterest=imassoc3[-log10(imassoc3$P)>=6,]
 #snpsofinterest
 #png("im-assoc_qc.png", res = 1200, height =3, width = 6, units = "in")
 #png(filename = "plink-imp-assoc-model.png", width = 780, height = 480, units = "px", pointsize = 12,
@@ -85,7 +85,7 @@ imassoc4=read.table("post-impc1-c10-hethom-noNA.assoc.logistic", header = T, as.
 #median(qchisq(imassoc4[,9], df=1, lower.tail = F), na.rm = T)/0.456
 
 # Now produce association plot
-snpsofinterest=imassoc4[-log10(imassoc4$P)>=7,]
+snpsofinterest=imassoc4[-log10(imassoc4$P)>=6,]
 snpsofinterest
 #png("im-assoc_qc.png", res = 1200, height =3, width = 6, units = "in")
 png(filename = "plink-imp-assoc-hethom.png", width = 780, height = 480, units = "px", 
