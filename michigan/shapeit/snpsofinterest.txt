@@ -1,0 +1,21 @@
+[1] 1.075679
+[1] CHR   SNP   BP    A1    TEST  NMISS OR    STAT  P    
+<0 rows> (or 0-length row.names)
+null device 
+          1 
+[1] 1.057104
+[1] CHR   SNP   BP    A1    TEST  NMISS OR    STAT  P    
+<0 rows> (or 0-length row.names)
+null device 
+          1 
+[1] 1.060995
+[1] CHR   SNP   BP    A1    TEST  NMISS OR    STAT  P    
+<0 rows> (or 0-length row.names)
+null device 
+          1 
+[1] CHR   SNP   BP    A1    TEST  NMISS OR    STAT  P    
+<0 rows> (or 0-length row.names)
+null device 
+          1 
+null device 
+          1 
