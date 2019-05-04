@@ -2,7 +2,7 @@
 
 # Run Association test with adjustment to assess the genomic control inflation factor (lambda)
 plink1.9 \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --autosome \
         --allow-no-sex \
         --assoc \
@@ -12,7 +12,7 @@ cat qc-camgwas.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - Additive MOI
 plink1.9 \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --autosome \
         --allow-no-sex \
         --logistic beta \
@@ -23,7 +23,7 @@ cat qc-camgwas-add.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - Dominant MOI
 plink1.9 \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --autosome \
         --allow-no-sex \
         --logistic dominant \
@@ -34,7 +34,7 @@ cat qc-camgwas-dom.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - Recessive MOI
 plink1.9 \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --autosome \
         --allow-no-sex \
         --logistic recessive \
@@ -45,7 +45,7 @@ cat qc-camgwas-rec.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - hethom MOI
 plink1.9 \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --autosome \
         --allow-no-sex \
         --logistic hethom \
@@ -56,7 +56,7 @@ cat qc-camgwas-hethom.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - Model
 plink1.9 \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --autosome \
         --allow-no-sex \
         --model \
@@ -113,7 +113,7 @@ echo """
 	with P-val < 1e-05 (0.00001)
 """
 
-echo "#################### QC R #####################" >> snpsofinterest.txt
-Rscript post-qc-assoc.R >> snpsofinterest.txt
-echo "#################### QC R #####################" >> snpsofinterest.txt
+#echo "#################### QC R #####################" >> snpsofinterest.txt
+#Rscript post-qc-assoc.R >> snpsofinterest.txt
+#echo "#################### QC R #####################" >> snpsofinterest.txt
 

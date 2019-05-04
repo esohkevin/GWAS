@@ -4,7 +4,7 @@
 
 # With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
 plink \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --covar ../popstruct/evecData.txt \
         --covar-name C1 C4 C5 \
 	--keep ../popstruct/evecData.ids \
@@ -18,7 +18,7 @@ cat eig-qc-camgwasC1C4C5.log >> all-eig-assoc.log
 
 # With all PCs - Additive MOI
 plink \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --covar ../popstruct/evecData.txt \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
@@ -32,7 +32,7 @@ cat eig-qc-camgwasC1-C10-add.log >> all-eig-assoc.log
 
 # With all PCs and different MOI
 plink \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --covar ../popstruct/evecData.txt \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
@@ -45,7 +45,7 @@ cat eig-qc-camgwasC1-C10-model.log >> all-eig-assoc.log
 
 # With all PCs and hethom MOI
 plink \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --covar ../popstruct/evecData.txt \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
@@ -59,7 +59,7 @@ cat eig-qc-camgwasC1-C10-hethom.log >> all-eig-assoc.log
 
 # With all PCs and Recessive MOI
 plink \
-        --bfile qc-camgwas \
+        --bfile ../analysis/qc-camgwas \
         --covar ../popstruct/evecData.txt \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
@@ -87,11 +87,11 @@ echo -e "\n###################### Post-EIG End #####################\n" >> snpso
 #########################################################################
 #                        Plot Association in R                          #
 #########################################################################
-echo -e "\nNow generating association plots in R. Please wait..."
+#echo -e "\nNow generating association plots in R. Please wait..."
 
-echo "#################### EIG R #####################" >> snpsofinterest.txt
-Rscript post-eig-assoc.R >> snpsofinterest.txt
-echo "#################### EIG R #####################" >> snpsofinterest.txt
+#echo "#################### EIG R #####################" >> snpsofinterest.txt
+#Rscript post-eig-assoc.R >> snpsofinterest.txt
+#echo "#################### EIG R #####################" >> snpsofinterest.txt
 
 # Filter association results to obtain SNPs with p-val 1e-5
 #for i in ps*-qc-camgwas.assoc.logistic; 
