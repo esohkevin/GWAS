@@ -29,7 +29,7 @@ plink \
 
 # Perform admixture cross-validation to determine the appropriate k value to use
 for k in $(seq 1 5); do
-	admixture --cv qc-camgwas-ldPruned.bed "${k}" | tee log${k}.out;
+	admixture --cv -j30 qc-camgwas-ldPruned.bed "${k}" | tee log${k}.out;
 done
 
 echo -e "\nDone Cross-Validating!"

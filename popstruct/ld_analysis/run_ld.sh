@@ -26,7 +26,7 @@ plink \
         --chr 6 \
         --from-bp 28477797 \
         --to-bp 33448354 \
-        --r2 sqaure yes-really \
+        --r2 square yes-really \
         --out chr6Mhc-ld
 
 ## Outputting haplotype frequencies,r2 and D'
