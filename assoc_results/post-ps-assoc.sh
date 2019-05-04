@@ -68,14 +68,19 @@ cat ps-qc-camgwasC1-C10-rec.log >> all-ps-assoc.log
 
 echo -e "###################### Post-PS Start ####################\n" >> snpsofinterest.txt
 echo "###################### ADD C1C5C9 ###########################" >> snpsofinterest.txt
+head -1 ps-qc-camgwasC1C5C9.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' ps-qc-camgwasC1C5C9.assoc.logistic >> snpsofinterest.txt
 echo "###################### C1-C10 ADD ###########################" >> snpsofinterest.txt
+head -1 ps-qc-camgwasC1-C10-add.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' ps-qc-camgwasC1-C10-add.assoc.logistic >> snpsofinterest.txt
 echo "###################### C1-C10 HETHOM ###########################" >> snpsofinterest.txt
+head -1 ps-qc-camgwasC1-C10-hethom.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' ps-qc-camgwasC1-C10-hethom.assoc.logistic >> snpsofinterest.txt
 echo "###################### C1-C10 REC ###########################" >> snpsofinterest.txt
+head -1 ps-qc-camgwasC1-C10-rec.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' ps-qc-camgwasC1-C10-rec.assoc.logistic >> snpsofinterest.txt
 echo "###################### MODEL ###########################" >> snpsofinterest.txt
+head -1 ps-qc-camgwasC1-C10-model.model >> snpsofinterest.txt
 awk '$10<1e-05' ps-qc-camgwasC1-C10-model.model >> snpsofinterest.txt
 echo -e "\n###################### Post-PS End #####################\n" >> snpsofinterest.txt
 

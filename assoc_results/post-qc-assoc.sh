@@ -92,14 +92,19 @@ cat qc-camgwas-model.log >> all-assoc.log
 #cat autopseudo.log >> all.log
 echo -e "###################### Post-QC Start ####################\n" > snpsofinterest.txt
 echo "###################### HETHOM ###########################" >> snpsofinterest.txt
+head -1 qc-camgwas-hethom.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' qc-camgwas-hethom.assoc.logistic >> snpsofinterest.txt
 echo "###################### ADD ###########################" >> snpsofinterest.txt
+head -1 qc-camgwas-add.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' qc-camgwas-add.assoc.logistic >> snpsofinterest.txt
 echo "###################### DOM ###########################" >> snpsofinterest.txt
+head -1 qc-camgwas-dom.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' qc-camgwas-dom.assoc.logistic >> snpsofinterest.txt
 echo "###################### REC ###########################" >> snpsofinterest.txt
+head -1 qc-camgwas-rec.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' qc-camgwas-rec.assoc.logistic >> snpsofinterest.txt
 echo "###################### MODEL ###########################" >> snpsofinterest.txt
+head -1 qc-camgwas-model.model >> snpsofinterest.txt
 awk '$10<1e-05' qc-camgwas-model.model >> snpsofinterest.txt
 echo -e "\n###################### Post-QC End #####################\n" >> snpsofinterest.txt
 
