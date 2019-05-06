@@ -8,4 +8,7 @@ numoutevec: 30
 numoutlieriter: 5
 numoutlierevec: 10
 outliersigmathresh: 6.0
+genotypeoutname: qc-camgwas-no-outlier.bed
+snpoutname: qc-camgwas-no-outlier.bim
+indivoutname: qc-camgwas-no-outlier.fam
 qtmode: 0

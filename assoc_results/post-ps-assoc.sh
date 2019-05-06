@@ -4,7 +4,7 @@
 
 # With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
 plink \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --covar ../popstruct/ps-data.mds \
         --covar-name C1 C5 C9 \
         --allow-no-sex \
@@ -17,20 +17,20 @@ cat ps-qc-camgwasC1C5C9.log >> all-ps-assoc.log
 
 # With all PCs - Additive MOI
 plink \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --covar ../popstruct/ps-data.mds \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
         --autosome \
         --hide-covar \
-        --logistic beta \
+        --logistic \
 	--ci 0.95 \
         --out ps-qc-camgwasC1-C10-add
 cat ps-qc-camgwasC1-C10-add.log >> all-ps-assoc.log
 
 # With all PCs and different MOI
 plink \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --covar ../popstruct/ps-data.mds \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
@@ -42,7 +42,7 @@ cat ps-qc-camgwasC1-C10-model.log >> all-ps-assoc.log
 
 # With all PCs and hethom MOI
 plink \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --covar ../popstruct/ps-data.mds \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
@@ -55,7 +55,7 @@ cat ps-qc-camgwasC1-C10-hethom.log >> all-ps-assoc.log
 
 # With all PCs and Recessive MOI
 plink \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --covar ../popstruct/ps-data.mds \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
@@ -69,19 +69,19 @@ cat ps-qc-camgwasC1-C10-rec.log >> all-ps-assoc.log
 echo -e "###################### Post-PS Start ####################\n" >> snpsofinterest.txt
 echo "###################### ADD C1C5C9 ###########################" >> snpsofinterest.txt
 head -1 ps-qc-camgwasC1C5C9.assoc.logistic >> snpsofinterest.txt
-awk '$12<1e-05' ps-qc-camgwasC1C5C9.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-04' ps-qc-camgwasC1C5C9.assoc.logistic >> snpsofinterest.txt
 echo "###################### C1-C10 ADD ###########################" >> snpsofinterest.txt
 head -1 ps-qc-camgwasC1-C10-add.assoc.logistic >> snpsofinterest.txt
-awk '$12<1e-05' ps-qc-camgwasC1-C10-add.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-04' ps-qc-camgwasC1-C10-add.assoc.logistic >> snpsofinterest.txt
 echo "###################### C1-C10 HETHOM ###########################" >> snpsofinterest.txt
 head -1 ps-qc-camgwasC1-C10-hethom.assoc.logistic >> snpsofinterest.txt
-awk '$12<1e-05' ps-qc-camgwasC1-C10-hethom.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-04' ps-qc-camgwasC1-C10-hethom.assoc.logistic >> snpsofinterest.txt
 echo "###################### C1-C10 REC ###########################" >> snpsofinterest.txt
 head -1 ps-qc-camgwasC1-C10-rec.assoc.logistic >> snpsofinterest.txt
-awk '$12<1e-05' ps-qc-camgwasC1-C10-rec.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-04' ps-qc-camgwasC1-C10-rec.assoc.logistic >> snpsofinterest.txt
 echo "###################### MODEL ###########################" >> snpsofinterest.txt
 head -1 ps-qc-camgwasC1-C10-model.model >> snpsofinterest.txt
-awk '$10<1e-05' ps-qc-camgwasC1-C10-model.model >> snpsofinterest.txt
+awk '$10<1e-04' ps-qc-camgwasC1-C10-model.model >> snpsofinterest.txt
 echo -e "\n###################### Post-PS End #####################\n" >> snpsofinterest.txt
 
 echo "Done!"

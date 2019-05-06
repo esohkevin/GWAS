@@ -2,7 +2,7 @@
 
 # Run Association test with adjustment to assess the genomic control inflation factor (lambda)
 plink1.9 \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --autosome \
         --allow-no-sex \
         --assoc \
@@ -12,7 +12,7 @@ cat qc-camgwas.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - Additive MOI
 plink1.9 \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --autosome \
         --allow-no-sex \
         --logistic beta \
@@ -23,7 +23,7 @@ cat qc-camgwas-add.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - Dominant MOI
 plink1.9 \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --autosome \
         --allow-no-sex \
         --logistic dominant \
@@ -34,7 +34,7 @@ cat qc-camgwas-dom.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - Recessive MOI
 plink1.9 \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --autosome \
         --allow-no-sex \
         --logistic recessive \
@@ -45,7 +45,7 @@ cat qc-camgwas-rec.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - hethom MOI
 plink1.9 \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --autosome \
         --allow-no-sex \
         --logistic hethom \
@@ -56,7 +56,7 @@ cat qc-camgwas-hethom.log >> all-assoc.log
 
 # Run Association test on QCed data (logistic beta) - Model
 plink1.9 \
-        --bfile ../analysis/qc-camgwas \
+        --bfile ../analysis/qc-camgwas-updated \
         --autosome \
         --allow-no-sex \
         --model \
@@ -93,19 +93,19 @@ cat qc-camgwas-model.log >> all-assoc.log
 echo -e "###################### Post-QC Start ####################\n" > snpsofinterest.txt
 echo "###################### HETHOM ###########################" >> snpsofinterest.txt
 head -1 qc-camgwas-hethom.assoc.logistic >> snpsofinterest.txt
-awk '$12<1e-05' qc-camgwas-hethom.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-04' qc-camgwas-hethom.assoc.logistic >> snpsofinterest.txt
 echo "###################### ADD ###########################" >> snpsofinterest.txt
 head -1 qc-camgwas-add.assoc.logistic >> snpsofinterest.txt
-awk '$12<1e-05' qc-camgwas-add.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-04' qc-camgwas-add.assoc.logistic >> snpsofinterest.txt
 echo "###################### DOM ###########################" >> snpsofinterest.txt
 head -1 qc-camgwas-dom.assoc.logistic >> snpsofinterest.txt
-awk '$12<1e-05' qc-camgwas-dom.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-04' qc-camgwas-dom.assoc.logistic >> snpsofinterest.txt
 echo "###################### REC ###########################" >> snpsofinterest.txt
 head -1 qc-camgwas-rec.assoc.logistic >> snpsofinterest.txt
-awk '$12<1e-05' qc-camgwas-rec.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-04' qc-camgwas-rec.assoc.logistic >> snpsofinterest.txt
 echo "###################### MODEL ###########################" >> snpsofinterest.txt
 head -1 qc-camgwas-model.model >> snpsofinterest.txt
-awk '$10<1e-05' qc-camgwas-model.model >> snpsofinterest.txt
+awk '$10<1e-04' qc-camgwas-model.model >> snpsofinterest.txt
 echo -e "\n###################### Post-QC End #####################\n" >> snpsofinterest.txt
 
 echo """
@@ -115,7 +115,7 @@ echo """
 	Running Post-QC Association Plot in R
 
 	Please check the 'snpsofinterest.txt' file for associations
-	with P-val < 1e-05 (0.00001)
+	with P-val < 1e-04 (0.00001)
 """
 
 #echo "#################### QC R #####################" >> snpsofinterest.txt

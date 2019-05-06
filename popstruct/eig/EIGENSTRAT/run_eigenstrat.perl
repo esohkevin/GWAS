@@ -10,7 +10,7 @@ $command .= " -b ../CONVERTF/qc-camgwas.ind " ;
 $command .= " -k 30 ";
 $command .= " -o qc-camgwas.pca ";
 $command .= " -p qc-camgwas.plot ";
-$command .= " -e qc-camgwas.evec ";
+$command .= " -e qc-camgwas.eval ";
 $command .= " -l qc-camgwas-pca.log ";
 $command .= " -m 5 ";
 $command .= " -t 10 ";
@@ -22,18 +22,18 @@ $command = "smarteigenstrat.perl ";
 $command .= " -i ../CONVERTF/qc-camgwas.eigenstratgeno ";
 $command .= " -a ../CONVERTF/qc-camgwas.snp ";
 $command .= " -b ../CONVERTF/qc-camgwas.ind ";
-$command .= " -p qc-camgwas-pca ";
+$command .= " -p qc-camgwas.pca ";
 $command .= " -k 20 ";
 $command .= " -o qc-camgwas.chisq ";
 $command .= " -l qc-camgwas-eig.log ";
 print("$command\n");
 system("$command");
 
-$command = "gc.perl qc-camgwas-chisq qc-camgwas-chisq.GC";
+$command = "gc.perl qc-camgwas.chisq qc-camgwas.chisq.GC";
 print("$command\n");
 system("$command");
 
-$command = "evec2pca.perl 30 qc-camgwas.evec ../CONVERTF/qc-camgwas.ind qc-camgwas.pca";
-print("$command\n");
-system("$command");
+#$command = "evec2pca.perl 30 qc-camgwas.pca.evec ../CONVERTF/qc-camgwas.ind qc-camgwas.pca";
+#print("$command\n");
+#system("$command");
 

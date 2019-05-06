@@ -9,7 +9,7 @@ plink \
 	--exclude merge.filtered.dups \
         --allow-no-sex \
         --make-bed \
-	--vcf-min-gp 0.90 \
+	--vcf-min-gp 0.995 \
         --biallelic-only \
 	--keep-allele-order \
 	--double-id \
@@ -19,10 +19,10 @@ plink \
 plink \
 	--bfile merge.filtered \
 	--allow-no-sex \
-	--pheno update-camgwas.phe \
+	--pheno ../shapeit/update-camgwas.phe \
 	--1 \
-	--update-name update-ucsc.ids 2 1 \
-	--update-sex update-camgwas.sex \
+	--update-name ../shapeit/update-ucsc.ids 2 1 \
+	--update-sex ../shapeit/update-camgwas.sex \
 	--maf 0.01 \
 	--geno 0.1 \
 	--hwe 1e-6 \
