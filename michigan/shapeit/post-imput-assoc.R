@@ -10,7 +10,7 @@ library(qqman)
 imassoc=read.table("post-impc1c2.assoc.logistic", header = T, as.is = T)
 
 # Now assess the genomic control inflation factor
-median(qchisq(imassoc[,9], df=1, lower.tail = F), na.rm = T)/0.456  
+median(qchisq(imassoc[,12], df=1, lower.tail = F), na.rm = T)/0.456  
 
 # Now produce association plot
 snpsofinterest=imassoc[-log10(imassoc$P)>=6,]
@@ -28,7 +28,7 @@ dev.off()
 imassoc1=read.table("post-impc1c5c9.assoc.logistic", header = T, as.is = T)
 
 # Now assess the genomic control inflation factor
-median(qchisq(imassoc1[,9], df=1, lower.tail = F), na.rm = T)/0.456
+median(qchisq(imassoc1[,12], df=1, lower.tail = F), na.rm = T)/0.456
 
 # Now produce association plot
 snpsofinterest=imassoc1[-log10(imassoc1$P)>=6,]
@@ -46,7 +46,7 @@ dev.off()
 imassoc2=read.table("post-impc1-c10.assoc.logistic", header = T, as.is = T)
 
 # Now assess the genomic control inflation factor
-median(qchisq(imassoc2[,9], df=1, lower.tail = F), na.rm = T)/0.456
+median(qchisq(imassoc2[,12], df=1, lower.tail = F), na.rm = T)/0.456
 
 # Now produce association plot
 snpsofinterest=imassoc2[-log10(imassoc2$P)>=6,]

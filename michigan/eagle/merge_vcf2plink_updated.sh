@@ -9,7 +9,7 @@ plink \
 	--exclude merge.filtered.dups \
         --allow-no-sex \
         --make-bed \
-	--vcf-min-gp 0.99 \
+	--vcf-min-gp 0.90 \
         --biallelic-only \
 	--keep-allele-order \
 	--double-id \

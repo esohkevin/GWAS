@@ -12,7 +12,7 @@ plink \
         --hide-covar \
         --logistic recessive \
 	--ci 0.95 \
-        --out post-impc1-10-rec
+        --out post-impc1-c10-rec
 #cat post-impc1c2.log >> post-imp-assoc-all.log
 
 # With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
@@ -25,7 +25,8 @@ plink \
         --autosome \
         --hide-covar \
         --logistic \
-        --out post-impc1c4c5
+	--ci 0.95 \
+        --out post-impc1c4c5-add
 #cat post-impc1c5c9.log >> post-imp-assoc-all.log
 
 # With all PCs
@@ -64,6 +65,7 @@ plink \
         --allow-no-sex \
         --autosome \
         --hide-covar \
+	--ci 0.95 \
         --logistic hethom \
         --out post-impc1-c10-hethom
 #cat post-impc1-c10-hethom.log >> post-imp-assoc-all.log
@@ -80,18 +82,27 @@ plink \
         --ci 0.95 \
         --out post-impc1-c10-dom
 
+# Update hethom file by removing all NAs
+grep -v "NA" post-impc1-c10-hethom.assoc.logistic > post-impc1-c10-hethom-noNA.assoc.logistic
+
 echo -e "######################################### Post-Imputation Start ########################################\n" > post-imp-snpsofinterest.txt
 echo "############################################### HETHOM ##############################################" >> post-imp-snpsofinterest.txt
+head -1 post-impc1-c10-hethom.assoc.logistic >> post-imp-snpsofinterest.txt
 awk '$12<1e-05' post-impc1-c10-hethom.assoc.logistic >> post-imp-snpsofinterest.txt
 echo "############################################### ADD ######################################################" >> post-imp-snpsofinterest.txt
+head -1 post-impc1-c10-add.assoc.logistic >> post-imp-snpsofinterest.txt
 awk '$12<1e-05' post-impc1-c10-add.assoc.logistic >> post-imp-snpsofinterest.txt
 echo "######################################################## ADD C1C4C5 ############################################" >> post-imp-snpsofinterest.txt
+head -1 post-impc1c4c5-add.assoc.logistic >> post-imp-snpsofinterest.txt
 awk '$12<1e-05' post-impc1c4c5-add.assoc.logistic >> post-imp-snpsofinterest.txt
 echo "########################################################## DOM ############################################" >> post-imp-snpsofinterest.txt
+head -1 post-impc1-c10-dom.assoc.logistic >> post-imp-snpsofinterest.txt
 awk '$12<1e-05' post-impc1-c10-dom.assoc.logistic >> post-imp-snpsofinterest.txt
 echo "################################################# REC ###########################################################" >> post-imp-snpsofinterest.txt
+head -1 post-impc1-c10-rec.assoc.logistic >> post-imp-snpsofinterest.txt
 awk '$12<1e-05' post-impc1-c10-rec.assoc.logistic >> post-imp-snpsofinterest.txt
 echo "########################################################### MODEL ################################################" >> post-imp-snpsofinterest.txt
+head -1 post-impc1-c10-model.model >> post-imp-snpsofinterest.txt
 awk '$10<1e-05' post-impc1-c10-model.model >> post-imp-snpsofinterest.txt
 echo -e "\n################################################### Post-Imputation End ###############################################\n" >> post-imp-snpsofinterest.txt
 
@@ -107,7 +118,7 @@ echo -e "\n################################################### Post-Imputation E
 #done
 
 # Produce manhattan plots in R
-#R CMD BATCH post-imput-assoc.R
+R CMD BATCH post-imput-assoc.R
 
 #mv *.png ../../images/
 
