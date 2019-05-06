@@ -2,7 +2,7 @@
 
 ### Association tests including covariats to account for population structure
 
-# With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
+# With PC1, PC4 and PC5 as reported by glm to associate significantly with disease
 plink \
         --bfile ../analysis/qc-camgwas \
         --covar ../popstruct/evecData.txt \
@@ -25,10 +25,24 @@ plink \
         --autosome \
 	--keep ../popstruct/evecData.ids \
         --hide-covar \
-        --logistic beta \
+        --logistic \
 	--ci 0.95 \
         --out eig-qc-camgwasC1-C10-add
 cat eig-qc-camgwasC1-C10-add.log >> all-eig-assoc.log
+
+# With all PCs and Dominant MOI
+plink \
+        --bfile ../analysis/qc-camgwas \
+        --covar ../popstruct/evecData.txt \
+        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+        --allow-no-sex \
+        --autosome \
+        --keep ../popstruct/evecData.ids \
+        --hide-covar \
+        --logistic dominant \
+        --ci 0.95 \
+        --out eig-qc-camgwasC1-C10-dom
+cat eig-qc-camgwasC1-C10-dom.log >> all-eig-assoc.log
 
 # With all PCs and different MOI
 plink \
@@ -84,6 +98,9 @@ awk '$12<1e-05' eig-qc-camgwasC1-C10-hethom.assoc.logistic >> snpsofinterest.txt
 echo "###################### C1-C10 REC ###########################" >> snpsofinterest.txt
 head -1 eig-qc-camgwasC1-C10-rec.assoc.logistic >> snpsofinterest.txt
 awk '$12<1e-05' eig-qc-camgwasC1-C10-rec.assoc.logistic >> snpsofinterest.txt
+echo "###################### C1-C10 DOM ###########################" >> snpsofinterest.txt
+head -1 eig-qc-camgwasC1-C10-dom.assoc.logistic >> snpsofinterest.txt
+awk '$12<1e-05' eig-qc-camgwasC1-C10-dom.assoc.logistic >> snpsofinterest.txt
 echo "###################### MODEL ###########################" >> snpsofinterest.txt
 head -1 eig-qc-camgwasC1-C10-model.model >> snpsofinterest.txt
 awk '$10<1e-05' eig-qc-camgwasC1-C10-model.model >> snpsofinterest.txt

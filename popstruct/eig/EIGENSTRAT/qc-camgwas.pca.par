@@ -4,7 +4,7 @@ indivname: ../CONVERTF/qc-camgwas.ind
 evecoutname: qc-camgwas.pca.evec
 evaloutname: qc-camgwas.evec
 altnormstyle: NO
-numoutevec: 10
+numoutevec: 30
 numoutlieriter: 5
 numoutlierevec: 10
 outliersigmathresh: 6.0
