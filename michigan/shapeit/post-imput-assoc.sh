@@ -4,10 +4,12 @@
 # With PC1 and PC2
 plink \
         --bfile merge.filtered-updated \
-        --covar ../../popstruct/evecData.txt \
-        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+        --covar ../../popstruct/eig-camgwas.pca \
+        --covar-name C1-C20 \
         --autosome \
-	--keep ../../popstruct/evecData.ids \
+	--maf 0.0001 \
+	--geno 0.05 \
+	--keep ../../popstruct/eig-camgwas.ids \
         --allow-no-sex \
         --hide-covar \
         --logistic recessive \
@@ -18,11 +20,13 @@ plink \
 # With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
 plink \
         --bfile merge.filtered-updated \
-        --covar ../../popstruct/evecData.txt \
-	--keep ../../popstruct/evecData.ids \
+        --covar ../../popstruct/eig-camgwas.pca \
+	--keep ../../popstruct/eig-camgwas.ids \
         --covar-name C1 C4 C5 \
         --allow-no-sex \
+	--maf 0.0001 \
         --autosome \
+	--geno 0.05 \
         --hide-covar \
         --logistic \
 	--ci 0.95 \
@@ -32,11 +36,13 @@ plink \
 # With all PCs
 plink \
         --bfile merge.filtered-updated \
-        --covar ../../popstruct/evecData.txt \
-        --keep ../../popstruct/evecData.ids \
-	--covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+        --covar ../../popstruct/eig-camgwas.pca \
+        --keep ../../popstruct/eig-camgwas.ids \
+	--covar-name C1-C20 \
         --allow-no-sex \
         --autosome \
+	--geno 0.05 \
+	--maf 0.0001 \
         --hide-covar \
         --logistic \
 	--ci 0.95 \
@@ -46,11 +52,13 @@ plink \
 # With all PCs and different MOI
 plink \
         --bfile merge.filtered-updated \
-	--covar ../../popstruct/evecData.txt \
-        --keep ../../popstruct/evecData.ids \
-        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+	--covar ../../popstruct/eig-camgwas.pca \
+        --keep ../../popstruct/eig-camgwas.ids \
+        --covar-name C1-C20 \
         --allow-no-sex \
         --autosome \
+	--maf 0.0001 \
+	--geno 0.05 \
         --hide-covar \
         --model \
         --out post-impc1-c10-model
@@ -59,12 +67,14 @@ plink \
 # With all PCs and hethom MOI
 plink \
         --bfile merge.filtered-updated \
-	--covar ../../popstruct/evecData.txt \
-        --keep ../../popstruct/evecData.ids \
-        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+	--covar ../../popstruct/eig-camgwas.pca \
+        --keep ../../popstruct/eig-camgwas.ids \
+        --covar-name C1-C20 \
         --allow-no-sex \
         --autosome \
+	--geno 0.05 \
         --hide-covar \
+	--maf 0.0001 \
 	--ci 0.95 \
         --logistic hethom \
         --out post-impc1-c10-hethom
@@ -72,10 +82,12 @@ plink \
 
 plink \
         --bfile merge.filtered-updated \
-        --covar ../../popstruct/evecData.txt \
-        --keep ../../popstruct/evecData.ids \
-        --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
+        --covar ../../popstruct/eig-camgwas.pca \
+        --keep ../../popstruct/eig-camgwas.ids \
+        --covar-name C1-C20 \
         --allow-no-sex \
+	--maf 0.0001 \
+	--geno 0.05 \
         --autosome \
         --hide-covar \
         --logistic dominant \
