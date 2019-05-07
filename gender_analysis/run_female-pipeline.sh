@@ -14,8 +14,6 @@ plink \
 	--covar ../popstruct/eig-camgwas.pca \
 	--covar-name C1-C20 \
 	--out females-add
-echo "################################################ ADD ############################################# " > females-snpsofinterest.txt
-awk '$12<1e-05' females-add.assoc.logistic | awk '$5=="ADD"' >> females-snpsofinterest.txt
 
 # Recessive
 plink \
@@ -26,8 +24,6 @@ plink \
         --covar ../popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out females-rec
-echo "################################################ REC ############################################# " >> females-snpsofinterest.txt
-awk '$12<1e-05' females-rec.assoc.logistic >> females-snpsofinterest.txt
 
 # Dominant
 plink \
@@ -38,8 +34,6 @@ plink \
         --covar ../popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out females-dom
-echo "################################################ DOM ############################################# " >> females-snpsofinterest.txt
-awk '$12<1e-05' females-dom.assoc.logistic >> females-snpsofinterest.txt
 
 # hethom
 plink \
@@ -50,8 +44,6 @@ plink \
         --covar ../popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out females-hethom
-echo "################################################ HETHOM ############################################# " >> females-snpsofinterest.txt
-awk '$12<1e-05' females-hethom.assoc.logistic >> females-snpsofinterest.txt
 
 # model
 plink \
@@ -62,7 +54,14 @@ plink \
         --covar ../popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out females
+
+echo "################################################ ADD ############################################# " > females-snpsofinterest.txt
+head -1 females-add.assoc.logistic >> females-snpsofinterest.txt; awk '$12<1e-05' females-add.assoc.logistic | awk '$5=="ADD"' >> females-snpsofinterest.txt 
+echo "################################################ REC ############################################# " >> females-snpsofinterest.txt
+head -1 females-rec.assoc.logistic >> females-snpsofinterest.txt; awk '$12<1e-05' females-rec.assoc.logistic | awk '$5=="REC"' >> females-snpsofinterest.txt 
+echo "################################################ DOM ############################################# " >> females-snpsofinterest.txt
+head -1 females-dom.assoc.logistic >> females-snpsofinterest.txt; awk '$12<1e-05' females-dom.assoc.logistic | awk '$5=="DOM"' >> females-snpsofinterest.txt 
+echo "################################################ HETHOM ############################################# " >> females-snpsofinterest.txt
+head -1 females-hethom.assoc.logistic >> females-snpsofinterest.txt; awk '$12<1e-05' females-hethom.assoc.logistic | awk '$5=="HET"|| $5=="HOM"' >> females-snpsofinterest.txt
 echo "################################################ MODEL ############################################# " >> females-snpsofinterest.txt
-awk '$10<1e-05' females.model >> females-snpsofinterest.txt
-
-
+head -1 females.model >> females-snpsofinterest.txt; awk '$10<1e-05' females.model >> females-snpsofinterest.txt

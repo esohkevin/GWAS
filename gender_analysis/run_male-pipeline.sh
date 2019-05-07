@@ -14,8 +14,6 @@ plink \
 	--covar ../popstruct/eig-camgwas.pca \
 	--covar-name C1-C20 \
 	--out males-add
-echo "################################################ ADD ############################################# " > males-snpsofinterest.txt
-awk '$12<1e-05' males-add.assoc.logistic | awk '$5=="ADD"' >> females-snpsofinterest.txt
 
 # Recessive
 plink \
@@ -26,8 +24,6 @@ plink \
         --covar ../popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out males-rec
-echo "################################################ REC ############################################# " >> males-snpsofinterest.txt
-awk '$12<1e-05' males-rec.assoc.logistic >> females-snpsofinterest.txt
 
 # Dominant
 plink \
@@ -38,8 +34,6 @@ plink \
         --covar ../popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out males-dom
-echo "################################################ DOM ############################################# " >> males-snpsofinterest.txt
-awk '$12<1e-05' males-dom.assoc.logistic >> females-snpsofinterest.txt
 
 # hethom
 plink \
@@ -50,8 +44,6 @@ plink \
         --covar ../popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out males-hethom
-echo "################################################ HETHOM ############################################# " >> males-snpsofinterest.txt
-awk '$12<1e-05' males-hethom.assoc.logistic >> females-snpsofinterest.txt
 
 # model
 plink \
@@ -62,7 +54,15 @@ plink \
         --covar ../popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out males
-echo "################################################ MODEL ############################################# " >> males-snpsofinterest.txt
-awk '$10<1e-05' males.model >> females-snpsofinterest.txt
 
+echo "################################################ ADD ############################################# " > males-snpsofinterest.txt
+head -1 males-add.assoc.logistic >> males-snpsofinterest.txt; awk '$12<1e-05' males-add.assoc.logistic | awk '$5=="ADD"' >> males-snpsofinterest.txt
+echo "################################################ REC ############################################# " >> males-snpsofinterest.txt
+head -1 males-rec.assoc.logistic >> males-snpsofinterest.txt; awk '$12<1e-05' males-rec.assoc.logistic | awk '$5=="REC"' >> males-snpsofinterest.txt
+echo "################################################ DOM ############################################# " >> males-snpsofinterest.txt
+head -1 males-dom.assoc.logistic >> males-snpsofinterest.txt; awk '$12<1e-05' males-dom.assoc.logistic | awk '$5=="DOM"' >> males-snpsofinterest.txt
+echo "################################################ HETHOM ############################################# " >> males-snpsofinterest.txt
+head -1 males-hethom.assoc.logistic >> males-snpsofinterest.txt; awk '$12<1e-05' males-hethom.assoc.logistic | awk '$5=="HET"|| $5=="HOM"' >> males-snpsofinterest.txt
+echo "################################################ MODEL ############################################# " >> males-snpsofinterest.txt
+head -1 males.model >> males-snpsofinterest.txt; awk '$10<1e-05' males.model >> males-snpsofinterest.txt
 
