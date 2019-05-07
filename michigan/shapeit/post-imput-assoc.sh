@@ -14,8 +14,8 @@ plink \
         --hide-covar \
         --logistic recessive \
 	--ci 0.95 \
-        --out post-impc1-c10-rec
-#cat post-impc1c2.log >> post-imp-assoc-all.log
+        --out shapeit-post-impc1-c10-rec
+#cat shapeit-post-impc1c2.log >> post-imp-assoc-all.log
 
 # With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
 plink \
@@ -30,8 +30,8 @@ plink \
         --hide-covar \
         --logistic \
 	--ci 0.95 \
-        --out post-impc1c4c5-add
-#cat post-impc1c5c9.log >> post-imp-assoc-all.log
+        --out shapeit-post-impc1c4c5-add
+#cat shapeit-post-impc1c5c9.log >> post-imp-assoc-all.log
 
 # With all PCs
 plink \
@@ -46,8 +46,8 @@ plink \
         --hide-covar \
         --logistic \
 	--ci 0.95 \
-        --out post-impc1-c10-add
-#cat post-impc1-c10.log >> post-imp-assoc-all.log
+        --out shapeit-post-impc1-c10-add
+#cat shapeit-post-impc1-c10.log >> post-imp-assoc-all.log
 
 # With all PCs and different MOI
 plink \
@@ -61,8 +61,8 @@ plink \
 	--geno 0.05 \
         --hide-covar \
         --model \
-        --out post-impc1-c10-model
-#cat post-impc1-c10-model.log >> post-imp-assoc-all.log
+        --out shapeit-post-impc1-c10-model
+#cat shapeit-post-impc1-c10-model.log >> post-imp-assoc-all.log
 
 # With all PCs and hethom MOI
 plink \
@@ -77,8 +77,8 @@ plink \
 	--maf 0.0001 \
 	--ci 0.95 \
         --logistic hethom \
-        --out post-impc1-c10-hethom
-#cat post-impc1-c10-hethom.log >> post-imp-assoc-all.log
+        --out shapeit-post-impc1-c10-hethom
+#cat shapeit-post-impc1-c10-hethom.log >> post-imp-assoc-all.log
 
 plink \
         --bfile merge.filtered-updated \
@@ -92,45 +92,45 @@ plink \
         --hide-covar \
         --logistic dominant \
         --ci 0.95 \
-        --out post-impc1-c10-dom
+        --out shapeit-post-impc1-c10-dom
 
 # Update hethom file by removing all NAs
-grep -v "NA" post-impc1-c10-hethom.assoc.logistic > post-impc1-c10-hethom-noNA.assoc.logistic
+grep -v "NA" shapeit-post-impc1-c10-hethom.assoc.logistic > post-impc1-c10-hethom-noNA.assoc.logistic
 
-echo -e "######################################### Post-Imputation Start ########################################\n" > post-imp-snpsofinterest.txt
-echo "############################################### HETHOM ##############################################" >> post-imp-snpsofinterest.txt
-head -1 post-impc1-c10-hethom.assoc.logistic >> post-imp-snpsofinterest.txt
-awk '$12<1e-05' post-impc1-c10-hethom.assoc.logistic >> post-imp-snpsofinterest.txt
-echo "############################################### ADD ######################################################" >> post-imp-snpsofinterest.txt
-head -1 post-impc1-c10-add.assoc.logistic >> post-imp-snpsofinterest.txt
-awk '$12<1e-05' post-impc1-c10-add.assoc.logistic >> post-imp-snpsofinterest.txt
-echo "######################################################## ADD C1C4C5 ############################################" >> post-imp-snpsofinterest.txt
-head -1 post-impc1c4c5-add.assoc.logistic >> post-imp-snpsofinterest.txt
-awk '$12<1e-05' post-impc1c4c5-add.assoc.logistic >> post-imp-snpsofinterest.txt
-echo "########################################################## DOM ############################################" >> post-imp-snpsofinterest.txt
-head -1 post-impc1-c10-dom.assoc.logistic >> post-imp-snpsofinterest.txt
-awk '$12<1e-05' post-impc1-c10-dom.assoc.logistic >> post-imp-snpsofinterest.txt
-echo "################################################# REC ###########################################################" >> post-imp-snpsofinterest.txt
-head -1 post-impc1-c10-rec.assoc.logistic >> post-imp-snpsofinterest.txt
-awk '$12<1e-05' post-impc1-c10-rec.assoc.logistic >> post-imp-snpsofinterest.txt
-echo "########################################################### MODEL ################################################" >> post-imp-snpsofinterest.txt
-head -1 post-impc1-c10-model.model >> post-imp-snpsofinterest.txt
-awk '$10<1e-05' post-impc1-c10-model.model >> post-imp-snpsofinterest.txt
-echo -e "\n################################################### Post-Imputation End ###############################################\n" >> post-imp-snpsofinterest.txt
+echo -e "######################################### Post-Imputation Start ########################################\n" > shapeit-post-imp-snpsofinterest.txt
+echo "############################################### HETHOM ##############################################" >> shapeit-post-imp-snpsofinterest.txt
+head -1 shapeit-post-impc1-c10-hethom.assoc.logistic >> post-imp-snpsofinterest.txt
+awk '$12<1e-05' shapeit-post-impc1-c10-hethom.assoc.logistic >> post-imp-snpsofinterest.txt
+echo "############################################### ADD ######################################################" >> shapeit-post-imp-snpsofinterest.txt
+head -1 shapeit-post-impc1-c10-add.assoc.logistic >> post-imp-snpsofinterest.txt
+awk '$12<1e-05' shapeit-post-impc1-c10-add.assoc.logistic >> post-imp-snpsofinterest.txt
+echo "######################################################## ADD C1C4C5 ############################################" >> shapeit-post-imp-snpsofinterest.txt
+head -1 shapeit-post-impc1c4c5-add.assoc.logistic >> post-imp-snpsofinterest.txt
+awk '$12<1e-05' shapeit-post-impc1c4c5-add.assoc.logistic >> post-imp-snpsofinterest.txt
+echo "########################################################## DOM ############################################" >> shapeit-post-imp-snpsofinterest.txt
+head -1 shapeit-post-impc1-c10-dom.assoc.logistic >> post-imp-snpsofinterest.txt
+awk '$12<1e-05' shapeit-post-impc1-c10-dom.assoc.logistic >> post-imp-snpsofinterest.txt
+echo "################################################# REC ###########################################################" >> shapeit-post-imp-snpsofinterest.txt
+head -1 shapeit-post-impc1-c10-rec.assoc.logistic >> post-imp-snpsofinterest.txt
+awk '$12<1e-05' shapeit-post-impc1-c10-rec.assoc.logistic >> post-imp-snpsofinterest.txt
+echo "########################################################### MODEL ################################################" >> shapeit-post-imp-snpsofinterest.txt
+head -1 shapeit-post-impc1-c10-model.model >> post-imp-snpsofinterest.txt
+awk '$10<1e-05' shapeit-post-impc1-c10-model.model >> post-imp-snpsofinterest.txt
+echo -e "\n################################################### Post-Imputation End ###############################################\n" >> shapeit-post-imp-snpsofinterest.txt
 
 #########################################################################
 #                        Plot Association in R                          #
 #########################################################################
 
 # Filter association results to obtain SNPs with p-val 1e-5
-#for i in ps*-post-imp.assoc.logistic; 
+#for i in ps*-shapeit-post-imp.assoc.logistic; 
 #do 
-#	head -1 ${i} > ${i/-post-imp.assoc.logistic/-assoc.results}; 
-#	awk '$9<1e-5' ${i} >> ${i/-post-imp.assoc.logistic/-assoc.results}; 
+#	head -1 ${i} > ${i/-shapeit-post-imp.assoc.logistic/-assoc.results}; 
+#	awk '$9<1e-5' ${i} >> ${i/-shapeit-post-imp.assoc.logistic/-assoc.results}; 
 #done
 
 # Produce manhattan plots in R
-R CMD BATCH post-imput-assoc.R
+R CMD BATCH shapeit-post-imput-assoc.R
 
 #mv *.png ../../images/
 

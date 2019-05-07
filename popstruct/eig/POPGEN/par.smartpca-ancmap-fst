@@ -1,0 +1,16 @@
+genotypename:    ../CONVERTF/qc-camgwas.ancestrymapgeno
+snpname:         ../CONVERTF/qc-camgwas.snp
+indivname:       ../CONVERTF/qc-camgwas.ind1
+evecoutname:     qc-camgwas.evec
+evaloutname:     qc-camgwas.eval
+altnormstyle:    NO 
+#numoutevec:      10
+outlieroutname:	 smartpca-fst.outlier
+familynames:     NO
+#grmoutname:      qc-camgwas-grm
+#grmbinary:	 YES
+#phylipoutname:	 qc-camgwas-phy
+#snpweightoutname:	qc-camgwas-snpwt
+deletesnpoutname:	qc-camgwas-badsnps
+#numthreads:	 2
+fstonly:	 YES
