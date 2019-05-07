@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Run Association test with adjustment to assess the genomic control inflation factor (lambda)
+# Exclude the Foulbe ethnic group
+# Run Association test with adjustment to assess the genomic control inflation factor (lambda) 
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --allow-no-sex \
         --assoc \
         --adjust \
@@ -14,6 +16,7 @@ cat qc-camgwas.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --allow-no-sex \
         --logistic beta \
         --set-hh-missing \
@@ -25,6 +28,7 @@ cat qc-camgwas-add.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --allow-no-sex \
         --logistic dominant \
         --set-hh-missing \
@@ -36,6 +40,7 @@ cat qc-camgwas-dom.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --allow-no-sex \
         --logistic recessive \
         --set-hh-missing \
@@ -47,6 +52,7 @@ cat qc-camgwas-rec.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --allow-no-sex \
         --logistic hethom \
         --set-hh-missing \
@@ -58,6 +64,7 @@ cat qc-camgwas-hethom.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --allow-no-sex \
         --model \
         --set-hh-missing \

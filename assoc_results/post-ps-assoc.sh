@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ### Association tests including covariats to account for population structure
-
+# Excluding the Foulbe ethnic group
 # With PC1, PC5 and PC9 as reported by glm to associate significantly with disease
 plink \
         --bfile ../analysis/qc-camgwas-updated \
@@ -9,6 +9,7 @@ plink \
         --covar-name C1 C5 C9 \
         --allow-no-sex \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --hide-covar \
         --logistic beta \
 	--ci 0.95 \
@@ -22,6 +23,7 @@ plink \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --hide-covar \
         --logistic \
 	--ci 0.95 \
@@ -35,6 +37,7 @@ plink \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --hide-covar \
         --model \
         --out ps-qc-camgwasC1-C10-model
@@ -47,6 +50,7 @@ plink \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
         --autosome \
+	--remove ../gender_analysis/exclude_fo.txt \
         --hide-covar \
         --logistic hethom \
 	--ci 0.95 \
@@ -59,6 +63,7 @@ plink \
         --covar ../popstruct/ps-data.mds \
         --covar-name C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 \
         --allow-no-sex \
+	--remove ../gender_analysis/exclude_fo.txt \
         --autosome \
         --hide-covar \
         --logistic recessive \
