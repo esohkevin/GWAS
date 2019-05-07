@@ -26,7 +26,7 @@ severe malaria in the study participants. This would be particularly important i
 into host-parasite interaction which will in turn be crucial in informing development of novel 
 intervention strategies.
 
-## Pipeline
+## Pipeline (Workflow)
 
 ### Pre-QC Association analysis
  - Model: Logistic (beta) at 95% confidence interval, 1df Chi square allelic test (adjusted to assess the genomic control inflation factor - λ).
