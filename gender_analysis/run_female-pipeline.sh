@@ -1,57 +1,62 @@
 #!/bin/bash
+# Paths
+popstruct="$HOME/GWAS/Git/GWAS/popstruct"
+assocResults="$HOME/GWAS/Git/GWAS/assoc_results"
+samples="$HOME/GWAS/Git/GWAS/samples"
+analysis="$HOME/GWAS/Git/GWAS/analysis"
 
 # Get sample IDs for FO ethnic group to exclude from analysis
 grep "FO"  ../samples/eth-cluster-all.txt > exclude_ethn.txt
-cut -f1,2 -d' ' exclude_ethn.txt > exclude_fo.txt
+cut -f1,2 -d' ' exclude_ethn.txt > $samples/exclude_fo.txt
 
 # Run several association tests on the different sample sets
 # Additive
 plink \
-	--bfile qc-camgwas-females \
-	--remove exclude_fo.txt \
+	--bfile $analysis/qc-camgwas-eig-corrected-females \
+	--remove $samples/exclude_fo.txt \
 	--logistic \
 	--ci 0.95 \
-	--covar ../popstruct/eig-camgwas.pca \
+	--covar $popstruct/eig-camgwas.pca \
 	--covar-name C1-C20 \
 	--out females-add
 
 # Recessive
 plink \
-        --bfile qc-camgwas-females \
-        --remove exclude_fo.txt \
+        --bfile $analysis/qc-camgwas-eig-corrected-females \
+        --remove $samples/exclude_fo.txt \
         --logistic recessive \
         --ci 0.95 \
-        --covar ../popstruct/eig-camgwas.pca \
+        --covar $popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out females-rec
 
 # Dominant
 plink \
-        --bfile qc-camgwas-females \
-        --remove exclude_fo.txt \
+        --bfile $analysis/qc-camgwas-eig-corrected-females \
+        --remove $samples/exclude_fo.txt \
         --logistic dominant \
         --ci 0.95 \
-        --covar ../popstruct/eig-camgwas.pca \
+        --covar $popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out females-dom
 
 # hethom
 plink \
-        --bfile qc-camgwas-females \
-        --remove exclude_fo.txt \
+        --bfile $analysis/qc-camgwas-eig-corrected-females \
+        --remove $samples/exclude_fo.txt \
         --logistic hethom \
         --ci 0.95 \
-        --covar ../popstruct/eig-camgwas.pca \
+        --covar $popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out females-hethom
 
 # model
 plink \
-        --bfile qc-camgwas-females \
-        --remove exclude_fo.txt \
+        --bfile $analysis/qc-camgwas-eig-corrected-females \
+        --remove $samples/exclude_fo.txt \
         --model \
         --ci 0.95 \
-        --covar ../popstruct/eig-camgwas.pca \
+        --covar $popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out females
 

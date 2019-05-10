@@ -132,5 +132,5 @@ echo -e "\n################################################### Post-Imputation E
 # Produce manhattan plots in R
 R CMD BATCH shapeit-post-imput-assoc.R
 
-#mv *.png ../../images/
-
+mv *.png ../../images/
+mv *.logistic result/

@@ -1,6 +1,6 @@
 genotypename:    merged-data-pruned.ped
 snpname:         merged-data-pruned.map
-indivname:       merged-pruned-sort-by-pop.ind
+indivname:       merged2-pruned-sort-by-pop.ind
 evecoutname:     merged.evec
 evaloutname:     merged.eval
 altnormstyle:    NO 

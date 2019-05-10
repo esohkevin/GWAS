@@ -555,3 +555,723 @@ Writing logistic model association results to
 eig-qc-camgwasC1-C10-rec.assoc.logistic ... done.
 
 End time: Tue May  7 00:31:33 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-sma-sample.ids
+  --logistic
+  --out eig-qc-camgwas-smaC1-C20-add
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:14:58 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386098
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 351 people remaining.
+--remove: 340 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 340 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.995211.
+1607768 variants and 340 people pass filters and QC.
+Among remaining phenotypes, 340 are cases and 0 are controls.
+Warning: Skipping --linear/--logistic since phenotype is constant.
+
+End time: Thu May  9 07:14:59 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-sma-sample.ids
+  --logistic dominant
+  --out eig-qc-camgwas-smaC1-C20-dom
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:14:59 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386099
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 351 people remaining.
+--remove: 340 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 340 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.995211.
+1607768 variants and 340 people pass filters and QC.
+Among remaining phenotypes, 340 are cases and 0 are controls.
+Warning: Skipping --linear/--logistic since phenotype is constant.
+
+End time: Thu May  9 07:15:00 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-sma-sample.ids
+  --model
+  --out eig-qc-camgwas-smaC1-C20-model
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:15:00 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386100
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 351 people remaining.
+--remove: 340 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Warning: Ignoring --covar since no commands reference the covariates.
+Before main variant filters, 340 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.995211.
+1607768 variants and 340 people pass filters and QC.
+Among remaining phenotypes, 340 are cases and 0 are controls.
+Writing --model report to eig-qc-camgwas-smaC1-C20-model.model ...
+done.
+
+End time: Thu May  9 07:15:05 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-sma-sample.ids
+  --logistic hethom
+  --out eig-qc-camgwas-smaC1-C20-hethom
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:15:05 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386105
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 351 people remaining.
+--remove: 340 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 340 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.995211.
+1607768 variants and 340 people pass filters and QC.
+Among remaining phenotypes, 340 are cases and 0 are controls.
+Warning: Skipping --linear/--logistic since phenotype is constant.
+
+End time: Thu May  9 07:15:06 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-sma-sample.ids
+  --logistic recessive
+  --out eig-qc-camgwas-smaC1-C20-rec
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:15:06 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386106
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 351 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 351 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.995162.
+1607768 variants and 351 people pass filters and QC.
+Among remaining phenotypes, 351 are cases and 0 are controls.
+Warning: Skipping --linear/--logistic since phenotype is constant.
+
+End time: Thu May  9 07:15:07 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cm-sample.ids
+  --logistic
+  --out eig-qc-camgwas-cmC1-C20-add
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:15:12 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386112
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 43 people remaining.
+--remove: 39 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 39 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996391.
+1607768 variants and 39 people pass filters and QC.
+Among remaining phenotypes, 39 are cases and 0 are controls.
+Warning: Skipping --linear/--logistic since phenotype is constant.
+
+End time: Thu May  9 07:15:13 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cm-sample.ids
+  --logistic dominant
+  --out eig-qc-camgwas-cmC1-C20-dom
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:15:13 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386113
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 43 people remaining.
+--remove: 39 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 39 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996391.
+1607768 variants and 39 people pass filters and QC.
+Among remaining phenotypes, 39 are cases and 0 are controls.
+Warning: Skipping --linear/--logistic since phenotype is constant.
+
+End time: Thu May  9 07:15:14 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cm-sample.ids
+  --model
+  --out eig-qc-camgwas-cmC1-C20-model
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:15:14 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386114
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 43 people remaining.
+--remove: 39 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Warning: Ignoring --covar since no commands reference the covariates.
+Before main variant filters, 39 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996391.
+1607768 variants and 39 people pass filters and QC.
+Among remaining phenotypes, 39 are cases and 0 are controls.
+Writing --model report to eig-qc-camgwas-cmC1-C20-model.model ...
+done.
+
+End time: Thu May  9 07:15:17 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cm-sample.ids
+  --logistic hethom
+  --out eig-qc-camgwas-cmC1-C20-hethom
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:15:17 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386117
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 43 people remaining.
+--remove: 39 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 39 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996391.
+1607768 variants and 39 people pass filters and QC.
+Among remaining phenotypes, 39 are cases and 0 are controls.
+Warning: Skipping --linear/--logistic since phenotype is constant.
+
+End time: Thu May  9 07:15:18 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cm-sample.ids
+  --logistic recessive
+  --out eig-qc-camgwas-cmC1-C20-rec
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:15:18 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386118
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 43 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 43 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996484.
+1607768 variants and 43 people pass filters and QC.
+Among remaining phenotypes, 43 are cases and 0 are controls.
+Warning: Skipping --linear/--logistic since phenotype is constant.
+
+End time: Thu May  9 07:15:19 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-smacon-sample.ids
+  --logistic
+  --out eig-qc-camgwas-smaC1-C20-add
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:20:29 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557386429
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 949 people remaining.
+--remove: 928 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 928 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996005.
+1607768 variants and 928 people pass filters and QC.
+Among remaining phenotypes, 340 are cases and 588 are controls.
+Writing logistic model association results to
+eig-qc-camgwas-smaC1-C20-add.assoc.logistic ... done.
+
+End time: Thu May  9 07:32:12 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-smacon-sample.ids
+  --logistic dominant
+  --out eig-qc-camgwas-smaC1-C20-dom
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:32:12 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557387132
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 949 people remaining.
+--remove: 928 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 928 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996005.
+1607768 variants and 928 people pass filters and QC.
+Among remaining phenotypes, 340 are cases and 588 are controls.
+Writing logistic model association results to
+eig-qc-camgwas-smaC1-C20-dom.assoc.logistic ... done.
+
+End time: Thu May  9 07:43:49 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-smacon-sample.ids
+  --model
+  --out eig-qc-camgwas-smaC1-C20-model
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:43:49 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557387829
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 949 people remaining.
+--remove: 928 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Warning: Ignoring --covar since no commands reference the covariates.
+Before main variant filters, 928 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996005.
+1607768 variants and 928 people pass filters and QC.
+Among remaining phenotypes, 340 are cases and 588 are controls.
+Writing --model report to eig-qc-camgwas-smaC1-C20-model.model ...
+done.
+
+End time: Thu May  9 07:43:56 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-smacon-sample.ids
+  --logistic hethom
+  --out eig-qc-camgwas-smaC1-C20-hethom
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:43:56 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557387836
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 949 people remaining.
+--remove: 928 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 928 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996005.
+1607768 variants and 928 people pass filters and QC.
+Among remaining phenotypes, 340 are cases and 588 are controls.
+Writing logistic model association results to
+eig-qc-camgwas-smaC1-C20-hethom.assoc.logistic ... done.
+
+End time: Thu May  9 07:55:54 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-smacon-sample.ids
+  --logistic recessive
+  --out eig-qc-camgwas-smaC1-C20-rec
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 07:55:54 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557388554
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 949 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 949 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.995976.
+1607768 variants and 949 people pass filters and QC.
+Among remaining phenotypes, 351 are cases and 598 are controls.
+Writing logistic model association results to
+eig-qc-camgwas-smaC1-C20-rec.assoc.logistic ... done.
+
+End time: Thu May  9 08:07:09 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cmcon-sample.ids
+  --logistic
+  --out eig-qc-camgwas-cmC1-C20-add
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 08:07:23 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557389243
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 641 people remaining.
+--remove: 627 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 627 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.99646.
+1607768 variants and 627 people pass filters and QC.
+Among remaining phenotypes, 39 are cases and 588 are controls.
+Writing logistic model association results to
+eig-qc-camgwas-cmC1-C20-add.assoc.logistic ... done.
+
+End time: Thu May  9 08:17:52 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cmcon-sample.ids
+  --logistic dominant
+  --out eig-qc-camgwas-cmC1-C20-dom
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 08:17:52 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557389872
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 641 people remaining.
+--remove: 627 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 627 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.99646.
+1607768 variants and 627 people pass filters and QC.
+Among remaining phenotypes, 39 are cases and 588 are controls.
+Writing logistic model association results to
+eig-qc-camgwas-cmC1-C20-dom.assoc.logistic ... done.
+
+End time: Thu May  9 08:28:22 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cmcon-sample.ids
+  --model
+  --out eig-qc-camgwas-cmC1-C20-model
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 08:28:22 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557390502
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 641 people remaining.
+--remove: 627 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Warning: Ignoring --covar since no commands reference the covariates.
+Before main variant filters, 627 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.99646.
+1607768 variants and 627 people pass filters and QC.
+Among remaining phenotypes, 39 are cases and 588 are controls.
+Writing --model report to eig-qc-camgwas-cmC1-C20-model.model ...
+done.
+
+End time: Thu May  9 08:28:31 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cmcon-sample.ids
+  --logistic hethom
+  --out eig-qc-camgwas-cmC1-C20-hethom
+  --remove ../gender_analysis/exclude_fo.txt
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 08:28:31 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557390511
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 641 people remaining.
+--remove: 627 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 627 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.99646.
+1607768 variants and 627 people pass filters and QC.
+Among remaining phenotypes, 39 are cases and 588 are controls.
+Writing logistic model association results to
+eig-qc-camgwas-cmC1-C20-hethom.assoc.logistic ... done.
+
+End time: Thu May  9 08:38:43 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas-eig-corrected
+  --ci 0.95
+  --covar ../popstruct/eig-camgwas.pca
+  --covar-name C1-C20
+  --hide-covar
+  --keep ../samples/qc-cmcon-sample.ids
+  --logistic recessive
+  --out eig-qc-camgwas-cmC1-C20-rec
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/assoc_results
+Start time: Thu May  9 08:38:43 2019
+
+Note: --hide-covar flag deprecated.  Use e.g. '--linear hide-covar'.
+Random number seed: 1557391123
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+1607768 out of 1644580 variants loaded from .bim file.
+1187 people (697 males, 490 females) loaded from .fam.
+1187 phenotype values loaded from .fam.
+--keep: 641 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+--covar: 20 out of 31 covariates loaded.
+Before main variant filters, 641 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate in remaining samples is 0.996457.
+1607768 variants and 641 people pass filters and QC.
+Among remaining phenotypes, 43 are cases and 598 are controls.
+Writing logistic model association results to
+eig-qc-camgwas-cmC1-C20-rec.assoc.logistic ... done.
+
+End time: Thu May  9 08:48:10 2019

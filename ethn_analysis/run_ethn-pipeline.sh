@@ -1,58 +1,63 @@
 #!/bin/bash
+# Paths
+popstruct="$HOME/GWAS/Git/GWAS/popstruct"
+assocResults="$HOME/GWAS/Git/GWAS/assoc_results"
+samples="$HOME/GWAS/Git/GWAS/samples"
+analysis="$HOME/GWAS/Git/GWAS/analysis"
 
 # Get sample IDs for BA and SB ethnic groups
-grep "BA"  ../samples/eth-cluster-all.txt > include_ethn.txt
-grep "SB"  ../samples/eth-cluster-all.txt >> include_ethn.txt
-cut -f1,2 -d' ' include_ethn.txt > include_bantu-semibantu.txt
+grep "BA"  $samples/eth-cluster-all.txt > $samples/include_ethn.txt
+grep "SB"  $samples/eth-cluster-all.txt >> $samples/include_ethn.txt
+cut -f1,2 -d' ' $samples/include_ethn.txt > $samples/include_bantu-semibantu.txt
 
 # Run several association tests on the different sample sets
 # Additive
 plink \
-	--bfile ../analysis/qc-camgwas-updated \
-	--keep include_bantu-semibantu.txt \
+	--bfile $assoc_results/qc-camgwas-eig-corrected \
+	--keep $samples/include_bantu-semibantu.txt \
 	--logistic \
 	--ci 0.95 \
-	--covar ../popstruct/eig-camgwas.pca \
+	--covar $popstruct/eig-camgwas.pca \
 	--covar-name C1-C20 \
 	--out bantu-semib-add
 
 # Recessive
 plink \
-        --bfile ../analysis/qc-camgwas-updated \
-        --keep include_bantu-semibantu.txt \
+        --bfile $assoc_results/qc-camgwas-eig-corrected \
+        --keep $samples/include_bantu-semibantu.txt \
         --logistic recessive \
         --ci 0.95 \
-        --covar ../popstruct/eig-camgwas.pca \
+        --covar $popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out bantu-semib-rec
 
 # Dominant
 plink \
-        --bfile ../analysis/qc-camgwas-updated \
-        --keep include_bantu-semibantu.txt \
+        --bfile $assoc_results/qc-camgwas-eig-corrected \
+        --keep $samples/include_bantu-semibantu.txt \
         --logistic dominant \
         --ci 0.95 \
-        --covar ../popstruct/eig-camgwas.pca \
+        --covar $popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out bantu-semib-dom
 
 # hethom
 plink \
-        --bfile ../analysis/qc-camgwas-updated \
-        --keep include_bantu-semibantu.txt \
+        --bfile $assoc_results/qc-camgwas-eig-corrected \
+        --keep $samples/include_bantu-semibantu.txt \
         --logistic hethom \
         --ci 0.95 \
-        --covar ../popstruct/eig-camgwas.pca \
+        --covar $popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out bantu-semib-hethom
 
 # model
 plink \
-        --bfile ../analysis/qc-camgwas-updated \
-        --keep include_bantu-semibantu.txt \
+        --bfile $assoc_results/qc-camgwas-eig-corrected \
+        --keep $samples/include_bantu-semibantu.txt \
         --model \
         --ci 0.95 \
-        --covar ../popstruct/eig-camgwas.pca \
+        --covar $popstruct/eig-camgwas.pca \
         --covar-name C1-C20 \
         --out bantu-semib
 
