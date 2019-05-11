@@ -12,8 +12,9 @@ for chr in {1..2}; do
     --geneticMapFile=tables/genetic_map_hg19_withX.txt.gz \
     --outPrefix=chr${chr}-phased_wref \
     --chrom=${chr} \
+    --pbwtIters=10 \
     --numThreads=15 \
-    --Kpbwt=100000 \
+    --Kpbwt=50000 \
     --vcfOutFormat=z \
     2>&1 | tee chr${chr}-phase_wref.log
 
