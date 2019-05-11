@@ -118,3 +118,52 @@ gnuplot -e 'set terminal png; set output "mhclwk.png"; set autoscale yfix; set a
 gnuplot -e 'set terminal png; set output "mhcmsl.png"; set autoscale yfix; set autoscale xfix; set title "MSL LD Heat Map";set pm3d map; plot "mhcmsl.ids.ld" matrix with image'
 gnuplot -e 'set terminal png; set output "mhcyri.png"; set autoscale yfix; set autoscale xfix; set title "YRI LD Heat Map";set pm3d map; plot "mhcyri.ids.ld" matrix with image'
 
+########### Extract Common SNPs for the next position to run ld on ######################
+plink \
+	--allow-no-sex \
+        --bfile ../eig/world/qc-rsids-world-pops \
+        --chr 11 \
+	--make-bed \
+        --from-bp 4800000 \
+        --out common \
+        --r2 square yes-really \
+        --to-bp 5800000 \
+        --keep ../eig/world/acb.ids
+cut -f2 common.bim > common.ids
+
+#### LD for African Groups only Around rs334 locus
+file="../eig/world/acb.ids ../eig/world/gwd.ids ../eig/world/asw.ids ../eig/world/esn.ids ../eig/world/lwk.ids ../eig/world/msl.ids ../eig/world/yri.ids"
+for pop in $file; do
+        plink \
+                --allow-no-sex \
+                --bfile ../eig/world/qc-rsids-world-pops \
+                --chr 11 \
+                --from-bp 4800000 \
+                --out "${pop/..\/eig\/world\//rs334}" \
+                --r2 square yes-really \
+                --to-bp 5800000 \
+                --keep "${pop}"
+
+done
+gnuplot -e 'set terminal png; set output "rs334acb.png"; set autoscale yfix; set autoscale xfix; set title "ACB LD Heat Map rs334 locus";set pm3d map; plot "rs334acb.ids.ld" matrix with image'
+gnuplot -e 'set terminal png; set output "rs334gwd.png"; set autoscale yfix; set autoscale xfix; set title "GWB LD Heat Map rs334 locus";set pm3d map; plot "rs334gwd.ids.ld" matrix with image'
+gnuplot -e 'set terminal png; set output "rs334asw.png"; set autoscale yfix; set autoscale xfix; set title "ASW LD Heat Map rs334 locus";set pm3d map; plot "rs334asw.ids.ld" matrix with image'
+gnuplot -e 'set terminal png; set output "rs334esn.png"; set autoscale yfix; set autoscale xfix; set title "ESN LD Heat Map rs334 locus";set pm3d map; plot "rs334esn.ids.ld" matrix with image'
+gnuplot -e 'set terminal png; set output "rs334lwk.png"; set autoscale yfix; set autoscale xfix; set title "LWK LD Heat Map rs334 locus";set pm3d map; plot "rs334lwk.ids.ld" matrix with image'
+gnuplot -e 'set terminal png; set output "rs334msl.png"; set autoscale yfix; set autoscale xfix; set title "MSL LD Heat Map rs334 locus";set pm3d map; plot "rs334msl.ids.ld" matrix with image'
+gnuplot -e 'set terminal png; set output "rs334yri.png"; set autoscale yfix; set autoscale xfix; set title "YRI LD Heat Map rs334 locus";set pm3d map; plot "rs334yri.ids.ld" matrix with image'
+
+# Run rs334 REgion for Cameroon
+plink \
+	--allow-no-sex \
+	--bfile ../../analysis/qc-camgwas-updated \
+	--chr 11 \
+	--from-bp 4800000 \
+	--out rs334cmr \
+	--thin-indiv-count 150 \
+	--r2 square yes-really \
+	--to-bp 5800000 \
+	--extract common.ids
+
+gnuplot -e 'set terminal png; set output "rs334cmr.png"; set autoscale yfix; set autoscale xfix; set title "CMR LD Heat Map at HBB locus";set pm3d map; plot "rs334cmr.ld" matrix with image'
+
