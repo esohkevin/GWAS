@@ -9,7 +9,6 @@ for chr in {1..22}; do
      plink2 \
 	--vcf "$phase_path"chr"${chr}"-phased_wref.vcf.gz \
 	--export haps \
-        --keep "$sample_path"eig-camgwas.ids \
 	--double-id \
 	--out chr"${chr}"-phased_wref
   else

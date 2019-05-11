@@ -10,10 +10,10 @@ for chr in {1..22}; do
       -m "$ref_path"genetic_map_chr"${chr}"_combined_b37.txt \
       -h "$ref_path"1000GP_Phase3_chr"${chr}".hap.gz \
       -l "$ref_path"1000GP_Phase3_chr"${chr}".legend.gz \
-      -int 202658471 204658471 \
-      -Ne 20000 \
+      -int 22000000 23000000 \
+      -Ne 17469 \
       -buffer 1000 \
-      -o chr"${chr}"_test1_imput2.gen
+      -o chr"${chr}"_test_imput2.gen
   else
     echo "chr"${chr}"_phased_wref.haps could not be found!"
   fi

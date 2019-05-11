@@ -4,7 +4,7 @@ sample_path="$HOME/GWAS/Git/GWAS/samples/"
 phase_path="$HOME/GWAS/Git/GWAS/phase/"
 
 snptest_v2.5.4-beta3 \
-	-data "${phase_path}"chr1_test_imput2.gen "${sample_path}"merge.filtered-updated.sample \
+	-data "${phase_path}"chr1_test_imput2.gen "${sample_path}"qc-camgwas.sample \
 	-frequentist 1 \
 	-bayesian 1 \
 	-method score \
