@@ -5,7 +5,7 @@
 
 ref_path="$HOME/GWAS/Git/GWAS/1000G"
 
-for chr in {8..22}; do
+for chr in {17..22}; do
   eagle \
     --vcfRef=${ref_path}/ALL.chr${chr}.phase3_integrated.20130502.genotypes.bcf \
     --vcfTarget=qc-camgwas-updated.vcf.gz \

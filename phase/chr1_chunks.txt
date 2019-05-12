@@ -1,250 +1,250 @@
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 1 2000000 -Ne 20000 -buffer 500 -o chr1_1 2000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 1 2000000 -Ne 20000 -buffer 500 -o chr1_1_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 2000000 4000000 -Ne 20000 -buffer 500 -o chr1_2000000 4000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 2000001 4000000 -Ne 20000 -buffer 500 -o chr1_2000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 4000000 6000000 -Ne 20000 -buffer 500 -o chr1_4000000 6000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 4000001 6000000 -Ne 20000 -buffer 500 -o chr1_4000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 6000000 8000000 -Ne 20000 -buffer 500 -o chr1_6000000 8000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 6000001 8000000 -Ne 20000 -buffer 500 -o chr1_6000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 8000000 10000000 -Ne 20000 -buffer 500 -o chr1_8000000 10000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 8000001 10000000 -Ne 20000 -buffer 500 -o chr1_8000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 10000000 12000000 -Ne 20000 -buffer 500 -o chr1_10000000 12000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 10000001 12000000 -Ne 20000 -buffer 500 -o chr1_10000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 12000000 14000000 -Ne 20000 -buffer 500 -o chr1_12000000 14000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 12000001 14000000 -Ne 20000 -buffer 500 -o chr1_12000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 14000000 16000000 -Ne 20000 -buffer 500 -o chr1_14000000 16000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 14000001 16000000 -Ne 20000 -buffer 500 -o chr1_14000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 16000000 18000000 -Ne 20000 -buffer 500 -o chr1_16000000 18000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 16000001 18000000 -Ne 20000 -buffer 500 -o chr1_16000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 18000000 20000000 -Ne 20000 -buffer 500 -o chr1_18000000 20000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 18000001 20000000 -Ne 20000 -buffer 500 -o chr1_18000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 20000000 22000000 -Ne 20000 -buffer 500 -o chr1_20000000 22000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 20000001 22000000 -Ne 20000 -buffer 500 -o chr1_20000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 22000000 24000000 -Ne 20000 -buffer 500 -o chr1_22000000 24000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 22000001 24000000 -Ne 20000 -buffer 500 -o chr1_22000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 24000000 26000000 -Ne 20000 -buffer 500 -o chr1_24000000 26000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 24000001 26000000 -Ne 20000 -buffer 500 -o chr1_24000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 26000000 28000000 -Ne 20000 -buffer 500 -o chr1_26000000 28000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 26000001 28000000 -Ne 20000 -buffer 500 -o chr1_26000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 28000000 30000000 -Ne 20000 -buffer 500 -o chr1_28000000 30000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 28000001 30000000 -Ne 20000 -buffer 500 -o chr1_28000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 30000000 32000000 -Ne 20000 -buffer 500 -o chr1_30000000 32000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 30000001 32000000 -Ne 20000 -buffer 500 -o chr1_30000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 32000000 34000000 -Ne 20000 -buffer 500 -o chr1_32000000 34000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 32000001 34000000 -Ne 20000 -buffer 500 -o chr1_32000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 34000000 36000000 -Ne 20000 -buffer 500 -o chr1_34000000 36000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 34000001 36000000 -Ne 20000 -buffer 500 -o chr1_34000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 36000000 38000000 -Ne 20000 -buffer 500 -o chr1_36000000 38000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 36000001 38000000 -Ne 20000 -buffer 500 -o chr1_36000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 38000000 40000000 -Ne 20000 -buffer 500 -o chr1_38000000 40000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 38000001 40000000 -Ne 20000 -buffer 500 -o chr1_38000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 40000000 42000000 -Ne 20000 -buffer 500 -o chr1_40000000 42000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 40000001 42000000 -Ne 20000 -buffer 500 -o chr1_40000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 42000000 44000000 -Ne 20000 -buffer 500 -o chr1_42000000 44000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 42000001 44000000 -Ne 20000 -buffer 500 -o chr1_42000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 44000000 46000000 -Ne 20000 -buffer 500 -o chr1_44000000 46000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 44000001 46000000 -Ne 20000 -buffer 500 -o chr1_44000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 46000000 48000000 -Ne 20000 -buffer 500 -o chr1_46000000 48000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 46000001 48000000 -Ne 20000 -buffer 500 -o chr1_46000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 48000000 50000000 -Ne 20000 -buffer 500 -o chr1_48000000 50000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 48000001 50000000 -Ne 20000 -buffer 500 -o chr1_48000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 50000000 52000000 -Ne 20000 -buffer 500 -o chr1_50000000 52000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 50000001 52000000 -Ne 20000 -buffer 500 -o chr1_50000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 52000000 54000000 -Ne 20000 -buffer 500 -o chr1_52000000 54000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 52000001 54000000 -Ne 20000 -buffer 500 -o chr1_52000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 54000000 56000000 -Ne 20000 -buffer 500 -o chr1_54000000 56000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 54000001 56000000 -Ne 20000 -buffer 500 -o chr1_54000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 56000000 58000000 -Ne 20000 -buffer 500 -o chr1_56000000 58000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 56000001 58000000 -Ne 20000 -buffer 500 -o chr1_56000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 58000000 60000000 -Ne 20000 -buffer 500 -o chr1_58000000 60000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 58000001 60000000 -Ne 20000 -buffer 500 -o chr1_58000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 60000000 62000000 -Ne 20000 -buffer 500 -o chr1_60000000 62000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 60000001 62000000 -Ne 20000 -buffer 500 -o chr1_60000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 62000000 64000000 -Ne 20000 -buffer 500 -o chr1_62000000 64000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 62000001 64000000 -Ne 20000 -buffer 500 -o chr1_62000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 64000000 66000000 -Ne 20000 -buffer 500 -o chr1_64000000 66000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 64000001 66000000 -Ne 20000 -buffer 500 -o chr1_64000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 66000000 68000000 -Ne 20000 -buffer 500 -o chr1_66000000 68000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 66000001 68000000 -Ne 20000 -buffer 500 -o chr1_66000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 68000000 70000000 -Ne 20000 -buffer 500 -o chr1_68000000 70000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 68000001 70000000 -Ne 20000 -buffer 500 -o chr1_68000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 70000000 72000000 -Ne 20000 -buffer 500 -o chr1_70000000 72000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 70000001 72000000 -Ne 20000 -buffer 500 -o chr1_70000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 72000000 74000000 -Ne 20000 -buffer 500 -o chr1_72000000 74000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 72000001 74000000 -Ne 20000 -buffer 500 -o chr1_72000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 74000000 76000000 -Ne 20000 -buffer 500 -o chr1_74000000 76000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 74000001 76000000 -Ne 20000 -buffer 500 -o chr1_74000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 76000000 78000000 -Ne 20000 -buffer 500 -o chr1_76000000 78000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 76000001 78000000 -Ne 20000 -buffer 500 -o chr1_76000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 78000000 80000000 -Ne 20000 -buffer 500 -o chr1_78000000 80000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 78000001 80000000 -Ne 20000 -buffer 500 -o chr1_78000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 80000000 82000000 -Ne 20000 -buffer 500 -o chr1_80000000 82000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 80000001 82000000 -Ne 20000 -buffer 500 -o chr1_80000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 82000000 84000000 -Ne 20000 -buffer 500 -o chr1_82000000 84000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 82000001 84000000 -Ne 20000 -buffer 500 -o chr1_82000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 84000000 86000000 -Ne 20000 -buffer 500 -o chr1_84000000 86000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 84000001 86000000 -Ne 20000 -buffer 500 -o chr1_84000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 86000000 88000000 -Ne 20000 -buffer 500 -o chr1_86000000 88000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 86000001 88000000 -Ne 20000 -buffer 500 -o chr1_86000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 88000000 90000000 -Ne 20000 -buffer 500 -o chr1_88000000 90000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 88000001 90000000 -Ne 20000 -buffer 500 -o chr1_88000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 90000000 92000000 -Ne 20000 -buffer 500 -o chr1_90000000 92000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 90000001 92000000 -Ne 20000 -buffer 500 -o chr1_90000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 92000000 94000000 -Ne 20000 -buffer 500 -o chr1_92000000 94000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 92000001 94000000 -Ne 20000 -buffer 500 -o chr1_92000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 94000000 96000000 -Ne 20000 -buffer 500 -o chr1_94000000 96000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 94000001 96000000 -Ne 20000 -buffer 500 -o chr1_94000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 96000000 98000000 -Ne 20000 -buffer 500 -o chr1_96000000 98000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 96000001 98000000 -Ne 20000 -buffer 500 -o chr1_96000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 98000000 100000000 -Ne 20000 -buffer 500 -o chr1_98000000 100000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 98000001 100000000 -Ne 20000 -buffer 500 -o chr1_98000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 100000000 102000000 -Ne 20000 -buffer 500 -o chr1_100000000 102000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 100000001 102000000 -Ne 20000 -buffer 500 -o chr1_100000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 102000000 104000000 -Ne 20000 -buffer 500 -o chr1_102000000 104000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 102000001 104000000 -Ne 20000 -buffer 500 -o chr1_102000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 104000000 106000000 -Ne 20000 -buffer 500 -o chr1_104000000 106000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 104000001 106000000 -Ne 20000 -buffer 500 -o chr1_104000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 106000000 108000000 -Ne 20000 -buffer 500 -o chr1_106000000 108000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 106000001 108000000 -Ne 20000 -buffer 500 -o chr1_106000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 108000000 110000000 -Ne 20000 -buffer 500 -o chr1_108000000 110000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 108000001 110000000 -Ne 20000 -buffer 500 -o chr1_108000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 110000000 112000000 -Ne 20000 -buffer 500 -o chr1_110000000 112000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 110000001 112000000 -Ne 20000 -buffer 500 -o chr1_110000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 112000000 114000000 -Ne 20000 -buffer 500 -o chr1_112000000 114000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 112000001 114000000 -Ne 20000 -buffer 500 -o chr1_112000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 114000000 116000000 -Ne 20000 -buffer 500 -o chr1_114000000 116000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 114000001 116000000 -Ne 20000 -buffer 500 -o chr1_114000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 116000000 118000000 -Ne 20000 -buffer 500 -o chr1_116000000 118000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 116000001 118000000 -Ne 20000 -buffer 500 -o chr1_116000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 118000000 120000000 -Ne 20000 -buffer 500 -o chr1_118000000 120000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 118000001 120000000 -Ne 20000 -buffer 500 -o chr1_118000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 120000000 122000000 -Ne 20000 -buffer 500 -o chr1_120000000 122000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 120000001 122000000 -Ne 20000 -buffer 500 -o chr1_120000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 122000000 124000000 -Ne 20000 -buffer 500 -o chr1_122000000 124000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 122000001 124000000 -Ne 20000 -buffer 500 -o chr1_122000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 124000000 126000000 -Ne 20000 -buffer 500 -o chr1_124000000 126000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 124000001 126000000 -Ne 20000 -buffer 500 -o chr1_124000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 126000000 128000000 -Ne 20000 -buffer 500 -o chr1_126000000 128000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 126000001 128000000 -Ne 20000 -buffer 500 -o chr1_126000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 128000000 130000000 -Ne 20000 -buffer 500 -o chr1_128000000 130000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 128000001 130000000 -Ne 20000 -buffer 500 -o chr1_128000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 130000000 132000000 -Ne 20000 -buffer 500 -o chr1_130000000 132000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 130000001 132000000 -Ne 20000 -buffer 500 -o chr1_130000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 132000000 134000000 -Ne 20000 -buffer 500 -o chr1_132000000 134000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 132000001 134000000 -Ne 20000 -buffer 500 -o chr1_132000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 134000000 136000000 -Ne 20000 -buffer 500 -o chr1_134000000 136000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 134000001 136000000 -Ne 20000 -buffer 500 -o chr1_134000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 136000000 138000000 -Ne 20000 -buffer 500 -o chr1_136000000 138000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 136000001 138000000 -Ne 20000 -buffer 500 -o chr1_136000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 138000000 140000000 -Ne 20000 -buffer 500 -o chr1_138000000 140000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 138000001 140000000 -Ne 20000 -buffer 500 -o chr1_138000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 140000000 142000000 -Ne 20000 -buffer 500 -o chr1_140000000 142000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 140000001 142000000 -Ne 20000 -buffer 500 -o chr1_140000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 142000000 144000000 -Ne 20000 -buffer 500 -o chr1_142000000 144000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 142000001 144000000 -Ne 20000 -buffer 500 -o chr1_142000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 144000000 146000000 -Ne 20000 -buffer 500 -o chr1_144000000 146000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 144000001 146000000 -Ne 20000 -buffer 500 -o chr1_144000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 146000000 148000000 -Ne 20000 -buffer 500 -o chr1_146000000 148000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 146000001 148000000 -Ne 20000 -buffer 500 -o chr1_146000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 148000000 150000000 -Ne 20000 -buffer 500 -o chr1_148000000 150000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 148000001 150000000 -Ne 20000 -buffer 500 -o chr1_148000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 150000000 152000000 -Ne 20000 -buffer 500 -o chr1_150000000 152000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 150000001 152000000 -Ne 20000 -buffer 500 -o chr1_150000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 152000000 154000000 -Ne 20000 -buffer 500 -o chr1_152000000 154000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 152000001 154000000 -Ne 20000 -buffer 500 -o chr1_152000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 154000000 156000000 -Ne 20000 -buffer 500 -o chr1_154000000 156000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 154000001 156000000 -Ne 20000 -buffer 500 -o chr1_154000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 156000000 158000000 -Ne 20000 -buffer 500 -o chr1_156000000 158000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 156000001 158000000 -Ne 20000 -buffer 500 -o chr1_156000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 158000000 160000000 -Ne 20000 -buffer 500 -o chr1_158000000 160000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 158000001 160000000 -Ne 20000 -buffer 500 -o chr1_158000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 160000000 162000000 -Ne 20000 -buffer 500 -o chr1_160000000 162000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 160000001 162000000 -Ne 20000 -buffer 500 -o chr1_160000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 162000000 164000000 -Ne 20000 -buffer 500 -o chr1_162000000 164000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 162000001 164000000 -Ne 20000 -buffer 500 -o chr1_162000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 164000000 166000000 -Ne 20000 -buffer 500 -o chr1_164000000 166000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 164000001 166000000 -Ne 20000 -buffer 500 -o chr1_164000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 166000000 168000000 -Ne 20000 -buffer 500 -o chr1_166000000 168000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 166000001 168000000 -Ne 20000 -buffer 500 -o chr1_166000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 168000000 170000000 -Ne 20000 -buffer 500 -o chr1_168000000 170000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 168000001 170000000 -Ne 20000 -buffer 500 -o chr1_168000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 170000000 172000000 -Ne 20000 -buffer 500 -o chr1_170000000 172000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 170000001 172000000 -Ne 20000 -buffer 500 -o chr1_170000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 172000000 174000000 -Ne 20000 -buffer 500 -o chr1_172000000 174000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 172000001 174000000 -Ne 20000 -buffer 500 -o chr1_172000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 174000000 176000000 -Ne 20000 -buffer 500 -o chr1_174000000 176000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 174000001 176000000 -Ne 20000 -buffer 500 -o chr1_174000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 176000000 178000000 -Ne 20000 -buffer 500 -o chr1_176000000 178000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 176000001 178000000 -Ne 20000 -buffer 500 -o chr1_176000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 178000000 180000000 -Ne 20000 -buffer 500 -o chr1_178000000 180000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 178000001 180000000 -Ne 20000 -buffer 500 -o chr1_178000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 180000000 182000000 -Ne 20000 -buffer 500 -o chr1_180000000 182000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 180000001 182000000 -Ne 20000 -buffer 500 -o chr1_180000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 182000000 184000000 -Ne 20000 -buffer 500 -o chr1_182000000 184000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 182000001 184000000 -Ne 20000 -buffer 500 -o chr1_182000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 184000000 186000000 -Ne 20000 -buffer 500 -o chr1_184000000 186000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 184000001 186000000 -Ne 20000 -buffer 500 -o chr1_184000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 186000000 188000000 -Ne 20000 -buffer 500 -o chr1_186000000 188000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 186000001 188000000 -Ne 20000 -buffer 500 -o chr1_186000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 188000000 190000000 -Ne 20000 -buffer 500 -o chr1_188000000 190000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 188000001 190000000 -Ne 20000 -buffer 500 -o chr1_188000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 190000000 192000000 -Ne 20000 -buffer 500 -o chr1_190000000 192000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 190000001 192000000 -Ne 20000 -buffer 500 -o chr1_190000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 192000000 194000000 -Ne 20000 -buffer 500 -o chr1_192000000 194000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 192000001 194000000 -Ne 20000 -buffer 500 -o chr1_192000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 194000000 196000000 -Ne 20000 -buffer 500 -o chr1_194000000 196000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 194000001 196000000 -Ne 20000 -buffer 500 -o chr1_194000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 196000000 198000000 -Ne 20000 -buffer 500 -o chr1_196000000 198000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 196000001 198000000 -Ne 20000 -buffer 500 -o chr1_196000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 198000000 200000000 -Ne 20000 -buffer 500 -o chr1_198000000 200000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 198000001 200000000 -Ne 20000 -buffer 500 -o chr1_198000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 200000000 202000000 -Ne 20000 -buffer 500 -o chr1_200000000 202000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 200000001 202000000 -Ne 20000 -buffer 500 -o chr1_200000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 202000000 204000000 -Ne 20000 -buffer 500 -o chr1_202000000 204000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 202000001 204000000 -Ne 20000 -buffer 500 -o chr1_202000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 204000000 206000000 -Ne 20000 -buffer 500 -o chr1_204000000 206000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 204000001 206000000 -Ne 20000 -buffer 500 -o chr1_204000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 206000000 208000000 -Ne 20000 -buffer 500 -o chr1_206000000 208000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 206000001 208000000 -Ne 20000 -buffer 500 -o chr1_206000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 208000000 210000000 -Ne 20000 -buffer 500 -o chr1_208000000 210000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 208000001 210000000 -Ne 20000 -buffer 500 -o chr1_208000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 210000000 212000000 -Ne 20000 -buffer 500 -o chr1_210000000 212000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 210000001 212000000 -Ne 20000 -buffer 500 -o chr1_210000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 212000000 214000000 -Ne 20000 -buffer 500 -o chr1_212000000 214000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 212000001 214000000 -Ne 20000 -buffer 500 -o chr1_212000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 214000000 216000000 -Ne 20000 -buffer 500 -o chr1_214000000 216000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 214000001 216000000 -Ne 20000 -buffer 500 -o chr1_214000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 216000000 218000000 -Ne 20000 -buffer 500 -o chr1_216000000 218000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 216000001 218000000 -Ne 20000 -buffer 500 -o chr1_216000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 218000000 220000000 -Ne 20000 -buffer 500 -o chr1_218000000 220000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 218000001 220000000 -Ne 20000 -buffer 500 -o chr1_218000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 220000000 222000000 -Ne 20000 -buffer 500 -o chr1_220000000 222000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 220000001 222000000 -Ne 20000 -buffer 500 -o chr1_220000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 222000000 224000000 -Ne 20000 -buffer 500 -o chr1_222000000 224000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 222000001 224000000 -Ne 20000 -buffer 500 -o chr1_222000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 224000000 226000000 -Ne 20000 -buffer 500 -o chr1_224000000 226000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 224000001 226000000 -Ne 20000 -buffer 500 -o chr1_224000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 226000000 228000000 -Ne 20000 -buffer 500 -o chr1_226000000 228000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 226000001 228000000 -Ne 20000 -buffer 500 -o chr1_226000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 228000000 230000000 -Ne 20000 -buffer 500 -o chr1_228000000 230000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 228000001 230000000 -Ne 20000 -buffer 500 -o chr1_228000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 230000000 232000000 -Ne 20000 -buffer 500 -o chr1_230000000 232000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 230000001 232000000 -Ne 20000 -buffer 500 -o chr1_230000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 232000000 234000000 -Ne 20000 -buffer 500 -o chr1_232000000 234000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 232000001 234000000 -Ne 20000 -buffer 500 -o chr1_232000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 234000000 236000000 -Ne 20000 -buffer 500 -o chr1_234000000 236000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 234000001 236000000 -Ne 20000 -buffer 500 -o chr1_234000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 236000000 238000000 -Ne 20000 -buffer 500 -o chr1_236000000 238000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 236000001 238000000 -Ne 20000 -buffer 500 -o chr1_236000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 238000000 240000000 -Ne 20000 -buffer 500 -o chr1_238000000 240000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 238000001 240000000 -Ne 20000 -buffer 500 -o chr1_238000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 240000000 242000000 -Ne 20000 -buffer 500 -o chr1_240000000 242000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 240000001 242000000 -Ne 20000 -buffer 500 -o chr1_240000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 242000000 244000000 -Ne 20000 -buffer 500 -o chr1_242000000 244000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 242000001 244000000 -Ne 20000 -buffer 500 -o chr1_242000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 244000000 246000000 -Ne 20000 -buffer 500 -o chr1_244000000 246000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 244000001 246000000 -Ne 20000 -buffer 500 -o chr1_244000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 246000000 248000000 -Ne 20000 -buffer 500 -o chr1_246000000 248000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 246000001 248000000 -Ne 20000 -buffer 500 -o chr1_246000001_imputed.gen
 
--use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 248000000 250000000 -Ne 20000 -buffer 500 -o chr1_248000000 250000000_imputed.gen
+-use_prephased_g -known_haps_g chr1-phased_wref.haps -m 1000GP_Phase3/genetic_map_chr1_combined_b37.txt -h 1000GP_Phase3/1000GP_Phase3_chr1.hap.gz -l 1000GP_Phase3/1000GP_Phase3_chr1.legend.gz  -int 248000001 249000000 -Ne 20000 -buffer 500 -o chr1_248000001_imputed.gen
 
