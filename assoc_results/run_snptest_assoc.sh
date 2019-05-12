@@ -1,13 +1,18 @@
 #!/bin/bash
 
 sample_path="$HOME/GWAS/Git/GWAS/samples/"
-phase_path="$HOME/GWAS/Git/GWAS/phase/"
+phase_path="$HOME/GWAS/Git/GWAS/phase/imputed/"
 
-snptest_v2.5.4-beta3 \
-	-data "${phase_path}"chr1_test_imput2.gen "${sample_path}"qc-camgwas.sample \
-	-frequentist 2 3 5 \
-	-bayesian 2 3 5 \
+# Perform only bayesian for now. Add '-frequentist 1 2 3 5 \' to the command line to perform frequentist tests
+
+for chunk in "${phase_path}"chr1_*_imputed.gen; do
+    snptest_v2.5.4-beta3 \
+	-data "${chunk}" "${sample_path}"qc-camgwas.sample \
+	-bayesian 1 2 3 5 \
 	-method score \
 	-pheno pheno1 \
 	-cov_all \
-	-o snptest_assoc_test_imp.txt
+	-o ${chunk/_imputed.gen/_assoc.txt}
+done
+
+mv ${phase_path}*_assoc.txt .
