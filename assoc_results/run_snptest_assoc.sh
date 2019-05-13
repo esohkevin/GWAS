@@ -16,3 +16,6 @@ for chunk in "${phase_path}"chr1_*_imputed.gen; do
 done
 
 mv ${phase_path}*_assoc.txt .
+#cat chr1_114000000_assoc.txt
+
+#Rscript --vanilla run_snptest_assoc.R ../phase/chr2_84000001_imputed.gen chr2_84000001_imputed.png	# Uncomment this line to produce R plots of the chunks
