@@ -57,9 +57,10 @@ cat raw-camgwas.log >> all.log
 ###########################################################################
 # LD-prune the raw data before sex check
 plink1.9 \
-        --bfile frequent \
+        --bfile raw-camgwas \
         --allow-no-sex \
         --indep-pairwise 50 5 0.2 \
+	--set-hh-missing \
         --out prunedsnplist
 cat prunedsnplist.log >> all.log
 
