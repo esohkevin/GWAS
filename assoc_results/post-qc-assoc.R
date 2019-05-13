@@ -1,6 +1,5 @@
 #!/usr/bin/Rscript
 
-#################### Association Test #########################
 if (!requireNamespace("qqman")) 
 	install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
 library(qqman)
