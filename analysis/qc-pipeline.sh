@@ -69,7 +69,6 @@ plink1.9 \
         --allow-no-sex \
         --extract prunedsnplist.prune.in \
         --make-bed \
-	--set-hh-missing \
         --out check-sex-data
 cat check-sex-data.log >> all.log
 
