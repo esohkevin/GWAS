@@ -66,7 +66,7 @@ cat prunedsnplist.log >> all.log
 
 # Now extract the pruned SNPs to perform check-sex on
 plink1.9 \
-        --bfile frequent \
+        --bfile raw-camgwas \
         --allow-no-sex \
         --extract prunedsnplist.prune.in \
         --make-bed \
