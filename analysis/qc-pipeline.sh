@@ -54,18 +54,38 @@ plink1.9 \
 cat raw-camgwas.log >> all.log
 
 ######## Per Individual QC ##########
-#
+###########################################################################
+# LD-prune the raw data before sex check
+plink1.9 \
+        --bfile frequent \
+        --allow-no-sex \
+        --indep-pairwise 50 5 0.2 \
+        --out prunedsnplist
+cat prunedsnplist.log >> all.log
+
+# Now extract the pruned SNPs to perform check-sex on
+plink1.9 \
+        --bfile frequent \
+        --allow-no-sex \
+        --extract prunedsnplist.prune.in \
+        --make-bed \
+	--set-hh-missing \
+        --out check-sex-data
+cat check-sex-data.log >> all.log
+
 # Check for sex concordance
 plink1.9 \
-	--bfile raw-camgwas \
+	--bfile check-sex-data \
 	--check-sex \
 	--set-hh-missing \
 	--allow-no-sex \
-	--out raw-camgwas
-cat raw-camgwas.log >> all.log
+	--out check-sex-data
+cat check-sex-data.log >> all.log
 
 # Extract FIDs and IIDs of individuals flagged with error (PROBLEM) in the .sexcheck file (failed sex check)
-grep "PROBLEM" raw-camgwas.sexcheck > fail-checksex.qc
+grep "PROBLEM" check-sex-data.sexcheck > fail-checksex.qc
+
+##########################################################################
 
 # Compute missing data stats
 plink1.9 \
