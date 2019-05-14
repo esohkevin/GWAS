@@ -23,7 +23,7 @@ plink \
 echo -e "\n### Now extract palindromic SNPs in R for subsequent exclusion ###"
 R CMD BATCH palindromicsnps.R
 
-echo -e "\n### Check Strang using the Wrayner perl script ###"
+echo -e "\n### Check Strand using the Wrayner perl script ###"
 echo "`perl HRC-1000G-check-bim.pl -b qc-camgwas.bim -f qc-camgwas.frq -r ${1kgp_path}1000GP_Phase3_combined.legend.gz -g -p "AFR"`"
 
 echo -e "\n### Update Run-plink.sh file to remove palindromic SNPs ###"
@@ -35,6 +35,9 @@ cp TEMP.file Run-plink.sh
 
 echo -e "\n### Run Run-plink.sh to update the dataset ###"
 ./Run-plink.sh
+
+echo -e "\n######## Update rsIDs with dbSNP 151 reference SNP IDs ###########\n"
+./update_rsids.sh
 
 echo -e "\nConverting Single Chromosome plink binary files to VCF files\n"
 ./plink2vcf.sh

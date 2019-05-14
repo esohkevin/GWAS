@@ -291,6 +291,14 @@ echo """
 #                     Run Imputation Prep Script                        #
 #########################################################################
 """
+mv check-sex-data.sexcheck sexcheck.txt
+rm raw-camgwas.*
+rm check-sex-data*
+rm *.hh
+rm ind-qc-camgwas.*
+rm frequent.*
+rm caseconpruned.*
+
 ./imputePrep.sh
 
 #}
