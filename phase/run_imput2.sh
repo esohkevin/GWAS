@@ -27,7 +27,7 @@ for chr in {1..22}; do
    fi
 
    # Run IMPUTE2 with the commands in the files previously created
-   cat chr${chr}_chunks.txt | xargs -P1 -n30 impute_v2.3.2 &
+   cat chr${chr}_chunks.txt | xargs -P2 -n30 impute_v2.3.2 &
 
 done
 
