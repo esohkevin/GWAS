@@ -43,6 +43,16 @@
 
 #done
 
+plink \
+	--bfile ../analysis/qc-camgwas-updated \
+	--thin-indiv-count 200 \
+	--maked-bed \
+	--autosome \
+	--out qc-camgwas200
+
+cut -f2 qc-camgwas200.bim > camgwas200.ids
+
+
 pop="YRI ESN LWK GWD MSL"
 
 for eachPop in $pop; do 
@@ -57,6 +67,7 @@ for eachPop in $pop; do
 		--allow-no-sex \
 		--autosome \
        		--make-bed \
+		--extract camgwas200.ids \
 		--keep all_$eachPop.ids \
        		--biallelic-only \
        		--exclude-snp rs16959560 \
