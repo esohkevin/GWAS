@@ -17,6 +17,22 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
+[Previously saved workspace restored]
+
+> #!/usr/bin/Rscript
+> 
+> # Check installation of qqman and load it if installed
+> if (!requireNamespace("qqman"))
++         install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
+Loading required namespace: qqman
+> library(qqman)
+
+For example usage please run: vignette('qqman')
+
+Citation appreciated but not required:
+Turner, S.D. qqman: an R package for visualizing GWAS results using Q-Q and manhattan plots. biorXiv DOI: 10.1101/005165 (2014).
+
+> 
 > ############### Extract IDs of individuals that failed sex check from the .sexcheck file ##############
 > sexcheck=read.table("fail-checksex.qc", header = F, as.is = T)
 > write.table(sexcheck[,1:2], file = "fail-checksex.qc", col.names = F, row.names = F, quote = F, sep = "\t")
@@ -38,11 +54,13 @@ Type 'q()' to quit R.
 > #hetlower=meanhet - sdhet*3
 > 
 > # Plot the proportion of missing genotypes and the heterozygosity rate
-> png("mishet.png", res = 1200, height = 5, width = 7, units = "in")
+> #png("mishet.png", res = 1200, height = 4, width = 5, units = "in")
+> png(filename = "mishet.png", width = 520, height = 520, units = "px", pointsize = 12,
++     bg = "white",  res = NA)
 > par(mfrow=c(1,1))
 > plot(mishet$het.rate, mishet$mis.rate, xlab = "Heterozygous rate", ylab = "Proportion of missing genotype", pch=20)
 > #abline(v=c(hetlower, hetupper), h=0.1, lty=2)
-> abline(v=c(0.195,0.22), h=0.1, lty=2)
+> abline(v=c(0.185,0.25), h=0.1, lty=2)
 > dev.off()
 null device 
           1 
@@ -53,7 +71,7 @@ null device
 > write.table(fail_mis_qc[,1:2], file = "fail-mis.qc", row.names = F, col.names = F, quote = F, sep = "\t")
 > 
 > # Individuals with het.rate < 0.18 (previously 0.195) and individuals with het.rate > o.23 (previously 0.22)
-> fail_het_qc=mishet[mishet$het.rate < 0.195 | mishet$het.rate > 0.22, ]
+> fail_het_qc=mishet[mishet$het.rate < 0.185 | mishet$het.rate > 0.25, ]
 > write.table(fail_het_qc[,1:2], file = "fail-het.qc", row.names = F, col.names = F, quote = F, sep = "\t")
 > 
 > ################ Male Heterozygosity #####################################
@@ -77,4 +95,4 @@ null device
 > 
 > proc.time()
    user  system elapsed 
-  2.504   0.174   2.700 
+ 25.240   0.600  25.823 

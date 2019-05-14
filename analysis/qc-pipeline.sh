@@ -9,6 +9,7 @@
 mkdir -p ../images
 #read -p 'Please provide your genotype vcf file: ' vcf
 
+################################################################################
 plink1.9 \
 	--vcf camgwas_merge.vcf.gz \
 	--recode oxford \
@@ -21,7 +22,7 @@ cp ../samples/raw-camgwas.sample .
 
 #	Sample: 	raw-camgwas.sample
 
-# Check for duplicate SNPs
+############################ Check for duplicate SNPs #########################
 plink1.9 \
 	--data raw-camgwas \
 	--allow-no-sex \
@@ -29,6 +30,7 @@ plink1.9 \
 	--out dups
 cat dups.dupvar.log >> all.log
 
+###############################################################################
 # Make plink binary files from Oxford .gen + .sample files spliting chrX by the PARs using the b37 coordinates while removing duplicate SNPs
 plink1.9 \
 	--data raw-camgwas \
@@ -40,7 +42,7 @@ plink1.9 \
 	--out raw-camGwas
 cat raw-camGwas.log >> all.log
 
-# Update SNPID names with rsIDs
+########################## Update SNPID names with rsIDs #####################
 cut -f2 raw-camGwas.bim > all.snps.ids
 cut -f1 -d',' all.snps.ids > all.rs.ids
 paste all.rs.ids all.snps.ids > allMysnps.txt
@@ -53,8 +55,7 @@ plink1.9 \
         --out raw-camgwas
 cat raw-camgwas.log >> all.log
 
-######## Per Individual QC ##########
-###########################################################################
+############################## Per Individual QC #############################
 # LD-prune the raw data before sex check
 plink1.9 \
         --bfile raw-camgwas \
