@@ -2,8 +2,6 @@
 [Pre-QC SNPTEST Frequentist Association plot](snptestassoc_freq.png)
 [Pre-QC SNPTEST Bayesian Association plot](snptestassoc_baye.png)
 [Q-Q plot](qq_plot.png)
-![Female heterozygosity](femalehet.png)
-![Male heterozygosity](malehet.png)
 ![Missingness plot](mishet.png)
 ![IBD Analysis](ibd_analysis.png)
 ![IBD plot](ibd_colcode.png)
