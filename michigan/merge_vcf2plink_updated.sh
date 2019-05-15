@@ -2,6 +2,7 @@
 
 ################# Post Imputation GWAS Analysis ###################
 shapeit="$HOME/GWAS/Git/GWAS/michigan/shapeit/"
+analysis="$HOME/GWAS/Git/GWAS/michigan/analysis/"
 
 # Chech duplicate positions (snps) to exclude from downstream analyses
 zgrep -v "^#" merge.filtered.vcf.gz | cut -f3 | sort | uniq -d > merge.filtered.dups
@@ -29,6 +30,7 @@ plink \
 	--maf 0.01 \
 	--geno 0.04 \
 	--hwe 1e-6 \
+	--update-name "$analysis"ucss-rsids.txt 1 2 \
 	--make-bed \
 	--out merge.filtered-updated
 

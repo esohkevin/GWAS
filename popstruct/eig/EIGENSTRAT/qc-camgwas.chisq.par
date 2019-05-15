@@ -1,7 +1,0 @@
-genotypename:  ../CONVERTF/qc-camgwas.eigenstratgeno
-snpname:       ../CONVERTF/qc-camgwas.snp
-indivname:     ../CONVERTF/qc-camgwas.ind
-pcaname:       qc-camgwas.pca
-outputname:    qc-camgwas.chisq
-numpc:         20
-qtmode:        NO

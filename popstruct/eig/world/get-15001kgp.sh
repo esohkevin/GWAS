@@ -11,6 +11,9 @@ plink \
 	--mind 0.1 \
 	--maf 0.35 \
 	--geno 0.01 \
+	--pheno update-1kgp.phe \
+        --mpheno 1 \
+        --update-sex update-1kgp.sex 1 \
 	--allow-no-sex \
 	--make-bed \
 	--exclude-snp rs16959560 \

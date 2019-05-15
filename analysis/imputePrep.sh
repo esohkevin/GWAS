@@ -36,12 +36,8 @@ cp TEMP.file Run-plink.sh
 echo -e "\n### Run Run-plink.sh to update the dataset ###"
 ./Run-plink.sh
 
-echo -e "\n######## Update rsIDs with dbSNP 151 reference SNP IDs ###########\n"
-./update_rsids.sh
-
 echo -e "\nConverting Single Chromosome plink binary files to VCF files\n"
 ./plink2vcf.sh
 
 echo -e "\n### Chechk VCF for errors using the checkVCF.py script ###"
 ./vcfcheck.sh
-

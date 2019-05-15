@@ -46,6 +46,8 @@ cat raw-camGwas.log >> all.log
 cut -f2 raw-camGwas.bim > all.snps.ids
 cut -f1 -d',' all.snps.ids > all.rs.ids
 paste all.rs.ids all.snps.ids > allMysnps.txt
+rm all.rs.ids all.snps.ids
+
 plink1.9 \
         --bfile raw-camGwas \
         --update-name allMysnps.txt 1 2 \
@@ -235,6 +237,30 @@ plink \
 	--out qc-camgwas-autosome
 cat qc-camgwas-autosome.log >> all.log
 
+##############################################################################
+#                          UPDATE AUTOSOME IDs                               #
+#                                                                            #
+
+cut -f1,4 qc-camgwas-autosome.bim | sed 's/\t/:/g' > qc-autosome.pos
+
+rm ucsc.ids
+for pos in `cat qc-autosome.pos`; do 
+	grep "${pos}" ucsc-rsids.txt | cut -f1 >> ucsc.ids 
+done
+cut -f2 qc-camgwas-autosome.bim > qc-autosome.ids
+
+paste ucsc.ids qc-autosome.ids > update_rsids.txt
+
+plink \
+        --bfile qc-camgwas \
+        --allow-no-sex \
+        --make-bed \
+	--autosome \
+	--update-name update_rsids.txt \
+	--out qc-camgwas-autosome
+#									     #
+##############################################################################
+
 # Extract only chrX for QC
 plink \
 	--bfile qc-camgwas \
@@ -295,7 +321,6 @@ mv check-sex-data.sexcheck sexcheck.txt
 rm raw-camgwas.*
 rm check-sex-data*
 rm *.hh
-rm ind-qc-camgwas.*
 rm frequent.*
 rm caseconpruned.*
 
