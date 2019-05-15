@@ -168,7 +168,7 @@ plink1.9 \
 	--out ind-qc-camgwas
 cat ind-qc-camgwas.log >> all.log
 
-######### Per SNP QC ###############
+############################### Per SNP QC ################################
 #
 # Compute missing data rate for ind-qc-camgwas data
 plink1.9 \
@@ -212,7 +212,7 @@ plink1.9 \
 	--exclude fail-diffmiss.qc \
 	--allow-no-sex \
 	--maf 0.01 \
-	--hwe 1e-6 \
+	--hwe 1e-20 \
 	--geno 0.04 \
 	--make-bed \
 	--biallelic-only \
@@ -241,23 +241,23 @@ cat qc-camgwas-autosome.log >> all.log
 #                          UPDATE AUTOSOME IDs                               #
 #                                                                            #
 
-cut -f1,4 qc-camgwas-autosome.bim | sed 's/\t/:/g' > qc-autosome.pos
+#cut -f1,4 qc-camgwas-autosome.bim | sed 's/\t/:/g' > qc-autosome.pos
 
-rm ucsc.ids
-for pos in `cat qc-autosome.pos`; do 
-	grep "${pos}" ucsc-rsids.txt | cut -f1 >> ucsc.ids 
-done
-cut -f2 qc-camgwas-autosome.bim > qc-autosome.ids
+#rm ucsc.ids
+#for pos in `cat qc-autosome.pos`; do 
+#	grep "${pos}" ucsc-rsids.txt | cut -f1 >> ucsc.ids 
+#done
+#cut -f2 qc-camgwas-autosome.bim > qc-autosome.ids
 
-paste ucsc.ids qc-autosome.ids > update_rsids.txt
+#paste ucsc.ids qc-autosome.ids > update_rsids.txt
 
-plink \
-        --bfile qc-camgwas \
-        --allow-no-sex \
-        --make-bed \
-	--autosome \
-	--update-name update_rsids.txt \
-	--out qc-camgwas-autosome
+#plink \
+#        --bfile qc-camgwas \
+#        --allow-no-sex \
+#        --make-bed \
+#	--autosome \
+#	--update-name update_rsids.txt \
+#	--out qc-camgwas-autosome
 #									     #
 ##############################################################################
 
@@ -295,7 +295,7 @@ plink1.9 \
         --exclude fail-Xdiffmiss.qc \
         --allow-no-sex \
         --maf 0.01 \
-        --hwe 1e-6 \
+        --hwe 1e-20 \
         --geno 0.04 \
         --make-bed \
         --biallelic-only \
@@ -323,7 +323,7 @@ rm check-sex-data*
 rm *.hh
 rm frequent.*
 rm caseconpruned.*
-
+rm pruned*
 ./imputePrep.sh
 
 #}
