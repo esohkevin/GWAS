@@ -1,0 +1,337 @@
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --biallelic-only
+  --exclude-snp rs16959560
+  --extract qc-rs.ids
+  --geno 0.01
+  --maf 0.35
+  --make-bed
+  --mind 0.1
+  --out 1kGp3
+  --thin-indiv-count 1000
+  --vcf ../1000G/Phase3_merged.vcf.gz
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 02:09:57 2019
+
+Random number seed: 1557972597
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+--vcf: 1kGp3-temporary.bed + 1kGp3-temporary.bim + 1kGp3-temporary.fam written.
+(415838 variants skipped.)
+80855906 out of 80855907 variants loaded from .bim file.
+2504 people (0 males, 0 females, 2504 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to 1kGp3.nosex .
+--extract: 585255 variants remaining.
+--thin-indiv-count: 1504 people removed (1000 remaining).
+0 people removed due to missing genotype data (--mind).
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1000 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+0 variants removed due to missing genotype data (--geno).
+421512 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+163743 variants and 1000 people pass filters and QC.
+Note: No phenotypes present.
+--make-bed to 1kGp3.bed + 1kGp3.bim + 1kGp3.fam ... done.
+
+End time: Thu May 16 03:07:46 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile ../analysis/qc-camgwas-updated
+  --biallelic-only
+  --extract thinned.rs.ids
+  --make-bed
+  --out qc-data
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 03:07:46 2019
+
+Random number seed: 1557976066
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+1607462 out of 1644302 variants loaded from .bim file.
+1304 people (766 males, 538 females) loaded from .fam.
+1304 phenotype values loaded from .fam.
+--extract: 163743 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1304 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.994963.
+163743 variants and 1304 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 697 are controls.
+--make-bed to qc-data.bed + qc-data.bim + qc-data.fam ... done.
+
+End time: Thu May 16 03:07:47 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-data
+  --biallelic-only
+  --bmerge 1kGp3
+  --make-bed
+  --out merge
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 03:07:47 2019
+
+Random number seed: 1557976067
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+1304 people loaded from qc-data.fam.
+1000 people to be merged from 1kGp3.fam.
+Of these, 1000 are new, while 0 are present in the base dataset.
+163743 markers loaded from qc-data.bim.
+163743 markers to be merged from 1kGp3.bim.
+Of these, 0 are new, while 163743 are present in the base dataset.
+Performing single-pass merge (2304 people, 163743 variants).
+Merged fileset written to merge-merge.bed + merge-merge.bim + merge-merge.fam .
+163743 variants loaded from .bim file.
+2304 people (766 males, 538 females, 1000 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to merge.nosex .
+1304 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 2304 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.997149.
+163743 variants and 2304 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 697 are controls.  (1000
+phenotypes are missing.)
+--make-bed to merge.bed + merge.bim + merge.fam ... done.
+
+End time: Thu May 16 03:07:50 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile merge
+  --biallelic-only
+  --indep-pairwise 50 5 0.2
+  --out merge
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 03:07:50 2019
+
+Random number seed: 1557976070
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+163743 variants loaded from .bim file.
+2304 people (766 males, 538 females, 1000 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to merge.nosex .
+1304 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 2304 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.997149.
+163743 variants and 2304 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 697 are controls.  (1000
+phenotypes are missing.)
+Pruned 7985 variants from chromosome 1, leaving 4900.
+Pruned 8967 variants from chromosome 2, leaving 5105.
+Pruned 7133 variants from chromosome 3, leaving 4420.
+Pruned 5943 variants from chromosome 4, leaving 3941.
+Pruned 6066 variants from chromosome 5, leaving 3808.
+Pruned 8061 variants from chromosome 6, leaving 4016.
+Pruned 5410 variants from chromosome 7, leaving 3477.
+Pruned 5809 variants from chromosome 8, leaving 3369.
+Pruned 4620 variants from chromosome 9, leaving 2948.
+Pruned 5657 variants from chromosome 10, leaving 3322.
+Pruned 5112 variants from chromosome 11, leaving 3101.
+Pruned 4750 variants from chromosome 12, leaving 3103.
+Pruned 3927 variants from chromosome 13, leaving 2493.
+Pruned 3236 variants from chromosome 14, leaving 2146.
+Pruned 3124 variants from chromosome 15, leaving 2198.
+Pruned 2837 variants from chromosome 16, leaving 2082.
+Pruned 2435 variants from chromosome 17, leaving 1892.
+Pruned 2978 variants from chromosome 18, leaving 2165.
+Pruned 1421 variants from chromosome 19, leaving 1262.
+Pruned 2471 variants from chromosome 20, leaving 1742.
+Pruned 1420 variants from chromosome 21, leaving 997.
+Pruned 987 variants from chromosome 22, leaving 907.
+Pruning complete.  100349 of 163743 variants removed.
+Marker lists written to merge.prune.in and merge.prune.out .
+
+End time: Thu May 16 03:07:51 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile merge
+  --biallelic-only
+  --extract merge.prune.in
+  --genome
+  --out merge
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 03:07:51 2019
+
+Random number seed: 1557976071
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+163743 variants loaded from .bim file.
+2304 people (766 males, 538 females, 1000 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to merge.nosex .
+1304 phenotype values loaded from .fam.
+--extract: 63394 variants remaining.
+Using up to 127 threads (change this with --threads).
+Before main variant filters, 2304 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.996887.
+63394 variants and 2304 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 697 are controls.  (1000
+phenotypes are missing.)
+IBD calculations complete.
+Finished writing merge.genome .
+
+End time: Thu May 16 03:08:02 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --bfile merge
+  --cluster
+  --mds-plot 2
+  --out mds-data
+  --read-genome merge.genome
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 03:08:02 2019
+
+Random number seed: 1557976082
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+163743 variants loaded from .bim file.
+2304 people (766 males, 538 females, 1000 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to mds-data.nosex .
+1304 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 2304 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.997149.
+163743 variants and 2304 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 697 are controls.  (1000
+phenotypes are missing.)
+Clustering... done.
+Cluster solution written to mds-data.cluster1 , mds-data.cluster2 , and
+mds-data.cluster3 .
+Performing multidimensional scaling analysis (SVD algorithm, 2
+dimensions)... done.
+MDS solution written to mds-data.mds .
+
+End time: Thu May 16 03:08:09 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --autosome
+  --bfile ../analysis/qc-camgwas-updated
+  --indep-pairwise 50 5 0.2
+  --out qc-data
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 03:08:13 2019
+
+Random number seed: 1557976093
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+1607462 out of 1644302 variants loaded from .bim file.
+1304 people (766 males, 538 females) loaded from .fam.
+1304 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1304 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995357.
+1607462 variants and 1304 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 697 are controls.
+Pruned 91116 variants from chromosome 1, leaving 34445.
+Pruned 101744 variants from chromosome 2, leaving 36199.
+Pruned 86582 variants from chromosome 3, leaving 30823.
+Pruned 81232 variants from chromosome 4, leaving 28829.
+Pruned 74489 variants from chromosome 5, leaving 27487.
+Pruned 81732 variants from chromosome 6, leaving 27673.
+Pruned 65769 variants from chromosome 7, leaving 24196.
+Pruned 66123 variants from chromosome 8, leaving 23626.
+Pruned 51369 variants from chromosome 9, leaving 19656.
+Pruned 60453 variants from chromosome 10, leaving 22639.
+Pruned 58486 variants from chromosome 11, leaving 21019.
+Pruned 57046 variants from chromosome 12, leaving 21511.
+Pruned 44053 variants from chromosome 13, leaving 16469.
+Pruned 39178 variants from chromosome 14, leaving 14811.
+Pruned 36267 variants from chromosome 15, leaving 15184.
+Pruned 35069 variants from chromosome 16, leaving 14752.
+Pruned 27465 variants from chromosome 17, leaving 13147.
+Pruned 35662 variants from chromosome 18, leaving 14769.
+Pruned 17463 variants from chromosome 19, leaving 9049.
+Pruned 27036 variants from chromosome 20, leaving 11769.
+Pruned 15468 variants from chromosome 21, leaving 6687.
+Pruned 12710 variants from chromosome 22, leaving 6210.
+Pruning complete.  1166512 of 1607462 variants removed.
+Marker lists written to qc-data.prune.in and qc-data.prune.out .
+
+End time: Thu May 16 03:08:19 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --autosome
+  --bfile ../analysis/qc-camgwas-updated
+  --extract qc-data.prune.in
+  --genome
+  --out qc-data
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 03:08:19 2019
+
+Random number seed: 1557976099
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+1607462 out of 1644302 variants loaded from .bim file.
+1304 people (766 males, 538 females) loaded from .fam.
+1304 phenotype values loaded from .fam.
+--extract: 440950 variants remaining.
+Using up to 127 threads (change this with --threads).
+Before main variant filters, 1304 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.99511.
+440950 variants and 1304 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 697 are controls.
+IBD calculations complete.
+Finished writing qc-data.genome .
+
+End time: Thu May 16 03:08:38 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --bfile ../analysis/qc-camgwas-updated
+  --cluster
+  --mds-plot 10
+  --out ps-data
+  --read-genome qc-data.genome
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct
+Start time: Thu May 16 03:08:38 2019
+
+Random number seed: 1557976118
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+1644302 variants loaded from .bim file.
+1304 people (766 males, 538 females) loaded from .fam.
+1304 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1304 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995336.
+1644302 variants and 1304 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 697 are controls.
+Clustering... done.
+Cluster solution written to ps-data.cluster1 , ps-data.cluster2 , and
+ps-data.cluster3 .
+Performing multidimensional scaling analysis (SVD algorithm, 10
+dimensions)... done.
+MDS solution written to ps-data.mds .
+
+End time: Thu May 16 03:08:41 2019

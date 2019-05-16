@@ -45,10 +45,8 @@ for(i in 1:nrow(pcastat)){
  if(pcastat[i,6]=='CASE') points(pcastat[i,4], pcastat[i,5], col=1, pch=16)
  if(pcastat[i,6]=='CONTROL') points(pcastat[i,4], pcastat[i,5], col=1, pch=16)
  }
-#legend("topleft", legend=levels(pcastat$Status), pch = 16,
-#       col=1:length(levels(pcastat$Status), horiz = FALSE)
 legend("topleft", c("AFR","SAS","EAS","AMR","EUR","CASECON"), pch = 16, 
-       col = c(6,5,2,3,4,1), horiz=T, bty="n")
+       col = c(6,5,2,3,4,1), horiz=F, bty="n")
 dev.off()
 #identify(pcastat[,4], pcastat[,5], labels=pcastat[,2])
 
@@ -87,12 +85,9 @@ for(i in 1:nrow(pcastat)){
   if(pcastat[i,6]=='CASE') points(pcastat[i,4], pcastat[i,5], col=1, pch=16)
   if(pcastat[i,6]=='CONTROL') points(pcastat[i,4], pcastat[i,5], col=1, pch=16)
 }
-legend("topleft", legend=levels(pcastat$Status), pch = 16,
-       col=1:length(levels(pcastat$Status), horiz = FALSE)
-#legend("topleft", 
-#       c("AFR","SAS","EAS","AMR","EUR","ACB","ASW","CASECON"), pch=16, 
-#       col = c(6,5,2,3,4,7,8,1), horiz=T, bty="n")
-#par(mar=c(5, 4, 4, 2) + 0.1)
+legend("topleft", 
+       c("AFR","SAS","EAS","AMR","EUR","ACB","ASW","CASECON"), pch=16, 
+       col = c(6,5,2,3,4,7,8,1), horiz=F, bty="n")
 dev.off()
 
 # Identify the few case-control points that seem to be outliers
