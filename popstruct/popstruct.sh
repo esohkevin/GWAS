@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 # Obtain rsIDs of the study dataset for subsequent extraction from the 1000G Phase 3 dataset
-cut -f2 ../analysis/qc-camgwas.bim > qc-rs.ids
+cut -f2 ../analysis/qc-camgwas-updated.bim > qc-rs.ids
 
 # Extract from 1000G Phase dataset only rsIDs present in the study dataset with 1% missing genotype and MAF > 0.35,
 # While thinning it to obtain 780 individuals with at most 10% missingness.
 # Also exclude any SNPs that case plink to error out.
 plink \
 	--vcf ../1000G/Phase3_merged.vcf.gz \
-	--thin-indiv-count 780 \
+	--thin-indiv-count 1000 \
 	--autosome \
 	--extract qc-rs.ids \
 	--mind 0.1 \
@@ -26,7 +26,7 @@ cut -f2 1kGp3.bim > thinned.rs.ids
 
 # Extract the thinned rsIDs of the from the study dataset to be sure we'll be working on the same set of SNPs in the study and the 1000G dataset for MDS and Population structure
 plink \
-	--bfile ../analysis/qc-camgwas-updated-autosome \
+	--bfile ../analysis/qc-camgwas-updated \
 	--make-bed \
 	--biallelic-only \
 	--extract thinned.rs.ids \
@@ -93,14 +93,14 @@ grep -f qc-data.ids ../tmp/Cameroon_GWAS-2.5M_b37_release.sample | cut -f1,9 -d'
 
 # Now Compute 10 axes of genetic variation to determine pop structure
 plink \
-	--bfile ../analysis/qc-camgwas-updated-autosome \
+	--bfile ../analysis/qc-camgwas-updated \
 	--autosome \
 	--indep-pairwise 50 5 0.2 \
 	--out qc-data
 cat qc-data.log >> log.file
 
 plink \
-	--bfile ../analysis/qc-camgwas-updated-autosome \
+	--bfile ../analysis/qc-camgwas-updated \
 	--autosome \
 	--extract qc-data.prune.in \
 	--genome \
@@ -108,7 +108,7 @@ plink \
 cat qc-data.log >> log.file
 
 plink \
-	--bfile ../analysis/qc-camgwas-updated-autosome \
+	--bfile ../analysis/qc-camgwas-updated \
 	--read-genome qc-data.genome \
 	--cluster \
 	--mds-plot 10 \
@@ -128,12 +128,12 @@ mv *.png ../images/
 
 ################ Fst Estimates #######################
 # For 1KGP3 populations
-plink \
-	--bfile 1kgp3_ps-data \
-	--extract 1kgp3_ps-data.prune.in \
-	--fst \
-	--within 1kgp3-cluster.txt \
-	--make-bed \
-	--double-id \
-	--out fst
+#plink \
+#	--bfile 1kgp3_ps-data \
+#	--extract 1kgp3_ps-data.prune.in \
+#	--fst \
+#	--within 1kgp3-cluster.txt \
+#	--make-bed \
+#	--double-id \
+#	--out fst
 

@@ -1,6 +1,6 @@
 genotypename:    ../CONVERTF/qc-camgwas.ancestrymapgeno
 snpname:         ../CONVERTF/qc-camgwas.snp
-indivname:       ../CONVERTF/qc-camgwas.ind1
+indivname:       ../CONVERTF/qc-camgwas.ind
 evecoutname:     qc-camgwas.evec
 evaloutname:     qc-camgwas.eval
 altnormstyle:    NO 

@@ -1,6 +1,181 @@
-05-14 01:41 checkVCF.py -- check validity of VCF file for meta-analysis
-05-14 01:41 version 1.4 (20140115)
-05-14 01:41 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
-05-14 01:41 Python version is [ 2.7.12.final.0 ] 
-05-14 01:41 Begin checking vcfFile [ qc-camgwas-updated.vcf.gz ]
-05-14 01:41 IOError happened...
+05-16 02:19 checkVCF.py -- check validity of VCF file for meta-analysis
+05-16 02:19 version 1.4 (20140115)
+05-16 02:19 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
+05-16 02:19 Python version is [ 2.7.12.final.0 ] 
+05-16 02:19 Begin checking vcfFile [ qc-camgwas-updated.vcf.gz ]
+05-16 02:19 [ 10000 ] lines processed 
+05-16 02:20 [ 20000 ] lines processed 
+05-16 02:20 [ 30000 ] lines processed 
+05-16 02:21 [ 40000 ] lines processed 
+05-16 02:21 [ 50000 ] lines processed 
+05-16 02:22 [ 60000 ] lines processed 
+05-16 02:22 [ 70000 ] lines processed 
+05-16 02:23 [ 80000 ] lines processed 
+05-16 02:23 [ 90000 ] lines processed 
+05-16 02:24 [ 100000 ] lines processed 
+05-16 02:25 [ 110000 ] lines processed 
+05-16 02:25 [ 120000 ] lines processed 
+05-16 02:26 [ 130000 ] lines processed 
+05-16 02:26 [ 140000 ] lines processed 
+05-16 02:27 [ 150000 ] lines processed 
+05-16 02:27 [ 160000 ] lines processed 
+05-16 02:28 [ 170000 ] lines processed 
+05-16 02:28 [ 180000 ] lines processed 
+05-16 02:29 [ 190000 ] lines processed 
+05-16 02:29 [ 200000 ] lines processed 
+05-16 02:30 [ 210000 ] lines processed 
+05-16 02:30 [ 220000 ] lines processed 
+05-16 02:31 [ 230000 ] lines processed 
+05-16 02:32 [ 240000 ] lines processed 
+05-16 02:32 [ 250000 ] lines processed 
+05-16 02:33 [ 260000 ] lines processed 
+05-16 02:33 [ 270000 ] lines processed 
+05-16 02:34 [ 280000 ] lines processed 
+05-16 02:34 [ 290000 ] lines processed 
+05-16 02:35 [ 300000 ] lines processed 
+05-16 02:35 [ 310000 ] lines processed 
+05-16 02:36 [ 320000 ] lines processed 
+05-16 02:37 [ 330000 ] lines processed 
+05-16 02:37 [ 340000 ] lines processed 
+05-16 02:38 [ 350000 ] lines processed 
+05-16 02:38 [ 360000 ] lines processed 
+05-16 02:39 [ 370000 ] lines processed 
+05-16 02:39 [ 380000 ] lines processed 
+05-16 02:40 [ 390000 ] lines processed 
+05-16 02:40 [ 400000 ] lines processed 
+05-16 02:41 [ 410000 ] lines processed 
+05-16 02:41 [ 420000 ] lines processed 
+05-16 02:42 [ 430000 ] lines processed 
+05-16 02:42 [ 440000 ] lines processed 
+05-16 02:43 [ 450000 ] lines processed 
+05-16 02:43 [ 460000 ] lines processed 
+05-16 02:44 [ 470000 ] lines processed 
+05-16 02:45 [ 480000 ] lines processed 
+05-16 02:45 [ 490000 ] lines processed 
+05-16 02:46 [ 500000 ] lines processed 
+05-16 02:46 [ 510000 ] lines processed 
+05-16 02:47 [ 520000 ] lines processed 
+05-16 02:47 [ 530000 ] lines processed 
+05-16 02:48 [ 540000 ] lines processed 
+05-16 02:48 [ 550000 ] lines processed 
+05-16 02:49 [ 560000 ] lines processed 
+05-16 02:49 [ 570000 ] lines processed 
+05-16 02:50 [ 580000 ] lines processed 
+05-16 02:50 [ 590000 ] lines processed 
+05-16 02:51 [ 600000 ] lines processed 
+05-16 02:51 [ 610000 ] lines processed 
+05-16 02:52 [ 620000 ] lines processed 
+05-16 02:53 [ 630000 ] lines processed 
+05-16 02:53 [ 640000 ] lines processed 
+05-16 02:54 [ 650000 ] lines processed 
+05-16 02:54 [ 660000 ] lines processed 
+05-16 02:55 [ 670000 ] lines processed 
+05-16 02:55 [ 680000 ] lines processed 
+05-16 02:56 [ 690000 ] lines processed 
+05-16 02:56 [ 700000 ] lines processed 
+05-16 02:57 [ 710000 ] lines processed 
+05-16 02:57 [ 720000 ] lines processed 
+05-16 02:58 [ 730000 ] lines processed 
+05-16 02:58 [ 740000 ] lines processed 
+05-16 02:59 [ 750000 ] lines processed 
+05-16 02:59 [ 760000 ] lines processed 
+05-16 03:00 [ 770000 ] lines processed 
+05-16 03:01 [ 780000 ] lines processed 
+05-16 03:01 [ 790000 ] lines processed 
+05-16 03:02 [ 800000 ] lines processed 
+05-16 03:02 [ 810000 ] lines processed 
+05-16 03:03 [ 820000 ] lines processed 
+05-16 03:03 [ 830000 ] lines processed 
+05-16 03:04 [ 840000 ] lines processed 
+05-16 03:04 [ 850000 ] lines processed 
+05-16 03:05 [ 860000 ] lines processed 
+05-16 03:05 [ 870000 ] lines processed 
+05-16 03:06 [ 880000 ] lines processed 
+05-16 03:06 [ 890000 ] lines processed 
+05-16 03:07 [ 900000 ] lines processed 
+05-16 03:07 [ 910000 ] lines processed 
+05-16 03:08 [ 920000 ] lines processed 
+05-16 03:09 [ 930000 ] lines processed 
+05-16 03:09 [ 940000 ] lines processed 
+05-16 03:10 [ 950000 ] lines processed 
+05-16 03:10 [ 960000 ] lines processed 
+05-16 03:11 [ 970000 ] lines processed 
+05-16 03:11 [ 980000 ] lines processed 
+05-16 03:12 [ 990000 ] lines processed 
+05-16 03:12 [ 1000000 ] lines processed 
+05-16 03:13 [ 1010000 ] lines processed 
+05-16 03:13 [ 1020000 ] lines processed 
+05-16 03:14 [ 1030000 ] lines processed 
+05-16 03:14 [ 1040000 ] lines processed 
+05-16 03:15 [ 1050000 ] lines processed 
+05-16 03:15 [ 1060000 ] lines processed 
+05-16 03:16 [ 1070000 ] lines processed 
+05-16 03:16 [ 1080000 ] lines processed 
+05-16 03:17 [ 1090000 ] lines processed 
+05-16 03:17 [ 1100000 ] lines processed 
+05-16 03:18 [ 1110000 ] lines processed 
+05-16 03:19 [ 1120000 ] lines processed 
+05-16 03:19 [ 1130000 ] lines processed 
+05-16 03:20 [ 1140000 ] lines processed 
+05-16 03:20 [ 1150000 ] lines processed 
+05-16 03:21 [ 1160000 ] lines processed 
+05-16 03:21 [ 1170000 ] lines processed 
+05-16 03:22 [ 1180000 ] lines processed 
+05-16 03:22 [ 1190000 ] lines processed 
+05-16 03:23 [ 1200000 ] lines processed 
+05-16 03:23 [ 1210000 ] lines processed 
+05-16 03:24 [ 1220000 ] lines processed 
+05-16 03:24 [ 1230000 ] lines processed 
+05-16 03:25 [ 1240000 ] lines processed 
+05-16 03:25 [ 1250000 ] lines processed 
+05-16 03:26 [ 1260000 ] lines processed 
+05-16 03:26 [ 1270000 ] lines processed 
+05-16 03:27 [ 1280000 ] lines processed 
+05-16 03:27 [ 1290000 ] lines processed 
+05-16 03:28 [ 1300000 ] lines processed 
+05-16 03:29 [ 1310000 ] lines processed 
+05-16 03:29 [ 1320000 ] lines processed 
+05-16 03:30 [ 1330000 ] lines processed 
+05-16 03:30 [ 1340000 ] lines processed 
+05-16 03:31 [ 1350000 ] lines processed 
+05-16 03:31 [ 1360000 ] lines processed 
+05-16 03:32 [ 1370000 ] lines processed 
+05-16 03:32 [ 1380000 ] lines processed 
+05-16 03:33 [ 1390000 ] lines processed 
+05-16 03:33 [ 1400000 ] lines processed 
+05-16 03:34 [ 1410000 ] lines processed 
+05-16 03:34 [ 1420000 ] lines processed 
+05-16 03:35 [ 1430000 ] lines processed 
+05-16 03:35 [ 1440000 ] lines processed 
+05-16 03:36 [ 1450000 ] lines processed 
+05-16 03:36 [ 1460000 ] lines processed 
+05-16 03:37 [ 1470000 ] lines processed 
+05-16 03:38 [ 1480000 ] lines processed 
+05-16 03:38 [ 1490000 ] lines processed 
+05-16 03:39 [ 1500000 ] lines processed 
+05-16 03:39 [ 1510000 ] lines processed 
+05-16 03:40 [ 1520000 ] lines processed 
+05-16 03:40 [ 1530000 ] lines processed 
+05-16 03:41 [ 1540000 ] lines processed 
+05-16 03:41 [ 1550000 ] lines processed 
+05-16 03:42 [ 1560000 ] lines processed 
+05-16 03:42 [ 1570000 ] lines processed 
+05-16 03:43 [ 1580000 ] lines processed 
+05-16 03:43 [ 1590000 ] lines processed 
+05-16 03:44 [ 1600000 ] lines processed 
+05-16 03:44 [ 1610000 ] lines processed 
+05-16 03:45 [ 1620000 ] lines processed 
+05-16 03:45 [ 1630000 ] lines processed 
+05-16 03:46 [ 1640000 ] lines processed 
+05-16 03:46 ---------------     REPORT     ---------------
+05-16 03:46 Total [ 1644334 ] lines processed
+05-16 03:46 Examine [ 32 ] VCF header lines, [ 1644302 ] variant sites, [ 1304 ] samples
+05-16 03:46 [ 0 ] duplicated sites
+05-16 03:46 [ 0 ] NonSNP site are outputted to [ out.check.nonSnp ]
+05-16 03:46 [ 0 ] Inconsistent reference sites are outputted to [ out.check.ref ]
+05-16 03:46 [ 0 ] Variant sites with invalid genotypes are outputted to [ out.check.geno ]
+05-16 03:46 [ 333738 ] Alternative allele frequency > 0.5 sites are outputted to [ out.check.af ]
+05-16 03:46 [ 0 ] Monomorphic sites are outputted to [ out.check.mono ]
+05-16 03:46 ---------------     ACTION ITEM     ---------------
+05-16 03:46 * No error found by checkVCF.py, thank you for cleanning VCF file.
+05-16 03:46 * Upload these files to the ftp server (so we can double check): out.check.log out.check.dup out.check.noSnp out.check.ref out.check.geno out.check.af out.check.mono

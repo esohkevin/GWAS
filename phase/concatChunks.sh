@@ -1,11 +1,13 @@
 #!/bin/bash
 
 imputed_path="imputed/"
-rm concat_chr"${chr}"_Chunks.txt
-rm chr"${chr}"_imputed*
-`touch chr"${chr}"_imputed`
 
 for chr in {1..22}; do
+
+   rm concat_chr"${chr}"_Chunks.txt
+   rm chr"${chr}"_imputed.gen*
+   `touch chr"${chr}"_imputed`
+
 
   if [[ -f "chr${chr}-phased_wref.haps" ]]; then
 
