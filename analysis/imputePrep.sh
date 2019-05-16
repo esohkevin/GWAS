@@ -24,7 +24,7 @@ echo -e "\n### Now extract palindromic SNPs in R for subsequent exclusion ###"
 R CMD BATCH palindromicsnps.R
 
 echo -e "\n### Check Strand using the Wrayner perl script ###"
-echo "`perl HRC-1000G-check-bim.pl -b qc-camgwas.bim -f qc-camgwas.frq -r ${1kgp_path}1000GP_Phase3_combined.legend.gz -g -p "AFR"`"
+./checkstrand.sh
 
 echo -e "\n### Update Run-plink.sh file to remove palindromic SNPs ###"
 echo "plink --bfile qc-camgwas --allow-no-sex --exclude at-cg.snps --make-bed --out TEMP0" > TEMP.file

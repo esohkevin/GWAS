@@ -27,3 +27,5 @@
 #	fi
 #done
 #}
+
+mv qc-camgwas-*.vcf.gz* ../phase/

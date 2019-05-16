@@ -6,6 +6,8 @@
 #			from: 
 
 #runplink1.9() {
+images="$HOME/GWAS/Git/GWAS/images/"
+samples="$HOME/GWAS/Git/GWAS/samples/"
 mkdir -p ../images
 #read -p 'Please provide your genotype vcf file: ' vcf
 
@@ -18,7 +20,7 @@ plink1.9 \
 	--double-id \
 	--out raw-camgwas
 cat raw-camgwas.log > all.log
-cp ../samples/raw-camgwas.sample .
+cp ${samples}raw-camgwas.sample .
 
 #	Sample: 	raw-camgwas.sample
 
@@ -326,4 +328,5 @@ rm caseconpruned.*
 rm pruned*
 ./imputePrep.sh
 
+mv *.png ${images}
 #}

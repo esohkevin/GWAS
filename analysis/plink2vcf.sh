@@ -25,4 +25,3 @@ bgzip -f qc-camgwas-updated.vcf
 
 
 #########################################################################
-mv qc-camgwas-*.vcf.gz* ../phase/
