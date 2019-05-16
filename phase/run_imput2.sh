@@ -3,6 +3,8 @@
 ref_path="1000GP_Phase3/"
 imputed_path="imputed/"
 
+./make_chunks.sh
+
 for chr in {1..22}; do
 
   if [[ -f "chr${chr}-phased_wref.haps" ]]; then

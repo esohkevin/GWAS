@@ -1,423 +1,49 @@
 #!/bin/bash
 
-####################### CHR 1 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
+chrSize="252000000 246000000 202000000 194000000 185000000 174000000 163000000 149000000 142000000 136000000 139000000 137000000 118000000 111000000 106000000 92200000 85200000 82200000 60200000 66200000 48200000 52200000"
+
+for size in ${chrSize}; do 
+
+   for interval in `seq 1 2000000 $size`; do 
+
+      echo $(($interval)) >> chr"${size}".tmp1; 
+      echo $(($interval-1)) >> chr"${size}".tmp2; 
+
+   done; 
+
+      sed '1d' chr"${size}".tmp2 > chr"${size}".tmp3   
+
+     paste chr"${size}".tmp1 chr"${size}".tmp3 > chr"${size}".tmp4
+    
+     sed 's/\t/=/g' chr"${size}".tmp4 > chr"${size}".tmp5
+
+     head -n -1 chr"${size}".tmp5 > chr"${size}".txt
+
+   rm *.tmp*
+
+done;
+
+mv chr252000000.txt  chr1intervals.txt
+mv chr246000000.txt  chr2intervals.txt
+mv chr202000000.txt  chr3intervals.txt
+mv chr194000000.txt  chr4intervals.txt
+mv chr185000000.txt  chr5intervals.txt
+mv chr174000000.txt  chr6intervals.txt
+mv chr163000000.txt  chr7intervals.txt
+mv chr149000000.txt  chr8intervals.txt
+mv chr142000000.txt  chr9intervals.txt
+mv chr136000000.txt  chr10intervals.txt
+mv chr139000000.txt  chr11intervals.txt
+mv chr137000000.txt  chr12intervals.txt
+mv chr118000000.txt  chr13intervals.txt
+mv chr111000000.txt  chr14intervals.txt
+mv chr106000000.txt  chr15intervals.txt
+mv chr92200000.txt  chr16intervals.txt
+mv chr85200000.txt  chr17intervals.txt 
+mv chr82200000.txt  chr18intervals.txt
+mv chr60200000.txt  chr19intervals.txt
+mv chr66200000.txt  chr20intervals.txt
+mv chr48200000.txt  chr21intervals.txt 
+mv chr52200000.txt  chr22intervals.txt
 
-for i in {1..252000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr1intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-####################### CHR 2 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..246000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr2intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-####################### CHR 3 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..202000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr3intervals.txt
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-####################### CHR 4 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..194000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr4intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-####################### CHR 5 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..185000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr5intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-####################### CHR 6 #######################
-rm intervaltemp.txt; 						# Remove all temporary files
-rm interval.txt; 
-
-
-for i in {1..174000000..2000000}; do 				# Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt			# Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chr6intervaltemp.txt		# Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chr6intervaltemp.txt > chrintervaltemp2.txt		# Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr6intervals.txt
-
-rm chr6intervaltemp.txt						# Remove the last temp file created
-
-
-
-####################### CHR 7 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..163000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr7intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-####################### CHR 8 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..149000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr8intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-
-###################### CHR 9 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..142000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr9intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 10 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..137000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr10intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 11 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..139000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr11intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 12 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..137000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr12intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 13 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..118000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr13intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 14 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..111000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr14intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 15 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..106000000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr15intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 16 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..92200000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr16intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 17 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..85200000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr7intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 18 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..82200000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr19intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 19 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..60200000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr19intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 20 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..66200000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr20intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 21 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..48200000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr21intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
-
-###################### CHR 22 #######################
-rm intervaltemp.txt;                                            # Remove all temporary files
-rm interval.txt;
-
-for i in {1..52200000..2000000}; do                            # Make two temporary files holding the numbers column-wise
-    echo $i >> interval.txt
-    echo $(( $i-1 )) >> intervaltemp.txt
-done
-
-sed '1d' intervaltemp.txt > interval2.txt                       # Delet the first line in one of the temp files
-
-paste interval.txt interval2.txt > chrintervaltemp1.txt         # Paste the two files, the one with the deleted first line coming second
-
-sed 's/\t/=/g' chrintervaltemp1.txt > chrintervaltemp2.txt         # Replace the 'tab' delimiter in the file with an '=' sign
-
-head -n -1 chrintervaltemp2.txt > chr22intervals.txt
-
-rm chrintervaltemp1.txt; rm chrintervaltemp2.txt
 

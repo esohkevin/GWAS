@@ -9,12 +9,9 @@ pcastat=merge(pca, status, by.x="IID", all.x=T)
 ### Read in data for pop structure
 pca2=read.table("ps-data.mds", header=T, as.is=T)
 pcastat2=merge(pca2, status, by.x="IID", all.x=T)
-#View(pcastat2)
 
 # Plot and produce and image of the mds plot
-#png("mds-plot.png", res=1200, height=5, width=5, units="in")
-#par(xpd = T, mar = par()$mar + c(1,0,0,0))
-png(filename = "mds-plot.png", width = 480, height = 600, units = "px", pointsize = 12,
+png(filename = "mds-plot.png", width = 500, height = 500, units = "px", pointsize = 12,
     bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 plot(pcastat[,4], pcastat[,5], xlab="PC1", ylab="PC2", type="n")
@@ -48,16 +45,15 @@ for(i in 1:nrow(pcastat)){
  if(pcastat[i,6]=='CASE') points(pcastat[i,4], pcastat[i,5], col=1, pch=16)
  if(pcastat[i,6]=='CONTROL') points(pcastat[i,4], pcastat[i,5], col=1, pch=16)
  }
-legend(x=c(-0.055,0.155),y=c(-0.1555,-0.20), c("AFR","SAS","EAS","AMR","EUR","CASECON"), pch = 16, 
+#legend("topleft", legend=levels(pcastat$Status), pch = 16,
+#       col=1:length(levels(pcastat$Status), horiz = FALSE)
+legend("topleft", c("AFR","SAS","EAS","AMR","EUR","CASECON"), pch = 16, 
        col = c(6,5,2,3,4,1), horiz=T, bty="n")
-#par(mar=c(5, 4, 4, 2) + 0.1)
 dev.off()
 #identify(pcastat[,4], pcastat[,5], labels=pcastat[,2])
 
 # From the above plot, there is mild clustering of similar populations into different clusters. Check these
-#png("mds-plot2.png", res=1200, height=5, width=5, units="in")
-#par(xpd = T, mar = par()$mar + c(1,0,0,0))
-png(filename = "plinkassoc1_qc.png", width = 600, height = 480, units = "px", pointsize = 12,
+png(filename = "mds-plot2.png", width = 500, height = 500, units = "px", pointsize = 12,
     bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(1,1))
 plot(pcastat[,4], pcastat[,5], xlab="PC1", ylab="PC2", type="n")
@@ -91,9 +87,11 @@ for(i in 1:nrow(pcastat)){
   if(pcastat[i,6]=='CASE') points(pcastat[i,4], pcastat[i,5], col=1, pch=16)
   if(pcastat[i,6]=='CONTROL') points(pcastat[i,4], pcastat[i,5], col=1, pch=16)
 }
-legend(x=c(-0.09,0.20),y=c(-0.1555,-0.20), 
-       c("AFR","SAS","EAS","AMR","EUR","ACB","ASW","CASECON"), pch=16, 
-       col = c(6,5,2,3,4,7,8,1), horiz=T, bty="n")
+legend("topleft", legend=levels(pcastat$Status), pch = 16,
+       col=1:length(levels(pcastat$Status), horiz = FALSE)
+#legend("topleft", 
+#       c("AFR","SAS","EAS","AMR","EUR","ACB","ASW","CASECON"), pch=16, 
+#       col = c(6,5,2,3,4,7,8,1), horiz=T, bty="n")
 #par(mar=c(5, 4, 4, 2) + 0.1)
 dev.off()
 
@@ -120,11 +118,9 @@ dev.off()
 #dev.off()
 
 ### Population structure plot for case-control data loaded above as ps2data ###
-#png("ps-plots.png", res=1200, height=8, width=8, units="in")
-png(filename = "plinkassoc1_qc.png", width = 780, height = 500, units = "px", pointsize = 12,
+png(filename = "casecon-pcs.png", width = 780, height = 500, units = "px", pointsize = 12,
     bg = "white",  res = NA, type = c("quartz"))
 par(mfrow=c(2,3))
-#par(xpd = T, mar = par()$mar + c(0,1,-3,1))
 
 # Pop struct based on PC1 and PC2
 plot(pcastat2[,4], pcastat2[,5], xlab = "PC1", ylab = "PC2", type = "n")
@@ -132,6 +128,7 @@ for(i in 1:nrow(pcastat2)){
   if(pcastat2[i,14]=='CASE') points(pcastat2[i,4], pcastat2[i,5], col=2, pch=16)
   if(pcastat2[i,14]=='CONTROL') points(pcastat2[i,4], pcastat2[i,5], col=4, pch=16)
 }
+legend("bottomright", c("CASE","CONTROL"), pch=20, col = c(2,4), horiz=T, bty="n")
 
 # Pop struct based on PC3 and PC4
 plot(pcastat2[,6], pcastat2[,7], xlab = "PC3", ylab = "PC4", type = "n")
@@ -139,6 +136,7 @@ for(i in 1:nrow(pcastat2)){
   if(pcastat2[i,14]=='CASE') points(pcastat2[i,6], pcastat2[i,7], col=2, pch=16)
   if(pcastat2[i,14]=='CONTROL') points(pcastat2[i,6], pcastat2[i,7], col=4, pch=16)
 }
+legend("topright", c("CASE","CONTROL"), pch=20, col = c(2,4), horiz=T, bty="n")
 
 # Pop struct based on PC5 and PC6
 plot(pcastat2[,8], pcastat2[,9], xlab = "PC5", ylab = "PC6", type = "n")
@@ -146,6 +144,7 @@ for(i in 1:nrow(pcastat2)){
   if(pcastat2[i,14]=='CASE') points(pcastat2[i,8], pcastat2[i,9], col=2, pch=16)
   if(pcastat2[i,14]=='CONTROL') points(pcastat2[i,8], pcastat2[i,9], col=4, pch=16)
 }
+legend("bottomright", c("CASE","CONTROL"), pch=20, col = c(2,4), horiz=T, bty="n")
 
 # Pop struct based on PC7 and PC8
 plot(pcastat2[,10], pcastat2[,11], xlab = "PC7", ylab = "PC8", type = "n")
@@ -153,6 +152,7 @@ for(i in 1:nrow(pcastat2)){
   if(pcastat2[i,14]=='CASE') points(pcastat2[i,10], pcastat2[i,11], col=2, pch=16)
   if(pcastat2[i,14]=='CONTROL') points(pcastat2[i,10], pcastat2[i,11], col=4, pch=16)
 }
+legend("topright", c("CASE","CONTROL"), pch=20, col = c(2,4), horiz=T, bty="n")
 
 # Pop struct based on PC9 and PC10
 plot(pcastat2[,12], pcastat2[,13], xlab = "PC9", ylab = "PC10", type = "n")
@@ -160,12 +160,15 @@ for(i in 1:nrow(pcastat2)){
   if(pcastat2[i,14]=='CASE') points(pcastat2[i,12], pcastat2[i,13], col=2, pch=16)
   if(pcastat2[i,14]=='CONTROL') points(pcastat2[i,12], pcastat2[i,13], col=4, pch=16)
 }
+legend("topleft", c("CASE","CONTROL"), pch=20, col = c(2,4), horiz=T, bty="n")
 
-#plot(x=c(0,1),y=c(0,1), legend("center", c("CASE","CONTROL"), pch=16, col = c(2,4), 
-#       horiz=T, bty="n"))
-#par(mar=c(5, 4, 4, 2) + 0.1)
-
-legend("bottomright", c("CASE","CONTROL"), pch=16, col = c(2,4), horiz=T, bty="n")
+# Pop struct based on PC1 and PC7
+plot(pcastat2[,8], pcastat2[,9], xlab = "PC5", ylab = "PC6", type = "n")
+for(i in 1:nrow(pcastat2)){
+  if(pcastat2[i,14]=='CASE') points(pcastat2[i,4], pcastat2[i,10], col=2, pch=16)
+  if(pcastat2[i,14]=='CONTROL') points(pcastat2[i,4], pcastat2[i,10], col=4, pch=16)
+}
+legend("bottomright", c("CASE","CONTROL"), pch=20, col = c(2,4), horiz=T, bty="n")
 dev.off()
 
 ### Now test for association between disease and the first ten axes of genetic variation ###
