@@ -29,7 +29,7 @@ cd ${popstruct}
 #
 ####################################### Population Structure ##################################
 #
-./run_popstruct.sh
+./run_eigstruct.sh
 
 cd ${analysis}
 #

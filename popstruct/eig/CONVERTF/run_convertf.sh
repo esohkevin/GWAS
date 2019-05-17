@@ -34,8 +34,17 @@ cat qc-camgwas.log >> convertf.log
 rm qc-ldPruned* qc-camgwas-ldPruned*
 
 # Convert files into eigensoft compartible formats
-convertf -p par.PED.PACKEDPED 	# ped to packedped
-convertf -p par.PACKEDPED.PACKEDANCESTRYMAP	# packedped to packedancestrymap
-convertf -p par.PACKEDANCESTRYMAP.ANCESTRYMAP	# packedancestrymap to ancestrymap
-convertf -p par.ANCESTRYMAP.EIGENSTRAT	# ancestrymap to eigenstrat
+
+echo -e "\n### PED to PACKEDPED ###" >> convertf.log
+convertf -p par.PED.PACKEDPED
+
+echo -e "\n### PACKEDPED to PACKEDANCESTRYMAP ###" >> convertf.log
+convertf -p par.PACKEDPED.PACKEDANCESTRYMAP	
+
+echo -e "\n### PACKEDANCESTRYMAP to ANCESTRYMAP ###" >> convertf.log
+convertf -p par.PACKEDANCESTRYMAP.ANCESTRYMAP	
+
+echo -e "\n### ANCESTRYMAP to EIGENSTRAT ###" >> convertf.log
+convertf -p par.ANCESTRYMAP.EIGENSTRAT	
+
 #convertf -p par.PED.EIGENSTRAT

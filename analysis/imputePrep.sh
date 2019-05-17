@@ -26,9 +26,12 @@ R CMD BATCH palindromicsnps.R
 echo -e "\n### Check Strand using the Wrayner perl script ###"
 ./checkstrand.sh
 
+cut -f1,2 -d':' ID-qc-camgwas-1000G.txt > id1.txt
+mv id1.txt ID-qc-camgwas-1000G.txt 
+
 echo -e "\n### Update Run-plink.sh file to remove palindromic SNPs ###"
 echo "plink --bfile qc-camgwas --allow-no-sex --exclude at-cg.snps --make-bed --out TEMP0" > TEMP.file
-echo "plink --bfile TEMP0 --exclude Exclude-qc-camgwas-1000G.txt --make-bed --out TEMP1" >> TEMP.file
+echo "plink --bfile TEMP0 --exclude Exclude-qc-camgwas-1000G.txt --update-name ID-qc-camgwas-1000G.txt 2 1 --make-bed --out TEMP1" >> TEMP.file
 echo "plink --bfile TEMP1 --update-map Chromosome-qc-camgwas-1000G.txt --update-chr --make-bed --out TEMP2" >> TEMP.file
 grep -v "TEMP1" Run-plink.sh >> TEMP.file
 cp TEMP.file Run-plink.sh
@@ -41,3 +44,6 @@ echo -e "\nConverting Single Chromosome plink binary files to VCF files\n"
 
 echo -e "\n### Chechk VCF for errors using the checkVCF.py script ###"
 ./vcfcheck.sh
+
+################################# Remove Irrelevant Files ####################################
+rm qc-camgwas-updated-chr*.*
