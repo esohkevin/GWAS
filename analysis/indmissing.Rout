@@ -46,7 +46,7 @@ Type 'q()' to quit R.
 +     bg = "white",  res = NA)
 > par(mfrow=c(1,1))
 > plot(mishet$het.rate, mishet$mis.rate, xlab = "Heterozygous rate", ylab = "Proportion of missing genotype", pch=20)
-> abline(v=c(0.195,0.22), h=0.1, lty=2)
+> abline(v=c(0.185,0.225), h=0.1, lty=2)
 > dev.off()
 null device 
           1 
@@ -57,10 +57,10 @@ null device
 > write.table(fail_mis_qc[,1:2], file = "fail-mis.qc", row.names = F, col.names = F, quote = F, sep = "\t")
 > 
 > # Individuals with het.rate < 0.18 (previously 0.195) and individuals with het.rate > o.23 (previously 0.22)
-> fail_het_qc=mishet[mishet$het.rate < 0.195 | mishet$het.rate > 0.22, ]
+> fail_het_qc=mishet[mishet$het.rate < 0.185 | mishet$het.rate > 0.225, ]
 > write.table(fail_het_qc[,1:2], file = "fail-het.qc", row.names = F, col.names = F, quote = F, sep = "\t")
 > 
 > 
 > proc.time()
    user  system elapsed 
- 25.432   0.715  26.172 
+ 25.076   0.673  25.732 

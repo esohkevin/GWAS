@@ -312,13 +312,13 @@ plink \
 	--set-hh-missing \
 	--out qc-camgwas
 #done
-rm -r raw-camGwas.*
 
 echo """
 #########################################################################
 #                     Run Imputation Prep Script                        #
 #########################################################################
 """
+rm -r raw-camGwas.*
 mv check-sex-data.sexcheck sexcheck.txt
 rm raw-camgwas.*
 rm check-sex-data*
@@ -326,7 +326,9 @@ rm *.hh
 rm frequent.*
 rm caseconpruned.*
 rm pruned*
-./imputePrep.sh
 
 mv *.png ${images}
+
+./imputePrep.sh
+
 #}

@@ -1,16 +1,9 @@
 #!/usr/bin/env bash
 
+analysis="$HOME/GWAS/Git/GWAS/analysis/"
 1kgp_path="$HOME/GWAS/Git/GWAS/phase/1000GP_Phase3/"
-
-####################################################################################################
-# Prepare genotype files for Sanger Imputation Service
-
-# Get dbSNP annotation file for refernce SNPs (Accessed: January 22nd, 2019 - 10:08am)
-#wget ftp://ftp.ncbi.nih.gov/snp/organisms/human_9606_b151_GRCh37p13/VCF/All_20180423.vcf.*
-
-# Extract all SNPs in the file into a new file
-#grep "^#" VCF/All_20180423.vcf.gz | cut -f 
-####################################################################################################
+eig="$HOME/GWAS/Git/GWAS/popstruct/eig/EIGENSTRAT/"
+eigstruct="$HOME/GWAS/Git/GWAS/popstruct/eig/"
 
 echo "### Extract Palimcromic SNPs and prepare chromosomes for imputation services ###"
 # Compute allel frequencies
