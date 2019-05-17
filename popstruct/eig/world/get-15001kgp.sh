@@ -2,6 +2,8 @@
 
 # --thin-indiv-count 1500 \ add this line to get only 1500 individuals from 1KGP
 
+cut -f2 ../../../analysis/qc-camgwas-updated.bim | cut -f1 -d':' > updated-qc.rsids
+
 # Get 1kgp individuals limiting to only common SNPs that are found in qc-camgwas data
 plink \
 	--vcf ../../../1000G/Phase3_merged.vcf.gz \
@@ -20,12 +22,28 @@ plink \
 	--biallelic-only \
 	--out qc-rsids-world-pops
 
-# Get a subset of individuals from qc-camgwas to merge with individuals from 1kgp
+# Get only Foulbe individuals from qc-camgwas
+plink \
+        --bfile ../../../analysis/qc-camgwas-updated \
+        --allow-no-sex \
+        --keep ../../../samples/exclude_fo.txt \
+        --make-bed \
+        --out fo-camgwas
+
+# Get only Semi-Bantu and Bantu individuals from qc-camgwas while thinning to 250
 plink \
 	--bfile ../../../analysis/qc-camgwas-updated \
 	--allow-no-sex \
-	--thin-indiv-count 300 \
+	--thin-indiv-count 250 \
+	--remove ../../../samples/exclude_fo.txt \
 	--make-bed \
+	--out 250SB-camgwas
+
+# Now merge the Foulbe and the Semi-Bantu and Bantu populations
+plink \
+	--bfile 250SB-camgwas \
+	--bmerge fo-camgwas \
+	--keep-allele-order \
 	--out thinned-qc-camgwas
 
 # Get the rsIDs of the SNPs in the thinned-qc-camgwas file to use for merging with world pops

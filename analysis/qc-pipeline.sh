@@ -38,6 +38,9 @@ plink1.9 \
 	--data raw-camgwas \
 	--make-bed \
 	--exclude dups.dupvar \
+	--update-sex raw-camgwas 2 \
+	--pheno raw-camgwas \
+	--mpheno 3 \
 	--split-x b37 \
 	--keep-allele-order \
 	--allow-no-sex \
