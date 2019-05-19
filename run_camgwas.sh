@@ -41,5 +41,5 @@ cd ${phase}
 #
 ##################################### Phasing and Imputation ##################################
 #
-./run_phasImput.sh
+#./run_phasImput.sh
 
