@@ -1,30 +1,28 @@
-PLINK v1.90b3.31 64-bit (3 Feb 2016)
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
   --data raw-camgwas
   --list-duplicate-vars ids-only suppress-first
   --out dups
 
-Hostname: delgemebioserver
-Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/analysis
-Start time: Thu May 16 22:31:04 2019
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 08:35:36 2019
 
-Random number seed: 1558045864
-967454 MB RAM detected; reserving 483727 MB for main workspace.
+Random number seed: 1558244136
+5822 MB RAM detected; reserving 2911 MB for main workspace.
 --data: dups-temporary.bed + dups-temporary.bim + dups-temporary.fam written.
 2368677 variants loaded from .bim file.
-1471 people (875 males, 596 females) loaded from .fam.
-1471 phenotype values loaded from .fam.
-Using 1 thread (no multithreaded calculations invoked.
+1471 people (0 males, 0 females, 1471 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to dups.nosex .
+Using 1 thread (no multithreaded calculations invoked).
 Before main variant filters, 1471 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Warning: 1256941 het. haploid genotypes present (see dups.hh ); many commands
-treat these as missing.
 Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
 treat these as missing.
-Total genotyping rate is 0.953449.
+Total genotyping rate is 0.953866.
 2368677 variants and 1471 people pass filters and QC.
-Among remaining phenotypes, 693 are cases and 778 are controls.
+Note: No phenotypes present.
 --list-duplicate-vars report written to dups.dupvar .
 
-End time: Thu May 16 22:31:37 2019
+End time: Sun May 19 08:41:01 2019

@@ -1,5 +1,5 @@
 
-R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+R version 3.5.0 (2018-04-23) -- "Joy in Playing"
 Copyright (C) 2018 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -17,8 +17,6 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-[Previously saved workspace restored]
-
 > #!/usr/bin/env R
 > 
 > # Check installation of qqman and load it if installed
@@ -35,16 +33,9 @@ Turner, S.D. qqman: an R package for visualizing GWAS results using Q-Q and manh
 > 
 > # Extract palindromic SNPs
 > bim = read.table("qc-camgwas.bim", header=F, as.is=T)
-> # Get indices of A/T and G/C SNPs
-> w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="A" & bim$V6=="T") | (bim$V5=="A" & bim$V6=="T"))
-> 
-> # Extract A/T and G/C SNPs
-> at.cg.snps = bim[w,]
-> 
-> # Save A/T and G/C snps into a file at-cg.snps
-> write.table(at.cg.snps$V2, file="at-cg.snps", row.names=F, col.names=F, quote=F)
-> 
-> 
-> proc.time()
-   user  system elapsed 
- 34.147   1.395  35.526 
+Error in file(file, "rt") : cannot open the connection
+Calls: read.table -> file
+In addition: Warning message:
+In file(file, "rt") :
+  cannot open file 'qc-camgwas.bim': No such file or directory
+Execution halted

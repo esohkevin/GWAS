@@ -38,8 +38,8 @@ plink1.9 \
 	--data raw-camgwas \
 	--make-bed \
 	--exclude dups.dupvar \
-	--update-sex raw-camgwas 2 \
-	--pheno raw-camgwas \
+	--update-sex raw-camgwas.sample 2 \
+	--pheno raw-camgwas.sample \
 	--mpheno 3 \
 	--split-x b37 \
 	--keep-allele-order \
@@ -329,6 +329,7 @@ rm *.hh
 rm frequent.*
 rm caseconpruned.*
 rm pruned*
+rm allMysnps.txt
 
 mv *.png ${images}
 
