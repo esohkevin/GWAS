@@ -9,9 +9,9 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:16:04 2019
+Start time: Sun May 19 11:37:33 2019
 
-Random number seed: 1558242964
+Random number seed: 1558255053
 5822 MB RAM detected; reserving 2911 MB for main workspace.
 --vcf: raw-camgwas-temporary.bed + raw-camgwas-temporary.bim +
 raw-camgwas-temporary.fam written.
@@ -28,7 +28,7 @@ Total genotyping rate is 0.953866.
 Note: No phenotypes present.
 --recode oxford to raw-camgwas.gen + raw-camgwas.sample ... done.
 
-End time: Sun May 19 08:35:34 2019
+End time: Sun May 19 11:57:56 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -38,24 +38,38 @@ Options in effect:
   --make-bed
   --mpheno 3
   --out raw-camGwas
-  --pheno raw-camgwas
+  --pheno raw-camgwas.sample
   --split-x b37
-  --update-sex raw-camgwas 2
+  --update-sex raw-camgwas.sample 2
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:41:01 2019
+Start time: Sun May 19 12:03:49 2019
 
-Random number seed: 1558244461
+Random number seed: 1558256629
 5822 MB RAM detected; reserving 2911 MB for main workspace.
 --data: raw-camGwas-temporary.bed + raw-camGwas-temporary.bim +
 raw-camGwas-temporary.fam written.
 2368677 variants loaded from .bim file.
-1471 people (0 males, 0 females, 1471 ambiguous) loaded from .fam.
-Ambiguous sex IDs written to raw-camGwas.nosex .
-Error: Failed to open raw-camgwas.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values present after --pheno.
+--exclude: 2363060 variants remaining.
+--update-sex: 1471 people updated, 2 IDs not present.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 1223994 het. haploid genotypes present (see raw-camGwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+2363060 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+--split-x: 1164 chromosome codes changed.
+--make-bed to raw-camGwas.bed + raw-camGwas.bim + raw-camGwas.fam ... done.
 
-End time: Sun May 19 08:46:22 2019
+End time: Sun May 19 12:10:00 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -67,13 +81,28 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:23 2019
+Start time: Sun May 19 12:10:09 2019
 
-Random number seed: 1558244783
+Random number seed: 1558257009
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open raw-camGwas.bed.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+--update-name: 2363060 values updated.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 999034 het. haploid genotypes present (see raw-camgwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+2363060 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+--make-bed to raw-camgwas.bed + raw-camgwas.bim + raw-camgwas.fam ... done.
 
-End time: Sun May 19 08:46:23 2019
+End time: Sun May 19 12:10:41 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -84,13 +113,53 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:23 2019
+Start time: Sun May 19 12:10:42 2019
 
-Random number seed: 1558244783
+Random number seed: 1558257042
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open raw-camgwas.bed.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 999034 het. haploid genotypes present (see prunedsnplist.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+2363060 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+Pruned 133380 variants from chromosome 1, leaving 50118.
+Pruned 141465 variants from chromosome 2, leaving 52048.
+Pruned 119397 variants from chromosome 3, leaving 43966.
+Pruned 111107 variants from chromosome 4, leaving 41311.
+Pruned 105342 variants from chromosome 5, leaving 39875.
+Pruned 113824 variants from chromosome 6, leaving 40165.
+Pruned 93677 variants from chromosome 7, leaving 34966.
+Pruned 91426 variants from chromosome 8, leaving 33903.
+Pruned 74202 variants from chromosome 9, leaving 28521.
+Pruned 86735 variants from chromosome 10, leaving 32490.
+Pruned 84979 variants from chromosome 11, leaving 30895.
+Pruned 81371 variants from chromosome 12, leaving 31055.
+Pruned 60181 variants from chromosome 13, leaving 23188.
+Pruned 55205 variants from chromosome 14, leaving 21208.
+Pruned 51057 variants from chromosome 15, leaving 21095.
+Pruned 54484 variants from chromosome 16, leaving 21964.
+Pruned 46348 variants from chromosome 17, leaving 19910.
+Pruned 48329 variants from chromosome 18, leaving 20128.
+Pruned 33302 variants from chromosome 19, leaving 14347.
+Pruned 39837 variants from chromosome 20, leaving 16630.
+Pruned 22525 variants from chromosome 21, leaving 9454.
+Pruned 23321 variants from chromosome 22, leaving 9894.
+Pruned 36962 variants from chromosome 23, leaving 14554.
+Pruned 1646 variants from chromosome 24, leaving 109.
+Pruned 541 variants from chromosome 25, leaving 623.
+Pruning complete.  1710643 of 2363060 variants removed.
+Marker lists written to prunedsnplist.prune.in and prunedsnplist.prune.out .
 
-End time: Sun May 19 08:46:23 2019
+End time: Sun May 19 12:11:38 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -101,13 +170,29 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:23 2019
+Start time: Sun May 19 12:11:39 2019
 
-Random number seed: 1558244783
+Random number seed: 1558257099
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open raw-camgwas.bed.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+--extract: 652417 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 248241 het. haploid genotypes present (see check-sex-data.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.956776.
+652417 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+--make-bed to check-sex-data.bed + check-sex-data.bim + check-sex-data.fam ...
+done.
 
-End time: Sun May 19 08:46:23 2019
+End time: Sun May 19 12:11:49 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -118,13 +203,28 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:23 2019
+Start time: Sun May 19 12:11:50 2019
 
-Random number seed: 1558244783
+Random number seed: 1558257110
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open check-sex-data.bed.
+652417 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 248241 het. haploid genotypes present (see check-sex-data.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.956776.
+652417 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+--check-sex: 14554 Xchr and 0 Ychr variant(s) scanned, 104 problems detected.
+Report written to check-sex-data.sexcheck .
 
-End time: Sun May 19 08:46:23 2019
+End time: Sun May 19 12:11:52 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -135,13 +235,25 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:23 2019
+Start time: Sun May 19 12:11:52 2019
 
-Random number seed: 1558244783
+Random number seed: 1558257112
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open raw-camgwas.bed.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 999034 het. haploid genotypes present (see raw-camgwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+--missing: Sample missing data report written to raw-camgwas.imiss, and
+variant-based missing data report written to raw-camgwas.lmiss.
 
-End time: Sun May 19 08:46:23 2019
+End time: Sun May 19 12:12:04 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -152,13 +264,27 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:23 2019
+Start time: Sun May 19 12:12:05 2019
 
-Random number seed: 1558244783
+Random number seed: 1558257125
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open raw-camgwas.bed.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 999034 het. haploid genotypes present (see raw-camgwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+2363060 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+--het: 2258007 variants scanned, report written to raw-camgwas.het .
 
-End time: Sun May 19 08:46:23 2019
+End time: Sun May 19 12:12:24 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -172,13 +298,27 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:27 2019
+Start time: Sun May 19 12:12:31 2019
 
-Random number seed: 1558244787
+Random number seed: 1558257151
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open raw-camgwas.bed.
+2308625 out of 2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.953853.
+279692 variants removed due to missing genotype data (--geno).
+--hwe: 570 variants removed due to Hardy-Weinberg exact test.
+1771039 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+257324 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+--make-bed to frequent.bed + frequent.bim + frequent.fam ... done.
 
-End time: Sun May 19 08:46:27 2019
+End time: Sun May 19 12:12:40 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -188,13 +328,46 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:27 2019
+Start time: Sun May 19 12:12:40 2019
 
-Random number seed: 1558244787
+Random number seed: 1558257160
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open frequent.bed.
+257324 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.96674.
+257324 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+Pruned 12720 variants from chromosome 1, leaving 6791.
+Pruned 14700 variants from chromosome 2, leaving 7276.
+Pruned 13109 variants from chromosome 3, leaving 6214.
+Pruned 11888 variants from chromosome 4, leaving 5811.
+Pruned 11242 variants from chromosome 5, leaving 5590.
+Pruned 12149 variants from chromosome 6, leaving 5323.
+Pruned 9659 variants from chromosome 7, leaving 4857.
+Pruned 9758 variants from chromosome 8, leaving 4774.
+Pruned 7697 variants from chromosome 9, leaving 3970.
+Pruned 8552 variants from chromosome 10, leaving 4514.
+Pruned 8503 variants from chromosome 11, leaving 4110.
+Pruned 8170 variants from chromosome 12, leaving 4314.
+Pruned 6317 variants from chromosome 13, leaving 3410.
+Pruned 5556 variants from chromosome 14, leaving 2985.
+Pruned 5261 variants from chromosome 15, leaving 3142.
+Pruned 4939 variants from chromosome 16, leaving 2993.
+Pruned 3734 variants from chromosome 17, leaving 2524.
+Pruned 5218 variants from chromosome 18, leaving 3031.
+Pruned 2243 variants from chromosome 19, leaving 1667.
+Pruned 3778 variants from chromosome 20, leaving 2404.
+Pruned 2259 variants from chromosome 21, leaving 1394.
+Pruned 1619 variants from chromosome 22, leaving 1159.
+Pruning complete.  169071 of 257324 variants removed.
+Marker lists written to prunedsnplist.prune.in and prunedsnplist.prune.out .
 
-End time: Sun May 19 08:46:27 2019
+End time: Sun May 19 12:12:46 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -205,13 +378,25 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:27 2019
+Start time: Sun May 19 12:12:46 2019
 
-Random number seed: 1558244787
+Random number seed: 1558257166
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open frequent.bed.
+257324 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+--extract: 88253 variants remaining.
+Using up to 4 threads (change this with --threads).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.966097.
+88253 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 693 are controls.  (778 phenotypes
+are missing.)
+IBD calculations complete.
+Finished writing caseconpruned.genome .
 
-End time: Sun May 19 08:46:27 2019
+End time: Sun May 19 12:13:39 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -223,13 +408,29 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:29 2019
+Start time: Sun May 19 12:14:20 2019
 
-Random number seed: 1558244789
+Random number seed: 1558257260
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open raw-camgwas.bed.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+693 phenotype values loaded from .fam.
+--remove: 1307 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 435234 het. haploid genotypes present (see ind-qc-camgwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate in remaining samples is 0.974875.
+2363060 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 607 are controls.  (700 phenotypes
+are missing.)
+--make-bed to ind-qc-camgwas.bed + ind-qc-camgwas.bim + ind-qc-camgwas.fam ...
+done.
 
-End time: Sun May 19 08:46:29 2019
+End time: Sun May 19 12:14:39 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -240,13 +441,21 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:29 2019
+Start time: Sun May 19 12:14:40 2019
 
-Random number seed: 1558244789
+Random number seed: 1558257280
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open ind-qc-camgwas.bed.
+2363060 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+607 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.974709.
+--missing: Sample missing data report written to ind-qc-camgwas.imiss, and
+variant-based missing data report written to ind-qc-camgwas.lmiss.
 
-End time: Sun May 19 08:46:29 2019
+End time: Sun May 19 12:14:54 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -257,13 +466,20 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:29 2019
+Start time: Sun May 19 12:14:55 2019
 
-Random number seed: 1558244789
+Random number seed: 1558257295
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open ind-qc-camgwas.bed.
+2363060 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+607 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.974709.
+--freq: Allele frequencies (founders only) written to ind-qc-camgwas.frq .
 
-End time: Sun May 19 08:46:29 2019
+End time: Sun May 19 12:15:02 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -274,13 +490,24 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:29 2019
+Start time: Sun May 19 12:15:02 2019
 
-Random number seed: 1558244789
+Random number seed: 1558257302
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open ind-qc-camgwas.bed.
+2363060 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+607 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.974709.
+2363060 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 607 are controls.  (700 phenotypes
+are missing.)
+Warning: Skipping --test-missing since at least one case and one control is
+required.
 
-End time: Sun May 19 08:46:29 2019
+End time: Sun May 19 12:15:07 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -297,13 +524,32 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:30 2019
+Start time: Sun May 19 12:16:18 2019
 
-Random number seed: 1558244790
+Random number seed: 1558257378
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open ind-qc-camgwas.bed.
+2363060 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+607 phenotype values loaded from .fam.
+--exclude: 2261968 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.984192.
+95537 variants removed due to missing genotype data (--geno).
+Warning: --hwe observation counts vary by more than 10%, due to the X
+chromosome.  You may want to use a less stringent --hwe p-value threshold for X
+chromosome variants.
+--hwe: 44 variants removed due to Hardy-Weinberg exact test.
+453379 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+1713008 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 607 are controls.  (700 phenotypes
+are missing.)
+--merge-x: 649 chromosome codes changed.
+--make-bed to qc-camgwas.bed + qc-camgwas.bim + qc-camgwas.fam ... done.
 
-End time: Sun May 19 08:46:30 2019
+End time: Sun May 19 12:16:34 2019
 PLINK v1.90b6.7 64-bit (2 Dec 2018)
 Options in effect:
   --allow-no-sex
@@ -314,13 +560,24 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:31 2019
+Start time: Sun May 19 12:16:35 2019
 
-Random number seed: 1558244791
+Random number seed: 1558257395
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open qc-camgwas.bed.
+1673966 out of 1713008 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+607 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995122.
+1673966 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 607 are controls.  (700 phenotypes
+are missing.)
+--make-bed to qc-camgwas-autosome.bed + qc-camgwas-autosome.bim +
+qc-camgwas-autosome.fam ... done.
 
-End time: Sun May 19 08:46:31 2019
+End time: Sun May 19 12:16:46 2019
 PLINK v1.90b6.7 64-bit (2 Dec 2018)
 Options in effect:
   --allow-no-sex
@@ -332,13 +589,26 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:31 2019
+Start time: Sun May 19 12:16:46 2019
 
-Random number seed: 1558244791
+Random number seed: 1558257406
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open qc-camgwas.bed.
+38744 out of 1713008 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+607 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 144310 het. haploid genotypes present (see qc-camgwas-chrX.hh ); many
+commands treat these as missing.
+Total genotyping rate is 0.994229.
+38744 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 607 are controls.  (700 phenotypes
+are missing.)
+--make-bed to qc-camgwas-chrX.bed + qc-camgwas-chrX.bim + qc-camgwas-chrX.fam
+... done.
 
-End time: Sun May 19 08:46:31 2019
+End time: Sun May 19 12:16:48 2019
 PLINK v1.90b5.2 64-bit (9 Jan 2018)
 Options in effect:
   --allow-no-sex
@@ -349,10 +619,608 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:46:31 2019
+Start time: Sun May 19 12:16:48 2019
 
-Random number seed: 1558244791
+Random number seed: 1558257408
 5822 MB RAM detected; reserving 2911 MB for main workspace.
-Error: Failed to open qc-camgwas-chrX.bed.
+38744 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+607 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.991379.
+38744 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 0 are cases and 607 are controls.  (700 phenotypes
+are missing.)
+Warning: Skipping --test-missing since at least one case and one control is
+required.
 
-End time: Sun May 19 08:46:31 2019
+End time: Sun May 19 12:16:48 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --data raw-camgwas
+  --exclude dups.dupvar
+  --keep-allele-order
+  --make-bed
+  --out raw-camGwas
+  --split-x b37
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:38:50 2019
+
+Random number seed: 1558258730
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+--data: raw-camGwas-temporary.bed + raw-camGwas-temporary.bim +
+raw-camGwas-temporary.fam written.
+2368677 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+--exclude: 2363060 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 1223994 het. haploid genotypes present (see raw-camGwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+2363060 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+--split-x: 1164 chromosome codes changed.
+--make-bed to raw-camGwas.bed + raw-camGwas.bim + raw-camGwas.fam ... done.
+
+End time: Sun May 19 12:45:19 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile raw-camGwas
+  --keep-allele-order
+  --make-bed
+  --out raw-camgwas
+  --update-name allMysnps.txt 1 2
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:45:28 2019
+
+Random number seed: 1558259128
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+--update-name: 2363060 values updated.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 999034 het. haploid genotypes present (see raw-camgwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+2363060 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+--make-bed to raw-camgwas.bed + raw-camgwas.bim + raw-camgwas.fam ... done.
+
+End time: Sun May 19 12:46:04 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile raw-camgwas
+  --indep-pairwise 50 5 0.2
+  --out prunedsnplist
+  --set-hh-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:46:08 2019
+
+Random number seed: 1558259168
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 999034 het. haploid genotypes present (see prunedsnplist.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+2363060 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+Pruned 133380 variants from chromosome 1, leaving 50118.
+Pruned 141465 variants from chromosome 2, leaving 52048.
+Pruned 119397 variants from chromosome 3, leaving 43966.
+Pruned 111107 variants from chromosome 4, leaving 41311.
+Pruned 105342 variants from chromosome 5, leaving 39875.
+Pruned 113824 variants from chromosome 6, leaving 40165.
+Pruned 93677 variants from chromosome 7, leaving 34966.
+Pruned 91426 variants from chromosome 8, leaving 33903.
+Pruned 74202 variants from chromosome 9, leaving 28521.
+Pruned 86735 variants from chromosome 10, leaving 32490.
+Pruned 84979 variants from chromosome 11, leaving 30895.
+Pruned 81371 variants from chromosome 12, leaving 31055.
+Pruned 60181 variants from chromosome 13, leaving 23188.
+Pruned 55205 variants from chromosome 14, leaving 21208.
+Pruned 51057 variants from chromosome 15, leaving 21095.
+Pruned 54484 variants from chromosome 16, leaving 21964.
+Pruned 46348 variants from chromosome 17, leaving 19910.
+Pruned 48329 variants from chromosome 18, leaving 20128.
+Pruned 33302 variants from chromosome 19, leaving 14347.
+Pruned 39837 variants from chromosome 20, leaving 16630.
+Pruned 22525 variants from chromosome 21, leaving 9454.
+Pruned 23321 variants from chromosome 22, leaving 9894.
+Pruned 36962 variants from chromosome 23, leaving 14554.
+Pruned 1646 variants from chromosome 24, leaving 109.
+Pruned 541 variants from chromosome 25, leaving 623.
+Pruning complete.  1710643 of 2363060 variants removed.
+Marker lists written to prunedsnplist.prune.in and prunedsnplist.prune.out .
+
+End time: Sun May 19 12:47:18 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile raw-camgwas
+  --extract prunedsnplist.prune.in
+  --make-bed
+  --out check-sex-data
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:47:18 2019
+
+Random number seed: 1558259238
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+--extract: 652417 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 248241 het. haploid genotypes present (see check-sex-data.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.956776.
+652417 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+--make-bed to check-sex-data.bed + check-sex-data.bim + check-sex-data.fam ...
+done.
+
+End time: Sun May 19 12:47:29 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile check-sex-data
+  --check-sex
+  --out check-sex-data
+  --set-hh-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:47:30 2019
+
+Random number seed: 1558259250
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+652417 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 248241 het. haploid genotypes present (see check-sex-data.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.956776.
+652417 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+--check-sex: 14554 Xchr and 0 Ychr variant(s) scanned, 104 problems detected.
+Report written to check-sex-data.sexcheck .
+
+End time: Sun May 19 12:47:32 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile raw-camgwas
+  --missing
+  --out raw-camgwas
+  --set-hh-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:47:33 2019
+
+Random number seed: 1558259253
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 999034 het. haploid genotypes present (see raw-camgwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+--missing: Sample missing data report written to raw-camgwas.imiss, and
+variant-based missing data report written to raw-camgwas.lmiss.
+
+End time: Sun May 19 12:47:45 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile raw-camgwas
+  --het
+  --out raw-camgwas
+  --set-hh-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:47:46 2019
+
+Random number seed: 1558259266
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 999034 het. haploid genotypes present (see raw-camgwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate is 0.953836.
+2363060 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+--het: 2258007 variants scanned, report written to raw-camgwas.het .
+
+End time: Sun May 19 12:48:05 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile raw-camgwas
+  --geno 0.05
+  --hwe 1e-8
+  --maf 0.35
+  --make-bed
+  --out frequent
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:49:09 2019
+
+Random number seed: 1558259349
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2308625 out of 2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.953853.
+279692 variants removed due to missing genotype data (--geno).
+--hwe: 838 variants removed due to Hardy-Weinberg exact test.
+1770814 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+257281 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+--make-bed to frequent.bed + frequent.bim + frequent.fam ... done.
+
+End time: Sun May 19 12:49:18 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile frequent
+  --indep-pairwise 50 5 0.2
+  --out prunedsnplist
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:49:18 2019
+
+Random number seed: 1558259358
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+257281 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.96674.
+257281 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+Pruned 12710 variants from chromosome 1, leaving 6798.
+Pruned 14706 variants from chromosome 2, leaving 7265.
+Pruned 13098 variants from chromosome 3, leaving 6221.
+Pruned 11888 variants from chromosome 4, leaving 5813.
+Pruned 11227 variants from chromosome 5, leaving 5596.
+Pruned 12153 variants from chromosome 6, leaving 5320.
+Pruned 9665 variants from chromosome 7, leaving 4853.
+Pruned 9746 variants from chromosome 8, leaving 4779.
+Pruned 7700 variants from chromosome 9, leaving 3967.
+Pruned 8545 variants from chromosome 10, leaving 4519.
+Pruned 8497 variants from chromosome 11, leaving 4114.
+Pruned 8164 variants from chromosome 12, leaving 4315.
+Pruned 6323 variants from chromosome 13, leaving 3401.
+Pruned 5555 variants from chromosome 14, leaving 2986.
+Pruned 5262 variants from chromosome 15, leaving 3142.
+Pruned 4937 variants from chromosome 16, leaving 2994.
+Pruned 3741 variants from chromosome 17, leaving 2516.
+Pruned 5215 variants from chromosome 18, leaving 3033.
+Pruned 2235 variants from chromosome 19, leaving 1672.
+Pruned 3782 variants from chromosome 20, leaving 2399.
+Pruned 2261 variants from chromosome 21, leaving 1390.
+Pruned 1619 variants from chromosome 22, leaving 1159.
+Pruning complete.  169029 of 257281 variants removed.
+Marker lists written to prunedsnplist.prune.in and prunedsnplist.prune.out .
+
+End time: Sun May 19 12:49:25 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile frequent
+  --extract prunedsnplist.prune.in
+  --genome
+  --out caseconpruned
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:49:25 2019
+
+Random number seed: 1558259365
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+257281 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+--extract: 88252 variants remaining.
+Using up to 4 threads (change this with --threads).
+Before main variant filters, 1471 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.966098.
+88252 variants and 1471 people pass filters and QC.
+Among remaining phenotypes, 693 are cases and 778 are controls.
+IBD calculations complete.
+Finished writing caseconpruned.genome .
+
+End time: Sun May 19 12:50:29 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile raw-camgwas
+  --make-bed
+  --out ind-qc-camgwas
+  --remove fail-ind.qc
+  --set-hh-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:52:14 2019
+
+Random number seed: 1558259534
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
+--remove: 1307 people remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 435234 het. haploid genotypes present (see ind-qc-camgwas.hh ); many
+commands treat these as missing.
+Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
+treat these as missing.
+Total genotyping rate in remaining samples is 0.974875.
+2363060 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 700 are controls.
+--make-bed to ind-qc-camgwas.bed + ind-qc-camgwas.bim + ind-qc-camgwas.fam ...
+done.
+
+End time: Sun May 19 12:52:35 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile ind-qc-camgwas
+  --missing
+  --out ind-qc-camgwas
+  --set-hh-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:52:36 2019
+
+Random number seed: 1558259556
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+1307 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.974709.
+--missing: Sample missing data report written to ind-qc-camgwas.imiss, and
+variant-based missing data report written to ind-qc-camgwas.lmiss.
+
+End time: Sun May 19 12:52:51 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile ind-qc-camgwas
+  --freq
+  --out ind-qc-camgwas
+  --set-hh-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:52:52 2019
+
+Random number seed: 1558259572
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+1307 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.974709.
+--freq: Allele frequencies (founders only) written to ind-qc-camgwas.frq .
+
+End time: Sun May 19 12:52:59 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile ind-qc-camgwas
+  --out ind-qc-camgwas
+  --set-hh-missing
+  --test-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:53:00 2019
+
+Random number seed: 1558259580
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+1307 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.974709.
+2363060 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 700 are controls.
+Writing --test-missing report to ind-qc-camgwas.missing ... done.
+
+End time: Sun May 19 12:53:12 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile ind-qc-camgwas
+  --biallelic-only
+  --exclude fail-diffmiss.qc
+  --geno 0.04
+  --hwe 1e-20
+  --keep-allele-order
+  --maf 0.01
+  --make-bed
+  --merge-x
+  --out qc-camgwas
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:57:43 2019
+
+Random number seed: 1558259863
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+2363060 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+1307 phenotype values loaded from .fam.
+--exclude: 2263383 variants remaining.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.984149.
+96697 variants removed due to missing genotype data (--geno).
+Warning: --hwe observation counts vary by more than 10%, due to the X
+chromosome.  You may want to use a less stringent --hwe p-value threshold for X
+chromosome variants.
+--hwe: 67 variants removed due to Hardy-Weinberg exact test.
+453389 variants removed due to minor allele threshold(s)
+(--maf/--max-maf/--mac/--max-mac).
+1713230 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 700 are controls.
+--merge-x: 649 chromosome codes changed.
+--make-bed to qc-camgwas.bed + qc-camgwas.bim + qc-camgwas.fam ... done.
+
+End time: Sun May 19 12:58:01 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --autosome
+  --bfile qc-camgwas
+  --make-bed
+  --out qc-camgwas-autosome
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:58:01 2019
+
+Random number seed: 1558259881
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+1674187 out of 1713230 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+1307 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995119.
+1674187 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 700 are controls.
+--make-bed to qc-camgwas-autosome.bed + qc-camgwas-autosome.bim +
+qc-camgwas-autosome.fam ... done.
+
+End time: Sun May 19 12:58:18 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile qc-camgwas
+  --chr X
+  --make-bed
+  --out qc-camgwas-chrX
+  --set-hh-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:58:18 2019
+
+Random number seed: 1558259898
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+38745 out of 1713230 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+1307 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Warning: 144310 het. haploid genotypes present (see qc-camgwas-chrX.hh ); many
+commands treat these as missing.
+Total genotyping rate is 0.994228.
+38745 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 700 are controls.
+--make-bed to qc-camgwas-chrX.bed + qc-camgwas-chrX.bim + qc-camgwas-chrX.fam
+... done.
+
+End time: Sun May 19 12:58:20 2019
+PLINK v1.90b5.2 64-bit (9 Jan 2018)
+Options in effect:
+  --allow-no-sex
+  --bfile qc-camgwas-chrX
+  --out qc-camgwas-chrX
+  --set-hh-missing
+  --test-missing
+
+Hostname: esohkev
+Working directory: /home/esoh/esohdata/GWAS/analysis
+Start time: Sun May 19 12:58:20 2019
+
+Random number seed: 1558259900
+5822 MB RAM detected; reserving 2911 MB for main workspace.
+38745 variants loaded from .bim file.
+1307 people (767 males, 540 females) loaded from .fam.
+1307 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1307 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.991378.
+38745 variants and 1307 people pass filters and QC.
+Among remaining phenotypes, 607 are cases and 700 are controls.
+Writing --test-missing report to qc-camgwas-chrX.missing ... done.
+
+End time: Sun May 19 12:58:20 2019

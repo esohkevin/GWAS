@@ -7,22 +7,24 @@ Options in effect:
 
 Hostname: esohkev
 Working directory: /home/esoh/esohdata/GWAS/analysis
-Start time: Sun May 19 08:35:36 2019
+Start time: Sun May 19 11:57:58 2019
 
-Random number seed: 1558244136
+Random number seed: 1558256278
 5822 MB RAM detected; reserving 2911 MB for main workspace.
 --data: dups-temporary.bed + dups-temporary.bim + dups-temporary.fam written.
 2368677 variants loaded from .bim file.
-1471 people (0 males, 0 females, 1471 ambiguous) loaded from .fam.
-Ambiguous sex IDs written to dups.nosex .
+1471 people (875 males, 596 females) loaded from .fam.
+1471 phenotype values loaded from .fam.
 Using 1 thread (no multithreaded calculations invoked).
 Before main variant filters, 1471 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
+Warning: 1256941 het. haploid genotypes present (see dups.hh ); many commands
+treat these as missing.
 Warning: Nonmissing nonmale Y chromosome genotype(s) present; many commands
 treat these as missing.
-Total genotyping rate is 0.953866.
+Total genotyping rate is 0.953835.
 2368677 variants and 1471 people pass filters and QC.
-Note: No phenotypes present.
+Among remaining phenotypes, 693 are cases and 778 are controls.
 --list-duplicate-vars report written to dups.dupvar .
 
-End time: Sun May 19 08:41:01 2019
+End time: Sun May 19 12:03:48 2019

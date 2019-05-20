@@ -1,6 +1,6 @@
 #!/bin/bash
 
-base="qc-camgwas-updated-chr"
+prefix="qc-camgwas-updated-chr"
 
 #########################################################################
 #            The merged chromosomes file                                #
@@ -18,11 +18,11 @@ bgzip -f qc-camgwas-updated.vcf
 #########################################################################
 for i in $(seq 1 23); do
 vcfCooker \
-	--in-bfile ${base}${i} \
+	--in-bfile ${prefix}${i} \
 	--ref human_g1k_v37.fasta \
-	--out ${base}${i}.vcf \
+	--out ${prefix}${i}.vcf \
 	--write-vcf
-bgzip -f ${base}${i}.vcf
+bgzip -f ${prefix}${i}.vcf
 done
 cp qc-camgwas-updated-chr23.vcf.gz qc-camgwas-updated-chrX.vcf.gz
 

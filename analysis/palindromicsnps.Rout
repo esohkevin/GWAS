@@ -17,6 +17,8 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
+[Previously saved workspace restored]
+
 > #!/usr/bin/env R
 > 
 > # Check installation of qqman and load it if installed
@@ -33,9 +35,16 @@ Turner, S.D. qqman: an R package for visualizing GWAS results using Q-Q and manh
 > 
 > # Extract palindromic SNPs
 > bim = read.table("qc-camgwas.bim", header=F, as.is=T)
-Error in file(file, "rt") : cannot open the connection
-Calls: read.table -> file
-In addition: Warning message:
-In file(file, "rt") :
-  cannot open file 'qc-camgwas.bim': No such file or directory
-Execution halted
+> # Get indices of A/T and G/C SNPs
+> w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="A" & bim$V6=="T") | (bim$V5=="A" & bim$V6=="T"))
+> 
+> # Extract A/T and G/C SNPs
+> at.cg.snps = bim[w,]
+> 
+> # Save A/T and G/C snps into a file at-cg.snps
+> write.table(at.cg.snps$V2, file="at-cg.snps", row.names=F, col.names=F, quote=F)
+> 
+> 
+> proc.time()
+   user  system elapsed 
+ 89.027   1.093  90.462 

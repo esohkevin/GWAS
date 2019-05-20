@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
-analysis="$HOME/GWAS/Git/GWAS/analysis/"
-1kgp_path="$HOME/GWAS/Git/GWAS/phase/1000GP_Phase3/"
-eig="$HOME/GWAS/Git/GWAS/popstruct/eig/EIGENSTRAT/"
-eigstruct="$HOME/GWAS/Git/GWAS/popstruct/eig/"
+cd ../;
+baseDir=`pwd`
+cd -;
+analysis="${baseDir}/analysis/"
+kgp="${baseDir}/phase/1000GP_Phase3/"
+eig="${baseDir}/popstruct/eig/EIGENSTRAT/"
+eigstruct="${baseDir}/popstruct/eig/"
 
 echo "### Extract Palimcromic SNPs and prepare chromosomes for imputation services ###"
 # Compute allel frequencies

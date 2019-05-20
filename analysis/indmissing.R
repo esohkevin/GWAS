@@ -21,11 +21,11 @@ mishet=data.frame(FID=het$FID, IID=het$IID, het.rate=(het$N.NM. - het$O.HOM.)/he
 #hetlower=meanhet - sdhet*3
 
 # Plot the proportion of missing genotypes and the heterozygosity rate
-png(filename = "mishet.png", width = 520, height = 520, units = "px", pointsize = 12,
+png(filename = "mishet.png", width = 500, height = 480, units = "px", pointsize = 12,
     bg = "white",  res = NA)
 par(mfrow=c(1,1))
 plot(mishet$het.rate, mishet$mis.rate, xlab = "Heterozygous rate", ylab = "Proportion of missing genotype", pch=20)
-abline(v=c(0.185,0.225), h=0.1, lty=2)
+abline(v=c(0.180,0.230), h=0.1, lty=2)
 dev.off()
 
 # Extract individuals that will be excluded from further analysis (who didn't pass the filter)
@@ -34,6 +34,6 @@ fail_mis_qc=mishet[mishet$mis.rate > 0.1, ]
 write.table(fail_mis_qc[,1:2], file = "fail-mis.qc", row.names = F, col.names = F, quote = F, sep = "\t")
 
 # Individuals with het.rate < 0.18 (previously 0.195) and individuals with het.rate > o.23 (previously 0.22)
-fail_het_qc=mishet[mishet$het.rate < 0.185 | mishet$het.rate > 0.225, ]
+fail_het_qc=mishet[mishet$het.rate < 0.180 | mishet$het.rate > 0.230, ]
 write.table(fail_het_qc[,1:2], file = "fail-het.qc", row.names = F, col.names = F, quote = F, sep = "\t")
 

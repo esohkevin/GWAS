@@ -6,31 +6,34 @@
 #			from: 
 
 #runplink1.9() {
-images="$HOME/GWAS/Git/GWAS/images/"
-samples="$HOME/GWAS/Git/GWAS/samples/"
+cd ../;
+baseDir=`pwd`
+cd -;
+images="$baseDir/images/"
+samples="$baseDir/samples/"
 mkdir -p ../images
 #read -p 'Please provide your genotype vcf file: ' vcf
 
 ################################################################################
-plink1.9 \
+#plink1.9 \
 	--vcf camgwas_merge.vcf.gz \
 	--recode oxford \
 	--keep-allele-order \
 	--allow-no-sex \
 	--double-id \
 	--out raw-camgwas
-cat raw-camgwas.log > all.log
+#cat raw-camgwas.log > all.log
 cp ${samples}raw-camgwas.sample .
 
 #	Sample: 	raw-camgwas.sample
 
 ############################ Check for duplicate SNPs #########################
-plink1.9 \
+#plink1.9 \
 	--data raw-camgwas \
 	--allow-no-sex \
 	--list-duplicate-vars ids-only suppress-first \
 	--out dups
-cat dups.dupvar.log >> all.log
+#cat dups.log >> all.log
 
 ###############################################################################
 # Make plink binary files from Oxford .gen + .sample files spliting chrX by the PARs using the b37 coordinates while removing duplicate SNPs
@@ -48,7 +51,6 @@ cat raw-camGwas.log >> all.log
 cut -f2 raw-camGwas.bim > all.snps.ids
 cut -f1 -d',' all.snps.ids > all.rs.ids
 paste all.rs.ids all.snps.ids > allMysnps.txt
-rm all.rs.ids all.snps.ids
 
 plink1.9 \
         --bfile raw-camGwas \
@@ -119,7 +121,7 @@ echo -e "\nNow generating plots for per individual missingness in R. Please wait
 
 R CMD BATCH indmissing.R
 
-# Extract a subset of frequent individuals to produce an IBD report to check duplicate or related individuals based on autosomes
+# Extract a subset of frequent individuals to produce an IBD report to check duplicate or related individuals baseDird on autosomes
 plink1.9 \
 	--bfile raw-camgwas \
 	--autosome \
@@ -318,16 +320,16 @@ echo """
 #                     Run Imputation Prep Script                        #
 #########################################################################
 """
-rm -r raw-camGwas.*
-mv check-sex-data.sexcheck sexcheck.txt
-rm raw-camgwas.*
-rm check-sex-data*
-rm *.hh
-rm frequent.*
-rm caseconpruned.*
-rm pruned*
-rm allMysnps.txt
-
+#rm -r raw-camGwas.*
+#mv check-sex-data.sexcheck sexcheck.txt
+#rm raw-camgwas.*
+#rm check-sex-data*
+#rm *.hh
+#rm frequent.*
+#rm caseconpruned.*
+#rm pruned*
+#rm allMysnps.txt
+#rm all.rs.ids all.snps.ids
 mv *.png ${images}
 
 ./imputePrep.sh
