@@ -15,25 +15,25 @@ mkdir -p ../images
 #read -p 'Please provide your genotype vcf file: ' vcf
 
 ################################################################################
-#plink1.9 \
+plink1.9 \
 	--vcf camgwas_merge.vcf.gz \
 	--recode oxford \
 	--keep-allele-order \
 	--allow-no-sex \
 	--double-id \
 	--out raw-camgwas
-#cat raw-camgwas.log > all.log
+cat raw-camgwas.log > all.log
 cp ${samples}raw-camgwas.sample .
 
 #	Sample: 	raw-camgwas.sample
 
 ############################ Check for duplicate SNPs #########################
-#plink1.9 \
+plink1.9 \
 	--data raw-camgwas \
 	--allow-no-sex \
 	--list-duplicate-vars ids-only suppress-first \
 	--out dups
-#cat dups.log >> all.log
+cat dups.log >> all.log
 
 ###############################################################################
 # Make plink binary files from Oxford .gen + .sample files spliting chrX by the PARs using the b37 coordinates while removing duplicate SNPs
@@ -320,16 +320,16 @@ echo """
 #                     Run Imputation Prep Script                        #
 #########################################################################
 """
-#rm -r raw-camGwas.*
-#mv check-sex-data.sexcheck sexcheck.txt
-#rm raw-camgwas.*
-#rm check-sex-data*
-#rm *.hh
-#rm frequent.*
-#rm caseconpruned.*
-#rm pruned*
-#rm allMysnps.txt
-#rm all.rs.ids all.snps.ids
+rm raw-camGwas.*
+mv check-sex-data.sexcheck sexcheck.txt
+rm raw-camgwas.*
+rm check-sex-data*
+rm *.hh
+rm frequent.*
+rm caseconpruned.*
+rm pruned*
+rm allMysnps.txt
+rm all.rs.ids all.snps.ids
 mv *.png ${images}
 
 ./imputePrep.sh

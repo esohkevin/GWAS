@@ -1,11 +1,11 @@
 #!/bin/bash
 
-phase="$HOME/GWAS/Git/GWAS/phase/"
+analysis="$HOME/GWAS/Git/GWAS/analysis/"
 
 
 # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
 plink \
-        --vcf "${phase}"qc-camgwas-updated \
+        --bfile "${analysis}"qc-camgwas-updated \
         --indep-pairwise 50 5 0.2 \
         --allow-no-sex \
 	--keep-allele-order \
@@ -16,7 +16,7 @@ plink \
 cat qc-ldPruned.log > convertf.log
 
 plink \
-        --bfile "${phase}"qc-camgwas-updated \
+        --bfile "${analysis}"qc-camgwas-updated \
         --extract qc-ldPruned.prune.in \
         --allow-no-sex \
         --autosome \

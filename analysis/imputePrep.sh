@@ -36,10 +36,10 @@ echo -e "\n### Run Run-plink.sh to update the dataset ###"
 ./Run-plink.sh
 
 echo -e "\nConverting Single Chromosome plink binary files to VCF files\n"
-#./plink2vcf.sh
+./plink2vcf.sh
 
 echo -e "\n### Chechk VCF for errors using the checkVCF.py script ###"
-#./vcfcheck.sh
+./vcfcheck.sh
 
 ################################# Remove Irrelevant Files ####################################
 rm qc-camgwas-updated-chr*.*

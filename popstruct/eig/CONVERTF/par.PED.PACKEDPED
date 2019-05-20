@@ -5,7 +5,7 @@ outputformat:    PACKEDPED
 genotypeoutname: qc-camgwas.bed
 snpoutname:      qc-camgwas.pedsnp
 indivoutname:    qc-camgwas.pedind
-#xregionname:	 high-ld-regions.b37
+xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES
 familynames:     NO

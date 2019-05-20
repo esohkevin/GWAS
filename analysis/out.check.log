@@ -1,20 +1,14 @@
-05-17 19:22 checkVCF.py -- check validity of VCF file for meta-analysis
-05-17 19:22 version 1.4 (20140115)
-05-17 19:22 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
-05-17 19:22 Python version is [ 2.7.12.final.0 ] 
-05-17 19:22 Begin checking vcfFile [ qc-camgwas-updated-chr23.vcf.gz ]
-05-17 19:23 [ 10000 ] lines processed 
-05-17 19:23 [ 20000 ] lines processed 
-05-17 19:24 [ 30000 ] lines processed 
-05-17 19:24 ---------------     REPORT     ---------------
-05-17 19:24 Total [ 37081 ] lines processed
-05-17 19:24 Examine [ 10 ] VCF header lines, [ 37071 ] variant sites, [ 1304 ] samples
-05-17 19:24 [ 0 ] duplicated sites
-05-17 19:24 [ 0 ] NonSNP site are outputted to [ out.check.nonSnp ]
-05-17 19:24 [ 0 ] Inconsistent reference sites are outputted to [ out.check.ref ]
-05-17 19:24 [ 0 ] Variant sites with invalid genotypes are outputted to [ out.check.geno ]
-05-17 19:24 [ 9323 ] Alternative allele frequency > 0.5 sites are outputted to [ out.check.af ]
-05-17 19:24 [ 0 ] Monomorphic sites are outputted to [ out.check.mono ]
-05-17 19:24 ---------------     ACTION ITEM     ---------------
-05-17 19:24 * No error found by checkVCF.py, thank you for cleanning VCF file.
-05-17 19:24 * Upload these files to the ftp server (so we can double check): out.check.log out.check.dup out.check.noSnp out.check.ref out.check.geno out.check.af out.check.mono
+05-20 13:06 checkVCF.py -- check validity of VCF file for meta-analysis
+05-20 13:06 version 1.4 (20140115)
+05-20 13:06 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
+05-20 13:06 Python version is [ 2.7.12.final.0 ] 
+05-20 13:06 Begin checking vcfFile [ qc-camgwas-updated.vcf.gz ]
+05-20 13:06 [ 10000 ] lines processed 
+05-20 13:07 [ 20000 ] lines processed 
+05-20 13:07 [ 30000 ] lines processed 
+05-20 13:08 [ 40000 ] lines processed 
+05-20 13:08 [ 50000 ] lines processed 
+05-20 13:09 [ 60000 ] lines processed 
+05-20 13:09 [ 70000 ] lines processed 
+05-20 13:10 [ 80000 ] lines processed 
+05-20 13:10 [ 90000 ] lines processed 
