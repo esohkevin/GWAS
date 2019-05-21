@@ -16,10 +16,10 @@ fstonly
 norm used
 
 packed geno read OK
-number of samples used: 1304 number of snps used: 444438
+number of samples used: 1307 number of snps used: 435105
 Using 127 threads, and partial sum lookup algorithm.
 
-## Tracy-Widom statistics: rows: 1304  cols: 444438
+## Tracy-Widom statistics: rows: 1307  cols: 435105
   #N    eigenvalue  difference    twstat      p-value effect. n
            #eigvals: 
    6042341077_R01C01            BUEA
@@ -465,6 +465,7 @@ Using 127 threads, and partial sum lookup algorithm.
    6135601049_R01C01            BUEA
    6135601049_R02C01            BUEA
    6135601049_R03C01            BUEA
+   6135601049_R05C01            BUEA
    6135601049_R06C01            BUEA
    6135601049_R07C01            BUEA
    6135601049_R08C01            BUEA
@@ -1029,6 +1030,7 @@ Using 127 threads, and partial sum lookup algorithm.
    6171492048_R01C01            BUEA
    6171492048_R02C01            BUEA
    6171492048_R06C01            BUEA
+   6171492048_R08C01            BUEA
    6171492049_R01C01             YDE
    6171492049_R02C01             YDE
    6171492049_R03C01             YDE
@@ -1078,6 +1080,7 @@ Using 127 threads, and partial sum lookup algorithm.
    6171492060_R04C01            BUEA
    6171492060_R05C01            BUEA
    6171492060_R06C01            BUEA
+   6171492060_R07C01            BUEA
    6171492060_R08C01            BUEA
    6171492068_R01C01            BUEA
    6171492068_R02C01             YDE
@@ -1327,10 +1330,10 @@ Using 127 threads, and partial sum lookup algorithm.
    6264550046_R05C01            BUEA
    6264550046_R06C01            BUEA
     kurtosis           snps    indivs
-population:   0                 BUEA  846
+population:   0                 BUEA  849
 population:   1                  DLA   91
 population:   2                  YDE  367
-number of blocks for moving block jackknife: 555
+number of blocks for moving block jackknife: 540
 fst *1000:
           B     D     Y 
    B      0     0     0
@@ -1339,8 +1342,8 @@ fst *1000:
 
 s.dev * 1000000:
           B     D     Y 
-   B      0    12     6
-   D     12     0    15
+   B      0    13     6
+   D     13     0    15
    Y      6    15     0
 
 ##end of smartpca run

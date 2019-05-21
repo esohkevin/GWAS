@@ -13,7 +13,7 @@ for chr in {1..22}; do
     --outPrefix=chr${chr}-phased_wref \
     --chrom=${chr} \
     --pbwtIters=10 \
-    --numThreads=50 \
+    --numThreads=90 \
     --Kpbwt=50000 \
     --vcfOutFormat=z \
     2>&1 | tee chr${chr}-phase_wref.log

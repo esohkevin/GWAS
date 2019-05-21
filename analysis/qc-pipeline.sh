@@ -19,6 +19,7 @@ plink1.9 \
 	--vcf camgwas_merge.vcf.gz \
 	--recode oxford \
 	--keep-allele-order \
+	--remove ${samples}missingEthnicity.ids \
 	--allow-no-sex \
 	--double-id \
 	--out raw-camgwas
