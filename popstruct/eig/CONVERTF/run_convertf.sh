@@ -1,7 +1,6 @@
 #!/bin/bash
 
-analysis="$HOME/GWAS/Git/GWAS/analysis/"
-
+analysis="../../../analysis/"
 
 # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
 plink \
@@ -38,15 +37,15 @@ rm qc-ldPruned* qc-camgwas-ldPruned*
 # Convert files into eigensoft compartible formats
 
 echo -e "\n### PED to PACKEDPED ###" >> convertf.log
-convertf -p par.PED.PACKEDPED
+convertf -p par.PED.PACKEDPED >>convertf.log
 
 echo -e "\n### PACKEDPED to PACKEDANCESTRYMAP ###" >> convertf.log
-convertf -p par.PACKEDPED.PACKEDANCESTRYMAP	
+convertf -p par.PACKEDPED.PACKEDANCESTRYMAP >>convertf.log	
 
 echo -e "\n### PACKEDANCESTRYMAP to ANCESTRYMAP ###" >> convertf.log
-convertf -p par.PACKEDANCESTRYMAP.ANCESTRYMAP	
+convertf -p par.PACKEDANCESTRYMAP.ANCESTRYMAP >>convertf.log
 
 echo -e "\n### ANCESTRYMAP to EIGENSTRAT ###" >> convertf.log
-convertf -p par.ANCESTRYMAP.EIGENSTRAT	
+convertf -p par.ANCESTRYMAP.EIGENSTRAT >>convertf.log
 
 #convertf -p par.PED.EIGENSTRAT

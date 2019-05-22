@@ -1,6 +1,6 @@
 #!/bin/bash
 
-analysis="$HOME/GWAS/Git/GWAS/analysis/"
+analysis="../../../analysis/"
 
 
 # Prune the eig-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs

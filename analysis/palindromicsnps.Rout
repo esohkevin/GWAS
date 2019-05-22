@@ -47,4 +47,4 @@ Turner, S.D. qqman: an R package for visualizing GWAS results using Q-Q and manh
 > 
 > proc.time()
    user  system elapsed 
- 33.218   0.784  34.018 
+ 36.166   0.967  37.118 

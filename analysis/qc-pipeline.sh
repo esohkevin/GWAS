@@ -161,7 +161,7 @@ echo -e "\nNow generating plots for IBD analysis in R. Please wait..."
 R CMD BATCH ibdana.R
 
 # Merge IDs of all individuals that failed per individual qc
-cat fail-checksex.qc  fail-het.qc  fail-mis.qc duplicate.ids2 | sort | uniq > fail-ind.qc
+cat fail-checksex.qc  fail-het.qc  fail-mis.qc duplicate.ids1 | sort | uniq > fail-ind.qc
 
 # Remove individuals who failed per individual QC
 plink1.9 \
@@ -318,19 +318,46 @@ plink \
 
 echo """
 #########################################################################
+#                     	   Updating QC rsids                            #
+#########################################################################
+"""
+cut -f1,4 qc-camgwas.bim | \
+	sed 's/\t/:/g' > qc-camgwas.pos
+cut -f2 qc-camgwas.bim > qc-camgwas.ids
+paste qc-camgwas.ids qc-camgwas.pos > qc-camgwas-ids-pos.txt
+
+plink \
+	--bfile qc-camgwas \
+	--update-name qc-camgwas-ids-pos.txt 2 1 \
+	--allow-no-sex \
+	--make-bed \
+	--out qc-camgwas
+cat qc-camgwas.log >> all.log
+
+plink \
+	--bfile qc-camgwas \
+	--update-name updateName.txt 1 2 \
+	--allow-no-sex \
+	--make-bed \
+	--out qc-camgwas
+cat qc-camgwas.log >> all.log
+
+echo """
+#########################################################################
 #                     Run Imputation Prep Script                        #
 #########################################################################
 """
-rm raw-camGwas.*
+rm raw-camGwas.* qc-camgwas.bim~ qc-camgwas.bed~ qc-camgwas.fam~
 mv check-sex-data.sexcheck sexcheck.txt
-rm raw-camgwas.*
-rm check-sex-data*
-rm *.hh
-rm frequent.*
+rm raw-camgwas.* qc-camgwas-autosome.* qc-camgwas-chr* 
+rm check-sex-data* qc-camgwas-ids-pos.txt qc-camgwas.pos
+rm *.hh qc-camgwas.ids
+rm frequent.* ind-qc-camgwas*
 rm caseconpruned.*
 rm pruned*
 rm allMysnps.txt
 rm all.rs.ids all.snps.ids
+
 mv *.png ${images}
 
 ./imputePrep.sh

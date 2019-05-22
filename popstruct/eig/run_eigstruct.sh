@@ -19,6 +19,6 @@ cd ../
 
 # Compute Population Genetic Statistics
 cd POPGEN/
-#./run_popgen.sh
+./run_popgenstats.sh
 
 cd ../
