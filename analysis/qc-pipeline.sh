@@ -316,31 +316,31 @@ plink \
 	--out qc-camgwas
 #done
 
-echo """
+#echo """
 #########################################################################
 #                     	   Updating QC rsids                            #
 #########################################################################
-"""
-cut -f1,4 qc-camgwas.bim | \
-	sed 's/\t/:/g' > qc-camgwas.pos
-cut -f2 qc-camgwas.bim > qc-camgwas.ids
-paste qc-camgwas.ids qc-camgwas.pos > qc-camgwas-ids-pos.txt
-
-plink \
-	--bfile qc-camgwas \
-	--update-name qc-camgwas-ids-pos.txt 2 1 \
-	--allow-no-sex \
-	--make-bed \
-	--out qc-camgwas
-cat qc-camgwas.log >> all.log
-
-plink \
-	--bfile qc-camgwas \
-	--update-name updateName.txt 1 2 \
-	--allow-no-sex \
-	--make-bed \
-	--out qc-camgwas
-cat qc-camgwas.log >> all.log
+#"""
+#cut -f1,4 qc-camgwas.bim | \
+#	sed 's/\t/:/g' > qc-camgwas.pos
+#cut -f2 qc-camgwas.bim > qc-camgwas.ids
+#paste qc-camgwas.ids qc-camgwas.pos > qc-camgwas-ids-pos.txt
+#
+#plink \
+#	--bfile qc-camgwas \
+#	--update-name qc-camgwas-ids-pos.txt 2 1 \
+#	--allow-no-sex \
+#	--make-bed \
+#	--out qc-camgwas
+#cat qc-camgwas.log >> all.log
+#
+#plink \
+#	--bfile qc-camgwas \
+#	--update-name updateName.txt 1 2 \
+#	--allow-no-sex \
+#	--make-bed \
+#	--out qc-camgwas
+#cat qc-camgwas.log >> all.log
 
 echo """
 #########################################################################
@@ -349,7 +349,8 @@ echo """
 """
 rm raw-camGwas.* qc-camgwas.bim~ qc-camgwas.bed~ qc-camgwas.fam~
 mv check-sex-data.sexcheck sexcheck.txt
-rm raw-camgwas.* qc-camgwas-autosome.* qc-camgwas-chr* 
+#rm raw-camgwas.* 
+rm qc-camgwas-autosome.* qc-camgwas-chr* 
 rm check-sex-data* qc-camgwas-ids-pos.txt qc-camgwas.pos
 rm *.hh qc-camgwas.ids
 rm frequent.* ind-qc-camgwas*
@@ -360,6 +361,6 @@ rm all.rs.ids all.snps.ids
 
 mv *.png ${images}
 
-./imputePrep.sh
+#./imputePrep.sh
 
 #}

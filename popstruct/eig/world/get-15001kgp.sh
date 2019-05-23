@@ -6,7 +6,7 @@ kgp="../../../1000G/"
 
 # --thin-indiv-count 1500 \ add this line to get only 1500 individuals from 1KGP
 
-cut -f2 ${analysis}qc-camgwas-updated.bim > extract-qc.rsids
+cut -f1 -d':' ../../../analysis/ID-qc-camgwas-1000G.txt | cut -f2 | grep "rs" > extract-qc.rsids
 
 #cut -f1,2 -d':' ${analysis}ID-qc-camgwas-1000G.txt > updated-qc.rsids
 
@@ -97,8 +97,8 @@ plink \
 cat merged-data-pruned.log >> log.file
 
 
-rm fo-camgwas* prune* qc-world-merge* thinned-qc-camgwas* 250SB-camgwas*
-rm *.log
+#rm fo-camgwas* prune* qc-world-merge* thinned-qc-camgwas* 250SB-camgwas*
+#rm *.log
 
 # Prepare ethnicity template file 
 cut -f1 -d' ' merged-data-pruned.fam > cam.id

@@ -5,7 +5,9 @@
 
 ref_path="$HOME/GWAS/Git/GWAS/1000G"
 
-for chr in {1..22}; do
+echo "`tabix -f -p vcf qc-camgwas-updated.vcf.gz`"
+
+for chr in {2..22}; do
   eagle \
     --vcfRef=${ref_path}/ALL.chr${chr}.phase3_integrated.20130502.genotypes.bcf \
     --vcfTarget=qc-camgwas-updated.vcf.gz \
@@ -17,6 +19,8 @@ for chr in {1..22}; do
     --Kpbwt=50000 \
     --vcfOutFormat=z \
     2>&1 | tee chr${chr}-phase_wref.log
+
+  echo "`tabix -f -p vcf chr${chr}-phase_wref.vcf.gz`"
 
 done
 

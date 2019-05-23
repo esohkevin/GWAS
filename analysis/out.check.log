@@ -1,20 +1,20 @@
-05-22 05:47 checkVCF.py -- check validity of VCF file for meta-analysis
-05-22 05:47 version 1.4 (20140115)
-05-22 05:47 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
-05-22 05:47 Python version is [ 2.7.12.final.0 ] 
-05-22 05:47 Begin checking vcfFile [ qc-camgwas-updated-chr23.vcf.gz ]
-05-22 05:47 [ 10000 ] lines processed 
-05-22 05:48 [ 20000 ] lines processed 
-05-22 05:48 [ 30000 ] lines processed 
-05-22 05:49 ---------------     REPORT     ---------------
-05-22 05:49 Total [ 36842 ] lines processed
-05-22 05:49 Examine [ 10 ] VCF header lines, [ 36832 ] variant sites, [ 1185 ] samples
-05-22 05:49 [ 0 ] duplicated sites
-05-22 05:49 [ 0 ] NonSNP site are outputted to [ out.check.nonSnp ]
-05-22 05:49 [ 0 ] Inconsistent reference sites are outputted to [ out.check.ref ]
-05-22 05:49 [ 0 ] Variant sites with invalid genotypes are outputted to [ out.check.geno ]
-05-22 05:49 [ 9208 ] Alternative allele frequency > 0.5 sites are outputted to [ out.check.af ]
-05-22 05:49 [ 0 ] Monomorphic sites are outputted to [ out.check.mono ]
-05-22 05:49 ---------------     ACTION ITEM     ---------------
-05-22 05:49 * No error found by checkVCF.py, thank you for cleanning VCF file.
-05-22 05:49 * Upload these files to the ftp server (so we can double check): out.check.log out.check.dup out.check.noSnp out.check.ref out.check.geno out.check.af out.check.mono
+05-22 11:26 checkVCF.py -- check validity of VCF file for meta-analysis
+05-22 11:26 version 1.4 (20140115)
+05-22 11:26 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
+05-22 11:26 Python version is [ 2.7.12.final.0 ] 
+05-22 11:26 Begin checking vcfFile [ qc-camgwas-updated-chr23.vcf.gz ]
+05-22 11:26 [ 10000 ] lines processed 
+05-22 11:27 [ 20000 ] lines processed 
+05-22 11:27 [ 30000 ] lines processed 
+05-22 11:27 ---------------     REPORT     ---------------
+05-22 11:27 Total [ 36853 ] lines processed
+05-22 11:27 Examine [ 10 ] VCF header lines, [ 36843 ] variant sites, [ 1185 ] samples
+05-22 11:27 [ 0 ] duplicated sites
+05-22 11:27 [ 0 ] NonSNP site are outputted to [ out.check.nonSnp ]
+05-22 11:27 [ 0 ] Inconsistent reference sites are outputted to [ out.check.ref ]
+05-22 11:27 [ 0 ] Variant sites with invalid genotypes are outputted to [ out.check.geno ]
+05-22 11:27 [ 9209 ] Alternative allele frequency > 0.5 sites are outputted to [ out.check.af ]
+05-22 11:27 [ 0 ] Monomorphic sites are outputted to [ out.check.mono ]
+05-22 11:27 ---------------     ACTION ITEM     ---------------
+05-22 11:27 * No error found by checkVCF.py, thank you for cleanning VCF file.
+05-22 11:27 * Upload these files to the ftp server (so we can double check): out.check.log out.check.dup out.check.noSnp out.check.ref out.check.geno out.check.af out.check.mono
