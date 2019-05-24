@@ -1,10 +1,10 @@
 
 ####################################### EIGEN ANALYSIS #######################################
 # Convert File Formats
-cd CONVERTF/
-./run_convertf.sh
+#cd CONVERTF/
+#./run_convertf.sh
 
-cd ../
+#cd ../
 
 # Compute Eigenvectors
 cd EIGENSTRAT/
@@ -22,3 +22,13 @@ cd POPGEN/
 ./run_popgenstats.sh
 
 cd ../
+
+# Compute PCA with dataset without outliers
+cd CONVERTF/
+./run_eig-convertf.sh
+
+cd ../EIGENSTRAT/
+./run_eigCorrPCA.perl
+
+echo -e "\nAll Processes Done Running!\n"
+

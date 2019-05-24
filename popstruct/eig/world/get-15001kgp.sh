@@ -58,7 +58,7 @@ cat qc-rsids-world.log >> log.file
 
 # Get only Foulbe individuals from qc-camgwas
 plink \
-        --bfile ${analysis}qc-camgwas \
+        --bfile ${analysis}qc-camgwas-updated \
         --allow-no-sex \
         --keep ${samples}exclude_fo.txt \
 	--autosome \
@@ -68,7 +68,7 @@ cat fo-camgwas.log >> log.file
 
 # Get only Semi-Bantu and Bantu individuals from qc-camgwas while thinning to 250
 plink \
-	--bfile ${analysis}qc-camgwas \
+	--bfile ${analysis}qc-camgwas-updated \
 	--allow-no-sex \
 	--thin-indiv-count 250 \
 	--remove ${samples}exclude_fo.txt \
@@ -139,7 +139,7 @@ plink \
 	--out merged-data-pruned
 cat merged-data-pruned.log >> log.file
 
-
+mv merged-data-pruned.ped merged-data-pruned.map CONVERTF/
 rm fo-camgwas* prune* qc-world-merge* thinned-qc-camgwas* 250SB-camgwas*
 rm *.log qc-rsids-world-pops* yri*
 
