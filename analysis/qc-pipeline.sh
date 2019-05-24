@@ -15,52 +15,52 @@ mkdir -p ../images
 #read -p 'Please provide your genotype vcf file: ' vcf
 
 ################################################################################
-plink1.9 \
-	--vcf camgwas_merge.vcf.gz \
-	--recode oxford \
-	--keep-allele-order \
-	--remove ${samples}missingEthnicity.ids \
-	--allow-no-sex \
-	--double-id \
-	--out raw-camgwas
-cat raw-camgwas.log > all.log
-cp ${samples}raw-camgwas.sample .
+#plink1.9 \
+#	--vcf camgwas_merge.vcf.gz \
+#	--recode oxford \
+#	--keep-allele-order \
+#	--remove ${samples}missingEthnicity.ids \
+#	--allow-no-sex \
+#	--double-id \
+#	--out raw-camgwas
+#cat raw-camgwas.log > all.log
+#cp ${samples}raw-camgwas.sample .
 
 #	Sample: 	raw-camgwas.sample
 
 ############################ Check for duplicate SNPs #########################
-plink1.9 \
-	--data raw-camgwas \
-	--allow-no-sex \
-	--list-duplicate-vars ids-only suppress-first \
-	--out dups
-cat dups.log >> all.log
+#plink1.9 \
+#	--data raw-camgwas \
+#	--allow-no-sex \
+#	--list-duplicate-vars ids-only suppress-first \
+#	--out dups
+#cat dups.log >> all.log
 
 ###############################################################################
 # Make plink binary files from Oxford .gen + .sample files spliting chrX by the PARs using the b37 coordinates while removing duplicate SNPs
-plink1.9 \
-	--data raw-camgwas \
-	--make-bed \
-	--exclude dups.dupvar \
-	--split-x b37 \
-	--keep-allele-order \
-	--allow-no-sex \
-	--out raw-camGwas
-cat raw-camGwas.log >> all.log
+#plink1.9 \
+#	--data raw-camgwas \
+#	--make-bed \
+#	--exclude dups.dupvar \
+#	--split-x b37 \
+#	--keep-allele-order \
+#	--allow-no-sex \
+#	--out raw-camGwas
+#cat raw-camGwas.log >> all.log
 
 ########################## Update SNPID names with rsIDs #####################
-cut -f2 raw-camGwas.bim > all.snps.ids
-cut -f1 -d',' all.snps.ids > all.rs.ids
-paste all.rs.ids all.snps.ids > allMysnps.txt
+#cut -f2 raw-camGwas.bim > all.snps.ids
+#cut -f1 -d',' all.snps.ids > all.rs.ids
+#paste all.rs.ids all.snps.ids > allMysnps.txt
 
-plink1.9 \
-        --bfile raw-camGwas \
-        --update-name allMysnps.txt 1 2 \
-        --allow-no-sex \
-        --make-bed \
-	--keep-allele-order \
-        --out raw-camgwas
-cat raw-camgwas.log >> all.log
+#plink1.9 \
+#        --bfile raw-camGwas \
+#        --update-name allMysnps.txt 1 2 \
+#        --allow-no-sex \
+#        --make-bed \
+#	--keep-allele-order \
+#        --out raw-camgwas
+#cat raw-camgwas.log >> all.log
 
 ############################## Per Individual QC #############################
 # LD-prune the raw data before sex check
@@ -316,31 +316,31 @@ plink \
 	--out qc-camgwas
 #done
 
-#echo """
+echo """
 #########################################################################
 #                     	   Updating QC rsids                            #
 #########################################################################
-#"""
-#cut -f1,4 qc-camgwas.bim | \
-#	sed 's/\t/:/g' > qc-camgwas.pos
-#cut -f2 qc-camgwas.bim > qc-camgwas.ids
-#paste qc-camgwas.ids qc-camgwas.pos > qc-camgwas-ids-pos.txt
-#
-#plink \
-#	--bfile qc-camgwas \
-#	--update-name qc-camgwas-ids-pos.txt 2 1 \
-#	--allow-no-sex \
-#	--make-bed \
-#	--out qc-camgwas
-#cat qc-camgwas.log >> all.log
-#
-#plink \
-#	--bfile qc-camgwas \
-#	--update-name updateName.txt 1 2 \
-#	--allow-no-sex \
-#	--make-bed \
-#	--out qc-camgwas
-#cat qc-camgwas.log >> all.log
+"""
+cut -f1,4 qc-camgwas.bim | \
+	sed 's/\t/:/g' > qc-camgwas.pos
+cut -f2 qc-camgwas.bim > qc-camgwas.ids
+paste qc-camgwas.ids qc-camgwas.pos > qc-camgwas-ids-pos.txt
+
+plink \
+	--bfile qc-camgwas \
+	--update-name qc-camgwas-ids-pos.txt 2 1 \
+	--allow-no-sex \
+	--make-bed \
+	--out qc-camgwas
+cat qc-camgwas.log >> all.log
+
+plink \
+	--bfile qc-camgwas \
+	--update-name updateName.txt 1 2 \
+	--allow-no-sex \
+	--make-bed \
+	--out qc-camgwas
+cat qc-camgwas.log >> all.log
 
 echo """
 #########################################################################

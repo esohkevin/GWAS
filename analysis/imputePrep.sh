@@ -32,7 +32,7 @@ grep -v "TEMP1" Run-plink.sh >> TEMP.file
 cp TEMP.file Run-plink.sh
 
 echo -e "\n########################### Run Run-plink.sh to update the dataset ##########################"
-./Run-plink1.sh
+./Run-plink.sh
 
 cat qc-camgwas-updated.log >> log-impuPrep.txt
 
