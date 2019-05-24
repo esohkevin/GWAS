@@ -4,63 +4,38 @@ analysis="../../../analysis/"
 samples="../../../samples/"
 kgp="../../../1000G/"
 
-# --thin-indiv-count 1500 \ add this line to get only 1500 individuals from 1KGP
+# Extract YRI IDs for acertainment of Fst estimates
+grep "YRI" igsr_pops.txt | cut -f1 > yri.txt
 
-#cut -f1 -d':' ../../../analysis/ID-qc-camgwas-1000G.txt | cut -f2 | grep "rs" > extract-qc.rsids
+rm yri.ids
 
-#cut -f1,2 -d':' ${analysis}ID-qc-camgwas-1000G.txt > updated-qc.rsids
+for id in `cat yri.txt`;
+    do echo ${id} ${id} >> yri.ids;
+done
 
-# Get 1kgp individuals limiting to only common SNPs that are found in qc-camgwas data
-#plink \
-#	--vcf ${kgp}Phase3_merged.vcf.gz \
-#	--autosome \
-#	--extract extract-qc.rsids \
-#	--keep-allele-order \
-#	--mind 0.1 \
-#	--maf 0.35 \
-#	--geno 0.01 \
-#	--pheno update-1kgp.phe \
-#	--mpheno 1 \
-#	--update-sex update-1kgp.sex 1 \
-#	--allow-no-sex \
-#	--make-bed \
-#	--exclude-snp rs16959560 \
-#	--biallelic-only \
-#	--out worldPops/qc-rsids-world-pops
+plink \
+        --bfile worldPops/qc-rsids-world \
+        --autosome \
+        --keep yri.ids \
+        --make-bed \
+        --out yri
 
-#cut -f2 worldPops/qc-rsids-world-pops.bim > 1kgp.rsid
+cut -f2 yri.bim > yriAcertainment.rsids
 
-#echo """
-#########################################################################
-#                          Updating QC rsids                            #
-#########################################################################
-#"""
-#cut -f1,4 worldPops/qc-rsids-world-pops.bim | \
-#        sed 's/\t/:/g' > qc-rsids-world.pos
-#cut -f2 worldPops/qc-rsids-world-pops.bim > qc-rsids-world.ids
-#paste qc-rsids-world.ids qc-rsids-world.pos > qc-rsids-world-ids-pos.txt
-#
-#plink \
-#        --bfile worldPops/qc-rsids-world-pops \
-#        --update-name  qc-rsids-world-ids-pos.txt 2 1 \
-#        --allow-no-sex \
-#        --make-bed \
-#        --out qc-rsids-world-pops
-#cat qc-rsids-world.log >> log.file
-#
-#plink \
-#        --bfile qc-rsids-world-pops \
-#        --update-name ${analysis}updateName.txt 1 2 \
-#        --allow-no-sex \
-#        --make-bed \
-#        --out qc-rsids-world-pops
-#cat qc-rsids-world.log >> log.file
+# Prepared world pop data extracting only YRI rsids
+plink \
+	--bfile worldPops/qc-rsids-world \
+	--extract yriAcertainment.rsids \
+	--allow-no-sex \
+	--autosome \
+	--out qc-world
 
 # Get only Foulbe individuals from qc-camgwas
 plink \
         --bfile ${analysis}qc-camgwas-updated \
         --allow-no-sex \
         --keep ${samples}exclude_fo.txt \
+	--extract yriAcertainment.rsids \
 	--autosome \
         --make-bed \
         --out fo-camgwas
@@ -69,7 +44,8 @@ cat fo-camgwas.log >> log.file
 # Get only Semi-Bantu and Bantu individuals from qc-camgwas while thinning to 250
 plink \
 	--bfile ${analysis}qc-camgwas-updated \
-	--allow-no-sex \
+	--allow-no-sex \i
+	--extract yriAcertainment.rsids \
 	--thin-indiv-count 250 \
 	--remove ${samples}exclude_fo.txt \
 	--make-bed \
@@ -90,7 +66,7 @@ cat thinned-qc-camgwas.log >> log.file
 plink \
 	--bfile thinned-qc-camgwas \
 	--allow-no-sex \
-	--bmerge worldPops/qc-rsids-world-pops \
+	--bmerge qc-world \
 	--out qc-world-merge
 cat qc-world-merge.log >> log.file
 
@@ -110,29 +86,10 @@ plink \
 	--out merged-data-pruned
 cat merged-data-pruned.log >> log.file
 
-# Extract YRI IDs for acertainment of Fst estimates
-grep "YRI" igsr_pops.txt | cut -f1 > yri.txt
-
-rm yri.ids 
-
-for id in `cat yri.txt`; 
-    do echo ${id} ${id} >> yri.ids; 
-done
-
-plink \
-	--bfile merged-data-pruned \
-	--autosome \
-	--keep yri.ids \
-	--make-bed \
-	--out yri
-
-cut -f2 yri.bim > yri.rsids
-
 # Convert bed to ped required for CONVERTF
 plink \
 	--bfile merged-data-pruned \
 	--recode \
-	--extract yri.rsids \
 	--allow-no-sex \
 	--keep-allele-order \
 	--double-id \
@@ -140,8 +97,8 @@ plink \
 cat merged-data-pruned.log >> log.file
 
 mv merged-data-pruned.ped merged-data-pruned.map CONVERTF/
-rm fo-camgwas* prune* qc-world-merge* thinned-qc-camgwas* 250SB-camgwas*
-rm *.log yri* world.bim world.bed world.fam
+rm fo-camgwas* prune* qc-world* thinned-qc-camgwas* 250SB-camgwas*
+rm *.log yri.* world.bim world.bed world.fam
 
 # Prepare ethnicity template file 
 cut -f1 -d' ' merged-data-pruned.fam > cam.id
