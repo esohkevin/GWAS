@@ -19,7 +19,7 @@ mergedEvecDat <- merge(evecDat, popGroups, by="FID")
 
 
 ####################### Plot for top 2 vectors ##################################
-png(filename = "evec1vc2.png", width = 480, height = 700, units = "px", pointsize = 12, 
+png(filename = "evec1vc2.png", width = 450, height = 750, units = "px", pointsize = 12, 
     bg = "white",  res = NA, type = c("quartz"))
 # type =c("cairo", "cairo-png", "Xlib", "quartz")
 par(mfrow=c(2,1))

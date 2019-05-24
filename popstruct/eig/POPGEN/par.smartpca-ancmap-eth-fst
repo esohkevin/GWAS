@@ -1,0 +1,12 @@
+genotypename:    ../CONVERTF/qc-camgwas.ancestrymapgeno
+snpname:         ../CONVERTF/qc-camgwas.snp
+indivname:       ../CONVERTF/qc-camgwas-eth.ind
+evecoutname:     qc-camgwas-eth.evec
+evaloutname:     qc-camgwas-eth.eval
+altnormstyle:    NO 
+outlieroutname:	 smartpca-fst-eth.outlier
+familynames:     NO
+#snpweightoutname:	qc-camgwas-snpwt
+deletesnpoutname:	qc-camgwas-eth-badsnps
+#numthreads:	 2
+fstonly:	 YES

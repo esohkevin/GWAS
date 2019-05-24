@@ -77,3 +77,17 @@ Starting main algorithm
 54 (QN/Block) 	Elapsed: 84.214	Loglikelihood: -3.86026e+08	(delta): 0.0127841
 55 (QN/Block) 	Elapsed: 80.285	Loglikelihood: -3.86026e+08	(delta): 0.00776082
 56 (QN/Block) 	Elapsed: 80.108	Loglikelihood: -3.86026e+08	(delta): 0.00366092
+57 (QN/Block) 	Elapsed: 80.267	Loglikelihood: -3.86026e+08	(delta): 0.00411344
+58 (QN/Block) 	Elapsed: 80.316	Loglikelihood: -3.86026e+08	(delta): 0.00761425
+59 (QN/Block) 	Elapsed: 80.362	Loglikelihood: -3.86026e+08	(delta): 0.0044924
+60 (QN/Block) 	Elapsed: 80.044	Loglikelihood: -3.86026e+08	(delta): 0.000281513
+61 (QN/Block) 	Elapsed: 80.124	Loglikelihood: -3.86026e+08	(delta): 4.10676e-05
+Summary: 
+Converged in 61 iterations (5358.95 sec)
+Loglikelihood: -386025749.645744
+Fst divergences between estimated populations: 
+	Pop0	
+Pop0	
+Pop1	0.009	
+CV error (K=2): 0.41944
+Writing output files.
