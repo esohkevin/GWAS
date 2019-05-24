@@ -1,0 +1,12 @@
+genotypename:    merged-data-pruned.ped
+snpname:         merged-data-pruned.map # or example.map, either works
+indivname:       merged-data-pruned.ped # or example.ped, either works
+outputformat:    PACKEDPED
+genotypeoutname: qc-world.bed
+snpoutname:      qc-world.pedsnp
+indivoutname:    qc-world.pedind
+xregionname:	 high-ld-regions.b37
+pordercheck:	 YES
+strandcheck:	 YES
+familynames:     NO
+#numthreads:	 16
