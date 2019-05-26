@@ -23,13 +23,14 @@ It reguires the following libraries (It will not work without the libraries)
 
 Compilation
 ---
+```
+	tar -xzvf fs-2.1.3.tar.gz
 
-	`tar -xzvf fs-2.1.3.tar.gz`
+	cd fs-2.1.3/
 
-	`cd fs-2.1.3/`
+	./configure
 
-	`./configure`
+	make
 
-	`make`
-
-	`sudo make install`
+	sudo make install
+```
