@@ -9,28 +9,28 @@ It reguires the following libraries (It will not work without the libraries)
 ---
 - GNU Scientific Library (GSL, development version package libgsl0-dev and libgsl0 in Ubuntu, gsl-devel in OpenSUSE
 
-	`sudo apt-get install libgsl0-dev`
+   `sudo apt-get install libgsl0-dev`
 
-	`sudo apt-get install gsl-devel`
+   `sudo apt-get install gsl-devel`
 
 - GCC c++ compiler (package build-essential in ubuntu)
 
-	`sudo apt-get install build-essential`
+   `sudo apt-get install build-essential`
 
 - Switch.pm for perl
 
-	`sudo apt-get install libswitch-perl`
+   `sudo apt-get install libswitch-perl`
 
 Compilation
 ---
-```
-	tar -xzvf fs-2.1.3.tar.gz
+```	
+   tar -xzvf fs-2.1.3.tar.gz
 
-	cd fs-2.1.3/
+   cd fs-2.1.3/
 
-	./configure
+   ./configure
 
-	make
+   make
 
-	sudo make install
+   sudo make install
 ```
