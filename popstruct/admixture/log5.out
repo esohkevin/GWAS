@@ -2486,3 +2486,6 @@ Starting main algorithm
 2459 (QN/Block) 	Elapsed: 65.971	Loglikelihood: -1.39873e+08	(delta): 0.00132439
 2460 (QN/Block) 	Elapsed: 63.638	Loglikelihood: -1.39873e+08	(delta): 0.00175032
 2461 (QN/Block) 	Elapsed: 65.964	Loglikelihood: -1.39873e+08	(delta): 0.00279111
+2462 (QN/Block) 	Elapsed: 63.357	Loglikelihood: -1.39873e+08	(delta): 0.00150493
+2463 (QN/Block) 	Elapsed: 68.38	Loglikelihood: -1.39873e+08	(delta): 0.00132078
+2464 (QN/Block) 	Elapsed: 65.904	Loglikelihood: -1.39873e+08	(delta): 0.00174338
