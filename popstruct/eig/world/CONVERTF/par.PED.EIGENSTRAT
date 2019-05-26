@@ -9,4 +9,5 @@ xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES
 familynames:     NO
+phasedmode:	 YES
 #numthreads:      16

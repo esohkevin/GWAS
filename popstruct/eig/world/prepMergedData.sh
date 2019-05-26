@@ -3,6 +3,7 @@
 analysis="../../../analysis/"
 samples="../../../samples/"
 kgp="../../../1000G/"
+phase="../../../phase/"
 
 # Extract YRI IDs for acertainment of Fst estimates
 grep "YRI" igsr_pops.txt | cut -f1 > yri.txt
@@ -16,6 +17,7 @@ done
 plink \
         --bfile worldPops/qc-rsids-world \
         --autosome \
+	--maf 0.35 \
         --keep yri.ids \
         --make-bed \
         --out yri
@@ -28,11 +30,14 @@ plink \
 	--extract yriAcertainment.rsids \
 	--allow-no-sex \
 	--autosome \
+	--make-bed \
 	--out qc-world
+#
+#cut -f2 qc-world.bim > qc-world.rsids
 
 # Get only Foulbe individuals from qc-camgwas
 plink \
-        --bfile ${analysis}qc-camgwas-updated \
+        --bfile ${phase}phasedCamgwasAutosome \
         --allow-no-sex \
         --keep ${samples}exclude_fo.txt \
 	--extract yriAcertainment.rsids \
@@ -43,8 +48,8 @@ cat fo-camgwas.log >> log.file
 
 # Get only Semi-Bantu and Bantu individuals from qc-camgwas while thinning to 250
 plink \
-	--bfile ${analysis}qc-camgwas-updated \
-	--allow-no-sex \i
+	--bfile ${phase}phasedCamgwasAutosome \
+	--allow-no-sex \
 	--extract yriAcertainment.rsids \
 	--thin-indiv-count 250 \
 	--remove ${samples}exclude_fo.txt \
@@ -58,9 +63,16 @@ plink \
 	--bfile 250SB-camgwas \
 	--bmerge fo-camgwas \
 	--keep-allele-order \
-	--out thinned-qc-camgwas
+	--out temp279SBF
 cat thinned-qc-camgwas.log >> log.file
 
+# Get only rsids common to all pops
+plink \
+        --bfile temp279SBF \
+        --keep-allele-order \
+	--make-bed \
+	--exclude badSnps.txt \
+        --out thinned-qc-camgwas
 
 # Merge thinned qc-data with common SNPs
 plink \
@@ -97,7 +109,7 @@ plink \
 cat merged-data-pruned.log >> log.file
 
 mv merged-data-pruned.ped merged-data-pruned.map CONVERTF/
-rm fo-camgwas* prune* qc-world* thinned-qc-camgwas* 250SB-camgwas*
+#rm fo-camgwas* prune* qc-world* thinned-qc-camgwas* 250SB-camgwas*
 rm *.log yri.* world.bim world.bed world.fam
 
 # Prepare ethnicity template file 

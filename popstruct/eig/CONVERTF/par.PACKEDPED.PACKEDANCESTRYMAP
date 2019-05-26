@@ -6,4 +6,5 @@ genotypeoutname: qc-camgwas.packedancestrymapgeno
 snpoutname:      qc-camgwas.snp
 indivoutname:    qc-camgwas.ind
 familynames:     NO
+phasedmode:      YES
 #numthreads:      16

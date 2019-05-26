@@ -7,6 +7,7 @@ snpoutname:      eig-corr-camgwas.snp
 indivoutname:    eig-corr-camgwas.ind
 xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
+phasedmode:      YES
 strandcheck:	 YES
 familynames:     NO
 #numthreads:      16

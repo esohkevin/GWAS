@@ -2,7 +2,7 @@
 
 ######################################### SNP QC ############################################
 lmiss=read.table("ind-qc-camgwas.lmiss", header = T, as.is = T)
-png(filename = "snp_qc_missing.png", width = 520, height = 520, units = "px", pointsize = 12,
+png(filename = "snp_qc_missing.png", width = 400, height = 400, units = "px", pointsize = 12,
     bg = "white",  res = NA)
 par(mfrow=c(1,1))
 hist(log10(lmiss$F_MISS), ylab = "Number of SNPs", xlab = "Fraction of missing genotypes", 
@@ -12,7 +12,7 @@ dev.off()
 
 # Examining minor allele frequency
 freq=read.table("ind-qc-camgwas.frq", header = T, as.is = T)
-png(filename = "snp_qc_maf.png", width = 520, height = 520, units = "px", pointsize = 12,
+png(filename = "snp_qc_maf.png", width = 400, height = 400, units = "px", pointsize = 12,
     bg = "white",  res = NA)
 par(mfrow=c(1,1))
 hist(freq$MAF, ylab = "Number of SNPs", xlab = "MAF", main = "Minor Allele Frequencies")

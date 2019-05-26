@@ -1,7 +1,9 @@
 #!/bin/bash
-
-sample_path="$HOME/GWAS/Git/GWAS/samples/"
-phase_path="$HOME/GWAS/Git/GWAS/phase/imputed/"
+cd ../
+baseDir="`pwd`"
+cd -
+sample_path="${baseDir}/samples/"
+phase_path="${baseDir}/phase/imputed/"
 
 # Perform only bayesian for now. Add '-frequentist 1 2 3 5 \' to the command line to perform frequentist tests
 

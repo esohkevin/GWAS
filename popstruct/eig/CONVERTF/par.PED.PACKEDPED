@@ -8,5 +8,6 @@ indivoutname:    qc-camgwas.pedind
 xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES
+phasedmode:	 YES
 familynames:     NO
 #numthreads:	 16

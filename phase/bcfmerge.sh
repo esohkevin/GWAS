@@ -1,5 +1,5 @@
 for i in chr*-phased_wref.vcf.gz; do
-echo "`tabix -f -p vcf ${i}`"
+    tabix -f -p vcf ${i}
 done
 
 
@@ -26,7 +26,7 @@ chr19-phased_wref.vcf.gz \
 chr20-phased_wref.vcf.gz \
 chr21-phased_wref.vcf.gz \
 chr22-phased_wref.vcf.gz \
--o autosomePhase_wref.vcf.gz
+-o Phased_wref.vcf.gz
 
 #zgrep "^#" chr1.filtered.vcf.gz > merged.filtered.vcf.gz
 #zgrep -v "^#" chr1.filtered.vcf.gz >> merged.filtered.vcf.gz

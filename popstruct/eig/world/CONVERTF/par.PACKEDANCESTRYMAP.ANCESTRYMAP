@@ -5,4 +5,5 @@ outputformat:    ANCESTRYMAP
 genotypeoutname: qc-world.ancestrymapgeno
 snpoutname:      qc-world.snp
 indivoutname:    qc-world.ind
+phasedmode:	 YES
 #numthreads:      16

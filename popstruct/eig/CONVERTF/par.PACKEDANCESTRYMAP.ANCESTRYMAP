@@ -5,4 +5,5 @@ outputformat:    ANCESTRYMAP
 genotypeoutname: qc-camgwas.ancestrymapgeno
 snpoutname:      qc-camgwas.snp
 indivoutname:    qc-camgwas.ind
+phasedmode:      YES
 #numthreads:      16

@@ -1,7 +1,10 @@
 #!/bin/bash
 
-phase_path="$HOME/GWAS/Git/GWAS/phase/"
-sample_path="$HOME/GWAS/Git/GWAS/samples/"
+cd ../
+baseDir="`pwd`"
+cd -
+phase_path="${baseDir}/phase/"
+sample_path="${baseDir}/samples/"
 
 # Convert phased haplotypes in vcf format to IMPUTE2 .haps + .sample format
 
@@ -22,3 +25,4 @@ for chr in {1..22}; do
   fi
 done
 
+rm *.sample
