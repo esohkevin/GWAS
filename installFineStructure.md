@@ -5,7 +5,7 @@ A tool for haplotype-based Population Structure Analysis
 
 `wget https://people.maths.bris.ac.uk/~madjl/finestructure/fs-2.1.3.tar.gz`
 
-It reguires the following **dependencies** (It will not work without them)
+It reguires the following _dependencies\*_ (It will not work without them)
 ---
 - GNU Scientific Library (GSL, development version package libgsl0-dev and libgsl0 in Ubuntu, gsl-devel in OpenSUSE
 
