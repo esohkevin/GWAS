@@ -1,4 +1,5 @@
-## fineStructure installation
+fineStructure installation
+---
 
 A tool for haplotype-based Population Structure Analysis
 
@@ -21,7 +22,7 @@ It reguires the following libraries (It will not work without the libraries)
 	`sudo apt-get install libswitch-perl`
 
 Compilation
-----
+---
 
 	`tar -xzvf fs-2.1.3.tar.gz`
 
