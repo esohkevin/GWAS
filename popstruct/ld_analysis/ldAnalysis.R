@@ -1,0 +1,21 @@
+#!/usr/bin/Rscript
+
+hHbC11 <- read.table("chr11hHbCrs2445284.ld", header=T, as.is=T)
+hHbC11gwd <- read.table("chr11hHbCrs2445284gwd.ld", header=T, as.is=T)
+hHbC11yri <- read.table("chr11hHbCrs2445284yri.ld", header=T, as.is=T)
+hHbC11lwk <- read.table("chr11hHbCrs2445284lwk.ld", header=T, as.is=T)
+hHbC11gbr <- read.table("chr11hHbCrs2445284gbr.ld", header=T, as.is=T)
+
+png("hHbCld.png", height=480, width=700, units="px")
+par(mfrow=c(2,3))
+plot(hHbC11$BP_B, hHbC11$R2, pch=20, xlab="BP", ylab="LD (r^2)", main="CAM")
+abline(h=0.5, lty=2, col="blue")
+plot(hHbC11yri$BP_B, hHbC11yri$R2, pch=20, xlab="BP", ylab="LD (r^2)", main="YRI")
+abline(h=0.5, lty=2, col="blue")
+plot(hHbC11gwd$BP_B, hHbC11gwd$R2, pch=20, xlab="BP", ylab="LD (r^2)", main="GWD")
+abline(h=0.5, lty=2, col="blue")
+plot(hHbC11lwk$BP_B, hHbC11lwk$R2, pch=20, xlab="BP", ylab="LD (r^2)", main="LWK")
+abline(h=0.5, lty=2, col="blue")
+plot(hHbC11gbr$BP_B, hHbC11gbr$R2, pch=20, xlab="BP", ylab="LD (r^2)", main="GBR")
+abline(h=0.5, lty=2, col="blue")
+dev.off()
