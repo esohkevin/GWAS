@@ -42,6 +42,7 @@ for pop in gwd lwk yri gbr chb; do
 	--bfile ${world}qc-rsids-world \
 	--autosome \
 	--keep ${pop}.ids \
+	--extract nodups.rsids \
 	--allow-no-sex \
 	--out ${pop} \
 	--maf 0.01 \
@@ -58,3 +59,5 @@ plink \
 	--r2
 done
 
+# Plot
+Rscript ldAnalysis.R

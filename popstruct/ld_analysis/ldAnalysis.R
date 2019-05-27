@@ -1,11 +1,24 @@
 #!/usr/bin/Rscript
 
 hHbC11 <- read.table("chr11hHbCrs2445284.ld", header=T, as.is=T)
+cam <- data.frame(hHbC11[hHbC11$R2>=0.5,6])
+write.table(cam, file="camTag.txt", col.names=F, row.names=F, quote=F) 
 hHbC11gwd <- read.table("chr11hHbCrs2445284gwd.ld", header=T, as.is=T)
+gwd <- data.frame(hHbC11gwd[hHbC11gwd$R2>=0.5,6])
+write.table(cam, file="gwdTag.txt", col.names=F, row.names=F, quote=F)
 hHbC11yri <- read.table("chr11hHbCrs2445284yri.ld", header=T, as.is=T)
+yri <- data.frame(hHbC11yri[hHbC11yri$R2>=0.5,6])
+write.table(cam, file="yriTag.txt", col.names=F, row.names=F, quote=F)
 hHbC11lwk <- read.table("chr11hHbCrs2445284lwk.ld", header=T, as.is=T)
+lwk <- data.frame(hHbC11lwk[hHbC11lwk$R2>=0.5,6])
+write.table(cam, file="lwkTag.txt", col.names=F, row.names=F, quote=F)
 hHbC11gbr <- read.table("chr11hHbCrs2445284gbr.ld", header=T, as.is=T)
+gbr <- data.frame(hHbC11gbr[hHbC11gbr$R2>=0.5,6])
+write.table(cam, file="gbrTag.txt", col.names=F, row.names=F, quote=F)
 hHbC11chb <- read.table("chr11hHbCrs2445284chb.ld", header=T, as.is=T)
+chb <- data.frame(hHbC11chb[hHbC11chb$R2>=0.5,6])
+write.table(cam, file="chbTag.txt", col.names=F, row.names=F, quote=F)
+
 
 png("hHbCld.png", height=480, width=700, units="px")
 par(mfrow=c(2,3))
