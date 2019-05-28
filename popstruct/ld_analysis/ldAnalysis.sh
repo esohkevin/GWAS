@@ -16,14 +16,15 @@ phase="../../phase/"
 #        --ld-window-r2 0.2 \
 #	--out gypchr4
 
+
 # camgwas data
-plink \
-        --bfile ${phase}phasedCamgwasAutosome \
-        --autosome \
-        --allow-no-sex \
-        --out cam \
-        --maf 0.01 \
-        --make-bed
+#plink \
+#        --bfile ${phase}phasedCamgwasAutosome \
+#        --autosome \
+#        --allow-no-sex \
+#        --out cam \
+#        --maf 0.01 \
+#        --make-bed
 
 plink \
         --bfile cam \
@@ -32,21 +33,21 @@ plink \
         --ld-window 70 \
         --ld-window-kb 1000 \
         --ld-window-r2 0 \
-        --out chr"$1"hHbC"$2" \
+        --out chr"$1""$3" \
         --r2 
 
 # Reference-wise LD
 
 for pop in gwd lwk yri gbr chb; do 
-   plink \
-	--bfile ${world}qc-rsids-world \
-	--autosome \
-	--keep ${pop}.ids \
-	--extract nodups.rsids \
-	--allow-no-sex \
-	--out ${pop} \
-	--maf 0.01 \
-	--make-bed
+#   plink \
+#	--bfile ${world}qc-rsids-world \
+#	--autosome \
+#	--keep ${pop}.ids \
+#	--extract nodups.rsids \
+#	--allow-no-sex \
+#	--out ${pop} \
+#	--maf 0.01 \
+#	--make-bed
 
 plink \
 	--bfile ${pop} \
@@ -55,8 +56,9 @@ plink \
 	--ld-window 70 \
 	--ld-window-kb 1000 \
 	--ld-window-r2 0 \
-	--out chr"$1"hHbC"$2""${pop}" \
+	--out chr"$1""$3""${pop}" \
 	--r2
+
 done
 
 # Plot
