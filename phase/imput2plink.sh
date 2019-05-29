@@ -50,4 +50,13 @@ plink \
 
 plink \
 	--bfile phasedWrefImpute2 \
-	--list-dup-var id-only suppress-first \
+	--list-duplicate-vars ids-only suppress-first \
+	--keep-allele-order \
+	--out dups
+
+plink \
+        --bfile phasedWrefImpute2 \
+	--exclude dups.dupvar \
+	--keep-allele-order \
+	--out phasedWrefImpute2
+
