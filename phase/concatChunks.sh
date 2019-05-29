@@ -29,3 +29,13 @@ for chr in {1..22}; do
 
 done
 
+# Check all chunks per chr with successful imputation
+for chr in {1..22}; do 
+    
+    for chunk in chr${chr}_*_imputed.gen_info; do 
+    
+        cat $chunk; 
+    
+    done > chr${chr}ImputSuccessful.txt; 
+
+done
