@@ -4,6 +4,8 @@ analysis="../../analysis/"
 samples="../../samples/"
 kgp="../../1000G/"
 world="../eig/world/worldPops/"
+phase="../../phase/"
+
 
 # Extract YRI IDs for acertainment of Fst estimates
 grep "YRI" ../eig/world/igsr_pops.txt | cut -f1 > yri.txt
@@ -15,7 +17,7 @@ for id in `cat yri.txt`;
 done
 
 plink \
-        --bfile ${world}qc-rsids-world-pops \
+        --bfile ${world}qc-rsids-world \
         --autosome \
         --keep yri.ids \
         --make-bed \
@@ -27,7 +29,7 @@ cut -f2 yri.bim > yri.rsids
 # Extract only a subset of world Pops to use (YRI+LWK+GWD+GBR+CHS+BEB+PUR). 
 # The ids are stored in worldPops.ids
 plink \
-        --bfile ${world}qc-rsids-world-pops \
+        --bfile ${world}qc-rsids-world \
         --allow-no-sex \
 	--extract yri.rsids \
         --autosome \
@@ -38,7 +40,7 @@ at adm-data.log > log.file
 
 # Extract yri ids from study dataset
 plink \
-        --bfile ${analysis}qc-camgwas-updated \
+        --bfile ../eig/world/thinned-qc-camgwas \
         --allow-no-sex \
         --autosome \
 	--extract yri.rsids \
@@ -72,5 +74,8 @@ plink \
 	--make-bed \
 	--out adm-data
 cat adm-data.log >> log.file
+
+# Prepare .pop file
+Rscript prepMergedData.R
 
 rm yri* prune* merged* studyPops*

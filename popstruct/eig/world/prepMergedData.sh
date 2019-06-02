@@ -8,14 +8,16 @@ phase="../../../phase/"
 # Extract YRI IDs for acertainment of Fst estimates
 grep "YRI" igsr_pops.txt | cut -f1 > yri.txt
 
-rm yri.ids
+if [[ -f "yri.ids" ]]; then 
+   rm yri.ids
+fi
 
 for id in `cat yri.txt`;
     do echo ${id} ${id} >> yri.ids;
 done
 
 plink \
-        --bfile worldPops/qc-rsids-world \
+        --bfile worldPops/world-pops \
         --autosome \
 	--maf 0.35 \
         --keep yri.ids \
@@ -26,7 +28,7 @@ cut -f2 yri.bim > yriAcertainment.rsids
 
 # Prepared world pop data extracting only YRI rsids
 plink \
-	--bfile worldPops/qc-rsids-world \
+	--bfile worldPops/world-pops \
 	--extract yriAcertainment.rsids \
 	--allow-no-sex \
 	--autosome \
@@ -64,13 +66,18 @@ plink \
 	--bmerge fo-camgwas \
 	--keep-allele-order \
 	--out temp279SBF
-cat thinned-qc-camgwas.log >> log.file
-
+#cat thinned-qc-camgwas.log >> log.file
+cut -f1 temp279SBF.fam > cam.ids
+grep -f cam.ids ${samples}1471-eth_template.txt > 279cam.eth
+sort --key=2 279cam.eth > cam279.eth
+for id in `cut -f1 -d' ' cam279.eth`; do echo ${id} ${id}; done > camOrder.txt
+ 
 # Get only rsids common to all pops
 plink \
         --bfile temp279SBF \
         --keep-allele-order \
 	--make-bed \
+	--indiv-sort f camOrder.txt \
 	--exclude badSnps.txt \
         --out thinned-qc-camgwas
 
@@ -110,10 +117,13 @@ cat merged-data-pruned.log >> log.file
 
 mv merged-data-pruned.ped merged-data-pruned.map CONVERTF/
 #rm fo-camgwas* prune* qc-world* thinned-qc-camgwas* 250SB-camgwas*
-rm *.log yri.* world.bim world.bed world.fam
+#rm *.log yri.* world.bim world.bed world.fam
 
 # Prepare ethnicity template file 
-cut -f1 -d' ' merged-data-pruned.fam > cam.id
-grep -f cam.id ${samples}1471-eth_template.txt > 279cam.eth
-grep -f 1kgp.id igsr_pops.txt | cut -f1,3 > 2504world.eth
-cat 279cam.eth 2504world.eth > merged-data-eth_template.txt
+#cut -f1 merged-data-pruned.fam > cam.id
+#grep -f cam.id ${samples}1471-eth_template.txt > 279cam.eth
+#grep -f 1kgp.id igsr_pops.txt | cut -f1,3 > 2504world.eth
+#sort --key=2 279cam.eth > cam279.eth
+#cat cam279.eth 2504world.eth > merged-data-eth_template.txt
+#rm 279cam.eth cam.id
+#rm merged-data-pruned*

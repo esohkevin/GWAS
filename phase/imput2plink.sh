@@ -1,22 +1,23 @@
 #!/bin/bash
 
+assocResults="../assoc_results/"
 
-for chr in {1..22}; do
-
-   if [[ -f "chr${chr}impute2exclusion.list" ]]; then
-
-      rm chr${chr}impute2exclusion.list
-
-   fi
-
-
-   for chunk in chr${chr}_*_imputed.gen_info; do  					# Check all chunks per chr with successful imputation
-
-        sed '1d' $chunk | awk '$7<0.75' | cut -f2 -d' ';  
-    
-   done > chr${chr}impute2exclusion.list;
-
-done
+#for chr in {1..22}; do
+#
+#   if [[ -f "chr${chr}impute2exclusion.list" ]]; then
+#
+#      rm chr${chr}impute2exclusion.list
+#
+#   fi
+#
+#
+#   for chunk in chr${chr}_*_imputed.gen_info; do  					# Check all chunks per chr with successful imputation
+#
+#        sed '1d' $chunk | awk '$7<0.75' | cut -f2 -d' ';  
+#    
+#   done > chr${chr}impute2exclusion.list;
+#
+#done
 
 
 if [[ -f "merge.list" ]]; then
@@ -58,5 +59,9 @@ plink \
         --bfile phasedWrefImpute2 \
 	--exclude dups.dupvar \
 	--keep-allele-order \
-	--out phasedWrefImpute2
+	--make-bed \
+	--out ${assocResults}phasedWrefImpute2
 
+for chr in {1..22}; do
+    rm chr${chr}.bim chr${chr}.bed chr${chr}.fam chr${chr}.log
+done

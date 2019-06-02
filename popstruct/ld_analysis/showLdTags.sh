@@ -7,5 +7,5 @@ for pop in cam gwd lwk yri gbr chb; do
 	--list-all \
 	--tag-r2 0.5 \
 	--tag-kb 1000 \
-	--out ${pop}
+	--out ${pop}$1
 done

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for k in {1..5}; do
+for k in {4..7}; do
     Rscript plotQestimate.R adm-data.${k}.Q adm-data.${k}.png
 done
 
