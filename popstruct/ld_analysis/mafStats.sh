@@ -16,7 +16,7 @@ for pop in yri gwd lwk gbr chb; do
     done
 
         plink \
-            --bfile ${world}worldPops/qc-rsids-world \
+            --bfile ${world}worldPops/world-pops-updated \
             --autosome \
             --keep ${pop}.ids \
             --freq \
@@ -27,7 +27,7 @@ rm yri.txt lwk.txt gbr.txt
 
 # Get study data allele freqs
  plink \
-       --bfile ../../analysis/raw-camgwas \
+       --bfile ${world}worldPops/phased-data-updated \
        --autosome \
        --freq \
        --allow-no-sex \

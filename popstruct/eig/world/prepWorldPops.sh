@@ -24,13 +24,36 @@ kgp="../../../1000G/"
 #       --out worldPops/world-pops
 
 ## Get updated raw-camgwas rsids
-cut -f2 ${analysis}qc-camgwas-updated.bim | sort | uniq > qc-camgwas-updated.ids
+#cut -f2 ${analysis}qc-camgwas-updated.bim | sort | uniq > qc-camgwas-updated.ids
+#
+## Extract only SNPs with rsIDs
+#plink \
+#	--bfile worldPops/world-pops \
+#	--allow-no-sex \
+#	--extract qc-camgwas-updated.ids \
+#	--make-bed \
+#	--out worldPops/qc-rsids-world
 
-# Extract only SNPs with rsIDs
+cut -f2 worldPops/world-pops.bim > world.rsids
+sort world.rsids | uniq -u > world-uniq.rsids
+
 plink \
 	--bfile worldPops/world-pops \
-	--allow-no-sex \
-	--extract qc-camgwas-updated.ids \
+	--keep-allele-order \
+	--exclude badSnps.txt \
 	--make-bed \
-	--out worldPops/qc-rsids-world
+	--extract world-uniq.rsids \
+	--out world
 
+cut -f1,4 world.bim | sed 's/\t/:/g' > world.pos
+cut -f2 world.bim > world.rsids
+paste world.pos world.rsids > updateWorldName.txt 
+
+plink \
+	--bfile world \
+	--keep-allele-order \
+	--update-name updateWorldName.txt 1 2 \
+	--make-bed \
+	--out worldPops/world-pops-updated
+
+rm qc-camgwas-updated.ids
