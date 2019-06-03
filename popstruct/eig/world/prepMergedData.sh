@@ -160,7 +160,11 @@ mv merged-data-pruned.ped merged-data-pruned.map CONVERTF/
 
 # Prepare ethnicity template file 
 #cut -f1 merged-data-pruned.fam > cam.id
-cat cam279.eth 2504world.eth > merged-data-eth_template.txt
+#cat cam279.eth 2504world.eth > merged-data-eth_template.txt
+cut -f1 -d' ' worldPops/phased-data-updated.fam > cam.ids
+grep -f cam.ids ${samples}1471-eth_template.txt > cam.eth
+sort --key=2 cam.eth > camAll.eth
+cat camAll.eth 2504world.eth > merged-data-eth_template.txt
 #rm 279cam.eth cam.id
 mv merged-data-pruned* ../../admixture/
 
