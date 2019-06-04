@@ -3,37 +3,27 @@
 world="../eig/world/"
 
 # Extract data for YRI, LWK and study data at MAF>0.1 then compute MAF stats
-rm yri.ids lwk.ids gbr.ids chb.ids gwd.ids
+grep -wi -e cam -e yri -e gwd -e lwk maf-pops.template | awk '{print $1" "$1" "$2}' > camAll.cluster
 
-for pop in yri gwd lwk gbr chb; do 
-	
-    grep -wi ${pop} ${world}igsr_pops.txt | \
-	cut -f1 > ${pop}.txt
-
-
-    for id in `cat ${pop}.txt`; do 
-        echo ${id} ${id} >> ${pop}.ids;
-    done
-
-        plink \
-            --bfile maf-data \
-            --autosome \
-            --keep ${pop}.ids \
-            --freq \
-	    --allow-no-sex \
-            --out ${pop}
-done
-rm yri.txt lwk.txt gbr.txt
-
-# Get study data allele freqs
- plink \
-       --bfile ${world}worldPops/phased-data-updated \
+plink \
+       --bfile maf-data \
        --autosome \
-       --extract maf-data.rsids \
        --freq \
+       --keep-allele-order \
+       --within camAll.cluster \
        --allow-no-sex \
-       --out cam
+       --out camall
 
+# Observe MAF within Cameroonian populations
+plink \
+       --bfile maf-data-merge \
+       --autosome \
+       --freq \
+       --keep cam1185.ids \
+       --keep-allele-order \
+       --within cam1185.eth \
+       --allow-no-sex \
+       --out cam1185
 
 #### Plot
 Rscript mafStats.R

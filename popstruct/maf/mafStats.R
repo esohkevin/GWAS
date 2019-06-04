@@ -2,21 +2,37 @@
 
 maf <- read.table("camall.frq.strat", header = T, as.is = T)
 
-png(filename = "mafWorld.png", height = 480, width = 700, units = "px")
-par(mfrow=c(2,3))
-hist(maf$MAF[maf$CLST=="GWD"], ylab = "SNPs #", xlab = "MAF", main = "GWD", ylim=c(0,60000), breaks="Scott")
-abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
-hist(maf$MAF[maf$CLST=="CAM"], ylab = "SNPs #", xlab = "MAF", main = "CAM", ylim=c(0,60000), breaks="Scott")
-abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
-hist(maf$MAF[maf$CLST=="LWK"], ylab = "SNPs #", xlab = "MAF", main = "LWK", ylim=c(0,60000), breaks="Scott")
-abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
-hist(maf$MAF[maf$CLST=="YRI"], ylab = "SNPs #", xlab = "MAF", main = "YRI", ylim=c(0,60000), breaks="Scott")
-abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
-hist(maf$MAF[maf$CLST=="GBR"], ylab = "SNPs #", xlab = "MAF", main = "GBR", breaks="Scott")
-abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
-hist(maf$MAF[maf$CLST=="CHB"], ylab = "SNPs #", xlab = "MAF", main = "CHB", breaks="Scott")
-abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
+hbb <- data.frame(maf[4155094:4155193,])
+png("mafHbb.png", height=500, width=680, units="px")
+plot(hbb$SNP[hbb$CLST=="CAM"], hbb$MAF[hbb$CLST=="CAM"], ylim=c(0,1), xlab="Chr11 BP", ylab="%MAF", col="black", pch=20, type="o")
+lines(hbb$SNP[hbb$CLST=="YRI"], hbb$MAF[hbb$CLST=="YRI"], col="red", pch=20, type="o")
+lines(hbb$SNP[hbb$CLST=="GWD"], hbb$MAF[hbb$CLST=="GWD"], col="green", pch=20, type="o")
+lines(hbb$SNP[hbb$CLST=="LWK"], hbb$MAF[hbb$CLST=="LWK"], col="blue", pch=20, type="o")
+abline(h=0, lty=2, col="grey")
+legend("topleft", col=c("black", "red", "green", "blue"), legend=c("CAM", "YRI", "GWD", "LWK"), pch=20, bty="n", cex=0.7)
 dev.off()
+
+
+#png(filename = "mafWorld.png", height = 480, width = 460, units = "px")
+#par(mfrow=c(2,2))
+#hist(maf$MAF[maf$CLST=="GWD"], ylab = "SNPs #", xlab = "MAF", main = "GWD", ylim=c(0,90000), breaks="Scott")
+#abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
+#hist(maf$MAF[maf$CLST=="CAM"], ylab = "SNPs #", xlab = "MAF", main = "CAM", ylim=c(0,90000), breaks="Scott")
+#abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
+#hist(maf$MAF[maf$CLST=="LWK"], ylab = "SNPs #", xlab = "MAF", main = "LWK", ylim=c(0,90000), breaks="Scott")
+#abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
+#hist(maf$MAF[maf$CLST=="YRI"], ylab = "SNPs #", xlab = "MAF", main = "YRI", ylim=c(0,90000), breaks="Scott")
+#abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
+#dev.off()
+
+#hist(maf$MAF[maf$CLST=="ASW"], ylab = "SNPs #", xlab = "MAF", main = "ASW", breaks="Scott")
+#abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
+#hist(maf$MAF[maf$CLST=="GBR"], ylab = "SNPs #", xlab = "MAF", main = "GBR", breaks="Scott")
+#abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
+#dev.off()
+
+# Cameroon-only SNPs
+
 
 ## Examining minor allele frequency
 #camFreq <- read.table("cam.frq", header = T, as.is = T)
@@ -44,4 +60,5 @@ dev.off()
 #hist(chbFreq$MAF, ylab = "SNPs #", xlab = "MAF", main = "CHB", breaks="Scott")
 #abline(v=c(0.01,0.05), lty=2, col=c("red","blue"))
 #dev.off()
+
 
