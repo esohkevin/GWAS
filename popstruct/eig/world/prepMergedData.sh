@@ -19,13 +19,14 @@ done
 plink \
         --bfile worldPops/world-pops-updated \
         --autosome \
+	--maf 0.01 \
         --keep yri.ids \
         --make-bed \
         --out yri
 cat yri.log >> log.file
-#
+
 cut -f2 yri.bim > yriAcertainment.rsids
-#
+
 ## Update Phased study data
 #cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
 #sort phase.rsids | uniq -u > phase-uniq.rsids
@@ -110,33 +111,37 @@ cut -f2 yri.bim > yriAcertainment.rsids
 #      cat qc-world-merge.missnp >> badSnps.txt
 #      ./prepWorldPops.sh
 
-	plink \
-		--bfile worldPops/phased-data-updated \
-		--allow-no-sex \
-		--bmerge worldPops/world-pops-updated \
-		--merge-equal-pos \
-		--out qc-world-merge
-	cat qc-world-merge.log >> log.file
+
+
+######################## Refined ############################
+
+#plink \
+#	--bfile worldPops/phased-data-updated \
+#	--allow-no-sex \
+#	--bmerge worldPops/world-pops-updated \
+#	--merge-equal-pos \
+#	--out worldPops/qc-world-merge
+#cat worldPops/qc-world-merge.log >> log.file
 #done
 	
 # Now extract yriAcertainment SNPs
 plink \
-	--bfile qc-world-merge \
+	--bfile worldPops/qc-world-merge \
 	--keep-allele-order \
 	--extract yriAcertainment.rsids \
 	--make-bed \
-	--out acertained
+	--out yriacertained
 
 # Prune to get only SNPs at linkage equilibrium (independent SNPs - no LD between them)
 plink \
-	--bfile acertained \
+	--bfile yriacertained \
 	--indep-pairwise 50 5 0.2 \
 	--allow-no-sex \
 	--out prune
 cat prune.log >> log.file
 
 plink \
-	--bfile qc-world-merge \
+	--bfile worldPops/qc-world-merge \
 	--autosome \
 	--maf 0.35 \
 	--extract prune.prune.in \
