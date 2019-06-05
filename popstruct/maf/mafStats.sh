@@ -13,6 +13,7 @@ plink \
        --within camAll.cluster \
        --allow-no-sex \
        --out camall
+cat camall.log >> logFile.txt
 
 sed 's/:/\t/g' camall.frq.strat > camall.frq.txt
 sed 's/SNP/IN\tSNP/g' camall.frq.txt > camall.frq.strat
@@ -28,8 +29,11 @@ plink \
        --within cam1185.eth \
        --allow-no-sex \
        --out cam1185
+cat cam1185.log >> logFile.txt
 
 #### Plot
 Rscript mafStats.R
 
-mv *.png ../../images/
+mv *.png ../../images/i
+
+rm *.log

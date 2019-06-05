@@ -5,9 +5,6 @@ samples="../../../samples/"
 kgp="../../../1000G/"
 phase="../../../phase/"
 
-cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
-sort phase.rsids | uniq -u > phase-uniq.rsids
-
 # Get 1kgp individuals limiting to only common SNPs that are found in qc-camgwas data
 plink \
        --vcf ${kgp}Phase3_1kgpsnps.vcf.gz \

@@ -28,6 +28,9 @@ cat yri.log >> log.file
 cut -f2 yri.bim > yriAcertainment.rsids
 
 ## Update Phased study data
+cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
+sort phase.rsids | uniq -u > phase-uniq.rsids
+
 plink \
         --bfile ${phase}phasedCamgwasAutosome \
         --keep-allele-order \
@@ -99,9 +102,7 @@ mv merged-data-pruned.ped merged-data-pruned.map CONVERTF/
 cut -f1 -d' ' worldPops/phased-data-updated.fam > cam.ids
 grep -f cam.ids ${samples}1471-eth_template.txt > cam.eth
 sort --key=2 cam.eth > camAll.eth
-cat camAll.eth 2504world.eth > merged-data-eth_template.txt
+cat camAll.eth worldPops/2504world.eth > merged-data-eth_template.txt
 mv merged-data-pruned* ../../admixture/
-
-./run_popgen.sh
 
 rm phase* yri* cam.eth cam.ids updatePhaseName.txt prune.*

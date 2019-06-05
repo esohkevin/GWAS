@@ -5,8 +5,8 @@ analysis="../../analysis/"
 
 cut -f2 ${world}worldPops/phased-data-updated.bim > phased.rsids
 
-if [[ -f "merge.list" ]]; then
-   rm merge.list
+if [[ -f "merge.list" || -f "logFile.txt" ]]; then
+   rm merge.list logFile.txt
 fi
 
 for pop in cam yri gwd lwk; do 
@@ -19,6 +19,7 @@ for pop in cam yri gwd lwk; do
         --keep ${pop}.ids \
         --make-bed \
         --out ${pop}99
+cat ${pop}99.log >> logFile.txt
 
     echo ${pop}99 >> merge.list
     rm ${pop}.ids
@@ -28,6 +29,7 @@ plink \
         --merge-list merge.list \
         --keep-allele-order \
         --out maf-data
+cat maf-data.log >> logFile.txt
 
 ./mafStats.sh
 # Extract only SNPs with rsIDs
