@@ -28,6 +28,7 @@ plink \
         --keep-allele-order \
         --out maf-data
 
+./mafStats.sh
 # Extract only SNPs with rsIDs
 #plink \
 #        --bfile ${world}worldPops/qc-world-merge \
