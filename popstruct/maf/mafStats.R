@@ -3,13 +3,23 @@
 maf <- read.table("camall.frq.strat", header = T, as.is = T)
 
 hbb <- data.frame(maf[4155094:4155193,])
-png("mafHbb.png", height=500, width=680, units="px")
+png("mafHbbAfr.png", height=500, width=680, units="px")
 plot(hbb$SNP[hbb$CLST=="CAM"], hbb$MAF[hbb$CLST=="CAM"], ylim=c(0,1), xlab="Chr11 BP", ylab="%MAF", col="black", pch=20, type="o")
 lines(hbb$SNP[hbb$CLST=="YRI"], hbb$MAF[hbb$CLST=="YRI"], col="red", pch=20, type="o")
 lines(hbb$SNP[hbb$CLST=="GWD"], hbb$MAF[hbb$CLST=="GWD"], col="green", pch=20, type="o")
 lines(hbb$SNP[hbb$CLST=="LWK"], hbb$MAF[hbb$CLST=="LWK"], col="blue", pch=20, type="o")
 abline(h=0, lty=2, col="grey")
 legend("topleft", col=c("black", "red", "green", "blue"), legend=c("CAM", "YRI", "GWD", "LWK"), pch=20, bty="n", cex=0.7)
+dev.off()
+
+# Plot for non-African pops separately
+png("mafHbbNonAfr.png", height=500, width=680, units="px")
+plot(hbb$SNP[hbb$CLST=="CAM"], hbb$MAF[hbb$CLST=="CAM"], ylim=c(0,1), xlab="Chr11 BP", ylab="%MAF", col="black", pch=20, type="o")
+lines(hbb$SNP[hbb$CLST=="GBR"], hbb$MAF[hbb$CLST=="GBR"], col="red", pch=20, type="o")
+lines(hbb$SNP[hbb$CLST=="CHB"], hbb$MAF[hbb$CLST=="CHB"], col="green", pch=20, type="o")
+lines(hbb$SNP[hbb$CLST=="PUR"], hbb$MAF[hbb$CLST=="PUR"], col="blue", pch=20, type="o")
+abline(h=0, lty=2, col="grey")
+legend("topleft", col=c("black", "red", "green", "blue"), legend=c("CAM", "GBR", "CHB", "PUR"), pch=20, bty="n", cex=0.7)
 dev.off()
 
 

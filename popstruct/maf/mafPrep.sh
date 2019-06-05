@@ -9,18 +9,18 @@ if [[ -f "merge.list" ]]; then
    rm merge.list
 fi
 
-for pop in cam yri gwd lwk; do 
+for pop in cam yri gwd lwk gbr chb pur; do 
     grep -wi ${pop} maf-pops.template | awk '{print $1" "$1}' > ${pop}.ids
     plink \
         --bfile ${world}worldPops/qc-world-merge \
         --keep-allele-order \
 	--extract phased.rsids \
-        --thin-indiv-count 99 \
+        --thin-indiv-count 91 \
         --keep ${pop}.ids \
         --make-bed \
-        --out ${pop}99
+        --out ${pop}91
 
-    echo ${pop}99 >> merge.list
+    echo ${pop}91 >> merge.list
 done
 
 plink \
