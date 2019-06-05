@@ -17,6 +17,7 @@ plink \
 sed 's/:/\t/g' camall.frq.strat > camall.frq.txt
 sed 's/SNP/IN\tSNP/g' camall.frq.txt > camall.frq.strat
 rm camall.frq.txt
+
 # Observe MAF within Cameroonian populations
 plink \
        --bfile maf-data-merge \

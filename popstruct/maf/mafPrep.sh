@@ -21,6 +21,7 @@ for pop in cam yri gwd lwk; do
         --out ${pop}99
 
     echo ${pop}99 >> merge.list
+    rm ${pop}.ids
 done
 
 plink \
@@ -40,3 +41,5 @@ plink \
 #        --out maf-data
 
 #cut -f2 maf-data.bim > maf-data.rsids
+
+rm *99* 
