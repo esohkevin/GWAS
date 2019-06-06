@@ -12,7 +12,6 @@ plink \
        --keep-allele-order \
        --mind 0.1 \
        --geno 0.04 \
-       --extract phase-uniq.rsids \
        --hwe 1e-20 \
        --pheno worldPops/update-1kgp.phe \
        --mpheno 1 \
