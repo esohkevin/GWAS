@@ -14,16 +14,16 @@ hHbC11lwk <- read.table(args[4], header=T, as.is=T)
 lwk <- data.frame(hHbC11lwk[hHbC11lwk$R2>=0.5,6])
 write.table(cam, file="lwkTag.txt", col.names=F, row.names=F, quote=F)
 hHbC11gbr <- read.table(args[5], header=T, as.is=T)
-gbr <- data.frame(hHbC11gbr[hHbC11gbr$R2>=0.5,6])
-write.table(cam, file="gbrTag.txt", col.names=F, row.names=F, quote=F)
-hHbC11chb <- read.table(args[6], header=T, as.is=T)
-chb <- data.frame(hHbC11chb[hHbC11chb$R2>=0.5,6])
-write.table(cam, file="chbTag.txt", col.names=F, row.names=F, quote=F)
-recombMap <- read.table(args[10], header=T, as.is=T)
-a <- args[8]
-b <- args[9]
-c <- as.numeric(hHbC11[a,5]-300)
-d <- as.numeric(hHbC11[b,5]+300)
+#gbr <- data.frame(hHbC11gbr[hHbC11gbr$R2>=0.5,6])
+#write.table(cam, file="gbrTag.txt", col.names=F, row.names=F, quote=F)
+#hHbC11chb <- read.table(args[6], header=T, as.is=T)
+#chb <- data.frame(hHbC11chb[hHbC11chb$R2>=0.5,6])
+#write.table(cam, file="chbTag.txt", col.names=F, row.names=F, quote=F)
+#recombMap <- read.table(args[10], header=T, as.is=T)
+a <- as.interger(args[8])
+b <- as.interger(args[9])
+c <- as.numeric(as.interger(HbC11[a,5])-300)
+d <- as.numeric(as.interger(hHbC11[b,5])+300)
 recomRange <- recombMap[a:b,]
 
 rbPal <- colorRampPalette(c("yellow","red"))
@@ -34,10 +34,10 @@ rbPalb <- colorRampPalette(c("yellow","red"))
 hHbC11gwd$Col <- rbPalb(10)[as.numeric(cut(hHbC11gwd$R2,breaks = 10))]
 rbPalc <- colorRampPalette(c("yellow","red"))
 hHbC11lwk$Col <- rbPalc(10)[as.numeric(cut(hHbC11lwk$R2,breaks = 10))]
-rbPald <- colorRampPalette(c("yellow","red"))
-hHbC11gbr$Col <- rbPald(10)[as.numeric(cut(hHbC11gbr$R2,breaks = 10))]
-rbPale <- colorRampPalette(c("yellow","red"))
-hHbC11chb$Col <- rbPale(10)[as.numeric(cut(hHbC11chb$R2,breaks = 10))]
+#rbPald <- colorRampPalette(c("yellow","red"))
+#hHbC11gbr$Col <- rbPald(10)[as.numeric(cut(hHbC11gbr$R2,breaks = 10))]
+#rbPale <- colorRampPalette(c("yellow","red"))
+#hHbC11chb$Col <- rbPale(10)[as.numeric(cut(hHbC11chb$R2,breaks = 10))]
 
 
 

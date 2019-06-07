@@ -59,6 +59,8 @@ plink \
 	--merge-equal-pos \
 	--out worldPops/qc-world-merge
 cat worldPops/qc-world-merge.log >> log.file
+
+cut -f2 worldPops/phased-data-updated.bim > phased.rsids
 	
 # Now extract yriAcertainment SNPs
 plink \
@@ -74,6 +76,7 @@ plink \
 	--bfile yriacertained \
 	--indep-pairwise 50 5 0.2 \
 	--allow-no-sex \
+	--extract phased.rsids \
 	--out prune
 cat prune.log >> log.file
 
@@ -81,7 +84,6 @@ plink \
 	--bfile worldPops/qc-world-merge \
 	--autosome \
 	--maf 0.35 \
-	--extract prune.prune.in \
 	--make-bed \
 	--out merged-data-pruned
 cat merged-data-pruned.log >> log.file

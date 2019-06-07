@@ -5,7 +5,7 @@ outputformat:    PACKEDPED
 genotypeoutname: qc-world.bed
 snpoutname:      qc-world.pedsnp
 indivoutname:    qc-world.pedind
-#xregionname:	 high-ld-regions.b37
+xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 phasedmode:	 YES
 strandcheck:	 YES
