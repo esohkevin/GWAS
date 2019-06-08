@@ -8,3 +8,4 @@ indivoutname:    qc-world.ind
 phasedmode:	 YES
 familynames:     NO
 #numthreads:      16
+xregionname:     high-ld-regions.b37

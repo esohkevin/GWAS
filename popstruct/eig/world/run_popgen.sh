@@ -23,11 +23,11 @@ if [[ $response == [Yy] ]]; then
 	cd ../
 	
 	# Compute PCA
-	cd EIGENSTRAT/
+#	cd EIGENSTRAT/
 	
-	./run_eigCorrPCA.perl
+#	./run_eigCorrPCA.perl
 	
-	cd ../
+#	cd ../
 elif [[ $response == [Nn] ]]; then
 
 	# Convert File Formats
@@ -47,11 +47,11 @@ elif [[ $response == [Nn] ]]; then
 	cd ../
 	
 	# Compute PCA
-	cd EIGENSTRAT/
+#	cd EIGENSTRAT/
 	
-	./run_eigCorrPCA.perl
+#	./run_eigCorrPCA.perl
 	
-	cd ../
+#	cd ../
 
 else    echo "Sorry I did not understand your response!"
 	echo "Usage: 'y' (yes) 'n' (no)"

@@ -7,3 +7,4 @@ snpoutname:      qc-world.snp
 indivoutname:    qc-world.ind
 phasedmode:	 YES
 #numthreads:      16
+xregionname:     high-ld-regions.b37
