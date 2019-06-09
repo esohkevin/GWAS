@@ -2,9 +2,12 @@
 ####################################### EIGEN ANALYSIS #######################################
 read -p 'Do you really want to run ./prepWorldPops.sh and ./prepMergedData.sh scripts all over? [y|n]: ' response
 if [[ $response == [Yy] ]]; then
+   for maf in `(seq 0.2 0.04 0.5)`; do
 #	./prepWorldPops.sh
 	
-	./prepMergedData.sh
+	./prepMergedData.sh $maf
+
+#	./prepFile.sh $maf
 	
 	# Convert File Formats
 	cd CONVERTF/
@@ -14,11 +17,11 @@ if [[ $response == [Yy] ]]; then
 	
 	# Compute Population Genetic Statistics
 	cd POPGEN/
-	./run_popgenstats.sh
+	./run_popgenstats.sh $maf
 	
-	Rscript fstHeatMap.R
+#	Rscript fstHeatMap.R
 	
-	mv *.png ../
+#	mv *.png ../
 	
 	cd ../
 	
@@ -28,6 +31,7 @@ if [[ $response == [Yy] ]]; then
 #	./run_eigCorrPCA.perl
 	
 #	cd ../
+   done
 elif [[ $response == [Nn] ]]; then
 
 	# Convert File Formats

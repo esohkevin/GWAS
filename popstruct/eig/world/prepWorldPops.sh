@@ -3,7 +3,7 @@
 analysis="../../../analysis/"
 samples="../../../samples/"
 kgp="../../../1000G/"
-phase="../../../phase/"
+imput="../../../assoc_results/"
 
 # Get 1kgp individuals limiting to only common SNPs that are found in qc-camgwas data
 plink \
@@ -22,7 +22,6 @@ plink \
        --exclude-snp rs16959560 \
        --biallelic-only \
        --out worldPops/world-pops
-cat worldPops/world-pops.log > log.file
 
 cut -f2 worldPops/world-pops.bim > world.rsids
 sort world.rsids | uniq -u > world-uniq.rsids
@@ -34,7 +33,6 @@ plink \
 	--make-bed \
 	--extract world-uniq.rsids \
 	--out world
-cat world.log >> log.file
 
 cut -f1,4 world.bim | sed 's/\t/:/g' > world.pos
 cut -f2 world.bim > world.rsids
@@ -46,7 +44,5 @@ plink \
 	--update-name updateWorldName.txt 1 2 \
 	--make-bed \
 	--out worldPops/world-pops-updated
-cat worldPops/world-pops-updated.log >> log.file
-
 
 rm world.rsids world-uniq.rsids updateWorldName.txt world.pos world.rsids

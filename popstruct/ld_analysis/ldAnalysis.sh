@@ -4,6 +4,7 @@ analysis="../../analysis/"
 world="../eig/world/worldPops/"
 phase="../../phase/"
 kgp="${phase}1000GP_Phase3/"
+sample="../../samples/"
 
 # Pairwise LD in a region
 #plink \
@@ -31,10 +32,10 @@ for pop in cam gwd yri lwk; do
 #	--make-bed
 
 plink \
-	-i-bfile ${world}qc-world-merge \
+	-i-bfile ldData \
 	--chr $1 \
 	--ld-snp $2 \
-	--keep ${pop}.ids \
+	--keep ${sample}"${pop}".ids \
 	--ld-window 70 \
 	--ld-window-kb 1000 \
 	--ld-window-r2 0 \

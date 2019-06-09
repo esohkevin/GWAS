@@ -3,7 +3,7 @@
 analysis="../../../analysis/"
 samples="../../../samples/"
 kgp="../../../1000G/"
-phase="../../../phase/"
+imput="../../../assoc_results/"
 
 # Update Phased study data
 #cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
@@ -36,26 +36,46 @@ phase="../../../phase/"
 #	--out worldPops/qc-world-merge
 
 #cut -f2 worldPops/phased-data-updated.bim > phased.rsids
-	
-### Extract YRI IDs for acertainment of Fst estimates
-plink \
+
+if [[ -f "merge.list" ]]; then
+   rm merge.list
+fi
+
+echo "cam-updated" > merge.list
+
+for pop in `cat pop.list`; do
+    plink \
         --bfile worldPops/world-pops-updated \
         --autosome \
         --maf 0.01 \
-	--hwe 1e-08 \
-        --geno 0.01 \
-        --keep ${samples}yri.ids \
+	--hwe 1e-20 \
+        --geno 0.04 \
+        --keep ${samples}"${pop}".ids \
         --make-bed \
-        --out yri
+        --out ${pop}
 
-cut -f2 yri.bim > yriAcertainment.rsids
+    echo "${pop}" >> merge.list
+done
 
-# Now extract yriAcertainment SNPs
 plink \
-	--bfile worldPops/qc-world-merge \
+	--merge-list merge.list \
 	--keep-allele-order \
-	--extract yriAcertainment.rsids \
+	--out worldPops/mergedSet
+
+# YRI ascertainment
+plink \
+	--bfile worldPops/mergedSet \
+	--keep ${samples}yri.ids \
+	--keep-allele-order \
 	--make-bed \
+	--out yri
+
+cut -f2 yri.bim > yriascertainment.rsids
+
+plink \
+	--bfile worldPops/mergedSet \
+	--extract yriascertainment.rsids \
+	--keep-allele-order \
 	--out ascertained
 
 # Prune to get only SNPs at linkage equilibrium (independent SNPs - no LD between them)
@@ -69,7 +89,7 @@ plink \
 	--bfile ascertained \
 	--autosome \
 	--extract prune.prune.in \
-	--maf 0.35 \
+	--maf $1 \
 	--geno 0.01 \
 	--make-bed \
 	--out merged-data-pruned
