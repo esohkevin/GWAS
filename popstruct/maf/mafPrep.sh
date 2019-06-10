@@ -12,7 +12,7 @@ fi
 
 for pop in cam yri gwd lwk ibs chb; do 
     plink \
-        --bfile ascertained \
+        --bfile ${pop}worldPops/camMergeSet \
         --keep-allele-order \
         --thin-indiv-count 99 \
         --keep ${sample}"${pop}".ids \
