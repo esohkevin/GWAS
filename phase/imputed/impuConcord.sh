@@ -7,4 +7,7 @@ for chr in {1..22}; do
     done
 done
 
+cp  chr1Concord.txt mergeConcord.txt
+
+for chr in {2..22}; do sed '1d' chr${chr}Concord.txt >> mergeConcord.txt; done
 
