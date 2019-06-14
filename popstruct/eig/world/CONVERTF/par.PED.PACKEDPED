@@ -10,4 +10,5 @@ pordercheck:	 YES
 phasedmode:	 YES
 strandcheck:	 YES
 familynames:     NO
+#poplistname:	 ethlist.txt
 #numthreads:	 16

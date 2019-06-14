@@ -2,7 +2,11 @@
 ####################################### EIGEN ANALYSIS #######################################
 read -p 'Do you really want to run ./prepWorldPops.sh and ./prepMergedData.sh scripts all over? [y|n]: ' response
 if [[ $response == [Yy] ]]; then
-   for maf in `(seq 0.2 0.04 0.5)`; do
+   if [[ $# == 0 ]]; then
+      echo """Usage: ./run_popgen.sh <maf> 
+		Please enter at least one MAF value"""
+   else
+      for maf in $@; do
 #	./prepWorldPops.sh
 	
 	./prepMergedData.sh $maf
@@ -31,7 +35,8 @@ if [[ $response == [Yy] ]]; then
 #	./run_eigCorrPCA.perl
 	
 #	cd ../
-   done
+      done
+   fi
 elif [[ $response == [Nn] ]]; then
 
 	# Convert File Formats
@@ -57,6 +62,6 @@ elif [[ $response == [Nn] ]]; then
 	
 #	cd ../
 
-else    echo "Sorry I did not understand your response!"
+else    echo "Sorry I did not understand your choice!"
 	echo "Usage: 'y' (yes) 'n' (no)"
 fi

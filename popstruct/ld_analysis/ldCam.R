@@ -41,33 +41,33 @@ hHbC11cam$Col <- rbPalc(10)[as.numeric(cut(hHbC11cam$R2,breaks = 10))]
 
 
 
-png(args[5], height=680, width=700, units="px")
+png(args[5], height=680, width=700, units="px", points=14)
 par(mfrow=c(4,2))
 
 par(fig=c(0, 0.5, 0.535, 1), bty="o", cex.main=1)
-plot(hHbC11$BP_B, hHbC11$R2, pch=20, xlim=c(5150000,5400000), xaxt="n", xlab=" ", ylab="LD (r^2)", main="BANTU", col = hHbC11$Col)
+plot(hHbC11$BP_B, hHbC11$R2, pch=20, xlim=c(92000000,95000000), xaxt="n", xlab=" ", ylab="LD (r^2)", main="BANTU", col = hHbC11$Col)
 abline(h=0.5,lty=2, col="grey")
 
 par(fig=c(0.5, 1, 0.535, 1),new=T, bty="o", cex.main=1)
-plot(hHbC11fulbe$BP_B, hHbC11fulbe$R2, pch=20, xlim=c(5150000,5400000), xaxt="n", xlab=" ", ylab="LD (r^2)", main="FULBE", col = hHbC11fulbe$Col)
+plot(hHbC11fulbe$BP_B, hHbC11fulbe$R2, pch=20, xlim=c(92000000,95000000), xaxt="n", xlab=" ", ylab="LD (r^2)", main="FULBE", col = hHbC11fulbe$Col)
 abline(h=0.5, lty=2, col="grey")
 
 par(fig=c(0,0.5, 0.15, 0.605),new=T, bty="o", cex.main=1)
-plot(hHbC11semibantu$BP_B, hHbC11semibantu$R2, pch=20, xlim=c(5150000,5400000), xaxt="n", xlab=" ", ylab="LD (r^2)", main="SEMIBANTU", col = hHbC11semibantu$Col)
+plot(hHbC11semibantu$BP_B, hHbC11semibantu$R2, pch=20, xlim=c(92000000,95000000), xaxt="n", xlab=" ", ylab="LD (r^2)", main="SEMIBANTU", col = hHbC11semibantu$Col)
 abline(h=0.5, lty=2, col="grey")
 
-#plot(hHbC11gbr$BP_B, hHbC11gbr$R2, pch=20, xlim=c(5150000,5400000), xlab=" ", ylab="LD (r^2)", main="GBR", col = hHbC11gbr$Col)
+#plot(hHbC11gbr$BP_B, hHbC11gbr$R2, pch=20, xlim=c(92000000,95000000), xlab=" ", ylab="LD (r^2)", main="GBR", col = hHbC11gbr$Col)
 #abline(h=0.5, lty=2, col="grey")
 
 par(fig=c(0.5,1, 0.15, 0.605),new=T, bty="o", cex.main=1, cex.axis=0.9)
-plot(hHbC11cam$BP_B, hHbC11cam$R2, pch=20, xlim=c(5150000,5400000), xaxt="n", xlab=" ", ylab="LD (r^2)", main="CAM", col = hHbC11cam$Col)
+plot(hHbC11cam$BP_B, hHbC11cam$R2, pch=20, xlim=c(92000000,95000000), xaxt="n", xlab=" ", ylab="LD (r^2)", main="CAM", col = hHbC11cam$Col)
 abline(h=0.5, lty=2, col="grey")
 
-#plot(hHbC11chb$BP_B, hHbC11chb$R2, pch=20, xlim=c(5150000,5400000), xlab=" ", ylab="LD (r^2)", main="CHB", col = hHbC11chb$Col)
+#plot(hHbC11chb$BP_B, hHbC11chb$R2, pch=20, xlim=c(92000000,95000000), xlab=" ", ylab="LD (r^2)", main="CHB", col = hHbC11chb$Col)
 #abline(h=0.5, lty=2, col="grey")
 
 par(fig=c(0, 0.5, 0, 0.25), new=TRUE, bty="n", cex.axis=1.2, cex.main=1.2)
-plot(recomRange$position, recomRange$COMBINED_rate.cM.Mb., xlim=c(5150000,5400000), ylim=c(0,100), xlab="BP", ylab="cM/Mb", type="l")
+plot(recomRange$position, recomRange$COMBINED_rate.cM.Mb., xlim=c(92000000,95000000), ylim=c(0,100), xlab="BP", ylab="cM/Mb", type="l")
 par(fig=c(0.5, 1, 0, 0.25), new=TRUE, bty="n", cex.axis=1.2, cex.main=1.2)
-plot(recomRange$position, recomRange$COMBINED_rate.cM.Mb., xlim=c(5150000,5400000), ylim=c(0,100), xlab="BP", ylab="cM/Mb", type="l")
+plot(recomRange$position, recomRange$COMBINED_rate.cM.Mb., xlim=c(92000000,95000000), ylim=c(0,100), xlab="BP", ylab="cM/Mb", type="l")
 dev.off()
