@@ -18,6 +18,8 @@ sample="../../samples/"
 #        --ld-window-r2 0.2 \
 #	--out gypchr4
 
+if [[ $# == 5  ]]; then
+
 plink \
         --bfile ${world}../cam-updated \
         --chr $1 \
@@ -30,8 +32,6 @@ plink \
         --r2
 
 # Reference-wise LD
-
-if [[ $# == 5  ]]; then
 
    for pop in gwd yri lwk; do 
 
@@ -52,12 +52,11 @@ if [[ $# == 5  ]]; then
 # Plot
 Rscript ldWorld.R chr"$1""$3"cam.ld chr"$1""$3"gwd.ld chr"$1""$3"yri.ld chr"$1""$3"lwk.ld ${3}world.png $4 $5 ${kgp}genetic_map_chr"${1}"_combined_b37.txt
 
-./showLdTags.sh ${3}
+#./showLdTags.sh ${3}
 
 else
 	echo """
-	Usage: ./ldAnalysis.sh <chr#> <snp> <gene> <R-index1> <R-index2>
-
+	Usage: ./ldWorld.sh <chr#> <snp> <gene> <R-index1> <R-index2>
 """
 
 fi
