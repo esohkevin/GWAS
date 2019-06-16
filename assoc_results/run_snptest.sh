@@ -4,7 +4,7 @@ sample="../samples/"
 
 # Run SNPTEST Association for Severe Malaria cases only SMA + CM
 snptest_v2.5.4-beta3 \
-	-data phasedWrefImpute2.gen.gz phasedWrefImpute2.sample \
+	-data phasedWrefImpute2Biallelic.gen.gz phasedWrefImpute2.sample \
 	-frequentist 1 2 3 4 5 \
 	-bayesian 1 2 3 4 5 \
         -include_samples smcon.ids \
@@ -17,7 +17,7 @@ snptest_v2.5.4-beta3 \
 ###########################################################################################################################
 # Run association for only CM Vs Controls (by including only control+CM samples from analysis)
 snptest_v2.5.4-beta3 \
-        -data phasedWrefImpute2.gen.gz phasedWrefImpute2.sample \
+        -data phasedWrefImpute2Biallelic.gen.gz phasedWrefImpute2.sample \
         -frequentist 1 2 3 4 5 \
         -bayesian 1 2 3 4 5 \
         -method score \
@@ -30,7 +30,7 @@ snptest_v2.5.4-beta3 \
 
 # Run association for only SMA Vs Controls (bu including only control+SMA samples from analysis)
 snptest_v2.5.4-beta3 \
-        -data phasedWrefImpute2.gen.gz phasedWrefImpute2.sample \
+        -data phasedWrefImpute2Biallelic.gen.gz phasedWrefImpute2.sample \
         -frequentist 1 2 3 4 5 \
         -bayesian 1 2 3 4 5 \
         -method score \

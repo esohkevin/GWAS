@@ -12,7 +12,7 @@ else
     grep -wi -e cam -e yri -e gwd -e lwk -e ibs -e chb maf-pops.template | awk '{print $1" "$1" "$2}' > camAll.cluster
     
     plink \
-        --bfile ${world}worldPops/camMergedSet \
+        --bfile ${world}worldPops/mergedSet \
     	--chr $1 \
     	--from-kb $2 \
     	--to-kb $3 \

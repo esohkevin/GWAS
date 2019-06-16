@@ -9,7 +9,9 @@ if [[ $response == [Yy] ]]; then
       for maf in $@; do
 #	./prepWorldPops.sh
 	
-	./prepMergedData.sh $maf
+#	./prepMergedData.sh $maf
+
+	./prepTest.sh $maf
 
 #	./prepFile.sh $maf
 	

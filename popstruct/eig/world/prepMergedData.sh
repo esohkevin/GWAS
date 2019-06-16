@@ -16,22 +16,23 @@ imput="../../../assoc_results/"
 #	--out yriascertained
 #
 ## YRI ascertainment
-plink \
-        --bfile worldPops/world-pops-updated \
-        --keep ${samples}yri.ids \
-        --maf 0.0001 \
-        --keep-allele-order \
-        --make-bed \
-        --out yri
+#plink \
+#        --bfile worldPops/world-pops-updated \
+#        --keep ${samples}yri.ids \
+#        --maf 0.0001 \
+#        --keep-allele-order \
+#        --make-bed \
+#        --out yri
 
-cut -f2 yri.bim > yriascertainment.rsids
+cut -f2 cam-updated.bim > camascertainment.rsids
 ##
 plink \
         --bfile worldPops/mergedSet \
-        --extract yriascertainment.rsids \
+        --extract camascertainment.rsids \
         --keep-allele-order \
 	--pheno worldPops/update-1kgp.phe \
         --mpheno 1 \
+	--maf 0.01 \
 	--update-sex worldPops/update-1kgp.sex 1 \
         --make-bed \
         --out ascertained
@@ -39,7 +40,7 @@ plink \
 # Prune to get only SNPs at linkage equilibrium (independent SNPs - no LD between them)
 plink \
 	--bfile ascertained \
-	--indep-pairwise 50 5 0.2 \
+	--indep-pairwise 50kb 10 0.2 \
 	--allow-no-sex \
 	--out prune
 
@@ -49,6 +50,7 @@ plink \
 	--extract prune.prune.in \
 	--maf $1 \
 	--make-bed \
+	--geno 0.01 \
 	--out merged-data-pruned
 
 # Convert bed to ped required for CONVERTF

@@ -12,10 +12,10 @@ fstonly
 norm used
 
 packed geno read OK
-number of samples used: 3689 number of snps used: 39753
+number of samples used: 3689 number of snps used: 52625
 Using 127 threads, and partial sum lookup algorithm.
 
-## Tracy-Widom statistics: rows: 3689  cols: 39753
+## Tracy-Widom statistics: rows: 3689  cols: 52625
   #N    eigenvalue  difference    twstat      p-value effect. n
            #eigvals: 
    6042341077_R01C01              SB
@@ -3741,473 +3741,473 @@ number of blocks for moving block jackknife: 527
 ## Fst statistics between populations:         fst       std error
                    SB                   BA     0.001     0.0000
                    SB                   FO     0.003     0.0001
-                   SB                  GBR     0.134     0.0009
-                   SB                  FIN     0.136     0.0010
-                   SB                  CHS     0.157     0.0011
-                   SB                  PUR     0.096     0.0007
-                   SB                  CDX     0.157     0.0011
-                   SB                  CLM     0.109     0.0008
-                   SB                  IBS     0.129     0.0009
-                   SB                  PEL     0.160     0.0011
-                   SB                  PJL     0.117     0.0008
-                   SB                  KHV     0.154     0.0011
+                   SB                  GBR     0.132     0.0009
+                   SB                  FIN     0.134     0.0009
+                   SB                  CHS     0.155     0.0010
+                   SB                  PUR     0.095     0.0006
+                   SB                  CDX     0.155     0.0010
+                   SB                  CLM     0.107     0.0007
+                   SB                  IBS     0.127     0.0008
+                   SB                  PEL     0.158     0.0010
+                   SB                  PJL     0.115     0.0007
+                   SB                  KHV     0.152     0.0010
                    SB                  ACB     0.004     0.0001
                    SB                  GWD     0.007     0.0001
                    SB                  ESN     0.003     0.0000
-                   SB                  BEB     0.117     0.0008
+                   SB                  BEB     0.116     0.0007
                    SB                  MSL     0.005     0.0001
-                   SB                  STU     0.118     0.0008
-                   SB                  ITU     0.119     0.0008
-                   SB                  CEU     0.133     0.0009
+                   SB                  STU     0.117     0.0007
+                   SB                  ITU     0.118     0.0007
+                   SB                  CEU     0.131     0.0009
                    SB                  YRI     0.002     0.0000
-                   SB                  CHB     0.157     0.0011
-                   SB                  JPT     0.158     0.0011
+                   SB                  CHB     0.155     0.0010
+                   SB                  JPT     0.156     0.0010
                    SB                  LWK     0.005     0.0001
                    SB                  ASW     0.009     0.0001
-                   SB                  MXL     0.126     0.0009
-                   SB                  TSI     0.130     0.0009
-                   SB                  GIH     0.120     0.0008
+                   SB                  MXL     0.125     0.0008
+                   SB                  TSI     0.128     0.0008
+                   SB                  GIH     0.119     0.0007
                    BA                   FO     0.003     0.0001
-                   BA                  GBR     0.134     0.0009
-                   BA                  FIN     0.137     0.0010
-                   BA                  CHS     0.158     0.0011
-                   BA                  PUR     0.097     0.0007
-                   BA                  CDX     0.157     0.0011
-                   BA                  CLM     0.109     0.0008
-                   BA                  IBS     0.129     0.0009
-                   BA                  PEL     0.161     0.0012
-                   BA                  PJL     0.117     0.0008
-                   BA                  KHV     0.154     0.0011
+                   BA                  GBR     0.132     0.0009
+                   BA                  FIN     0.134     0.0009
+                   BA                  CHS     0.156     0.0010
+                   BA                  PUR     0.095     0.0007
+                   BA                  CDX     0.155     0.0010
+                   BA                  CLM     0.108     0.0007
+                   BA                  IBS     0.127     0.0008
+                   BA                  PEL     0.159     0.0010
+                   BA                  PJL     0.116     0.0007
+                   BA                  KHV     0.153     0.0010
                    BA                  ACB     0.004     0.0001
-                   BA                  GWD     0.007     0.0001
-                   BA                  ESN     0.003     0.0001
-                   BA                  BEB     0.117     0.0008
+                   BA                  GWD     0.008     0.0001
+                   BA                  ESN     0.003     0.0000
+                   BA                  BEB     0.116     0.0007
                    BA                  MSL     0.005     0.0001
-                   BA                  STU     0.118     0.0008
-                   BA                  ITU     0.119     0.0008
-                   BA                  CEU     0.134     0.0009
+                   BA                  STU     0.117     0.0007
+                   BA                  ITU     0.118     0.0007
+                   BA                  CEU     0.132     0.0009
                    BA                  YRI     0.002     0.0000
-                   BA                  CHB     0.157     0.0011
-                   BA                  JPT     0.158     0.0011
+                   BA                  CHB     0.155     0.0010
+                   BA                  JPT     0.156     0.0010
                    BA                  LWK     0.005     0.0001
                    BA                  ASW     0.009     0.0001
-                   BA                  MXL     0.127     0.0009
-                   BA                  TSI     0.130     0.0009
-                   BA                  GIH     0.120     0.0008
-                   FO                  GBR     0.123     0.0009
-                   FO                  FIN     0.125     0.0010
-                   FO                  CHS     0.148     0.0011
-                   FO                  PUR     0.086     0.0007
-                   FO                  CDX     0.148     0.0011
-                   FO                  CLM     0.099     0.0008
-                   FO                  IBS     0.118     0.0009
-                   FO                  PEL     0.151     0.0012
-                   FO                  PJL     0.107     0.0008
-                   FO                  KHV     0.145     0.0011
+                   BA                  MXL     0.125     0.0008
+                   BA                  TSI     0.128     0.0008
+                   BA                  GIH     0.119     0.0008
+                   FO                  GBR     0.121     0.0009
+                   FO                  FIN     0.124     0.0009
+                   FO                  CHS     0.147     0.0010
+                   FO                  PUR     0.085     0.0007
+                   FO                  CDX     0.147     0.0010
+                   FO                  CLM     0.098     0.0007
+                   FO                  IBS     0.116     0.0008
+                   FO                  PEL     0.150     0.0011
+                   FO                  PJL     0.106     0.0007
+                   FO                  KHV     0.144     0.0010
                    FO                  ACB     0.004     0.0001
                    FO                  GWD     0.006     0.0001
                    FO                  ESN     0.005     0.0001
-                   FO                  BEB     0.107     0.0008
+                   FO                  BEB     0.106     0.0008
                    FO                  MSL     0.006     0.0001
-                   FO                  STU     0.109     0.0008
-                   FO                  ITU     0.109     0.0008
-                   FO                  CEU     0.122     0.0009
+                   FO                  STU     0.108     0.0007
+                   FO                  ITU     0.108     0.0007
+                   FO                  CEU     0.121     0.0009
                    FO                  YRI     0.004     0.0001
-                   FO                  CHB     0.148     0.0011
-                   FO                  JPT     0.149     0.0011
+                   FO                  CHB     0.146     0.0010
+                   FO                  JPT     0.148     0.0010
                    FO                  LWK     0.005     0.0001
-                   FO                  ASW     0.007     0.0002
-                   FO                  MXL     0.116     0.0009
-                   FO                  TSI     0.119     0.0009
-                   FO                  GIH     0.110     0.0008
+                   FO                  ASW     0.008     0.0002
+                   FO                  MXL     0.115     0.0008
+                   FO                  TSI     0.117     0.0008
+                   FO                  GIH     0.109     0.0008
                   GBR                  FIN     0.007     0.0001
-                  GBR                  CHS     0.103     0.0009
-                  GBR                  PUR     0.011     0.0002
-                  GBR                  CDX     0.103     0.0009
+                  GBR                  CHS     0.102     0.0008
+                  GBR                  PUR     0.011     0.0001
+                  GBR                  CDX     0.102     0.0009
                   GBR                  CLM     0.015     0.0002
                   GBR                  IBS     0.002     0.0001
                   GBR                  PEL     0.085     0.0008
                   GBR                  PJL     0.028     0.0003
-                  GBR                  KHV     0.099     0.0009
-                  GBR                  ACB     0.106     0.0008
-                  GBR                  GWD     0.131     0.0009
-                  GBR                  ESN     0.135     0.0009
-                  GBR                  BEB     0.039     0.0004
-                  GBR                  MSL     0.136     0.0009
+                  GBR                  KHV     0.098     0.0008
+                  GBR                  ACB     0.105     0.0007
+                  GBR                  GWD     0.128     0.0008
+                  GBR                  ESN     0.133     0.0008
+                  GBR                  BEB     0.038     0.0004
+                  GBR                  MSL     0.133     0.0009
                   GBR                  STU     0.040     0.0004
-                  GBR                  ITU     0.040     0.0004
+                  GBR                  ITU     0.039     0.0004
                   GBR                  CEU     0.000     0.0000
-                  GBR                  YRI     0.133     0.0009
-                  GBR                  CHB     0.101     0.0009
-                  GBR                  JPT     0.104     0.0009
-                  GBR                  LWK     0.125     0.0009
-                  GBR                  ASW     0.083     0.0007
+                  GBR                  YRI     0.131     0.0008
+                  GBR                  CHB     0.100     0.0008
+                  GBR                  JPT     0.103     0.0009
+                  GBR                  LWK     0.123     0.0008
+                  GBR                  ASW     0.082     0.0007
                   GBR                  MXL     0.036     0.0004
                   GBR                  TSI     0.004     0.0001
-                  GBR                  GIH     0.034     0.0004
-                  FIN                  CHS     0.096     0.0008
+                  GBR                  GIH     0.034     0.0003
+                  FIN                  CHS     0.095     0.0008
                   FIN                  PUR     0.015     0.0002
-                  FIN                  CDX     0.097     0.0009
+                  FIN                  CDX     0.096     0.0008
                   FIN                  CLM     0.019     0.0002
                   FIN                  IBS     0.010     0.0001
                   FIN                  PEL     0.081     0.0008
                   FIN                  PJL     0.030     0.0003
                   FIN                  KHV     0.093     0.0008
-                  FIN                  ACB     0.109     0.0008
-                  FIN                  GWD     0.133     0.0010
-                  FIN                  ESN     0.137     0.0009
-                  FIN                  BEB     0.039     0.0004
-                  FIN                  MSL     0.138     0.0010
+                  FIN                  ACB     0.107     0.0007
+                  FIN                  GWD     0.131     0.0009
+                  FIN                  ESN     0.135     0.0009
+                  FIN                  BEB     0.038     0.0004
+                  FIN                  MSL     0.135     0.0009
                   FIN                  STU     0.041     0.0004
-                  FIN                  ITU     0.041     0.0004
+                  FIN                  ITU     0.040     0.0004
                   FIN                  CEU     0.006     0.0001
-                  FIN                  YRI     0.136     0.0009
-                  FIN                  CHB     0.094     0.0008
-                  FIN                  JPT     0.097     0.0009
-                  FIN                  LWK     0.128     0.0009
-                  FIN                  ASW     0.085     0.0007
+                  FIN                  YRI     0.133     0.0009
+                  FIN                  CHB     0.093     0.0008
+                  FIN                  JPT     0.096     0.0008
+                  FIN                  LWK     0.126     0.0009
+                  FIN                  ASW     0.084     0.0007
                   FIN                  MXL     0.036     0.0004
-                  FIN                  TSI     0.012     0.0002
-                  FIN                  GIH     0.036     0.0004
-                  CHS                  PUR     0.081     0.0007
+                  FIN                  TSI     0.012     0.0001
+                  FIN                  GIH     0.035     0.0003
+                  CHS                  PUR     0.080     0.0007
                   CHS                  CDX     0.005     0.0001
-                  CHS                  CLM     0.074     0.0007
-                  CHS                  IBS     0.103     0.0009
-                  CHS                  PEL     0.082     0.0009
-                  CHS                  PJL     0.069     0.0007
+                  CHS                  CLM     0.073     0.0006
+                  CHS                  IBS     0.102     0.0008
+                  CHS                  PEL     0.081     0.0009
+                  CHS                  PJL     0.068     0.0006
                   CHS                  KHV     0.003     0.0001
-                  CHS                  ACB     0.137     0.0010
-                  CHS                  GWD     0.155     0.0011
-                  CHS                  ESN     0.158     0.0011
-                  CHS                  BEB     0.055     0.0006
-                  CHS                  MSL     0.159     0.0011
-                  CHS                  STU     0.067     0.0007
-                  CHS                  ITU     0.068     0.0007
-                  CHS                  CEU     0.103     0.0009
-                  CHS                  YRI     0.157     0.0011
-                  CHS                  CHB     0.001     0.0001
+                  CHS                  ACB     0.135     0.0009
+                  CHS                  GWD     0.153     0.0010
+                  CHS                  ESN     0.156     0.0010
+                  CHS                  BEB     0.054     0.0005
+                  CHS                  MSL     0.157     0.0010
+                  CHS                  STU     0.065     0.0006
+                  CHS                  ITU     0.067     0.0006
+                  CHS                  CEU     0.102     0.0008
+                  CHS                  YRI     0.155     0.0010
+                  CHS                  CHB     0.001     0.0000
                   CHS                  JPT     0.009     0.0001
-                  CHS                  LWK     0.150     0.0011
-                  CHS                  ASW     0.117     0.0009
+                  CHS                  LWK     0.148     0.0010
+                  CHS                  ASW     0.116     0.0009
                   CHS                  MXL     0.066     0.0007
-                  CHS                  TSI     0.103     0.0009
-                  CHS                  GIH     0.072     0.0007
-                  PUR                  CDX     0.082     0.0008
+                  CHS                  TSI     0.101     0.0008
+                  CHS                  GIH     0.071     0.0006
+                  PUR                  CDX     0.081     0.0007
                   PUR                  CLM     0.006     0.0001
-                  PUR                  IBS     0.009     0.0001
-                  PUR                  PEL     0.058     0.0006
+                  PUR                  IBS     0.008     0.0001
+                  PUR                  PEL     0.057     0.0006
                   PUR                  PJL     0.022     0.0002
                   PUR                  KHV     0.078     0.0007
-                  PUR                  ACB     0.073     0.0006
-                  PUR                  GWD     0.093     0.0007
-                  PUR                  ESN     0.097     0.0007
+                  PUR                  ACB     0.071     0.0005
+                  PUR                  GWD     0.091     0.0006
+                  PUR                  ESN     0.095     0.0006
                   PUR                  BEB     0.029     0.0003
-                  PUR                  MSL     0.098     0.0007
+                  PUR                  MSL     0.096     0.0006
                   PUR                  STU     0.031     0.0003
                   PUR                  ITU     0.031     0.0003
                   PUR                  CEU     0.010     0.0001
-                  PUR                  YRI     0.096     0.0007
+                  PUR                  YRI     0.094     0.0006
                   PUR                  CHB     0.079     0.0007
-                  PUR                  JPT     0.081     0.0008
-                  PUR                  LWK     0.089     0.0007
+                  PUR                  JPT     0.081     0.0007
+                  PUR                  LWK     0.087     0.0006
                   PUR                  ASW     0.052     0.0005
-                  PUR                  MXL     0.020     0.0003
-                  PUR                  TSI     0.010     0.0002
-                  PUR                  GIH     0.028     0.0003
-                  CDX                  CLM     0.075     0.0007
-                  CDX                  IBS     0.103     0.0009
-                  CDX                  PEL     0.086     0.0010
-                  CDX                  PJL     0.069     0.0007
+                  PUR                  MXL     0.019     0.0003
+                  PUR                  TSI     0.009     0.0001
+                  PUR                  GIH     0.027     0.0003
+                  CDX                  CLM     0.074     0.0007
+                  CDX                  IBS     0.102     0.0009
+                  CDX                  PEL     0.085     0.0009
+                  CDX                  PJL     0.068     0.0006
                   CDX                  KHV     0.002     0.0001
-                  CDX                  ACB     0.136     0.0010
-                  CDX                  GWD     0.155     0.0011
-                  CDX                  ESN     0.158     0.0011
-                  CDX                  BEB     0.055     0.0005
-                  CDX                  MSL     0.158     0.0011
-                  CDX                  STU     0.066     0.0007
-                  CDX                  ITU     0.068     0.0006
-                  CDX                  CEU     0.103     0.0009
-                  CDX                  YRI     0.157     0.0011
+                  CDX                  ACB     0.135     0.0009
+                  CDX                  GWD     0.153     0.0010
+                  CDX                  ESN     0.156     0.0010
+                  CDX                  BEB     0.054     0.0005
+                  CDX                  MSL     0.156     0.0010
+                  CDX                  STU     0.065     0.0006
+                  CDX                  ITU     0.067     0.0006
+                  CDX                  CEU     0.102     0.0008
+                  CDX                  YRI     0.155     0.0010
                   CDX                  CHB     0.008     0.0001
                   CDX                  JPT     0.017     0.0002
-                  CDX                  LWK     0.150     0.0011
-                  CDX                  ASW     0.117     0.0010
+                  CDX                  LWK     0.148     0.0010
+                  CDX                  ASW     0.116     0.0009
                   CDX                  MXL     0.069     0.0007
-                  CDX                  TSI     0.103     0.0009
-                  CDX                  GIH     0.072     0.0007
+                  CDX                  TSI     0.102     0.0009
+                  CDX                  GIH     0.071     0.0006
                   CLM                  IBS     0.014     0.0002
-                  CLM                  PEL     0.040     0.0004
-                  CLM                  PJL     0.024     0.0003
-                  CLM                  KHV     0.072     0.0007
-                  CLM                  ACB     0.085     0.0006
-                  CLM                  GWD     0.106     0.0008
-                  CLM                  ESN     0.110     0.0008
+                  CLM                  PEL     0.039     0.0004
+                  CLM                  PJL     0.023     0.0002
+                  CLM                  KHV     0.071     0.0006
+                  CLM                  ACB     0.084     0.0006
+                  CLM                  GWD     0.104     0.0007
+                  CLM                  ESN     0.108     0.0007
                   CLM                  BEB     0.029     0.0003
-                  CLM                  MSL     0.110     0.0008
-                  CLM                  STU     0.032     0.0004
-                  CLM                  ITU     0.032     0.0004
+                  CLM                  MSL     0.109     0.0007
+                  CLM                  STU     0.032     0.0003
+                  CLM                  ITU     0.031     0.0003
                   CLM                  CEU     0.015     0.0002
-                  CLM                  YRI     0.109     0.0007
-                  CLM                  CHB     0.072     0.0007
-                  CLM                  JPT     0.074     0.0007
-                  CLM                  LWK     0.101     0.0007
-                  CLM                  ASW     0.063     0.0006
+                  CLM                  YRI     0.107     0.0007
+                  CLM                  CHB     0.071     0.0006
+                  CLM                  JPT     0.073     0.0007
+                  CLM                  LWK     0.100     0.0007
+                  CLM                  ASW     0.062     0.0005
                   CLM                  MXL     0.010     0.0002
                   CLM                  TSI     0.015     0.0002
                   CLM                  GIH     0.029     0.0003
-                  IBS                  PEL     0.087     0.0008
+                  IBS                  PEL     0.086     0.0008
                   IBS                  PJL     0.029     0.0003
-                  IBS                  KHV     0.099     0.0009
-                  IBS                  ACB     0.102     0.0007
-                  IBS                  GWD     0.125     0.0009
-                  IBS                  ESN     0.130     0.0009
+                  IBS                  KHV     0.098     0.0008
+                  IBS                  ACB     0.100     0.0007
+                  IBS                  GWD     0.123     0.0008
+                  IBS                  ESN     0.127     0.0008
                   IBS                  BEB     0.039     0.0004
-                  IBS                  MSL     0.130     0.0009
-                  IBS                  STU     0.041     0.0004
-                  IBS                  ITU     0.040     0.0004
+                  IBS                  MSL     0.128     0.0008
+                  IBS                  STU     0.040     0.0004
+                  IBS                  ITU     0.039     0.0004
                   IBS                  CEU     0.002     0.0001
-                  IBS                  YRI     0.128     0.0009
-                  IBS                  CHB     0.101     0.0009
-                  IBS                  JPT     0.104     0.0009
-                  IBS                  LWK     0.120     0.0009
-                  IBS                  ASW     0.079     0.0007
+                  IBS                  YRI     0.126     0.0008
+                  IBS                  CHB     0.100     0.0008
+                  IBS                  JPT     0.102     0.0009
+                  IBS                  LWK     0.118     0.0008
+                  IBS                  ASW     0.078     0.0006
                   IBS                  MXL     0.036     0.0004
                   IBS                  TSI     0.002     0.0001
-                  IBS                  GIH     0.035     0.0004
-                  PEL                  PJL     0.071     0.0007
-                  PEL                  KHV     0.083     0.0009
-                  PEL                  ACB     0.138     0.0010
-                  PEL                  GWD     0.158     0.0011
-                  PEL                  ESN     0.161     0.0011
+                  IBS                  GIH     0.034     0.0003
+                  PEL                  PJL     0.071     0.0006
+                  PEL                  KHV     0.082     0.0009
+                  PEL                  ACB     0.136     0.0009
+                  PEL                  GWD     0.156     0.0010
+                  PEL                  ESN     0.159     0.0010
                   PEL                  BEB     0.068     0.0007
-                  PEL                  MSL     0.162     0.0012
-                  PEL                  STU     0.075     0.0007
+                  PEL                  MSL     0.160     0.0011
+                  PEL                  STU     0.074     0.0007
                   PEL                  ITU     0.075     0.0007
                   PEL                  CEU     0.085     0.0008
-                  PEL                  YRI     0.160     0.0011
-                  PEL                  CHB     0.080     0.0009
+                  PEL                  YRI     0.158     0.0010
+                  PEL                  CHB     0.079     0.0009
                   PEL                  JPT     0.080     0.0009
-                  PEL                  LWK     0.153     0.0011
-                  PEL                  ASW     0.115     0.0010
+                  PEL                  LWK     0.151     0.0010
+                  PEL                  ASW     0.113     0.0009
                   PEL                  MXL     0.017     0.0003
                   PEL                  TSI     0.087     0.0008
-                  PEL                  GIH     0.075     0.0007
+                  PEL                  GIH     0.074     0.0007
                   PJL                  KHV     0.065     0.0006
-                  PJL                  ACB     0.093     0.0007
-                  PJL                  GWD     0.114     0.0008
-                  PJL                  ESN     0.118     0.0008
+                  PJL                  ACB     0.092     0.0006
+                  PJL                  GWD     0.112     0.0007
+                  PJL                  ESN     0.116     0.0007
                   PJL                  BEB     0.004     0.0001
-                  PJL                  MSL     0.118     0.0008
+                  PJL                  MSL     0.116     0.0007
                   PJL                  STU     0.004     0.0001
                   PJL                  ITU     0.003     0.0001
                   PJL                  CEU     0.028     0.0003
-                  PJL                  YRI     0.116     0.0008
-                  PJL                  CHB     0.068     0.0007
-                  PJL                  JPT     0.070     0.0007
-                  PJL                  LWK     0.109     0.0007
-                  PJL                  ASW     0.072     0.0006
+                  PJL                  YRI     0.115     0.0007
+                  PJL                  CHB     0.067     0.0006
+                  PJL                  JPT     0.069     0.0006
+                  PJL                  LWK     0.107     0.0007
+                  PJL                  ASW     0.071     0.0006
                   PJL                  MXL     0.034     0.0004
                   PJL                  TSI     0.027     0.0003
                   PJL                  GIH     0.004     0.0001
-                  KHV                  ACB     0.133     0.0010
-                  KHV                  GWD     0.152     0.0011
-                  KHV                  ESN     0.155     0.0011
-                  KHV                  BEB     0.051     0.0005
-                  KHV                  MSL     0.156     0.0011
-                  KHV                  STU     0.063     0.0006
-                  KHV                  ITU     0.064     0.0006
-                  KHV                  CEU     0.099     0.0009
-                  KHV                  YRI     0.154     0.0011
+                  KHV                  ACB     0.132     0.0009
+                  KHV                  GWD     0.150     0.0010
+                  KHV                  ESN     0.153     0.0010
+                  KHV                  BEB     0.050     0.0005
+                  KHV                  MSL     0.154     0.0010
+                  KHV                  STU     0.062     0.0006
+                  KHV                  ITU     0.063     0.0006
+                  KHV                  CEU     0.098     0.0008
+                  KHV                  YRI     0.152     0.0010
                   KHV                  CHB     0.006     0.0001
                   KHV                  JPT     0.014     0.0002
-                  KHV                  LWK     0.147     0.0010
-                  KHV                  ASW     0.114     0.0009
-                  KHV                  MXL     0.066     0.0007
-                  KHV                  TSI     0.099     0.0009
-                  KHV                  GIH     0.068     0.0006
+                  KHV                  LWK     0.145     0.0010
+                  KHV                  ASW     0.113     0.0009
+                  KHV                  MXL     0.065     0.0007
+                  KHV                  TSI     0.098     0.0008
+                  KHV                  GIH     0.067     0.0006
                   ACB                  GWD     0.006     0.0001
                   ACB                  ESN     0.004     0.0001
-                  ACB                  BEB     0.094     0.0007
+                  ACB                  BEB     0.093     0.0006
                   ACB                  MSL     0.005     0.0001
-                  ACB                  STU     0.095     0.0007
-                  ACB                  ITU     0.096     0.0007
-                  ACB                  CEU     0.106     0.0008
+                  ACB                  STU     0.094     0.0006
+                  ACB                  ITU     0.095     0.0006
+                  ACB                  CEU     0.104     0.0007
                   ACB                  YRI     0.003     0.0001
-                  ACB                  CHB     0.136     0.0010
-                  ACB                  JPT     0.137     0.0010
+                  ACB                  CHB     0.134     0.0009
+                  ACB                  JPT     0.136     0.0009
                   ACB                  LWK     0.007     0.0001
                   ACB                  ASW     0.003     0.0001
-                  ACB                  MXL     0.102     0.0008
-                  ACB                  TSI     0.103     0.0007
-                  ACB                  GIH     0.096     0.0007
+                  ACB                  MXL     0.101     0.0007
+                  ACB                  TSI     0.101     0.0007
+                  ACB                  GIH     0.095     0.0006
                   GWD                  ESN     0.007     0.0001
-                  GWD                  BEB     0.114     0.0008
+                  GWD                  BEB     0.113     0.0007
                   GWD                  MSL     0.004     0.0001
-                  GWD                  STU     0.115     0.0008
-                  GWD                  ITU     0.116     0.0008
-                  GWD                  CEU     0.130     0.0009
+                  GWD                  STU     0.114     0.0007
+                  GWD                  ITU     0.114     0.0007
+                  GWD                  CEU     0.128     0.0008
                   GWD                  YRI     0.006     0.0001
-                  GWD                  CHB     0.154     0.0011
-                  GWD                  JPT     0.156     0.0011
+                  GWD                  CHB     0.152     0.0010
+                  GWD                  JPT     0.154     0.0010
                   GWD                  LWK     0.011     0.0001
-                  GWD                  ASW     0.011     0.0002
-                  GWD                  MXL     0.123     0.0009
-                  GWD                  TSI     0.126     0.0009
-                  GWD                  GIH     0.117     0.0008
-                  ESN                  BEB     0.118     0.0008
+                  GWD                  ASW     0.011     0.0001
+                  GWD                  MXL     0.122     0.0008
+                  GWD                  TSI     0.124     0.0008
+                  GWD                  GIH     0.115     0.0007
+                  ESN                  BEB     0.116     0.0007
                   ESN                  MSL     0.005     0.0001
-                  ESN                  STU     0.119     0.0008
-                  ESN                  ITU     0.120     0.0008
-                  ESN                  CEU     0.134     0.0009
+                  ESN                  STU     0.117     0.0007
+                  ESN                  ITU     0.118     0.0007
+                  ESN                  CEU     0.132     0.0009
                   ESN                  YRI     0.001     0.0000
-                  ESN                  CHB     0.157     0.0011
-                  ESN                  JPT     0.159     0.0011
+                  ESN                  CHB     0.155     0.0010
+                  ESN                  JPT     0.157     0.0010
                   ESN                  LWK     0.008     0.0001
-                  ESN                  ASW     0.010     0.0001
-                  ESN                  MXL     0.127     0.0009
-                  ESN                  TSI     0.131     0.0009
-                  ESN                  GIH     0.121     0.0008
-                  BEB                  MSL     0.118     0.0008
+                  ESN                  ASW     0.009     0.0001
+                  ESN                  MXL     0.125     0.0008
+                  ESN                  TSI     0.128     0.0008
+                  ESN                  GIH     0.119     0.0007
+                  BEB                  MSL     0.117     0.0008
                   BEB                  STU     0.002     0.0001
                   BEB                  ITU     0.002     0.0001
-                  BEB                  CEU     0.039     0.0004
-                  BEB                  YRI     0.117     0.0008
-                  BEB                  CHB     0.054     0.0006
-                  BEB                  JPT     0.056     0.0006
-                  BEB                  LWK     0.109     0.0008
-                  BEB                  ASW     0.074     0.0006
+                  BEB                  CEU     0.038     0.0004
+                  BEB                  YRI     0.115     0.0007
+                  BEB                  CHB     0.053     0.0005
+                  BEB                  JPT     0.055     0.0005
+                  BEB                  LWK     0.108     0.0007
+                  BEB                  ASW     0.073     0.0006
                   BEB                  MXL     0.036     0.0004
                   BEB                  TSI     0.038     0.0004
                   BEB                  GIH     0.004     0.0001
-                  MSL                  STU     0.119     0.0008
-                  MSL                  ITU     0.120     0.0008
-                  MSL                  CEU     0.135     0.0009
+                  MSL                  STU     0.118     0.0008
+                  MSL                  ITU     0.118     0.0007
+                  MSL                  CEU     0.133     0.0009
                   MSL                  YRI     0.004     0.0001
-                  MSL                  CHB     0.158     0.0011
-                  MSL                  JPT     0.160     0.0011
-                  MSL                  LWK     0.010     0.0001
-                  MSL                  ASW     0.011     0.0002
-                  MSL                  MXL     0.128     0.0009
-                  MSL                  TSI     0.132     0.0009
-                  MSL                  GIH     0.121     0.0009
-                  STU                  ITU     0.001     0.0001
+                  MSL                  CHB     0.156     0.0010
+                  MSL                  JPT     0.157     0.0010
+                  MSL                  LWK     0.009     0.0001
+                  MSL                  ASW     0.010     0.0001
+                  MSL                  MXL     0.126     0.0009
+                  MSL                  TSI     0.129     0.0008
+                  MSL                  GIH     0.120     0.0008
+                  STU                  ITU     0.001     0.0000
                   STU                  CEU     0.040     0.0004
-                  STU                  YRI     0.118     0.0008
-                  STU                  CHB     0.066     0.0007
-                  STU                  JPT     0.067     0.0007
-                  STU                  LWK     0.110     0.0008
+                  STU                  YRI     0.116     0.0007
+                  STU                  CHB     0.065     0.0006
+                  STU                  JPT     0.066     0.0006
+                  STU                  LWK     0.109     0.0007
                   STU                  ASW     0.075     0.0006
-                  STU                  MXL     0.041     0.0005
+                  STU                  MXL     0.040     0.0004
                   STU                  TSI     0.039     0.0004
                   STU                  GIH     0.005     0.0001
                   ITU                  CEU     0.039     0.0004
-                  ITU                  YRI     0.118     0.0008
-                  ITU                  CHB     0.067     0.0007
-                  ITU                  JPT     0.069     0.0007
-                  ITU                  LWK     0.111     0.0008
-                  ITU                  ASW     0.076     0.0006
-                  ITU                  MXL     0.041     0.0005
+                  ITU                  YRI     0.117     0.0007
+                  ITU                  CHB     0.066     0.0006
+                  ITU                  JPT     0.068     0.0006
+                  ITU                  LWK     0.110     0.0007
+                  ITU                  ASW     0.075     0.0006
+                  ITU                  MXL     0.040     0.0004
                   ITU                  TSI     0.038     0.0004
                   ITU                  GIH     0.004     0.0001
-                  CEU                  YRI     0.133     0.0009
-                  CEU                  CHB     0.101     0.0009
-                  CEU                  JPT     0.104     0.0009
-                  CEU                  LWK     0.125     0.0009
-                  CEU                  ASW     0.082     0.0007
+                  CEU                  YRI     0.131     0.0008
+                  CEU                  CHB     0.100     0.0008
+                  CEU                  JPT     0.103     0.0009
+                  CEU                  LWK     0.123     0.0008
+                  CEU                  ASW     0.081     0.0007
                   CEU                  MXL     0.036     0.0004
                   CEU                  TSI     0.003     0.0001
-                  CEU                  GIH     0.034     0.0004
-                  YRI                  CHB     0.156     0.0011
-                  YRI                  JPT     0.158     0.0011
+                  CEU                  GIH     0.034     0.0003
+                  YRI                  CHB     0.154     0.0010
+                  YRI                  JPT     0.156     0.0010
                   YRI                  LWK     0.007     0.0001
                   YRI                  ASW     0.009     0.0001
-                  YRI                  MXL     0.126     0.0009
-                  YRI                  TSI     0.129     0.0009
-                  YRI                  GIH     0.119     0.0008
+                  YRI                  MXL     0.124     0.0008
+                  YRI                  TSI     0.127     0.0008
+                  YRI                  GIH     0.118     0.0007
                   CHB                  JPT     0.007     0.0001
-                  CHB                  LWK     0.149     0.0010
-                  CHB                  ASW     0.116     0.0009
+                  CHB                  LWK     0.147     0.0010
+                  CHB                  ASW     0.115     0.0009
                   CHB                  MXL     0.064     0.0007
-                  CHB                  TSI     0.101     0.0009
-                  CHB                  GIH     0.071     0.0007
-                  JPT                  LWK     0.151     0.0011
-                  JPT                  ASW     0.118     0.0010
-                  JPT                  MXL     0.066     0.0007
-                  JPT                  TSI     0.104     0.0009
-                  JPT                  GIH     0.072     0.0007
+                  CHB                  TSI     0.100     0.0008
+                  CHB                  GIH     0.070     0.0006
+                  JPT                  LWK     0.149     0.0010
+                  JPT                  ASW     0.116     0.0009
+                  JPT                  MXL     0.065     0.0007
+                  JPT                  TSI     0.103     0.0009
+                  JPT                  GIH     0.071     0.0006
                   LWK                  ASW     0.010     0.0001
-                  LWK                  MXL     0.118     0.0009
-                  LWK                  TSI     0.121     0.0009
-                  LWK                  GIH     0.112     0.0008
-                  ASW                  MXL     0.079     0.0007
-                  ASW                  TSI     0.080     0.0007
-                  ASW                  GIH     0.076     0.0006
+                  LWK                  MXL     0.117     0.0008
+                  LWK                  TSI     0.119     0.0008
+                  LWK                  GIH     0.111     0.0007
+                  ASW                  MXL     0.078     0.0007
+                  ASW                  TSI     0.079     0.0006
+                  ASW                  GIH     0.075     0.0006
                   MXL                  TSI     0.037     0.0004
                   MXL                  GIH     0.039     0.0004
-                  TSI                  GIH     0.033     0.0004
+                  TSI                  GIH     0.033     0.0003
 
 fst *1000:
           S     B     F     G     F     C     P     C     C     I     P     P     K     A     G     E     B     M     S     I     C     Y     C     J     L     A     M     T     G 
-   S      0     1     3   134   136   157    96   157   109   129   160   117   154     4     7     3   117     5   118   119   133     2   157   158     5     9   126   130   120
-   B      1     0     3   134   137   158    97   157   109   129   161   117   154     4     7     3   117     5   118   119   134     2   157   158     5     9   127   130   120
-   F      3     3     0   123   125   148    86   148    99   118   151   107   145     4     6     5   107     6   109   109   122     4   148   149     5     7   116   119   110
-   G    134   134   123     0     7   103    11   103    15     2    85    28    99   106   131   135    39   136    40    40     0   133   101   104   125    83    36     4    34
-   F    136   137   125     7     0    96    15    97    19    10    81    30    93   109   133   137    39   138    41    41     6   136    94    97   128    85    36    12    36
-   C    157   158   148   103    96     0    81     5    74   103    82    69     3   137   155   158    55   159    67    68   103   157     1     9   150   117    66   103    72
-   P     96    97    86    11    15    81     0    82     6     9    58    22    78    73    93    97    29    98    31    31    10    96    79    81    89    52    20    10    28
-   C    157   157   148   103    97     5    82     0    75   103    86    69     2   136   155   158    55   158    66    68   103   157     8    17   150   117    69   103    72
-   C    109   109    99    15    19    74     6    75     0    14    40    24    72    85   106   110    29   110    32    32    15   109    72    74   101    63    10    15    29
-   I    129   129   118     2    10   103     9   103    14     0    87    29    99   102   125   130    39   130    41    40     2   128   101   104   120    79    36     2    35
-   P    160   161   151    85    81    82    58    86    40    87     0    71    83   138   158   161    68   162    75    75    85   160    80    80   153   115    17    87    75
-   P    117   117   107    28    30    69    22    69    24    29    71     0    65    93   114   118     4   118     4     3    28   116    68    70   109    72    34    27     4
-   K    154   154   145    99    93     3    78     2    72    99    83    65     0   133   152   155    51   156    63    64    99   154     6    14   147   114    66    99    68
-   A      4     4     4   106   109   137    73   136    85   102   138    93   133     0     6     4    94     5    95    96   106     3   136   137     7     3   102   103    96
-   G      7     7     6   131   133   155    93   155   106   125   158   114   152     6     0     7   114     4   115   116   130     6   154   156    11    11   123   126   117
-   E      3     3     5   135   137   158    97   158   110   130   161   118   155     4     7     0   118     5   119   120   134     1   157   159     8    10   127   131   121
-   B    117   117   107    39    39    55    29    55    29    39    68     4    51    94   114   118     0   118     2     2    39   117    54    56   109    74    36    38     4
-   M      5     5     6   136   138   159    98   158   110   130   162   118   156     5     4     5   118     0   119   120   135     4   158   160    10    11   128   132   121
-   S    118   118   109    40    41    67    31    66    32    41    75     4    63    95   115   119     2   119     0     1    40   118    66    67   110    75    41    39     5
-   I    119   119   109    40    41    68    31    68    32    40    75     3    64    96   116   120     2   120     1     0    39   118    67    69   111    76    41    38     4
-   C    133   134   122     0     6   103    10   103    15     2    85    28    99   106   130   134    39   135    40    39     0   133   101   104   125    82    36     3    34
-   Y      2     2     4   133   136   157    96   157   109   128   160   116   154     3     6     1   117     4   118   118   133     0   156   158     7     9   126   129   119
-   C    157   157   148   101    94     1    79     8    72   101    80    68     6   136   154   157    54   158    66    67   101   156     0     7   149   116    64   101    71
-   J    158   158   149   104    97     9    81    17    74   104    80    70    14   137   156   159    56   160    67    69   104   158     7     0   151   118    66   104    72
-   L      5     5     5   125   128   150    89   150   101   120   153   109   147     7    11     8   109    10   110   111   125     7   149   151     0    10   118   121   112
-   A      9     9     7    83    85   117    52   117    63    79   115    72   114     3    11    10    74    11    75    76    82     9   116   118    10     0    79    80    76
-   M    126   127   116    36    36    66    20    69    10    36    17    34    66   102   123   127    36   128    41    41    36   126    64    66   118    79     0    37    39
-   T    130   130   119     4    12   103    10   103    15     2    87    27    99   103   126   131    38   132    39    38     3   129   101   104   121    80    37     0    33
-   G    120   120   110    34    36    72    28    72    29    35    75     4    68    96   117   121     4   121     5     4    34   119    71    72   112    76    39    33     0
+   S      0     1     3   132   134   155    95   155   107   127   158   115   152     4     7     3   116     5   117   118   131     2   155   156     5     9   125   128   119
+   B      1     0     3   132   134   156    95   155   108   127   159   116   153     4     8     3   116     5   117   118   132     2   155   156     5     9   125   128   119
+   F      3     3     0   121   124   147    85   147    98   116   150   106   144     4     6     5   106     6   108   108   121     4   146   148     5     8   115   117   109
+   G    132   132   121     0     7   102    11   102    15     2    85    28    98   105   128   133    38   133    40    39     0   131   100   103   123    82    36     4    34
+   F    134   134   124     7     0    95    15    96    19    10    81    30    93   107   131   135    38   135    41    40     6   133    93    96   126    84    36    12    35
+   C    155   156   147   102    95     0    80     5    73   102    81    68     3   135   153   156    54   157    65    67   102   155     1     9   148   116    66   101    71
+   P     95    95    85    11    15    80     0    81     6     8    57    22    78    71    91    95    29    96    31    31    10    94    79    81    87    52    19     9    27
+   C    155   155   147   102    96     5    81     0    74   102    85    68     2   135   153   156    54   156    65    67   102   155     8    17   148   116    69   102    71
+   C    107   108    98    15    19    73     6    74     0    14    39    23    71    84   104   108    29   109    32    31    15   107    71    73   100    62    10    15    29
+   I    127   127   116     2    10   102     8   102    14     0    86    29    98   100   123   127    39   128    40    39     2   126   100   102   118    78    36     2    34
+   P    158   159   150    85    81    81    57    85    39    86     0    71    82   136   156   159    68   160    74    75    85   158    79    80   151   113    17    87    74
+   P    115   116   106    28    30    68    22    68    23    29    71     0    65    92   112   116     4   116     4     3    28   115    67    69   107    71    34    27     4
+   K    152   153   144    98    93     3    78     2    71    98    82    65     0   132   150   153    50   154    62    63    98   152     6    14   145   113    65    98    67
+   A      4     4     4   105   107   135    71   135    84   100   136    92   132     0     6     4    93     5    94    95   104     3   134   136     7     3   101   101    95
+   G      7     8     6   128   131   153    91   153   104   123   156   112   150     6     0     7   113     4   114   114   128     6   152   154    11    11   122   124   115
+   E      3     3     5   133   135   156    95   156   108   127   159   116   153     4     7     0   116     5   117   118   132     1   155   157     8     9   125   128   119
+   B    116   116   106    38    38    54    29    54    29    39    68     4    50    93   113   116     0   117     2     2    38   115    53    55   108    73    36    38     4
+   M      5     5     6   133   135   157    96   156   109   128   160   116   154     5     4     5   117     0   118   118   133     4   156   157     9    10   126   129   120
+   S    117   117   108    40    41    65    31    65    32    40    74     4    62    94   114   117     2   118     0     1    40   116    65    66   109    75    40    39     5
+   I    118   118   108    39    40    67    31    67    31    39    75     3    63    95   114   118     2   118     1     0    39   117    66    68   110    75    40    38     4
+   C    131   132   121     0     6   102    10   102    15     2    85    28    98   104   128   132    38   133    40    39     0   131   100   103   123    81    36     3    34
+   Y      2     2     4   131   133   155    94   155   107   126   158   115   152     3     6     1   115     4   116   117   131     0   154   156     7     9   124   127   118
+   C    155   155   146   100    93     1    79     8    71   100    79    67     6   134   152   155    53   156    65    66   100   154     0     7   147   115    64   100    70
+   J    156   156   148   103    96     9    81    17    73   102    80    69    14   136   154   157    55   157    66    68   103   156     7     0   149   116    65   103    71
+   L      5     5     5   123   126   148    87   148   100   118   151   107   145     7    11     8   108     9   109   110   123     7   147   149     0    10   117   119   111
+   A      9     9     8    82    84   116    52   116    62    78   113    71   113     3    11     9    73    10    75    75    81     9   115   116    10     0    78    79    75
+   M    125   125   115    36    36    66    19    69    10    36    17    34    65   101   122   125    36   126    40    40    36   124    64    65   117    78     0    37    39
+   T    128   128   117     4    12   101     9   102    15     2    87    27    98   101   124   128    38   129    39    38     3   127   100   103   119    79    37     0    33
+   G    119   119   109    34    35    71    27    71    29    34    74     4    67    95   115   119     4   120     5     4    34   118    70    71   111    75    39    33     0
 
 s.dev * 1000000:
           S     B     F     G     F     C     P     C     C     I     P     P     K     A     G     E     B     M     S     I     C     Y     C     J     L     A     M     T     G 
-   S      0    12    97   919   957  1108   697  1110   755   890  1139   789  1092    65    90    50   803    70   797   805   930    43  1089  1136    71   141   899   887   825
-   B     12     0   100   927   966  1109   706  1110   767   900  1154   796  1093    66    94    53   811    74   804   810   942    45  1088  1140    73   143   911   896   832
-   F     97   100     0   930   970  1123   704  1131   770   894  1158   801  1114   112   135   130   818   130   816   817   940   111  1104  1150   119   163   913   892   835
-   G    919   927   930     0   111   891   159   918   218    67   816   324   883   759   922   916   440   930   442   429    50   904   891   934   900   716   439    81   375
-   F    957   966   970   111     0   827   189   851   227   140   800   319   814   793   965   950   418   974   428   425    98   937   830   871   942   730   422   161   378
-   C   1108  1109  1123   891   827     0   744    95   689   912   943   661    81  1004  1112  1098   553  1119   665   661   872  1099    55   131  1054   949   705   898   678
-   P    697   706   704   159   189   744     0   756   117   131   597   245   731   557   695   697   323   708   337   328   149   688   737   755   670   510   286   150   292
-   C   1110  1110  1131   918   851    95   756     0   723   929   972   658    59  1006  1111  1095   545  1129   654   649   893  1099   136   214  1065   957   723   920   672
-   C    755   767   770   218   227   689   117   723     0   210   448   267   685   610   757   755   339   775   356   351   206   733   689   716   729   583   191   216   319
-   I    890   900   894    67   140   912   131   929   210     0   825   319   901   729   883   888   435   902   437   426    65   869   906   940   870   688   429    57   370
-   P   1139  1154  1158   816   800   943   597   972   448   825     0   697   942  1010  1147  1143   698  1171   745   748   812  1123   930   928  1121   957   283   826   727
-   P    789   796   801   324   319   661   245   658   267   319   697     0   630   678   795   782    86   823    82    75   309   781   661   677   749   595   409   313    81
-   K   1092  1093  1114   883   814    81   731    59   685   901   942   630     0   987  1089  1078   509  1103   628   618   860  1075   112   186  1040   929   699   891   643
-   A     65    66   112   759   793  1004   557  1006   610   729  1010   678   987     0    86    72   687    86   688   694   762    63   985  1025    99    92   764   733   712
-   G     90    94   135   922   965  1112   695  1111   757   883  1147   795  1089    86     0   104   802    70   791   794   926    97  1095  1142   144   155   903   888   821
-   E     50    53   130   916   950  1098   697  1095   755   888  1143   782  1078    72   104     0   806    94   794   799   927    50  1081  1134   110   147   896   885   824
-   B    803   811   818   440   418   553   323   545   339   435   698    86   509   687   802   806     0   837    68    69   431   794   560   572   758   612   419   434    96
-   M     70    74   130   930   974  1119   708  1129   775   902  1171   823  1103    86    70    94   837     0   833   838   944    74  1100  1138   127   159   925   908   862
-   S    797   804   816   442   428   665   337   654   356   437   745    82   628   688   791   794    68   833     0    54   433   789   665   673   755   617   457   433    91
-   I    805   810   817   429   425   661   328   649   351   426   748    75   618   694   794   799    69   838    54     0   419   799   661   679   757   616   454   417    80
-   C    930   942   940    50    98   872   149   893   206    65   812   309   860   762   926   927   431   944   433   419     0   913   872   920   917   721   431    77   368
-   Y     43    45   111   904   937  1099   688  1099   733   869  1123   781  1075    63    97    50   794    74   789   799   913     0  1079  1117   102   143   885   868   816
-   C   1089  1088  1104   891   830    55   737   136   689   906   930   661   112   985  1095  1081   560  1100   665   661   872  1079     0   109  1038   929   697   901   675
-   J   1136  1140  1150   934   871   131   755   214   716   940   928   677   186  1025  1142  1134   572  1138   673   679   920  1117   109     0  1089   966   701   937   692
-   L     71    73   119   900   942  1054   670  1065   729   870  1121   749  1040    99   144   110   758   127   755   757   917   102  1038  1089     0   149   866   873   792
-   A    141   143   163   716   730   949   510   957   583   688   957   595   929    92   155   147   612   159   617   616   721   143   929   966   149     0   727   682   624
-   M    899   911   913   439   422   705   286   723   191   429   283   409   699   764   903   896   419   925   457   454   431   885   697   701   866   727     0   432   430
-   T    887   896   892    81   161   898   150   920   216    57   826   313   891   733   888   885   434   908   433   417    77   868   901   937   873   682   432     0   362
-   G    825   832   835   375   378   678   292   672   319   370   727    81   643   712   821   824    96   862    91    80   368   816   675   692   792   624   430   362     0
+   S      0    10    87   856   883  1027   649  1026   701   823  1031   713  1010    57    85    46   733    64   726   727   860    38  1015  1030    64   132   836   821   749
+   B     10     0    88   865   891  1030   657  1027   711   832  1046   722  1013    58    88    50   741    67   735   733   870    39  1016  1035    65   133   849   829   757
+   F     87    88     0   863   891  1037   652  1045   708   823  1051   724  1031   102   123   117   750   118   749   749   867   100  1023  1037   110   154   845   822   763
+   G    856   865   863     0   102   828   145   850   207    60   771   301   823   708   848   849   403   859   408   402    44   837   820   859   844   678   413    75   342
+   F    883   891   891   102     0   770   176   788   215   129   753   297   758   735   880   875   390   889   396   399    91   861   766   805   868   687   395   147   344
+   C   1027  1030  1037   828   770     0   679    87   638   843   901   608    74   936  1026  1018   505  1029   605   608   814  1018    49   121   971   872   669   832   625
+   P    649   657   652   145   176   679     0   690   108   120   569   230   671   522   638   642   298   650   313   305   135   636   670   687   625   484   275   137   263
+   C   1026  1027  1045   850   788    87   690     0   667   862   915   608    54   935  1021  1016   501  1033   603   602   836  1018   125   198   979   878   679   857   622
+   C    701   711   708   207   215   638   108   667     0   203   418   248   636   569   696   698   311   716   328   324   198   683   632   664   678   549   180   206   285
+   I    823   832   823    60   129   843   120   862   203     0   784   292   838   673   806   815   399   822   404   399    59   798   834   861   806   648   407    52   332
+   P   1031  1046  1051   771   753   901   569   915   418   784     0   649   888   912  1029  1038   661  1057   701   703   767  1020   892   896  1021   872   274   779   675
+   P    713   722   724   301   297   608   230   608   248   292   649     0   584   613   719   701    78   737    73    70   290   703   607   624   680   552   381   289    77
+   K   1010  1013  1031   823   758    74   671    54   636   838   888   584     0   919  1006   999   469  1013   579   575   807   998   101   168   958   857   657   832   598
+   A     57    58   102   708   735   936   522   935   569   673   912   613   919     0    81    65   628    76   629   630   706    57   922   934    87    85   709   675   646
+   G     85    88   123   848   880  1026   638  1021   696   806  1029   719  1006    81     0    94   731    65   722   720   848    91  1013  1030   129   144   830   812   746
+   E     46    50   117   849   875  1018   642  1016   698   815  1038   701   999    65    94     0   726    82   718   716   853    47  1006  1026   100   134   833   813   741
+   B    733   741   750   403   390   505   298   501   311   399   661    78   469   628   731   726     0   754    60    62   400   723   512   529   696   567   393   404    90
+   M     64    67   118   859   889  1029   650  1033   716   822  1057   737  1013    76    65    82   754     0   752   750   866    68  1015  1023   114   144   852   830   774
+   S    726   735   749   408   396   605   313   603   328   404   701    73   579   629   722   718    60   752     0    47   404   722   608   620   690   570   429   405    86
+   I    727   733   749   402   399   608   305   602   324   399   703    70   575   630   720   716    62   750    47     0   398   721   608   627   689   569   424   397    75
+   C    860   870   867    44    91   814   135   836   198    59   767   290   807   706   848   853   400   866   404   398     0   838   809   851   849   677   404    72   338
+   Y     38    39   100   837   861  1018   636  1018   683   798  1020   703   998    57    91    47   723    68   722   721   838     0  1003  1013    90   129   824   797   739
+   C   1015  1016  1023   820   766    49   670   125   632   834   892   607   101   922  1013  1006   512  1015   608   608   809  1003     0   102   960   854   657   831   627
+   J   1030  1035  1037   859   805   121   687   198   664   861   896   624   168   934  1030  1026   529  1023   620   627   851  1013   102     0   978   867   670   863   643
+   L     64    65   110   844   868   971   625   979   678   806  1021   680   958    87   129   100   696   114   690   689   849    90   960   978     0   137   807   807   719
+   A    132   133   154   678   687   872   484   878   549   648   872   552   857    85   144   134   567   144   570   569   677   129   854   867   137     0   681   642   576
+   M    836   849   845   413   395   669   275   679   180   407   274   381   657   709   830   833   393   852   429   424   404   824   657   670   807   681     0   406   399
+   T    821   829   822    75   147   832   137   857   206    52   779   289   832   675   812   813   404   830   405   397    72   797   831   863   807   642   406     0   329
+   G    749   757   763   342   344   625   263   622   285   332   675    77   598   646   746   741    90   774    86    75   338   739   627   643   719   576   399   329     0
 
 ##end of smartpca run

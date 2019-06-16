@@ -41,7 +41,7 @@ hHbC11cam$Col <- rbPalc(10)[as.numeric(cut(hHbC11cam$R2,breaks = 10))]
 
 
 
-png(args[5], height=680, width=700, units="px", points=14)
+png(args[5], height=6, width=6, units="in", type="cairo")
 par(mfrow=c(4,2))
 
 par(fig=c(0, 0.5, 0.535, 1), bty="o", cex.main=1)
@@ -67,7 +67,7 @@ abline(h=0.5, lty=2, col="grey")
 #abline(h=0.5, lty=2, col="grey")
 
 par(fig=c(0, 0.5, 0, 0.25), new=TRUE, bty="n", cex.axis=1.2, cex.main=1.2)
-plot(recomRange$position, recomRange$COMBINED_rate.cM.Mb., xlim=c(92000000,95000000), ylim=c(0,100), xlab="BP", ylab="cM/Mb", type="l")
+plot(recomRange$position, recomRange$COMBINED_rate.cM.Mb., xlim=c(92000000,95000000), ylim=c(0,100), xlab="BP", ylab="cM/Mb", main="Recombination Rate (cM/Mb)", type="l")
 par(fig=c(0.5, 1, 0, 0.25), new=TRUE, bty="n", cex.axis=1.2, cex.main=1.2)
-plot(recomRange$position, recomRange$COMBINED_rate.cM.Mb., xlim=c(92000000,95000000), ylim=c(0,100), xlab="BP", ylab="cM/Mb", type="l")
+plot(recomRange$position, recomRange$COMBINED_rate.cM.Mb., xlim=c(92000000,95000000), ylim=c(0,100), xlab="BP", ylab="cM/Mb", main="Recombination Rate (cM/Mb)", type="l")
 dev.off()
