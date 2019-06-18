@@ -24,15 +24,15 @@ imput="../../../assoc_results/"
 #        --make-bed \
 #        --out yri
 
-cut -f2 cam-updated.bim > camascertainment.rsids
+#cut -f2 cam-updated.bim > camascertainment.rsids
 ##
 plink \
         --bfile worldPops/mergedSet \
-        --extract camascertainment.rsids \
+        --extract yriAcertainment.rsids \
         --keep-allele-order \
 	--pheno worldPops/update-1kgp.phe \
         --mpheno 1 \
-	--maf 0.01 \
+	--maf 0.0001 \
 	--update-sex worldPops/update-1kgp.sex 1 \
         --make-bed \
         --out ascertained
@@ -40,7 +40,7 @@ plink \
 # Prune to get only SNPs at linkage equilibrium (independent SNPs - no LD between them)
 plink \
 	--bfile ascertained \
-	--indep-pairwise 50kb 10 0.2 \
+	--indep-pairwise 50kb 1 0.2 \
 	--allow-no-sex \
 	--out prune
 
@@ -50,7 +50,7 @@ plink \
 	--extract prune.prune.in \
 	--maf $1 \
 	--make-bed \
-	--geno 0.01 \
+	--geno 0.04 \
 	--out merged-data-pruned
 
 # Convert bed to ped required for CONVERTF
@@ -70,7 +70,7 @@ grep -f cam.ids ${samples}1471-eth_template.txt > cam.eth
 sort --key=2 cam.eth > camAll.eth
 cat camAll.eth worldPops/2504world.eth > merged-data-eth_template.txt
 
-Rscript prepPopList.R
-sed '1d' poplist.txt > CONVERTF/ethlist.txt
+#Rscript prepPopList.R
+#sed '1d' poplist.txt > CONVERTF/ethlist.txt
 
 #rm phase* cam.eth cam.ids updatePhaseName.txt prune.*

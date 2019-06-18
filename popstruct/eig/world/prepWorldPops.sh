@@ -93,8 +93,16 @@ imput="../../../assoc_results/"
 #    echo "${pop}" >> merge.list
 #done
 
+# Get Cam control samples
 plink \
         --bfile cam-updated \
+        --filter-controls \
+        --make-bed \
+        --keep-allele-order \
+        --out cam-controls
+
+plink \
+        --bfile cam-controls \
 	--bmerge worldPops/world-pops-updated \
         --keep-allele-order \
         --out worldPops/mergedSet

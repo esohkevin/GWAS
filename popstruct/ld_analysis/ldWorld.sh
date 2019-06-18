@@ -21,7 +21,7 @@ sample="../../samples/"
 if [[ $# == 5  ]]; then
 
 plink \
-        --bfile ${world}../cam-updated \
+        --bfile ${world}../cam-controls \
         --chr $1 \
         --ld-snp $2 \
 	--maf 0.0001 \

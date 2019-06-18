@@ -12,6 +12,7 @@ if [[ $# == 4 ]]; then
 	        --chr $1 \
 	        --from-kb $2 \
 	        --to-kb $3 \
+		--filter-controls \
 	        --r2 square yes-really \
 	        --out cam${4}region \
 	        --bfile ../../assoc_results/phasedWrefImpute2Biallelic
@@ -24,6 +25,8 @@ if [[ $# == 4 ]]; then
 	        --chr $1 \
 	        --from-kb $2 \
 	        --to-kb $3 \
+		--filter-controls \
+		--thin-indiv-count 12 \
 		--keep ../maf/${pop}.txt \
 	        --r2 square yes-really \
 	        --out ${pop}${4}region2 \

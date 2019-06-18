@@ -15,7 +15,7 @@ if [[ $# == 4 ]]; then
 	    --maf 0.0001 \
             --r2 square yes-really \
             --out cam${4}region \
-            --bfile ${world}../cam-updated
+            --bfile ${world}../cam-controls
     
     #gnuplot -e 'set terminal canvas; set output "camhbbregion.html"; set autoscale yfix; set autoscale xfix; set title "Pair-wise LD around HBB Region";set pm3d map; plot "camhbbregion.ld" matrix with image'
     

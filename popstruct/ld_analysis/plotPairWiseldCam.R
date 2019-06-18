@@ -34,9 +34,9 @@ fulbeldMatrix <- as.matrix(read.table(args[4], fill=T, skip = 0))
 # Plot pairwise LD
 recombMap <- read.table(args[5], header=T, as.is=T)
 recomRange <- recombMap[5428:5947,]
-png(args[6], height=6, width=6, units="in", res=1200, type="cairo")
+png(args[6], height=680, width=680, units="px", res=NA, points=14)
 par(mfrow=c(4,2))
-par(fig=c(0, 0.5, 0.535, 1), bty="o")
+par(fig=c(0, 0.5, 0.535, 1), bty="o", mar=c(4,2,4,2))
 image(bantuldMatrix, useRaster=T, axes=F, main="Bantu", col=c(1,2))
 par(fig=c(0.5, 1, 0.535, 1),new=T, bty="o")
 image(fulbeldMatrix, useRaster=T, axes=F, main="Fulbe", col=c(1,2))
