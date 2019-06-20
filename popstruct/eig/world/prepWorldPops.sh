@@ -98,6 +98,7 @@ plink \
         --bfile cam-updated \
         --filter-controls \
         --make-bed \
+	--keep ${samples}eig.ids \
         --keep-allele-order \
         --out cam-controls
 
