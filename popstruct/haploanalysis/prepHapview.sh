@@ -8,6 +8,7 @@ for pop in cam yri esn gwd msl lwk; do
 	--chr 11 \
 	--from-kb 5200 \
 	--to-kb 5400 \
+	--geno 0.04 \
 	--keep-allele-order \
 	--out ~/bioTools/haploview/${pop}
 done

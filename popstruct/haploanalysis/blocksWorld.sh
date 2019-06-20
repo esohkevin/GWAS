@@ -11,10 +11,10 @@ else
        rm all$4.blocks$5.det
     fi
 
-    for pop in cam gwd lwk yri; do
+    for pop in cam gwd lwk yri esn msl; do
 
         plink \
-	    --bfile world99 \
+	    --bfile ${pop} \
 	    --blocks no-pheno-req \
 	    --blocks-min-maf $5 \
 	    --chr $1 \

@@ -1,10 +1,10 @@
-genotypename:    eig-corr-camgwas.ped
-snpname:         eig-corr-camgwas.map # or example.map, either works 
-indivname:       eig-corr-camgwas.ped # or example.ped, either works
+genotypename:    afr-data.ped
+snpname:         afr-data.map # or example.map, either works 
+indivname:       afr-data.ped # or example.ped, either works
 outputformat:    EIGENSTRAT
-genotypeoutname: eig-corr-camgwas.eigenstratgeno
-snpoutname:      eig-corr-camgwas.snp
-indivoutname:    eig-corr-camgwas.ind
+genotypeoutname: afr-data.eigenstratgeno
+snpoutname:      afr-data.snp
+indivoutname:    afr-data.ind
 xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES

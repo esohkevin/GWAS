@@ -17,17 +17,17 @@ else
 	fi
 
 	plink \
-		--bfile ${world}../cam-updated \
+		--bfile ${world}../cam-controls \
 		--keep-allele-order \
 		--keep ${sample}cam.ids \
+		--remove fulbe.txt \
 		--make-bed \
-		--thin-indiv-count 99 \
 		--maf 0.0001 \
 		--out cam
 
 	echo "cam" > worldMergeList.txt
 	
-	for pop in gwd lwk yri; do
+	for pop in gwd lwk yri esn msl; do
 	    plink \
 		--bfile ${world}mergedSet \
 		--keep ${sample}${pop}.ids \
@@ -35,8 +35,7 @@ else
 		--out ${pop} \
 		--make-bed \
 		--update-sex ${world}update-1kgp.sex 1 \
-		--maf 0.0001 \
-		--thin-indiv-count 99
+		--maf 0.0001
 	
 		echo ${pop} >> worldMergeList.txt
 	done
@@ -44,14 +43,14 @@ else
 	plink \
 		--merge-list worldMergeList.txt \
 		--keep-allele-order \
-		--out world99
+		--out world
 	
 	plink \
-		--bfile world99 \
+		--bfile world \
 		--freq \
 		--keep-allele-order \
-		--within camAll.cluster \
-		--out world99
+		--within camAfr.cluster \
+		--out world
 	
 	plink \
 	        --bfile world \
@@ -60,8 +59,8 @@ else
 		--from-kb $2 \
 		--to-kb $3 \
 	        --keep-allele-order \
-	        --within camAll.cluster \
-	        --out world99$4
+	        --within camAfr.cluster \
+	        --out world$4
 fi
 
 ./blocksWorld.sh $1 $2 $3 $4 $5

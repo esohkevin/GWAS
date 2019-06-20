@@ -25,7 +25,7 @@ for chr in {1..22}; do
      sed 's/=/ /g' chr${chr}_imput_chunks.txt > chr${chr}_chunks.txt; 		# Primary aim is to create this file for all chrs to use for parallele jod execution
      rm chr${chr}_imput_chunks.txt
    
-    else
+   else
 
      echo "chr"${chr}"-phased_wref.haps could not be found!"     
 
@@ -35,7 +35,9 @@ for chr in {1..22}; do
 
 done
 
-rm *_warnings
+if [[ -f "*.warnings" ]]; then
+   rm *_warnings
+fi
 
 else
 	echo """
