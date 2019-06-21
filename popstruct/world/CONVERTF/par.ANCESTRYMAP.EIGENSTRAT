@@ -1,0 +1,10 @@
+genotypename:    qc-world.ancestrymapgeno
+snpname:         qc-world.snp
+indivname:       qc-world.ind
+outputformat:    EIGENSTRAT
+genotypeoutname: qc-world.eigenstratgeno
+snpoutname:      qc-world.snp
+indivoutname:    qc-world.ind
+phasedmode:	 YES
+#numthreads:      16
+xregionname:     high-ld-regions.b37
