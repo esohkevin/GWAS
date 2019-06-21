@@ -6,7 +6,7 @@ pcaDat <- read.table(fn, header=F, as.is=T)
 
 evecDat <- data.frame(FID=pcaDat[,1], IID=pcaDat[,1], C1=pcaDat[,2], C2=pcaDat[,3], C3=pcaDat[,4], 
 			C4=pcaDat[,5], C5=pcaDat[,6], C6=pcaDat[,7], C7=pcaDat[,8], C8=pcaDat[,9], 
-			C9=pcaDat[,10], C10=pcaDat[,11], Status=pcaDat[,32])
+			C9=pcaDat[,10], C10=pcaDat[,11], Status=pcaDat[,22])
 fm <- evecDat[,1:12]
 write.table(fm, file = "eig-corr-camgwas.pca.txt", col.names=T, row.names=F, quote=F, sep="\t")
 

@@ -1,52 +1,40 @@
 #!/bin/bash
 
-world="../eig/world/"
+world="../eig/world/worldPops/"
 analysis="../../analysis/"
 sample="../../samples/"
 
-#cut -f2 ${world}worldPops/phased-data-updated.bim > phased.rsids
-
-#if [[ -f "merge.list" || -f "logFile.txt" ]]; then
-#   rm merge.list logFile.txt
+#if [[ -f "worldMergeList.txt" ]]; then
+#    rm worldMergeList.txt
 #fi
-#
-#for pop in cam yri gwd lwk ibs chb; do 
-#    plink \
-#        --bfile ${pop}worldPops/camMergeSet \
-#        --keep-allele-order \
-#        --thin-indiv-count 99 \
-#        --keep ${sample}"${pop}".ids \
-#        --make-bed \
-#        --out ${pop}99
-#
-#    echo ${pop}99 >> merge.list
-#done
-#
-#plink \
-#        --merge-list merge.list \
-#        --keep-allele-order \
-#        --out maf-data
-#
-## Extract only SNPs with rsIDs
-##plink \
-##        --bfile ${world}worldPops/qc-world-merge \
-##        --allow-no-sex \
-##	--maf 0.01 \
-##	--keep-allele-order \
-##        --extract phased.rsids \
-##        --make-bed \
-##        --out maf-data
-#
-#rm *99*
 
 plink \
-	--vcf ../../phase/Phased_wref.vcf.gz \
-	--make-bed \
-	--keep-allele-order \
-	--biallelic-only \
-	--pheno ../../analysis/qc-camgwas-updated.fam \
-	--mpheno 4 \
-	--update-sex ../../analysis/qc-camgwas-updated.fam 3 \
-	--double-id \
-	--out camgwasPhasedWref
+        --bfile ${world}../cam-controls \
+        --keep-allele-order \
+        --keep ${sample}cam.ids \
+        --remove fulbe.txt \
+        --make-bed \
+        --maf 0.0001 \
+        --out cam
 
+#echo "cam" > worldMergeList.txt
+#
+#for pop in gwd lwk yri esn msl; do
+#    plink \
+#        --bfile ${world}world-pops-updated \
+#        --keep ${sample}${pop}.ids \
+#        --keep-allele-order \
+#        --out ${pop} \
+#        --make-bed \
+#        --update-sex ${world}update-1kgp.sex 1 \
+#        --maf 0.0001
+#
+#        echo ${pop} >> worldMergeList.txt
+#done
+
+plink \
+        --merge-list worldMergeList.txt \
+        --keep-allele-order \
+        --out world
+
+./mafWorld.sh 11 5200 5400 HBB

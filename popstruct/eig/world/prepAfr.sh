@@ -8,7 +8,7 @@ phase="../../../phase/"
 # Get Cam control samples
 plink \
 	--bfile worldPops/qc-world-merge \
-	--keep afr-only.txt \
+	--keep afr-only.ids \
 	--extract yriAcertainment.rsids \
 	--keep-allele-order \
 	--pheno worldPops/update-1kgp.phe \
@@ -29,7 +29,7 @@ plink \
 plink \
 	--bfile yriascertained \
 	--autosome \
-	--maf $1 \
+	--maf \
 	--geno 0.04 \
 	--extract aprune.prune.in \
 	--make-bed \
@@ -42,6 +42,8 @@ plink \
 	--allow-no-sex \
 	--keep-allele-order \
 	--double-id \
-	--out CONVERTF/afr-data
+	--out afr-data
 
+
+mv afr-data.map afr-data.ped CONVERTF/
 rm yriascertained.*

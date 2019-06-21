@@ -21,7 +21,7 @@ sample="../../samples/"
 
 # Entire cam data
 plink \
-        --bfile ../../assoc_results/phasedWrefImpute2Biallelic \
+        --bfile ${world}../cam-controls \
         --chr $1 \
         --ld-snp $2 \
         --ld-window 99999 \
@@ -43,10 +43,10 @@ for pop in bantu semibantu fulbe; do
 #	--make-bed
 
 plink \
-	--bfile ../../assoc_results/phasedWrefImpute2Biallelic \
+	--bfile ${world}../cam-controls \
 	--chr $1 \
 	--ld-snp $2 \
-	--keep ../maf/${pop}.txt \
+	--keep ../haploanalysis/${pop}.txt \
 	--ld-window 99999 \
 	--ld-window-kb 2000 \
 	--ld-window-r2 0 \

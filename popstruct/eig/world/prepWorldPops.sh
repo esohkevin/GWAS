@@ -4,6 +4,7 @@ analysis="../../../analysis/"
 samples="../../../samples/"
 kgp="../../../1000G/"
 imput="../../../assoc_results/"
+phase="../../../phase/"
 
 # Get 1kgp individuals limiting to only common SNPs that are found in qc-camgwas data
 #plink \
@@ -94,17 +95,50 @@ imput="../../../assoc_results/"
 #done
 
 # Get Cam control samples
-plink \
-        --bfile cam-updated \
-        --filter-controls \
-        --make-bed \
-	--keep ${samples}eig.ids \
-        --keep-allele-order \
-        --out cam-controls
+#plink \
+#        --bfile cam-updated \
+#        --filter-controls \
+#        --make-bed \
+#	--keep ${samples}eig.ids \
+#        --keep-allele-order \
+#        --out cam-controls
+#
+#plink \
+#        --bfile cam-controls \
+#	--bmerge worldPops/world-pops-updated \
+#        --keep-allele-order \
+#        --out worldPops/mergedSet
+
+## Update Phased study data
+cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
+sort phase.rsids | uniq -u > phase-uniq.rsids
 
 plink \
-        --bfile cam-controls \
-	--bmerge worldPops/world-pops-updated \
+        --bfile ${phase}phasedCamgwasAutosome \
         --keep-allele-order \
-        --out worldPops/mergedSet
+	--keep ${samples}eig.ids \
+        --exclude badSnps.txt \
+        --make-bed \
+	--filter-controls \
+        --extract phase-uniq.rsids \
+        --out phase
+
+cut -f1,4 phase.bim | sed 's/\t/:/g' > phase.pos
+cut -f2 phase.bim > phase.rsids
+paste phase.pos phase.rsids > updatePhaseName.txt
+
+plink \
+        --bfile phase \
+        --keep-allele-order \
+        --filter-controls \
+        --update-name updatePhaseName.txt 1 2 \
+        --make-bed \
+        --out worldPops/phased-data-updated
+
+plink \
+	--bfile worldPops/phased-data-updated \
+	--allow-no-sex \
+	--bmerge worldPops/world-pops-updated \
+	--merge-equal-pos \
+	--out worldPops/qc-world-merge
 

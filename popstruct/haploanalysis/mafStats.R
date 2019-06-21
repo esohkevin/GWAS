@@ -3,7 +3,7 @@
 frq <- read.table("camall.frq.txt", header = T, as.is = T)
 
 png("mafHbbAfr.png", height=550, width=550, units="px", points=14)
-hist(frq$MAF[frq$CLST=="GWD"], xlim=c(0,0.50),breaks=300, col=2, labels =F, main="Minor Allele Frequency Spectrum - African Ancestry", xlab="MAF", ylab="Allele Count")          
+hist(frq$MAF[frq$CLST=="GWD"], xlim=c(0,0.50),breaks=300, col=2, labels =F, main="Minor Allele Frequency Spectrum - HBB Region", xlab="MAF", ylab="Allele Count") 
 hist(frq$MAF[frq$CLST=="LWK"], xlim=c(0,0.50),breaks=300, col=3, labels =F, add=T)
 hist(frq$MAF[frq$CLST=="YRI"], xlim=c(0,0.50),breaks=300, col=4, labels =F, add=T)   
 hist(frq$MAF[frq$CLST=="ESN"], xlim=c(0,0.50),breaks=300, col=5, labels =F, add=T)   
