@@ -8,7 +8,7 @@ pcaDat <- merge(evecDat, popGrps, by="Sample")
 write.table(pcaDat, file="afr-data.pca.txt", col.names=T, row.names=F, quote=F, sep="\t")
 
 evecDat <- read.table("afr-data.pca.txt", header=T, as.is=T)
-png("AfrPCA.png", height=640, width=550, units="px", points=14, res=NA)
+png("AfrPCA.png", height=640, width=550, units="px", points=16, res=NA)
 par(mfrow=c(2,1), cex=0.8, cex.axis=1, cex.lab=1.2)
 par(fig=c(0,1,0.35,1), bty="o", mar=c(4,4,3,2))
 plot(evecDat[,2], evecDat[,3], xlab="PC1 (Arica-only)", ylab="PC2", type="n")
