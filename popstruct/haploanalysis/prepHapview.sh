@@ -15,8 +15,9 @@ done
 
 for pop in bantu semibantu fulbe; do
     plink \
-        --bfile cam \
+        --bfile ../eig/world/cam-controls \
         --recode HV-1chr \
+	--keep ${pop}.txt \
         --chr 11 \
         --from-kb 5200 \
         --to-kb 5400 \
