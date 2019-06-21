@@ -11,7 +11,7 @@ evecDat <- read.table("afr-data.pca.txt", header=T, as.is=T)
 png("AfrPCA.png", height=640, width=550, units="px", points=16, res=NA)
 par(mfrow=c(2,1), cex=0.8, cex.axis=1, cex.lab=1.2)
 par(fig=c(0,1,0.35,1), bty="o", mar=c(4,4,3,2))
-plot(evecDat[,2], evecDat[,3], xlab="PC1 (Arica-only)", ylab="PC2", type="n")
+plot(evecDat[,2], evecDat[,3], xlab="PC1 (Africa-only)", ylab="PC2", type="n")
 for(i in 1:nrow(evecDat)){                                                                      
 if(evecDat[i,13]=='BA') points(evecDat[i,2], evecDat[i,3], col="deeppink", pch=15)
 if(evecDat[i,13]=='SB') points(evecDat[i,2], evecDat[i,3], col="indianred4", pch=15)
