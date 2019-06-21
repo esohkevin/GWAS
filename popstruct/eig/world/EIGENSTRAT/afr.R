@@ -32,6 +32,6 @@ legend("center", c("BA=BANTU","SB=SEMI-BANTU","FO=FULBE","ACB=African Caribbean 
        		col=c("deeppink","indianred4", "purple4","aquamarine","aquamarine4","chartreuse","chartreuse4",
 		   "deepskyblue","deepskyblue4","goldenrod2"), 
        		pch=c(15,15,15,16,16,17,17,18,20,23), 
-		ncol=3, bty="n", cex=0.8)
+		ncol=2, bty="n", cex=0.8)
 dev.off()
 
