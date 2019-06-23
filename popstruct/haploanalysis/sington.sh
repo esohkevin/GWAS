@@ -28,8 +28,8 @@ grep -wv -f yriSington.id.txt tmp2.txt > lwkOnlySington.id.txt
 
 rm tmp*
 
-#for pop in yri msl gwd lwk; do
-#    grep -f ${pop}OnlySington.id.txt ../../analysis/updateName.txt > ${pop}OnlySington.rsid.txt
-#done
+for pop in yri msl gwd lwk; do
+    grep -f ${pop}OnlySington.id.txt ../../analysis/updateName.txt | cut -f1 > ${pop}OnlySington.rsid.txt
+done
 
-#rm *OnlySington.id.txt
+rm *Sington.id.txt
