@@ -1,6 +1,6 @@
 #!/bin/bash
 
-world="../eig/world/worldPops/"
+world="../world/worldPops/"
 analysis="../../analysis/"
 sample="../../samples/"
 
@@ -14,23 +14,23 @@ plink \
         --keep ${sample}cam.ids \
         --remove fulbe.txt \
         --make-bed \
-        --maf 0.0001 \
+        --maf 0.001 \
         --out cam
 
-#echo "cam" > worldMergeList.txt
-#
-#for pop in gwd lwk yri esn msl; do
-#    plink \
-#        --bfile ${world}world-pops-updated \
-#        --keep ${sample}${pop}.ids \
-#        --keep-allele-order \
-#        --out ${pop} \
-#        --make-bed \
-#        --update-sex ${world}update-1kgp.sex 1 \
-#        --maf 0.0001
-#
-#        echo ${pop} >> worldMergeList.txt
-#done
+echo "cam" > worldMergeList.txt
+
+for pop in gwd lwk yri esn msl; do
+    plink \
+        --bfile ${world}world-pops-updated \
+        --keep ${sample}${pop}.ids \
+        --keep-allele-order \
+        --out ${pop} \
+        --make-bed \
+        --update-sex ${world}update-1kgp.sex 1 \
+        --maf 0.001
+
+        echo ${pop} >> worldMergeList.txt
+done
 
 plink \
         --merge-list worldMergeList.txt \

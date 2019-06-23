@@ -8,7 +8,7 @@ plink \
 	--bfile ${analysis}raw-camgwas \
 	--autosome \
 	--allow-no-sex \
-	--maf 0.0001 \
+	--maf 0.001 \
 	--filter-controls \
 	--make-bed \
 	--out raw-cam-controls
@@ -19,6 +19,14 @@ plink \
 	--update-name updaterawName.txt 1 2 \
 	--make-bed \
 	--out raw
+
+plink \
+	--bfile raw \
+	--exclude out.check.mono \
+	--keep-allele-order \
+	--make-bed \
+	--out raw
+#rm *~
 
 plink \
 	--bfile raw \

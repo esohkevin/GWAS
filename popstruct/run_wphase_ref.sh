@@ -19,9 +19,9 @@ for chr in {1..22}; do
     --numThreads=90 \
     --Kpbwt=50000 \
     --vcfOutFormat=z \
-    2>&1 | tee raw${chr}-phase_wref.log
+    2>&1 | tee raw${chr}-phased_wref.log
 
-  echo "`tabix -f -p vcf raw${chr}-phase_wref.vcf.gz`"
+  echo "`tabix -f -p vcf raw${chr}-phased_wref.vcf.gz`"
 
 done
 
