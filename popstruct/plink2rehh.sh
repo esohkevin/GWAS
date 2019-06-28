@@ -11,6 +11,8 @@ else
    	--vcf $1 \
    	--make-bed \
    	--chr $2 \
+	--keep controls558.ids.txt \
+	--double-id \
    	--from-kb $3 \
    	--to-kb $4 \
    	--keep-allele-order \
@@ -20,6 +22,8 @@ else
    plink \
    	--vcf $1 \
    	--recode transpose \
+	--keep controls558.ids.txt \
+        --double-id \
    	--chr $2 \
    	--from-kb $3 \
    	--to-kb $4 \

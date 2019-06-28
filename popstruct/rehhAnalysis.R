@@ -50,10 +50,13 @@ library(rehh)
 #write.table(hapsUpdated, file = "chr11-updated.haps", col.names = F, row.names = F, quote = F)
 #
 ## Load data set
-#hap <- data2haplohh(hap_file = "chr11-updated.haps", map_file = "chr11.map", recode.allele = TRUE, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
-#
+
+hap <- data2haplohh(hap_file = "chr11cam-updated.hap", map_file = "chr11cam.map", recode.allele = TRUE, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
+
 ## Compute EHH
-#res.ehh <- calc_ehh(hap, mrk = "rs10742584")
+png("ehhHBB.png", height = 500, width = 500, units = "px", type = "cairo")
+res.ehh <- calc_ehh(hap, mrk = "rs10742584")
+dev.off()
 #
 ## Get statistics
 #res.ehh$ehh
@@ -73,15 +76,15 @@ library(rehh)
 #res.scan <- scan_hh(hap)
 #dim(res.scan)
 
-# iHS and cross-Population or whole genome scans
-hap <- data2haplohh(hap_file = "chr11All.haps", map_file = "chr11All.map", recode.allele = TRUE, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
-wg.res <- scan_hh(hap)
-wg.ihs <- ihh2ihs(wg.res)
-#head(wg.ihs$iHS)
-#head(wg.ihs$frequency.class)
-
-# Manhattan PLot of iHS results
-png("iHSmanhattan.png", height = 700, width = 640, units = "px", type = "cairo")
-layout(matrix(1:2,2,1))
-ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 2, main = "iHS (CAM - Chr11)")
-dev.off()
+## iHS and cross-Population or whole genome scans
+#hap <- data2haplohh(hap_file = "chr11All.haps", map_file = "chr11All.map", recode.allele = TRUE, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
+#wg.res <- scan_hh(hap)
+#wg.ihs <- ihh2ihs(wg.res)
+##head(wg.ihs$iHS)
+##head(wg.ihs$frequency.class)
+#
+## Manhattan PLot of iHS results
+#png("iHSmanhattan.png", height = 700, width = 640, units = "px", type = "cairo")
+#layout(matrix(1:2,2,1))
+#ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 2, main = "iHS (CAM - Chr11)")
+#dev.off()
