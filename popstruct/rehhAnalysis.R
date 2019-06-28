@@ -81,7 +81,7 @@ wg.ihs <- ihh2ihs(wg.res)
 #head(wg.ihs$frequency.class)
 
 # Manhattan PLot of iHS results
-png("iHSmanhattan.png", height = 7, width = 7, units = "px", type = "cairo")
+png("iHSmanhattan.png", height = 700, width = 640, units = "px", type = "cairo")
 layout(matrix(1:2,2,1))
 ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 2, main = "iHS (CAM - Chr11)")
 dev.off()
