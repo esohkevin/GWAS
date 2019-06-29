@@ -2,10 +2,10 @@
 
 # The merged chromosomes file
 vcfCooker \
-        --in-bfile raw-updated \
+        --in-bfile cam11-updated \
         --ref ../analysis/human_g1k_v37.fasta \
-        --out raw-updated.vcf \
+        --out cam11-updated.vcf \
         --write-vcf
-bgzip -f raw-updated.vcf
+bgzip -f cam11-updated.vcf
 
 

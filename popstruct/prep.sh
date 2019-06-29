@@ -9,34 +9,32 @@ plink \
 	--autosome \
 	--allow-no-sex \
 	--maf 0.001 \
-	--filter-controls \
+	--keep controls558.ids.txt \
 	--make-bed \
 	--out raw-cam-controls
 
 plink \
 	--bfile raw-cam-controls \
 	--allow-no-sex \
-	--update-name updaterawName.txt 1 2 \
+	--update-name ../analysis/updateName.txt 1 2 \
 	--make-bed \
 	--out raw
 
 plink \
 	--bfile raw \
-	--exclude out.check.mono \
-	--keep-allele-order \
 	--make-bed \
 	--out raw
-#rm *~
+rm *~
 
 plink \
-	--bfile raw \
+	--bfile camChr11 \
 	--allow-no-sex \
 	--freq \
-	--out raw
+	--out cam11
 
 Rscript palindromicsnps.R
 
-perl HRC-1000G-check-bim.pl -b raw.bim -f raw.frq -r ${kgp}1000GP_Phase3_combined.legend.gz -g -p "AFR"
+perl HRC-1000G-check-bim.pl -b cam11.bim -f cam11.frq -r ${kgp}1000GP_Phase3_combined.legend.gz -g -p "AFR"
 
 ./update-plink.sh
 

@@ -7,20 +7,21 @@ Options in effect:
 
 Hostname: delgemebioserver
 Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/analysis
-Start time: Thu May 23 21:04:48 2019
+Start time: Fri Jun 28 18:25:19 2019
 
-Random number seed: 1558645488
+Random number seed: 1561746319
 967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
 1714262 variants loaded from .bim file.
-1185 people (703 males, 482 females) loaded from .fam.
-1185 phenotype values loaded from .fam.
+1010 people (593 males, 417 females) loaded from .fam.
+1010 phenotype values loaded from .fam.
 Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 1185 founders and 0 nonfounders present.
+Before main variant filters, 1010 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Total genotyping rate is 0.995355.
+Total genotyping rate is 0.995034.
 --freq: Allele frequencies (founders only) written to qc-camgwas.frq .
 
-End time: Thu May 23 21:04:50 2019
+End time: Fri Jun 28 18:25:20 2019
 PLINK v1.90b6.7 64-bit (2 Dec 2018)
 Options in effect:
   --a1-allele Force-Allele1-qc-camgwas-1000G.txt
@@ -30,21 +31,50 @@ Options in effect:
 
 Hostname: delgemebioserver
 Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/analysis
-Start time: Thu May 23 21:28:29 2019
+Start time: Fri Jun 28 18:48:43 2019
 
-Random number seed: 1558646909
+Random number seed: 1561747723
 967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
 1644992 variants loaded from .bim file.
-1185 people (703 males, 482 females) loaded from .fam.
-1185 phenotype values loaded from .fam.
+1010 people (593 males, 417 females) loaded from .fam.
+1010 phenotype values loaded from .fam.
 Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 1185 founders and 0 nonfounders present.
+Before main variant filters, 1010 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Total genotyping rate is 0.995504.
+Total genotyping rate is 0.995188.
 --a1-allele: 1644992 assignments made.
-1644992 variants and 1185 people pass filters and QC.
-Among remaining phenotypes, 521 are cases and 664 are controls.
+1644992 variants and 1010 people pass filters and QC.
+Among remaining phenotypes, 491 are cases and 519 are controls.
 --make-bed to qc-camgwas-updated.bed + qc-camgwas-updated.bim +
 qc-camgwas-updated.fam ... done.
 
-End time: Thu May 23 21:28:32 2019
+End time: Fri Jun 28 18:48:46 2019
+PLINK v1.90b6.7 64-bit (2 Dec 2018)
+Options in effect:
+  --a2-allele Force-Allele1-qc-camgwas-1000G.txt
+  --bfile TEMP4
+  --make-bed
+  --out qc-camgwas-updated
+
+Hostname: delgemebioserver
+Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/analysis
+Start time: Fri Jun 28 19:58:27 2019
+
+Random number seed: 1561751907
+967454 MB RAM detected; reserving 483727 MB for main workspace.
+Allocated 362795 MB successfully, after larger attempt(s) failed.
+1644992 variants loaded from .bim file.
+1010 people (593 males, 417 females) loaded from .fam.
+1010 phenotype values loaded from .fam.
+Using 1 thread (no multithreaded calculations invoked).
+Before main variant filters, 1010 founders and 0 nonfounders present.
+Calculating allele frequencies... done.
+Total genotyping rate is 0.995188.
+--a2-allele: 1644992 assignments made.
+1644992 variants and 1010 people pass filters and QC.
+Among remaining phenotypes, 491 are cases and 519 are controls.
+--make-bed to qc-camgwas-updated.bed + qc-camgwas-updated.bim +
+qc-camgwas-updated.fam ... done.
+
+End time: Fri Jun 28 19:58:29 2019

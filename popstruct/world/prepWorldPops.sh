@@ -1,10 +1,10 @@
 #!/bin/bash
 
-analysis="../../../analysis/"
-samples="../../../samples/"
-kgp="../../../1000G/"
-imput="../../../assoc_results/"
-phase="../../../phase/"
+analysis="../../analysis/"
+samples="../../samples/"
+kgp="../../1000G/"
+imput="../../assoc_results/"
+phase="../../phase/"
 
 # Get 1kgp individuals limiting to only common SNPs that are found in qc-camgwas data
 #plink \
@@ -110,35 +110,44 @@ phase="../../../phase/"
 #        --out worldPops/mergedSet
 
 ## Update Phased study data
-cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
-sort phase.rsids | uniq -u > phase-uniq.rsids
+#cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
+#sort phase.rsids | uniq -u > phase-uniq.rsids
+#
+#plink \
+#        --bfile ${phase}phasedCamgwasAutosome \
+#        --keep-allele-order \
+#	--keep ${samples}eig.ids \
+#        --exclude badSnps.txt \
+#        --make-bed \
+#	--filter-controls \
+#        --extract phase-uniq.rsids \
+#        --out phase
+#
+#cut -f1,4 phase.bim | sed 's/\t/:/g' > phase.pos
+#cut -f2 phase.bim > phase.rsids
+#paste phase.pos phase.rsids > updatePhaseName.txt
+#
+#plink \
+#        --bfile phase \
+#        --keep-allele-order \
+#        --filter-controls \
+#        --update-name updatePhaseName.txt 1 2 \
+#        --make-bed \
+#        --out worldPops/phased-data-updated
+#
+#plink \
+#	--bfile worldPops/phased-data-updated \
+#	--allow-no-sex \
+#	--bmerge worldPops/world-pops-updated \
+#	--merge-equal-pos \
+#	--out worldPops/qc-world-merge
 
+# Update merged data rsids with dbSNP 151 ids
 plink \
-        --bfile ${phase}phasedCamgwasAutosome \
+        --bfile worldPops/qc-world-merge \
         --keep-allele-order \
-	--keep ${samples}eig.ids \
-        --exclude badSnps.txt \
+        --update-name ${analysis}updateName.txt 1 2 \
         --make-bed \
-	--filter-controls \
-        --extract phase-uniq.rsids \
-        --out phase
+        --out worldPops/qc-world-merge
 
-cut -f1,4 phase.bim | sed 's/\t/:/g' > phase.pos
-cut -f2 phase.bim > phase.rsids
-paste phase.pos phase.rsids > updatePhaseName.txt
-
-plink \
-        --bfile phase \
-        --keep-allele-order \
-        --filter-controls \
-        --update-name updatePhaseName.txt 1 2 \
-        --make-bed \
-        --out worldPops/phased-data-updated
-
-plink \
-	--bfile worldPops/phased-data-updated \
-	--allow-no-sex \
-	--bmerge worldPops/world-pops-updated \
-	--merge-equal-pos \
-	--out worldPops/qc-world-merge
-
+#rm worldPops/*~

@@ -17,16 +17,16 @@ mv "${vcfbase}".vcf.gz ../phase/
 #	if [[ "$1" == "0" ]];
 #	then
 #
-		for i in $(seq 1 23);
-        	do
-                	echo "`tabix -f -p vcf "${vcfbase1}""${i}".vcf.gz`"
-                	echo "`bcftools sort "${vcfbase1}""${i}".vcf.gz -Oz -o "${vcfbase1}""${i}".vcf.gz`"
-        	done
-
-        	for i in $(seq 1 23);
-        	do
-        	        echo "`checkVCF.py -r "$ref" -o out "${vcfbase1}""${i}".vcf.gz`"
-        	done
+#		for i in $(seq 1 23);
+#        	do
+#                	echo "`tabix -f -p vcf "${vcfbase1}""${i}".vcf.gz`"
+#                	echo "`bcftools sort "${vcfbase1}""${i}".vcf.gz -Oz -o "${vcfbase1}""${i}".vcf.gz`"
+#        	done
+#
+#        	for i in $(seq 1 23);
+#        	do
+#        	        echo "`checkVCF.py -r "$ref" -o out "${vcfbase1}""${i}".vcf.gz`"
+#        	done
 #	elif [[ "$1" == "1" ]];
 #	then
 #		echo "`tabix -f -p vcf "${vcfbase}".vcf.gz`"

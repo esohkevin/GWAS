@@ -5,7 +5,7 @@
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
-	--remove ../gender_analysis/exclude_fo.txt \
+	--remove ../samples/exclude_fo.txt \
         --allow-no-sex \
         --assoc \
         --adjust \
@@ -16,7 +16,7 @@ cat qc-camgwas.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
-	--remove ../gender_analysis/exclude_fo.txt \
+	--remove ../samples/exclude_fo.txt \
         --allow-no-sex \
         --logistic beta \
         --set-hh-missing \
@@ -28,7 +28,7 @@ cat qc-camgwas-add.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
-	--remove ../gender_analysis/exclude_fo.txt \
+	--remove ../samples/exclude_fo.txt \
         --allow-no-sex \
         --logistic dominant \
         --set-hh-missing \
@@ -40,7 +40,7 @@ cat qc-camgwas-dom.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
-	--remove ../gender_analysis/exclude_fo.txt \
+	--remove ../samples/exclude_fo.txt \
         --allow-no-sex \
         --logistic recessive \
         --set-hh-missing \
@@ -52,7 +52,7 @@ cat qc-camgwas-rec.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
-	--remove ../gender_analysis/exclude_fo.txt \
+	--remove ../samples/exclude_fo.txt \
         --allow-no-sex \
         --logistic hethom \
         --set-hh-missing \
@@ -64,7 +64,7 @@ cat qc-camgwas-hethom.log >> all-assoc.log
 plink1.9 \
         --bfile ../analysis/qc-camgwas-updated \
         --autosome \
-	--remove ../gender_analysis/exclude_fo.txt \
+	--remove ../samples/exclude_fo.txt \
         --allow-no-sex \
         --model \
         --set-hh-missing \
@@ -121,11 +121,11 @@ echo """
 #################################################################
 	Running Post-QC Association Plot in R
 
-	Please check the 'snpsofinterest.txt' file for associations
+	Please check the 'snpsofinterest-qc.txt' file for associations
 	with P-val < 1e-04 (0.00001)
 """
 
 #echo "#################### QC R #####################" >> snpsofinterest.txt
-#Rscript post-qc-assoc.R >> snpsofinterest.txt
+Rscript post-qc-assoc.R >> snpsofinterest-qc.txt
 #echo "#################### QC R #####################" >> snpsofinterest.txt
 

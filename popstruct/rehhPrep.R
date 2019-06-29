@@ -10,7 +10,7 @@ write.table(newBim, file=args[2], col.names=F, row.names=F, quote=F, sep = "\t")
 
 # Update transposed haplotype file
 haps <- read.table(args[3])
-newhaps <- haps[,5:ncol(haps)]
-hapsUpdated <- data.frame(newBim[,1:3], newhaps)
-write.table(hapsUpdated, file = args[4], col.names = F, row.names = F, quote = F)
+newhaps <- haps[,6:ncol(haps)]
+#hapsUpdated <- data.frame(newBim[,1:3], newhaps)
+write.table(newhaps, file = args[4], col.names = F, row.names = F, quote = F)
 

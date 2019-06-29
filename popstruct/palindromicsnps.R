@@ -1,7 +1,7 @@
 #!/usr/bin/env R
 
 # Extract palindromic SNPs
-bim = read.table("raw.bim", header=F, as.is=T)
+bim = read.table("cam11.frq", header=F, as.is=T)
 # Get indices of A/T and G/C SNPs
 w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="A" & bim$V6=="T") | (bim$V5=="A" & bim$V6=="T"))
 

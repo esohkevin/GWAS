@@ -22,15 +22,15 @@ Total processed 1714259
 
 Indels 0
 
-SNPs not changed 337559
-SNPs to change ref alt 1322828
+SNPs not changed 337852
+SNPs to change ref alt 1322535
 Strand ok 1660387
 Total Strand ok 1660387
 
 Strand to change 0
 Total checked 1692913
 Total checked Strand 1660387
-Total removed for allele Frequency diff > 0.2 614
+Total removed for allele Frequency diff > 0.2 615
 Palindromic SNPs with Freq > 0.4 5908
 
 
