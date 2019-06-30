@@ -11,18 +11,18 @@ echo "`tabix -f -p vcf cam11-updated.vcf.gz`"
 for chr in 11; do
   eagle \
     --vcfRef=${ref_path}ALL.chr${chr}.phase3_integrated.20130502.genotypes.bcf \
-    --vcfTarget=cam11-updated.vcf.gz \
+    --vcfTarget=${kgp}qc-camgwas-updated.vcf.gz \
     --geneticMapFile=${kgp}tables/genetic_map_hg19_withX.txt.gz \
-    --outPrefix=cam${chr}-phased_wref \
+    --outPrefix=chr${chr}-phased_wref \
     --chrom=${chr} \
     --pbwtIters=10 \
     --numThreads=90 \
     --Kpbwt=50000 \
     --vcfOutFormat=z \
     --allowRefAltSwap \
-    2>&1 | tee cam${chr}-phased_wref.log
+    2>&1 | tee chr${chr}-phased_wref.log
 
-  echo "`tabix -f -p vcf cam${chr}-phased_wref.vcf.gz`"
+  echo "`tabix -f -p vcf chr${chr}-phased_wref.vcf.gz`"
 
 done
 

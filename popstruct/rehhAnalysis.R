@@ -2,7 +2,7 @@
 
 setwd("~/GWAS/Git/GWAS/popstruct")
 library(rehh)
-
+args <- commandArgs(TRUE)
 ## Tutorial
 #make.example.files()
 #dir()
@@ -55,7 +55,9 @@ hap <- data2haplohh(hap_file = "chr11hbb.hap", map_file = "chr11hbb.map", recode
 
 ## Compute EHH
 png("ehhHBB.png", height = 500, width = 500, units = "px", type = "cairo")
-res.ehh <- calc_ehh(hap, mrk = "rs10742584")
+par(mfrow=c(2,1))
+res.ehh <- calc_ehh(hap, mrk = args[1],  ylab="EHH")
+res.ehh <- calc_ehh(hap, mrk = args[2],  ylab="EHH")
 dev.off()
 #
 ## Get statistics
@@ -80,11 +82,13 @@ dev.off()
 hap <- data2haplohh(hap_file = "chr11.hap", map_file = "chr11.map", recode.allele = F, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
 wg.res <- scan_hh(hap)
 wg.ihs <- ihh2ihs(wg.res)
+write.table(wg.ihs$iHS, file="iHSResult.txt", col.names=T, row.names=F, quote=F, sep="\t")
+write.table(wg.ihs$frequency.class, file="frqResult.txt", col.names=T, row.names=F, quote=F, sep="\t")
 #head(wg.ihs$iHS)
 #head(wg.ihs$frequency.class)
 
 # Manhattan PLot of iHS results
 png("iHSmanhattan.png", height = 700, width = 640, units = "px", type = "cairo")
 layout(matrix(1:2,2,1))
-ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 2, main = "iHS (CAM - Chr11)")
+ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 4, main = args[3])
 dev.off()
