@@ -10,7 +10,7 @@ hap <- data2haplohh(hap_file = args[1], map_file = args[2], recode.allele = F, m
 ## Compute EHH
 png(args[3], height = 500, width = 500, units = "px", type = "cairo")
 par(mfrow=c(2,1))
-res.ehh <- calc_ehh(hap, mrk = args[4],  ylab="EHH")
-res.ehh <- calc_ehh(hap, mrk = args[5],  ylab="EHH")
+res.ehh <- calc_ehh(hap, mrk = args[4],  ylab="EHH", main = args[4])
+res.ehh <- calc_ehh(hap, mrk = args[5],  ylab="EHH", main = args[5])
 dev.off()
 
