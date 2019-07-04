@@ -21,15 +21,15 @@ else
    sed 's/0/2/g' chr${1}hbb.haps > chr${1}hbb.hap
    
    # Entire chr11
-#   plink2 \
-#           --chr $1 \
-#           --export hapslegend \
-#           --vcf chr${1}-phased_wref.vcf.gz \
-#           --out chr$1 \
-#           --keep controls558.ids.txt \
-#           --double-id
-   
-#   sed '1d' chr${1}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${1}.map
-#   sed 's/0/2/g' chr${1}.haps > chr${1}.hap
+   plink2 \
+           --chr $1 \
+           --export hapslegend \
+           --vcf chr${1}-phased_wref.vcf.gz \
+           --out chr$1 \
+           --keep controls558.ids.txt \
+           --double-id
+  
+   sed '1d' chr${1}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${1}.map
+   sed 's/0/2/g' chr${1}.haps > chr${1}.hap
    
 fi
