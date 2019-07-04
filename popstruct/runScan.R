@@ -19,24 +19,24 @@ ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 4, main = args[4])
 dev.off()
 
 # Gaussian Distribution and Q-Q plots
-png("qqPlot.png", height = 7, width = 6, res = 1200, units = "in")
+png("qqPlot.png", height = 700, width = 640, res = NA, units = "px", type = "cairo")
 layout(matrix(1:2,2,1))
 distribplot(wg.ihs$iHS[,3], xlab="iHS")
 dev.off()
 
 # Bifurcation plot
-png("bifurcation1.png", height = 7, width = 6, res = 1200, units = "in")
+png("bifurcation1.png", height = 700, width = 640, res = NA, units = "px", cairo = "cairo")
 layout(matrix(1:2,2,1))
-bifurcation.diagram(hap,mrk_foc="rs73407039",all_foc=1,nmrk_l=50,nmrk_r=50,
+bifurcation.diagram(hap,mrk_foc="rs73407039",all_foc=1,nmrk_l=50,nmrk_r=50, refsize = 0.01,
                     main="rs73407039: Ancestral allele")
-bifurcation.diagram(hap,mrk_foc="rs73407039",all_foc=2,nmrk_l=50,nmrk_r=50,
+bifurcation.diagram(hap,mrk_foc="rs73407039",all_foc=2,nmrk_l=50,nmrk_r=50, refsize = 0.06,
                     main="rs73407039: Derived allele")
 dev.off()
 
-png("bifurcation2.png", height = 7, width = 6, res = 1200, units = "in")
+png("bifurcation2.png", height = 700, width = 640, res = NA, units = "px", type = "cairo")
 layout(matrix(1:2,2,1))
-bifurcation.diagram(hap,mrk_foc="rs73404549",all_foc=1,nmrk_l=50,nmrk_r=50,
+bifurcation.diagram(hap,mrk_foc="rs73404549",all_foc=1,nmrk_l=50,nmrk_r=50, refsize = 0.01,
                     main="rs73404549: Ancestral allele")
-bifurcation.diagram(hap,mrk_foc="rs73404549",all_foc=2,nmrk_l=50,nmrk_r=50,
+bifurcation.diagram(hap,mrk_foc="rs73404549",all_foc=2,nmrk_l=50,nmrk_r=50, refsize = 0.06,
                     main="rs73404549: Derived allele")
 dev.off()
