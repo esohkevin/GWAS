@@ -55,6 +55,25 @@ plink1.9 \
         --make-bed \
         --out raw-camgwas
 
+## Update rsids with dbSNP 151 ids
+#cut -f1,4 raw-camgwas.bim | \
+#        sed 's/\t/:/g' > raw-camgwas.pos
+#cut -f2 raw-camgwas.bim > raw-camgwas.ids
+#paste raw-camgwas.ids raw-camgwas.pos > raw-camgwas-ids-pos.txt
+#
+#plink \
+#        --bfile raw-camgwas \
+#        --update-name raw-camgwas-ids-pos.txt 2 1 \
+#        --allow-no-sex \
+#        --make-bed \
+#        --out raw-camgwas
+#
+#plink \
+#        --bfile raw-camgwas \
+#        --update-name updateName.txt 1 2 \
+#        --allow-no-sex \
+#        --make-bed \
+#        --out raw-camgwas
 ############################### Per Individual QC #############################
 # LD-prune the raw data before sex check
 plink1.9 \
@@ -311,7 +330,6 @@ plink \
 	--bfile qc-camgwas \
 	--update-name updateName.txt 1 2 \
 	--allow-no-sex \
-	--keep ../popstruct/eig/EIGENSTRAT/eig.ids \
 	--make-bed \
 	--out qc-camgwas
 
@@ -320,7 +338,7 @@ echo """
 #                     Run Imputation Prep Script                        #
 #########################################################################
 """
-rm raw-camGwas.* qc-camgwas.bim~ qc-camgwas.bed~ qc-camgwas.fam~
+rm raw-camGwas.* *~ raw-camgwas.gen
 mv check-sex-data.sexcheck sexcheck.txt
 #rm raw-camgwas.* 
 #rm qc-camgwas-autosome.* qc-camgwas-chr* 
@@ -333,6 +351,11 @@ rm allMysnps.txt
 rm all.rs.ids all.snps.ids
 
 mv *.png ${images}
+
+# Perform Population Structure
+#cd ../popstruct/
+#./popstruct.sh
+#cd -
 #
 ##./imputePrep.sh
 #

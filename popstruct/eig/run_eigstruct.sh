@@ -17,18 +17,31 @@ rm eig.id1 eig.id2
 
 cd ../
 
+## Perform second iteration of outlier removal
+#cd CONVERTF/
+#./run_eig-convertf.sh
+#
+#cd ../EIGENSTRAT/
+#./run_eigCorrPCA.perl
+#
+#cut -f4 -d' ' qc-camgwas.pca.evec | sed '1d' > eig.id1
+#cut -f4 -d' ' qc-camgwas.pca.evec | sed '1d' > eig.id2
+#paste eig.id1 eig.id2 > eigcorr.ids
+#rm eig.id1 eig.id2
+
+
 # Compute Population Genetic Statistics
 cd POPGEN/
 ./run_popgenstats.sh
 
 cd ../
 
-# Compute PCA with dataset without outliers
-cd CONVERTF/
-./run_eig-convertf.sh
-
-cd ../EIGENSTRAT/
-./run_eigCorrPCA.perl
-
-echo -e "\nAll Processes Done Running!\n"
+## Compute PCA with dataset without outliers
+#cd CONVERTF/
+#./run_eig-convertf.sh
+#
+#cd ../EIGENSTRAT/
+#./run_eigCorrPCA.perl
+#
+#echo -e "\nAll Processes Done Running!\n"
 

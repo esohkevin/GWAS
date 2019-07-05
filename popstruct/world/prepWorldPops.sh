@@ -75,24 +75,24 @@ phase="../../phase/"
 #
 #echo "cam-updated" > merge.list
 #
-#for pop in `cat pop.list`; do
-#    plink \
-#        --bfile worldPops/world-pops-updated \
-#        --autosome \
-#        --maf 0.01 \
-#	--extract cam-updated-rsids.txt \
-#        --hwe 1e-20 \
-#	--exclude worldPops/mergedSet.missnp \
-#        --geno 0.04 \
-#	--pheno worldPops/update-1kgp.phe \
-#        --mpheno 1 \
-#	--update-sex worldPops/update-1kgp.sex 1 \
-#        --keep ${samples}"${pop}".ids \
-#        --make-bed \
-#        --out ${pop}
+for pop in `cat pop.list`; do
+    plink \
+        --bfile worldPops/world-pops-updated \
+        --autosome \
+        --maf 0.01 \
+	--extract cam-updated-rsids.txt \
+        --hwe 1e-20 \
+	--exclude worldPops/mergedSet.missnp \
+        --geno 0.04 \
+	--pheno worldPops/update-1kgp.phe \
+        --mpheno 1 \
+	--update-sex worldPops/update-1kgp.sex 1 \
+        --keep ${samples}"${pop}".ids \
+        --make-bed \
+        --out ${pop}
 #
 #    echo "${pop}" >> merge.list
-#done
+done
 
 # Get Cam control samples
 #plink \
@@ -143,11 +143,11 @@ phase="../../phase/"
 #	--out worldPops/qc-world-merge
 
 # Update merged data rsids with dbSNP 151 ids
-plink \
-        --bfile worldPops/qc-world-merge \
-        --keep-allele-order \
-        --update-name ${analysis}updateName.txt 1 2 \
-        --make-bed \
-        --out worldPops/qc-world-merge
+#plink \
+#        --bfile worldPops/qc-world-merge \
+#        --keep-allele-order \
+#        --update-name ${analysis}updateName.txt 1 2 \
+#        --make-bed \
+#        --out worldPops/qc-world-merge
 
 #rm worldPops/*~

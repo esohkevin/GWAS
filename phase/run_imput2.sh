@@ -16,13 +16,13 @@ for chr in {1..22}; do
      for interval in `cat chr${chr}intervals.txt`; do
 
        if [[ ! -f "chr${chr}_${interval/=*/_imputed.gen.gz}" && ! -f "${imputed_path}chr${chr}_${interval/=*/_imputed.gen.gz}" ]]; then
-	    echo -e """-use_prephased_g -known_haps_g chr"${chr}"-phased_wref.haps -m "$ref_path"genetic_map_chr"${chr}"_combined_b37.txt -h "$ref_path"1000GP_Phase3_chr"${chr}".hap.gz -l "$ref_path"1000GP_Phase3_chr"${chr}".legend.gz  -int "${interval}" -Ne 20000 -os 0 2 -buffer 500 -phase -o_gz -o chr"${chr}"_"${interval/=*/_imputed.gen}"\n""" >> chr${chr}_imput_chunks.txt
+	    echo -e "-use_prephased_g -known_haps_g chr"${chr}"-phased_wref.haps -m "$ref_path"genetic_map_chr"${chr}"_combined_b37.txt -h "$ref_path"1000GP_Phase3_chr"${chr}".hap.gz -l "$ref_path"1000GP_Phase3_chr"${chr}".legend.gz  -int "${interval}" -Ne 20000 -os 0 2 -buffer 500 -filt_rules_l 'AFR<0.01' 'AMR<=0.05' 'EUR<=0.05' 'EAS<=0.05' 'SAS<=0.05' 'TYPE==Biallelic_SNP' 'TYPE==Biallelic_INDEL' -o_gz -o chr"${chr}"_"${interval/=*/_imputed.gen}"\n" >> chr${chr}_imput_chunks.txt
        else
             echo "chr"${chr}"_"${interval/=*/_imputed.gen}" already exists! Its command line has not been included in chr${chr}_chunks.txt file! "
        fi
      done
 
-     sed 's/=/ /g' chr${chr}_imput_chunks.txt > chr${chr}_chunks.txt; 		# Primary aim is to create this file for all chrs to use for parallele jod execution
+     sed 's/1=/1 /g' chr${chr}_imput_chunks.txt > chr${chr}_chunks.txt; 		# Primary aim is to create this file for all chrs to use for parallele jod execution
      rm chr${chr}_imput_chunks.txt
    
    else
@@ -31,7 +31,7 @@ for chr in {1..22}; do
 
    fi
 
-   cat chr${chr}_chunks.txt | xargs -P$1 -n25 impute_v2.3.2 &			# Run IMPUTE2 with the commands in the files previously created
+   cat chr${chr}_chunks.txt | xargs -P$1 -n30 impute_v2.3.2 &			# Run IMPUTE2 with the commands in the files previously created
 
 done
 

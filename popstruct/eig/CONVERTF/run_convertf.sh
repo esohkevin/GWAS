@@ -5,10 +5,9 @@ phase="../../../phase/"
 
 # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
 plink \
-        --bfile "${phase}"phasedCamgwasAutosome \
+        --bfile "${analysis}"qc-camgwas \
         --indep-pairwise 50 5 0.2 \
         --allow-no-sex \
-	--keep-allele-order \
 	--hwe 1e-8 \
         --autosome \
         --biallelic-only \
@@ -16,7 +15,7 @@ plink \
 cat qc-ldPruned.log > convertf.log
 
 plink \
-        --bfile "${phase}"phasedCamgwasAutosome \
+        --bfile "${analysis}"qc-camgwas \
         --extract qc-ldPruned.prune.in \
         --allow-no-sex \
         --autosome \
@@ -28,7 +27,6 @@ plink \
 	--bfile qc-camgwas-ldPruned \
 	--recode \
 	--allow-no-sex \
-	--keep-allele-order \
 	--double-id \
 	--out qc-camgwas
 cat qc-camgwas.log >> convertf.log
