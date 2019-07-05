@@ -50,10 +50,10 @@ library(rehh)
 #write.table(hapsUpdated, file = "chr11-updated.haps", col.names = F, row.names = F, quote = F)
 #
 ## Load data set
-#hap <- data2haplohh(hap_file = "chr11-updated.haps", map_file = "chr11.map", recode.allele = TRUE, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
+hap <- data2haplohh(hap_file = "chr11hbb.hap", map_file = "chr11hbb.map", recode.allele = F, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
 #
 ## Compute EHH
-#res.ehh <- calc_ehh(hap, mrk = "rs10742584")
+res.ehh <- calc_ehh(hap, mrk = "rs73407039")
 #
 ## Get statistics
 #res.ehh$ehh
@@ -74,14 +74,46 @@ library(rehh)
 #dim(res.scan)
 
 # iHS and cross-Population or whole genome scans
-hap <- data2haplohh(hap_file = "chr11All.haps", map_file = "chr11All.map", recode.allele = TRUE, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
+hap <- data2haplohh(hap_file = "chr11.hap", map_file = "chr11.map", recode.allele = F, min_perc_geno.hap=100,min_perc_geno.snp=100, haplotype.in.columns=TRUE, chr.name = 11)
 wg.res <- scan_hh(hap)
 wg.ihs <- ihh2ihs(wg.res)
 #head(wg.ihs$iHS)
 #head(wg.ihs$frequency.class)
 
-# Manhattan PLot of iHS results
-png("iHSmanhattan.png", height = 7, width = 7, units = "px", type = "cairo")
+# Gaussian Distribution and Q-Q plot
+head(wg.ihs$iHS)
 layout(matrix(1:2,2,1))
-ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 2, main = "iHS (CAM - Chr11)")
+distribplot(wg.ihs$iHS[,3], xlab = "iHS")
 dev.off()
+
+#rs73407039
+#rs73404549
+#rs73400351
+#rs113660949
+#rs7102501
+#rs75301276
+#rs74373495
+#rs1905055
+#rs116480398
+#rs116573934
+#rs114519170
+#rs76011226
+#rs7117421
+#rs76186525
+#rs80047940
+#rs17132555
+#rs7924842
+#rs112890356
+
+# Bifurcation plot
+bifurcation.diagram(hap,mrk_foc="rs76011226",all_foc=1,nmrk_l=20,nmrk_r=20, refsize = 0.01,
+                    main="rs76011226")
+bifurcation.diagram(hap,mrk_foc="rs76011226",all_foc=2,nmrk_l=20,nmrk_r=20, refsize = 0.01,
+                    main="rs76011226")
+
+?bifurcation.diagram()
+# Manhattan PLot of iHS results
+#png("iHSmanhattan.png", height = 7, width = 7, units = "px", type = "cairo")
+#layout(matrix(1:2,2,1))
+#ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 2, main = "iHS (CAM - Chr11)")
+#dev.off()
