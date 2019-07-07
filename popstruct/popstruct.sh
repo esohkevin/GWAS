@@ -3,15 +3,15 @@
 analysis="../analysis/"
 
 # Run EIGENANALYSIS
-cd eig/
-./run_eigstruct.sh
+#cd eig/
+#./run_eigstruct.sh
 
-cd ../
+#cd ../
 
 # Extract samples from eigenanalysis
 plink \
 	--bfile ${analysis}qc-camgwas \
-	--keep eig/EIGENSTRAT/eigcorr.ids \
+	--keep eig/EIGENSTRAT/eig.ids \
 	--make-bed \
 	--out ${analysis}qc-camgwas-eig-corr
 

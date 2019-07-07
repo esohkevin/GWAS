@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ $# != 3 ]]; then
+if [[ $# != 4 ]]; then
    echo """
-	Usage: ./rehhPrep.sh <chr#> <from-kb> <to-kb>
+	Usage: ./rehhPrep.sh <chr#> <from-kb> <to-kb> <pop-name>
    """
 else
 
@@ -11,25 +11,25 @@ else
    	--chr $1 \
    	--export hapslegend \
    	--vcf chr${1}-phased_wref.vcf.gz \
-   	--out chr${1}hbb \
+   	--out chr${1}${4}hbb \
    	--from-kb $2 \
    	--to-kb $3 \
-   	--keep controls558.ids.txt \
+   	--keep $4.txt \
    	--double-id
    
-   sed '1d' chr${1}hbb.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${1}hbb.map
-   sed 's/0/2/g' chr${1}hbb.haps > chr${1}hbb.hap
+   sed '1d' chr${1}${4}hbb.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${1}${4}hbb.map
+   sed 's/0/2/g' chr${1}${4}hbb.haps > chr${1}${4}hbb.hap
    
    # Entire chr11
    plink2 \
            --chr $1 \
            --export hapslegend \
            --vcf chr${1}-phased_wref.vcf.gz \
-           --out chr$1 \
-           --keep controls558.ids.txt \
+           --out chr$1$4 \
+           --keep $4.txt \
            --double-id
   
-   sed '1d' chr${1}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${1}.map
-   sed 's/0/2/g' chr${1}.haps > chr${1}.hap
+   sed '1d' chr${1}${4}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${1}${4}.map
+   sed 's/0/2/g' chr${1}${4}.haps > chr${1}${4}.hap
    
 fi

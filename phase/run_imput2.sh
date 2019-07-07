@@ -16,7 +16,7 @@ for chr in {1..22}; do
      for interval in `cat chr${chr}intervals.txt`; do
 
        if [[ ! -f "chr${chr}_${interval/=*/_imputed.gen.gz}" && ! -f "${imputed_path}chr${chr}_${interval/=*/_imputed.gen.gz}" ]]; then
-	    echo -e "-use_prephased_g -known_haps_g chr"${chr}"-phased_wref.haps -m "$ref_path"genetic_map_chr"${chr}"_combined_b37.txt -h "$ref_path"1000GP_Phase3_chr"${chr}".hap.gz -l "$ref_path"1000GP_Phase3_chr"${chr}".legend.gz  -int "${interval}" -Ne 20000 -os 0 2 -buffer 500 -filt_rules_l 'AFR<0.01' 'AMR<=0.05' 'EUR<=0.05' 'EAS<=0.05' 'SAS<=0.05' 'TYPE==Biallelic_SNP' 'TYPE==Biallelic_INDEL' -o_gz -o chr"${chr}"_"${interval/=*/_imputed.gen}"\n" >> chr${chr}_imput_chunks.txt
+	    echo -e "-use_prephased_g -known_haps_g chr"${chr}"-phased_wref.haps -m "$ref_path"genetic_map_chr"${chr}"_combined_b37.txt -h "$ref_path"1000GP_Phase3_chr"${chr}".hap.gz -l "$ref_path"1000GP_Phase3_chr"${chr}".legend.gz  -int "${interval}" -Ne 20000 -os 0 1 2 3 -buffer 500 -filt_rules_l 'AFR<0.01' 'AMR<0.01' 'EUR<0.01' 'SAS<0.01' 'EAS<0.01' 'TYPE==\"Biallelic_SNP\"' 'TYPE==\"Biallelic_INDEL\"' -o_gz -o chr"${chr}"_"${interval/=*/_imputed.gen}"\n" >> chr${chr}_imput_chunks.txt
        else
             echo "chr"${chr}"_"${interval/=*/_imputed.gen}" already exists! Its command line has not been included in chr${chr}_chunks.txt file! "
        fi

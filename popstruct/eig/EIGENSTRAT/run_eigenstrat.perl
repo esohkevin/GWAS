@@ -3,20 +3,20 @@
 #$ENV{'PATH'} = "/home/esoh/bioTools/EIG-6.1.4/bin:$ENV{'PATH'}"; 
 # MUST put smartpca bin directory in path for smartpca.perl to work
 
-$command = "smartpca.perl";
-$command .= " -i ../CONVERTF/qc-camgwas.eigenstratgeno ";
-$command .= " -a ../CONVERTF/qc-camgwas.snp ";
-$command .= " -b ../CONVERTF/qc-camgwas.ind " ;
-$command .= " -k 30 ";
-$command .= " -o qc-camgwas.pca ";
-$command .= " -p qc-camgwas.plot ";
-$command .= " -e qc-camgwas.eval ";
-$command .= " -l qc-camgwas-pca.log ";
-$command .= " -m 15 ";
-$command .= " -t 20 ";
-$command .= " -s 6.0 ";
-print("$command\n");
-system("$command");
+#$command = "smartpca.perl";
+#$command .= " -i ../CONVERTF/qc-camgwas.eigenstratgeno ";
+#$command .= " -a ../CONVERTF/qc-camgwas.snp ";
+#$command .= " -b ../CONVERTF/qc-camgwas.ind " ;
+#$command .= " -k 30 ";
+#$command .= " -o qc-camgwas.pca ";
+#$command .= " -p qc-camgwas.plot ";
+#$command .= " -e qc-camgwas.eval ";
+#$command .= " -l qc-camgwas-pca.log ";
+#$command .= " -m 8 ";
+#$command .= " -t 20 ";
+#$command .= " -s 7.0 ";
+#print("$command\n");
+#system("$command");
 
 $command = "smarteigenstrat.perl "; 
 $command .= " -i ../CONVERTF/qc-camgwas.eigenstratgeno ";

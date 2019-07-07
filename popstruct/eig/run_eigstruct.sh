@@ -1,10 +1,10 @@
 
 ####################################### EIGEN ANALYSIS #######################################
 # Convert File Formats
-cd CONVERTF/
-./run_convertf.sh
+#cd CONVERTF/
+#./run_convertf.sh
 
-cd ../
+#cd ../
 
 # Compute Eigenvectors
 cd EIGENSTRAT/
