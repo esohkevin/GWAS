@@ -32,4 +32,6 @@ else
    sed '1d' chr${1}${4}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${1}${4}.map
    sed 's/0/2/g' chr${1}${4}.haps > chr${1}${4}.hap
    
+   rm *.haps *.sample *.legend *.log
+
 fi
