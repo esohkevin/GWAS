@@ -16,8 +16,6 @@ iHSplot <- paste(args[3],"iHS.png", sep="")
 iHSresult <- paste(args[3],"iHSresult.txt", sep="")
 iHSfrq <- paste(args[3],"iHSfrq.txt", sep="")
 qqPlot <- paste(args[3],"qqDist.png", sep="")
-#bifurcA <- paste(args[3],"bifurc1.png", sep="")
-#bifurcB <- paste(args[3],"bifurc2.png", sep="")
 iHSmain <- paste("chr",chr,"-",args[3],"-iHS", sep="")
 sigOut <- paste(args[3],"chr",chr,"Signals.txt",sep="")
 
@@ -84,19 +82,3 @@ for (locus in sigpos) {
 	dev.off()
 }
 
-
-#png(bifurcA, height = 700, width = 640, res = NA, units = "px", type = "cairo")
-#layout(matrix(1:2,2,1))
-#bifurcation.diagram(hap,mrk_foc="rs73407039",all_foc=1,nmrk_l=10,nmrk_r=10, refsize = 0.05,
-#                    main="rs73407039: Ancestral allele")
-#bifurcation.diagram(hap,mrk_foc="rs73407039",all_foc=2,nmrk_l=10,nmrk_r=10, refsize = 0.05,
-#                    main="rs73407039: Derived allele")
-#dev.off()
-#
-#png(bifurcB, height = 700, width = 640, res = NA, units = "px", type = "cairo")
-#layout(matrix(1:2,2,1))
-#bifurcation.diagram(hap,mrk_foc="rs73404549",all_foc=1,nmrk_l=10,nmrk_r=10, refsize = 0.05,
-#                    main="rs73404549: Ancestral allele")
-#bifurcation.diagram(hap,mrk_foc="rs73404549",all_foc=2,nmrk_l=10,nmrk_r=10, refsize = 0.05,
-#                    main="rs73404549: Derived allele")
-#dev.off()
