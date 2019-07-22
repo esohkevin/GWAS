@@ -6,7 +6,10 @@ if [[ $# != 3 ]]; then
 """
 else
    Rscript runScan.R $1 $2 $3
-   grep -v -w NA ${3}iHSresult.txt | awk '$4>=4' >chr${2}${3}Signals.txt
+#   grep -v -w NA ${3}iHSresult.txt | awk '$4>=4' >chr${2}${3}Signals.txt
+#   awk '{print $2}' chr${2}${3}Signals.txt > ${3}sig.pos.txt
+#   grep -w -f sig.pos.txt ${1}.map |\
+#	   cut -f 1 > signalsRsids.txt
 
    echo """
         Done Scanning Genome! Results saved in iHSResult.txt, frqResults.txt, and chr11Signals.txt

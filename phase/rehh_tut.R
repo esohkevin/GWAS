@@ -1,8 +1,8 @@
 #!/usr/bin/Rscript
 
-setwd("~/GWAS/Git/GWAS/popstruct")
+setwd("../popstruct")
 library(rehh)
-
+?rehh
 ## Tutorial
 #make.example.files()
 #dir()
@@ -106,9 +106,9 @@ dev.off()
 #rs112890356
 
 # Bifurcation plot
-bifurcation.diagram(hap,mrk_foc="rs76011226",all_foc=1,nmrk_l=20,nmrk_r=20, refsize = 0.01,
-                    main="rs76011226")
-bifurcation.diagram(hap,mrk_foc="rs76011226",all_foc=2,nmrk_l=20,nmrk_r=20, refsize = 0.01,
+bifurcation.diagram(hap,mrk_foc="rs114519170",all_foc=1,nmrk_l=20,nmrk_r=20, refsize = 0.01,
+                    main="rs114519170")
+bifurcation.diagram(hap,mrk_foc="rs76011226",all_foc=2,nmrk_l=20,nmrk_r=20, refsize = 0.08,
                     main="rs76011226")
 
 ?bifurcation.diagram()
@@ -117,3 +117,29 @@ bifurcation.diagram(hap,mrk_foc="rs76011226",all_foc=2,nmrk_l=20,nmrk_r=20, refs
 #layout(matrix(1:2,2,1))
 #ihsplot(wg.ihs, plot.pval = TRUE, ylim.scan = 2, main = "iHS (CAM - Chr11)")
 #dev.off()
+
+ihs <- read.table("cam-simiHSresult.txt", header = T, as.is = T)
+ihs <- na.omit(ihs)
+head(ihs)
+args <- commandArgs(TRUE)
+
+hapFile <- paste("chr11Sim",".hap", sep="")
+mapFile <- paste("chr11Sim",".map", sep="")
+chr <- 11
+iHSplot <- paste("cam","iHS.png", sep="")
+iHSresult <- paste("cam","iHSresult.txt", sep="")
+iHSfrq <- paste("cam","iHSfrq.txt", sep="")
+qqPlot <- paste("cam","qqDist.png", sep="")
+bifurcA <- paste("cam","bifurc1.png", sep="")
+bifurcB <- paste("cam","bifurc2.png", sep="")
+iHSmain <- paste("chr",chr,"-","cam","-iHS", sep="")
+map <- read.table(mapFile)
+map <- data.frame(ID=map$V1, POSITION=map$V3, Ancestral=map$V4, Derived=map$V5)
+ihsMerge <- merge(map, ihs, by = "POSITION")
+ihsMerge
+signals <- ihsMerge[ihsMerge$X.log10.p.value.>=4,]
+sigpos <- signals[,2]
+sigpos
+for (locus in sigpos) {
+  print(locus)
+}
