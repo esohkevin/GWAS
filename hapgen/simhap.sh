@@ -1,7 +1,7 @@
 #!/bin/bash
 
 hapgen2 \
-	-m /home/esoh/esohdata/GWAS/phase/1000GP_Phase3/genetic_map_chr11_combined_b37.txt \
+	-m ../phase/1000GP_Phase3/genetic_map_chr11_combined_b37.txt \
 	-l chr11.legend \
 	-h chr11.haps \
 	-n 1000 1000 \
