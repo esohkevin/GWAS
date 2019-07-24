@@ -39,12 +39,12 @@ else
 
       # Entire chr11
       plink2 \
-              --chr $2 \
-              --export hapslegend \
-              --vcf $4 \
-              --out chr$2$3 \
-              --keep $3.txt \
-              --double-id
+        --chr $2 \
+        --export hapslegend \
+        --vcf $4 \
+        --out chr$2$3 \
+        --keep $3.txt \
+        --double-id
      
       sed '1d' chr${2}${3}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${2}${3}.map
       sed 's/0/2/g' chr${2}${3}.haps > chr${2}${3}.hap
@@ -57,18 +57,18 @@ else
     elif [[ "$param" == "1" && $# == 4 ]]; then
       # Entire dataset with more than one chromosomes
       plink2 \
-              --export hapslegend \
-              --vcf $3 \
-              --out $2 \
-              --keep $2.txt \
-              --double-id
+        --export hapslegend \
+        --vcf $3 \
+        --out $2 \
+        --keep $2.txt \
+        --double-id
      
       sed '1d' ${3}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > ${3}.map
       sed 's/0/2/g' ${3}.haps > ${3}.hap
    
    fi
 
-   for file in *.haps *.legend *.log *.sample; do
+   for file in *.log *.sample; do
        if [[ -f ${file} ]]; then
          rm ${file}
        fi
