@@ -137,7 +137,7 @@ map <- read.table(mapFile)
 map <- data.frame(ID=map$V1, POSITION=map$V3, Ancestral=map$V4, Derived=map$V5)
 ihsMerge <- merge(map, ihs, by = "POSITION")
 ihsMerge
-signals <- ihsMerge[ihsMerge$X.log10.p.value.>=4,]
+signals <- ihsMerge[ihsMerge[,7]>=4,]
 sigpos <- signals[,2]
 sigpos
 for (locus in sigpos) {
