@@ -132,18 +132,27 @@ elif [[ $data == "all" ]]; then
  
        elif [[ "$param" == "3" && $# != 4 ]]; then
           echo """
-               Usage: ./plink2rehh.sh all 3 <pop-name> <input-VCF> (whole genome with more than one chromosomes)
+               Usage: ./plink2rehh.sh all 3 <out-file-name> <#chr> <input-VCF> (whole genome with more than one chromosomes)
+	       		
+	       		out-file-name: The output file name prefix
+	       		         #chr: The number of chromosomes in the input VCF file
+			    input-VCF: The input phased VCF dataset (e.g. data.vcf or data.vcf.gz)
           """
         elif [[ "$param" == "3" && $# == 4 ]]; then
-          # Entire dataset with more than one chromosomes
+
+       for chr in {1..$4}; do
+	# Entire dataset with more than one chromosomes
           plink2 \
             --export hapslegend \
-            --vcf $4 \
+            --vcf $5 \
+	    --chr $chr \
             --out $3 \
             --double-id
 
-          sed '1d' ${4}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > ${4}.map
-          sed 's/0/2/g' ${4}.haps > ${4}.hap
+          sed '1d' ${3}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > ${3}.map
+          sed 's/0/2/g' ${3}.haps > ${3}.hap
+
+       done
 
        fi
 
