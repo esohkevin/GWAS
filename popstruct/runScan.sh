@@ -27,7 +27,7 @@ if [[ $param == [12] ]]; then
 
    elif [[ $param == "2" && $# == 3 ]]; then
 
-        Rscript scanFull.R $2
+        Rscript scanFull.R $2 $3
   
    fi
 

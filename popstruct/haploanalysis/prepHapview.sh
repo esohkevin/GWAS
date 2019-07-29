@@ -1,5 +1,6 @@
 #!/bin/bash
 
+samples="../../samples/"
 
 #for pop in cam yri esn gwd msl lwk; do
 #    plink \
@@ -13,16 +14,17 @@
 #	--out ~/bioTools/haploview/${pop}
 #done
 
-#for pop in bantu semibantu; do
+for pop in bantucontrols sbantucontrols fulbecontrols; do
+
     plink \
         --vcf ../chr11-phased_wref.vcf.gz \
         --recode HV-1chr \
-	--keep ../controls558.ids.txt \
+	--keep ${samples}${pop}.txt \
 	--double-id \
         --chr 11 \
         --from-kb 4500 \
         --to-kb 5800 \
         --keep-allele-order \
-        --out ~/bioTools/haploview/cam
-#done
+        --out ~/bioTools/haploview/${pop}
+done
 

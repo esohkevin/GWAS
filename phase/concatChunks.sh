@@ -2,10 +2,14 @@
 
 imputed_path="imputed/"
 
-for chr in {1..22}; do
+for chr in 11; do
 
-   rm concat_chr"${chr}"_Chunks.txt
-   rm chr"${chr}"_imputed.gen*
+if [[ -f "concat_chr"${chr}"_Chunks.txt" || -f "chr"${chr}"_imputed.gen.gz" ]]; then
+   rm concat_chr"${chr}"_Chunks.txt chr"${chr}"_imputed.gen.gz
+fi
+
+#   rm concat_chr"${chr}"_Chunks.txt
+#   rm chr"${chr}"_imputed.gen*
    `touch chr"${chr}"_imputed.gen`
 
 
@@ -13,13 +17,13 @@ for chr in {1..22}; do
 
      for interval in `cat chr${chr}intervals.txt`; do
 
-          echo """chr"${chr}"_"${interval/=*/_imputed.gen}"""" >> concat_chr"${chr}"_Chunks.txt
+          echo """chr"${chr}"_"${interval/=*/_imputed.gen.gz}"""" >> concat_chr"${chr}"_Chunks.txt
 
      done
 
   for chunk in `cat concat_chr"${chr}"_Chunks.txt`; do
       
-      cat ${chunk} >> chr"${chr}"_imputed.gen
+      zcat ${chunk} >> chr"${chr}"_imputed.gen
 
   done
 
@@ -30,7 +34,7 @@ for chr in {1..22}; do
 done
 
 # Check all chunks per chr with successful imputation
-for chr in {1..22}; do 
+for chr in 11; do 
     
     for chunk in chr${chr}_*_imputed.gen_info; do 
     
