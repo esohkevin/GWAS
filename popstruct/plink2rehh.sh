@@ -89,7 +89,7 @@ if [[ $data == "sub" ]]; then
               sed 's/0/2/g' ${3}${chr}.haps > ${3}${chr}.hap
             done
 
-	    for chr in {1..22}; do 
+	    for chr in {1..$4}; do 
 		    awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' chr${chr}.map; 
 	    done > snp.info
        fi 
@@ -193,7 +193,7 @@ elif [[ $data == "all" ]]; then
            fi
        done
 
-       for chr in {1..22}; do
+       for chr in {1..$4}; do
                awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' chr${chr}.map
        done > snp.info
 
