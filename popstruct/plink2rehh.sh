@@ -89,12 +89,19 @@ if [[ $data == "sub" ]]; then
               sed 's/0/2/g' ${3}${chr}.haps > ${3}${chr}.hap
             done
 
-	    for chr in {1..$4}; do 
-		    awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' chr${chr}.map; 
-	    done > snp.info
+	       for chr in {1..$4}; do
+
+	           if [[ -f "${3}${chr}.map" ]]; then
+	     
+		       awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' ${3}${chr}.map; 
+	   
+		   fi
+    
+	       done > snp.info
+	   
        fi 
 
-       for file in *.log *.sample awkProgFile.txt; do
+       for file in *.log *.sample *.legend *.haps awkProgFile.txt; do
            if [[ -f ${file} ]]; then
              rm ${file}
            fi
@@ -187,15 +194,21 @@ elif [[ $data == "all" ]]; then
 
        fi
 
-       for file in *.log *.sample awkProgFile.txt; do
+       for file in *.log *.sample *.legend *.haps awkProgFile.txt; do
            if [[ -f ${file} ]]; then
              rm ${file}
            fi
        done
 
-       for chr in {1..$4}; do
-               awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' chr${chr}.map
-       done > snp.info
+          for chr in {1..$4}; do
+
+              if [[ -f "${3}${chr}.map" ]]; then
+
+               awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' ${3}${chr}.map
+
+	      fi
+	   
+          done > snp.info
 
     fi
 
