@@ -89,7 +89,7 @@ if [[ $data == "sub" ]]; then
               sed 's/0/2/g' ${3}${chr}.haps > ${3}${chr}.hap
             done
 
-	       for chr in {1..$4}; do
+	       for chr in `(seq 1 $4)`; do
 
 	           if [[ -f "${3}${chr}.map" ]]; then
 	     
@@ -200,7 +200,7 @@ elif [[ $data == "all" ]]; then
            fi
        done
 
-          for chr in {1..$4}; do
+          for chr in `(seq 1 $4)`; do
 
               if [[ -f "${3}${chr}.map" ]]; then
 
