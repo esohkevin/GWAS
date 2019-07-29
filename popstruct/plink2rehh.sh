@@ -53,31 +53,54 @@ if [[ $data == "sub" ]]; then
           sed '1d' chr${3}${4}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr${3}${4}.map
           sed 's/0/2/g' chr${3}${4}.haps > chr${3}${4}.hap
           
-       
-       elif [[ "$param" == "3" && $# != 4 ]]; then
-          echo """
-               Usage: ./plink2rehh.sh sub 3 <pop-name> <input-VCF> (whole genome with more than one chromosomes)
+       elif [[ "$param" == "3" && $# != 6 ]]; then
+            echo """
+               Usage: ./plink2rehh.sh sub 3 <out-file-name> <#chr> <sample-file> <input-VCF> (whole genome with more than one chromosomes)
+                        
+                        out-file-name: The output file name prefix
+                                 #chr: The number of chromosomes in the input VCF file
+				 sample-file: List of subsamples to include
+                            input-VCF: The input phased VCF dataset (e.g. data.vcf or data.vcf.gz)
           """
-        elif [[ "$param" == "3" && $# == 4 ]]; then
-          # Entire dataset with more than one chromosomes
-          plink2 \
-            --export hapslegend \
-            --vcf $4 \
-            --out $3 \
-            --keep $3.txt \
-            --double-id
-         
-          sed '1d' ${4}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > ${4}.map
-          sed 's/0/2/g' ${4}.haps > ${4}.hap
-       
-       fi
-    
-       for file in *.log *.sample; do
+       elif [[ "$param" == "3" && $# == 6 ]]; then
+
+            for chr in `(seq 1 $4)`; do
+           
+	      # Entire dataset with more than one chromosomes
+
+              plink2 \
+                --export hapslegend \
+                --vcf $6 \
+                --chr $chr \
+                --keep $5 \
+                --out $3${chr} \
+                --double-id
+
+              # Set awk variables
+
+              a='$1"\\t"'
+              b="\"$chr\""
+              c='"\\t"$2"\\t"$4"\\t"$3'
+
+	      echo "{print `awk -v vara="$a" -v varb="$b" -v varc="$c" 'BEGIN{print vara varb varc}'`}" > awkProgFile.txt
+
+              sed '1d' ${3}${chr}.legend | \
+                      awk -f awkProgFile.txt > ${3}${chr}.map
+              sed 's/0/2/g' ${3}${chr}.haps > ${3}${chr}.hap
+            done
+
+	    for chr in {1..22}; do 
+		    awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' chr${chr}.map; 
+	    done > snp.info
+       fi 
+
+       for file in *.log *.sample awkProgFile.txt; do
            if [[ -f ${file} ]]; then
              rm ${file}
            fi
        done
-    
+
+      
     fi
 
 elif [[ $data == "all" ]]; then
@@ -130,7 +153,7 @@ elif [[ $data == "all" ]]; then
           sed 's/0/2/g' chr${3}${4}.haps > chr${3}${4}.hap
  
  
-       elif [[ "$param" == "3" && $# != 4 ]]; then
+       elif [[ "$param" == "3" && $# != 5 ]]; then
           echo """
                Usage: ./plink2rehh.sh all 3 <out-file-name> <#chr> <input-VCF> (whole genome with more than one chromosomes)
 	       		
@@ -138,29 +161,41 @@ elif [[ $data == "all" ]]; then
 	       		         #chr: The number of chromosomes in the input VCF file
 			    input-VCF: The input phased VCF dataset (e.g. data.vcf or data.vcf.gz)
           """
-        elif [[ "$param" == "3" && $# == 4 ]]; then
+       elif [[ "$param" == "3" && $# == 5 ]]; then
 
-       for chr in {1..$4}; do
+       for chr in `(seq 1 $4)`; do
 	# Entire dataset with more than one chromosomes
           plink2 \
             --export hapslegend \
             --vcf $5 \
 	    --chr $chr \
-            --out $3 \
+            --out $3${chr} \
             --double-id
 
-          sed '1d' ${3}.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > ${3}.map
-          sed 's/0/2/g' ${3}.haps > ${3}.hap
+	  # Set awk variables
+	  a='$1"\\t"'
+	  b="\"$chr\""	  
+	  c='"\\t"$2"\\t"$4"\\t"$3'
+
+	  echo "{print `awk -v vara="$a" -v varb="$b" -v varc="$c" 'BEGIN{print vara varb varc}'`}" > awkProgFile.txt
+
+          sed '1d' ${3}${chr}.legend | \
+		  awk -f awkProgFile.txt > ${3}${chr}.map
+          sed 's/0/2/g' ${3}${chr}.haps > ${3}${chr}.hap
 
        done
 
        fi
 
-       for file in *.log *.sample; do
+       for file in *.log *.sample awkProgFile.txt; do
            if [[ -f ${file} ]]; then
              rm ${file}
            fi
        done
+
+       for chr in {1..22}; do
+               awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5}' chr${chr}.map
+       done > snp.info
 
     fi
 
