@@ -1,14 +1,49 @@
 #!/bin/bash
 
-hapgen2 \
-	-m ../phase/1000GP_Phase3/genetic_map_chr11_combined_b37.txt \
-	-l chr11.legend \
-	-h chr11.haps \
-	-n 1000 1000 \
-	-dl 56216495 0 1 1 \
-	-no_gens_output \
-	-Ne 17469 \
-	-o chr11.out
+if [[ $# == 7 ]]; then
 
-sed '1d' chr11.out.legend | awk '{print $1"\t""11""\t"$2"\t"$4"\t"$3}' > chr11con.map
-sed 's/0/2/g' chr11.out.controls.haps > chr11con.hap
+    map="$1"
+    leg="$2"
+    hap="$3"
+    chr="$4"
+    numhap="$5"
+    dlocus="$6"
+    out="$7"
+    
+    
+#    hapgen2 \
+#    	-m ${map} \
+#    	-l ${leg} \
+#    	-h ${hap} \
+#    	-n ${numhap} ${numhap} \
+#    	-dl ${dlocus} \
+#    	-no_gens_output \
+#    	-Ne 17469 \
+#    	-o ${out}
+    
+    
+    # Set awk variables
+    a='$1"\\t"'
+    b="\"$chr\""	  
+    c='"\\t"$2"\\t"$4"\\t"$3'
+    
+    echo "{print `awk -v vara="$a" -v varb="$b" -v varc="$c" 'BEGIN{print vara varb varc}'`}" > awkProgFile.txt
+    
+    sed '1d' ${leg} | \
+            awk -f awkProgFile.txt > ${out}.map
+    sed 's/0/2/g' ${out}.controls.haps > ${out}.hap
+    
+    else
+    	echo """
+    	Usage: ./simhaps.sh <map-file> <legend-file> <haps-file> <chr#> <num-haps> <dlocus> <outname>
+    
+    		   map-file: Recombination map file
+    		legend-file: Input legend file
+    		  haps-file: Input haplotype file
+    		       chr#: Chromosome number
+    		   num-haps: Number of haplotypes to simulate
+    		     dlocus: The disease locus position
+    		    outname: THe output file name
+    	"""
+
+fi
