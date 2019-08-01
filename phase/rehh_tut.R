@@ -36,6 +36,15 @@ library(rehh)
 #layout(matrix(1:2,2,1))
 #ihsplot(ihs.cgu,plot.pval = TRUE,ylim.scan = 2,main = "iHS (CGU cattle breed)")
 #
+
+### Whole genome Manhattan
+for(i in 1:29){
+  hap_file=paste("hap_chr_",i,".pop1",sep="")
+  data<-data2haplohh(hap_file="hap_file","snp.info",chr.name=i)
+  res<-scan_hh(data)
+  if(i==1){wg.res<-res}else{wg.res<-rbind(wg.res,res)}
+}
+wg.ihs<-ihh2ihs(wg.res)
 ### My Data Test
 #
 ## Convert Plink bim file to rehh map file format
