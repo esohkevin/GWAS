@@ -7,31 +7,28 @@ vcf="$1"
 
 # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
 plink \
-        --bfile "${vcf}"qc-camgwas \
-        --indep-pairwise 50 5 0.2 \
+        --vcf "${vcf}" \
+        --indep-pairwise 5k 5 0.05 \
         --allow-no-sex \
 	--hwe 1e-8 \
         --autosome \
         --biallelic-only \
         --out qc-ldPruned
-cat qc-ldPruned.log > convertf.log
 
 plink \
-        --bfile "${analysis}"qc-camgwas \
+        --vcf "${vcf}" \
         --extract qc-ldPruned.prune.in \
         --allow-no-sex \
         --autosome \
         --make-bed \
         --out qc-camgwas-ldPruned
-cat qc-camgwas-ldPruned.log >> convertf.log
 
 plink \
 	--bfile qc-camgwas-ldPruned \
 	--recode \
 	--allow-no-sex \
 	--double-id \
-	--out qc-camgwas
-cat qc-camgwas.log >> convertf.log
+	--out plaf
 
 rm qc-ldPruned* qc-camgwas-ldPruned*
 
