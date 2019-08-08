@@ -10,5 +10,5 @@ plink \
 	--allow-no-sex \
 	--real-ref-alleles \
 	--double-id \
-	--out chr11_imp_phased
+	--out chr11-imputed
 

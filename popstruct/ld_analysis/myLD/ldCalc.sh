@@ -12,23 +12,25 @@
 
 
 vcf2use="$1"
+sample="$2"
 #vcf2use=args[1]
 
 ########################
 ## CP POINT ESTIMATES ##
 ########################
 
-for i in {1..14}
+for i in 11
 do
 
 ## split vcf
-vcftools --gzvcf $vcf2use \
-	--recode \
-	--out chr$i
+#vcftools --gzvcf $vcf2use \
+#	--recode \
+#	--out chr$i
 
 ## calculate LD
-vcftools --gzvcf chr$i.recode.vcf \
+vcftools --gzvcf $vcf2use \
 	--hap-r2 \
+	--keep $2 \
 	--ld-window-bp 100000 \
 	--out chr$i.ld.1-100000
 
@@ -45,7 +47,7 @@ do
 	## sample without replacement
 	## sampling with replacement is impossible with vcftools
 	## pull 17 isolates
-	shuf -n17 sample/samples.txt >> bootstrap/boot/boot$strap.txt
+	shuf -n17 $sample >> bootstrap/boot/boot$strap.txt
 
 	## subsample the VCF
 	vcftools --gzvcf $vcf2use \

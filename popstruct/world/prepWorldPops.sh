@@ -75,24 +75,24 @@ phase="../../phase/"
 #
 #echo "cam-updated" > merge.list
 #
-for pop in `cat pop.list`; do
-    plink \
-        --bfile worldPops/world-pops-updated \
-        --autosome \
-        --maf 0.01 \
-	--extract cam-updated-rsids.txt \
-        --hwe 1e-20 \
-	--exclude worldPops/mergedSet.missnp \
-        --geno 0.04 \
-	--pheno worldPops/update-1kgp.phe \
-        --mpheno 1 \
-	--update-sex worldPops/update-1kgp.sex 1 \
-        --keep ${samples}"${pop}".ids \
-        --make-bed \
-        --out ${pop}
+#for pop in $(cat pop.list); do
+#    plink \
+#        --bfile worldPops/world-pops-updated \
+#        --autosome \
+#        --maf 0.01 \
+#	--extract cam-updated-rsids.txt \
+#        --hwe 1e-20 \
+#	--exclude worldPops/mergedSet.missnp \
+#        --geno 0.04 \
+#	--pheno worldPops/update-1kgp.phe \
+#        --mpheno 1 \
+#	--update-sex worldPops/update-1kgp.sex 1 \
+#        --keep ${samples}"${pop}".ids \
+#        --make-bed \
+#        --out ${pop}
 #
 #    echo "${pop}" >> merge.list
-done
+#done
 
 # Get Cam control samples
 #plink \
@@ -109,45 +109,45 @@ done
 #        --keep-allele-order \
 #        --out worldPops/mergedSet
 
-## Update Phased study data
-#cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
-#sort phase.rsids | uniq -u > phase-uniq.rsids
-#
-#plink \
-#        --bfile ${phase}phasedCamgwasAutosome \
-#        --keep-allele-order \
-#	--keep ${samples}eig.ids \
-#        --exclude badSnps.txt \
-#        --make-bed \
-#	--filter-controls \
-#        --extract phase-uniq.rsids \
-#        --out phase
-#
-#cut -f1,4 phase.bim | sed 's/\t/:/g' > phase.pos
-#cut -f2 phase.bim > phase.rsids
-#paste phase.pos phase.rsids > updatePhaseName.txt
-#
-#plink \
-#        --bfile phase \
-#        --keep-allele-order \
-#        --filter-controls \
-#        --update-name updatePhaseName.txt 1 2 \
-#        --make-bed \
-#        --out worldPops/phased-data-updated
-#
-#plink \
-#	--bfile worldPops/phased-data-updated \
-#	--allow-no-sex \
-#	--bmerge worldPops/world-pops-updated \
-#	--merge-equal-pos \
-#	--out worldPops/qc-world-merge
+# Update Phased study data
+cut -f2 ${phase}phasedCamgwasAutosome.bim > phase.rsids
+sort phase.rsids | uniq -u > phase-uniq.rsids
+
+plink \
+        --bfile ${phase}phasedCamgwasAutosome \
+        --keep-allele-order \
+	--keep ${samples}eig.ids \
+        --exclude badSnps.txt \
+        --make-bed \
+	--filter-controls \
+        --extract phase-uniq.rsids \
+        --out phase
+
+cut -f1,4 phase.bim | sed 's/\t/:/g' > phase.pos
+cut -f2 phase.bim > phase.rsids
+paste phase.pos phase.rsids > updatePhaseName.txt
+
+plink \
+        --bfile phase \
+        --keep-allele-order \
+        --filter-controls \
+        --update-name updatePhaseName.txt 1 2 \
+        --make-bed \
+        --out worldPops/phased-data-updated
+
+plink \
+	--bfile worldPops/phased-data-updated \
+	--allow-no-sex \
+	--bmerge worldPops/world-pops-updated \
+	--merge-equal-pos \
+	--out worldPops/qc-world-merge
 
 # Update merged data rsids with dbSNP 151 ids
-#plink \
-#        --bfile worldPops/qc-world-merge \
-#        --keep-allele-order \
-#        --update-name ${analysis}updateName.txt 1 2 \
-#        --make-bed \
-#        --out worldPops/qc-world-merge
+plink \
+        --bfile worldPops/qc-world-merge \
+        --keep-allele-order \
+        --update-name ${analysis}updateName.txt 1 2 \
+        --make-bed \
+        --out worldPops/qc-world-merge
 
 #rm worldPops/*~

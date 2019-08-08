@@ -28,7 +28,7 @@ hap <- data2haplohh(hap_file = hapFile, map_file = mapFile, recode.allele = F,
                     min_perc_geno.hap=100,min_maf=0.05, haplotype.in.columns=TRUE, 
                     chr.name = chr)
 wg.res <- scan_hh(hap)
-wg.ihs <- ihh2ihs(wg.res, freqbin = 0.1)
+wg.ihs <- ihh2ihs(wg.res, freqbin = 0.025)
 
 ##################################################################################
 ##              Extract iHS results ommitting missing value rows
@@ -39,7 +39,7 @@ ihs <- na.omit(wg.ihs$ihs)
 mapF <- read.table(mapFile)
 map <- data.frame(ID=mapF$V1, POSITION=mapF$V3, Anc=mapF$V4, Der=mapF$V5)
 ihsMerge <- merge(map, ihs, by = "POSITION")
-signals <- ihsMerge[ihsMerge[,7]>=2,]
+signals <- ihsMerge[ihsMerge[,7]>=4,]
 sigpos <- signals[,2]
 
 ##################################################################################

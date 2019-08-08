@@ -25,7 +25,7 @@ if [[ $response == [Yy] ]]; then
 	cd POPGEN/
 	./run_popgenstats.sh $maf
 	
-#	Rscript fstHeatMap.R
+	Rscript fstHeatMap.R fstMatrix$maf.txt wfst$maf.png 
 	
 #	mv *.png ../
 	

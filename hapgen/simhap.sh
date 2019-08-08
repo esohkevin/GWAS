@@ -11,15 +11,15 @@ if [[ $# == 7 ]]; then
     out="$7"
     
     
-#    hapgen2 \
-#    	-m ${map} \
-#    	-l ${leg} \
-#    	-h ${hap} \
-#    	-n ${numhap} ${numhap} \
-#    	-dl ${dlocus} \
-#    	-no_gens_output \
-#    	-Ne 17469 \
-#    	-o ${out}
+    hapgen2 \
+    	-m ${map} \
+    	-l ${leg} \
+    	-h ${hap} \
+    	-n ${numhap} ${numhap} \
+    	-dl ${dlocus} \
+    	-no_gens_output \
+    	-Ne 17469 \
+    	-o ${out}
     
     
     # Set awk variables

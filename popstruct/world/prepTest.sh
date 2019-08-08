@@ -1,9 +1,9 @@
 #!/bin/bash
 
-analysis="../../../analysis/"
-samples="../../../samples/"
-kgp="../../../1000G/"
-phase="../../../phase/"
+analysis="../../analysis/"
+samples="../../samples/"
+kgp="../../1000G/"
+phase="../../phase/"
 
 ## Extract YRI IDs for acertainment of Fst estimates
 #plink \
@@ -17,7 +17,7 @@ phase="../../../phase/"
 #
 #cut -f2 yri.bim > yriAcertainment.rsids
 
-cut -f2 cam-controls.bim > camAcertainment.rsids
+cut -f2 yri.bim > camAcertainment.rsids
 
 # Now extract yriAcertainment SNPs
 plink \
