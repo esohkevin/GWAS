@@ -7,7 +7,7 @@ if [[ $# == 1 ]]; then
 
 ./make_chunks.sh
 
-for chr in 11; do
+for chr in 1; do
 
   if [[ -f "chr${chr}-phased_wref.haps" ]]; then
 
