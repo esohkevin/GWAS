@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $# == 7 ]]; then
+if [[ $# == 9 ]]; then
 
     map="$1"
     leg="$2"
@@ -8,7 +8,9 @@ if [[ $# == 7 ]]; then
     chr="$4"
     numhap="$5"
     dlocus="$6"
-    out="$7"
+    hetrisk="$7"
+    homrisk="$8"
+    out="$9"
     
     
     hapgen2 \
@@ -16,7 +18,7 @@ if [[ $# == 7 ]]; then
     	-l ${leg} \
     	-h ${hap} \
     	-n ${numhap} ${numhap} \
-    	-dl ${dlocus} \
+    	-dl ${dlocus} ${hetrisk} ${homrisk} \
     	-no_gens_output \
     	-Ne 17469 \
     	-o ${out}
@@ -42,7 +44,9 @@ if [[ $# == 7 ]]; then
     		  haps-file: Input haplotype file
     		       chr#: Chromosome number
     		   num-haps: Number of haplotypes to simulate
-    		     dlocus: The disease locus position
+		     dlocus: The disease locus position (e.g. 63487386)
+		    hetrisk: heterozygote disease risk
+		    homrisk: homozygote disease risk
     		    outname: THe output file name
     	"""
 
