@@ -1,0 +1,15 @@
+Variable	number_ptage
+Age
+Children
+Adults
+Gender
+Female	169
+Male	338
+Ethnicity
+Bantu	262
+Fulbe	238
+Semi-Bantu	9
+Location
+Centre	247
+Littoral	0
+South_West	260

@@ -1,0 +1,9 @@
+Variable	number_ptage
+Female	169
+Male	338
+Bantu	262
+Fulbe	238
+Semi-Bantu	9
+Centre	247
+Littoral	0
+South_West	260
