@@ -2,7 +2,7 @@
 
 imputed_path="imputed/"
 
-for chr in {1..22}; do
+for chr in 11; do
 
 if [[ -f "concat_chr"${chr}"_Chunks.txt" || -f "chr"${chr}"_imputed.gen.gz" ]]; then
    rm concat_chr"${chr}"_Chunks.txt chr"${chr}"_imputed.gen.gz
@@ -34,7 +34,7 @@ fi
 done
 
 # Check all chunks per chr with successful imputation
-for chr in {1..22}; do 
+for chr in 11; do 
     
     for chunk in chr${chr}_*_imputed.gen_info; do 
     
