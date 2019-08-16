@@ -50,11 +50,11 @@ done
 
 
 
-#plink \
-#	--merge-list merge.list \
-#	--keep-allele-order \
-#	--out phasedWrefImpute2
-#
+plink \
+	--merge-list merge.list \
+	--keep-allele-order \
+	--out phasedWrefImpute2
+
 plink \
 	--bfile phasedWrefImpute2 \
 	--list-duplicate-vars ids-only suppress-first \
