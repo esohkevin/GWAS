@@ -16,7 +16,7 @@ iHSplot <- paste(args[3],"iHS.png", sep="")
 iHSresult <- paste(args[3],"iHSresult.txt", sep="")
 iHSfrq <- paste(args[3],"iHSfrq.txt", sep="")
 qqPlot <- paste(args[3],"qqDist.png", sep="")
-iHSmain <- paste("chr",chr,"-iHS", sep="")
+iHSmain <- paste(args[3],"chr",chr,"-iHS", sep="")
 sigOut <- paste(args[3],"chr",chr,"Signals.txt",sep="")
 
 
@@ -39,8 +39,8 @@ ihs <- na.omit(wg.ihs$ihs)
 mapF <- read.table(mapFile)
 map <- data.frame(ID=mapF$V1, POSITION=mapF$V3, Anc=mapF$V4, Der=mapF$V5)
 ihsMerge <- merge(map, ihs, by = "POSITION")
-signals <- ihsMerge[ihsMerge[,7]>=2,]
-sigpos <- signals[,2]
+signals <- ihsMerge[ihsMerge[,7]>=4,]
+sigpos <- signals[,4]
 
 ##################################################################################
 ##             			 Save results 

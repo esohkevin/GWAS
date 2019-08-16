@@ -16,7 +16,7 @@ if [[ $data == "sub" ]]; then
     else
        if [[ "$param" == "1" && $# != 8 ]]; then
           echo """
-          	Usage: ./plink2rehh.sh sub 1 <chr#> <from-kb> <to-kb> <pop-name> <genomic-region-name> <input-VCF> (for specific chromosome region)
+          	Usage: ./plink2rehh.sh sub 1 <chr#> <from-kb> <to-kb> <sample-file-name> <genomic-region-name> <input-VCF> (for specific chromosome region)
           """
        elif [[ "$param" == "1" && $# == 8 ]]; then
     
@@ -36,7 +36,7 @@ if [[ $data == "sub" ]]; then
        
        elif [[ "$param" == "2" && $# != 5 ]]; then
           echo """
-               Usage: ./plink2rehh.sh sub 2 <chr#> <pop-name> <input-VCF> (for single whole chromosome)
+               Usage: ./plink2rehh.sh sub 2 <chr#> <sample-file-name> <input-VCF> (for single whole chromosome)
           """
       
        elif [[ "$param" == "2" && $# == 5 ]]; then
@@ -124,7 +124,7 @@ elif [[ $data == "all" ]]; then
     else
        if [[ "$param" == "1" && $# != 8 ]]; then
           echo """
-                Usage: ./plink2rehh.sh all 1 <chr#> <from-kb> <to-kb> <pop-name> <genomic-region-name> <input-VCF> (for specific chromosome region)
+                Usage: ./plink2rehh.sh all 1 <chr#> <from-kb> <to-kb> <sample-file-name> <genomic-region-name> <input-VCF> (for specific chromosome region)
           """
        elif [[ "$param" == "1" && $# == 8 ]]; then
 
@@ -143,7 +143,7 @@ elif [[ $data == "all" ]]; then
  
        elif [[ "$param" == "2" && $# != 5 ]]; then
           echo """
-               Usage: ./plink2rehh.sh all 2 <chr#> <pop-name> <input-VCF> (for single whole chromosome)
+               Usage: ./plink2rehh.sh all 2 <chr#> <sample-file-name> <input-VCF> (for single whole chromosome)
           """
  
        elif [[ "$param" == "2" && $# == 5 ]]; then
