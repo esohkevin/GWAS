@@ -4,6 +4,9 @@
 #phase="../../../phase/"
 
 vcf="$1"
+outname="$2"
+
+if [[ $# == 2 ]]; then
 
 # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
 plink \
@@ -28,7 +31,7 @@ plink \
 	--recode \
 	--allow-no-sex \
 	--double-id \
-	--out plaf
+	--out ${outname}
 
 rm qc-ldPruned* qc-camgwas-ldPruned*
 
@@ -47,3 +50,9 @@ echo -e "\n### ANCESTRYMAP to EIGENSTRAT ###" >> convertf.log
 convertf -p par.ANCESTRYMAP.EIGENSTRAT >>convertf.log
 
 #convertf -p par.PED.EIGENSTRAT
+
+else
+	echo """
+	Usage: ./convertf_all.sh <in-vcf> <outname>
+	"""
+fi
