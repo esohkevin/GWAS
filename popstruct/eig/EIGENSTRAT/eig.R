@@ -1,14 +1,22 @@
 #!/usr/bin/Rscript
 
 # Save evec data into placeholder
-fn <- "qc-camgwas.pca.evec"
+args <- commandArgs(TRUE)
+
+fn <- args[1]
+out_text <- paste(args[1], ".pca.txt", sep="")
+eth_image <- paste(args[1], "_c1_2.eth.png", sep="")
+reg_image <- paste(args[1], "_c1_2.reg.png", sep="")
+c1_10_image <- paste(args[1], "_c1_10.png", sep="")
+
+
 pcaDat <- read.table(fn, header=F, as.is=T)
 
 evecDat <- data.frame(FID=pcaDat[,1], IID=pcaDat[,1], C1=pcaDat[,2], C2=pcaDat[,3], C3=pcaDat[,4], 
 			C4=pcaDat[,5], C5=pcaDat[,6], C6=pcaDat[,7], C7=pcaDat[,8], C8=pcaDat[,9], 
-			C9=pcaDat[,10], C10=pcaDat[,11], Status=pcaDat[,22])
+			C9=pcaDat[,10], C10=pcaDat[,11], Status=pcaDat[,12])
 fm <- evecDat[,1:12]
-write.table(fm, file = "qc-camgwas.pca.txt", col.names=T, row.names=F, quote=F, sep="\t")
+write.table(fm, file = out_text, col.names=T, row.names=F, quote=F, sep="\t")
 
 ethnicity <- read.table("../../../samples/qc-camgwas.eth", header = T, as.is = T)
 evecthn <- merge(evecDat, ethnicity, by="FID")
@@ -80,12 +88,12 @@ dev.off()
 #evecthn=read.table("qc-camgwas-ethni.evec", header=T, as.is=T)
 
 ######### Plot First 2 evecs with ethnicity distinction ##########
-png(filename = "evec_with_ethn.png", width = 510, height = 510, units = "px", pointsize = 12,
-    bg = "white",  res = NA, type = c("quartz"))
-plot(evecthn$C1, evecthn$C2, col=as.factor(evecthn$ethnicity), main="Eigenanalysis With Ethnicity", 
-     xlab="eigenvalue1", ylab="eigenvalue2", pch=20)
+png(filename = eth_image, width = 16, height = 17, units = "cm", pointsize = 14,
+    bg = "white",  res = 300, type = c("cairo"))
+plot(evecthn$C1, evecthn$C2, col=as.factor(evecthn$ethnicity),
+     xlab="PC1", ylab="PC2", pch=20)
 legend("topleft", legend=levels(as.factor(evecthn$ethnicity)), 
-       col=1:length(levels(as.factor(evecthn$ethnicity))), pch=20)
+       col=1:length(levels(as.factor(evecthn$ethnicity))), pch=20, bty="n")
 dev.off()
 
 ##### Project Case-Control status and Ethnicity Along the three interesting eigenvalues ######

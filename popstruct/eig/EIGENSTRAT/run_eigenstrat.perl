@@ -3,37 +3,37 @@
 #$ENV{'PATH'} = "/home/esoh/bioTools/EIG-6.1.4/bin:$ENV{'PATH'}"; 
 # MUST put smartpca bin directory in path for smartpca.perl to work
 
-#$command = "smartpca.perl";
-#$command .= " -i ../CONVERTF/qc-camgwas.eigenstratgeno ";
-#$command .= " -a ../CONVERTF/qc-camgwas.snp ";
-#$command .= " -b ../CONVERTF/qc-camgwas.ind " ;
-#$command .= " -k 30 ";
-#$command .= " -o qc-camgwas.pca ";
-#$command .= " -p qc-camgwas.plot ";
-#$command .= " -e qc-camgwas.eval ";
-#$command .= " -l qc-camgwas-pca.log ";
-#$command .= " -m 8 ";
-#$command .= " -t 20 ";
-#$command .= " -s 7.0 ";
+$command = "smartpca.perl";
+$command .= " -i ../CONVERTF/con.eigenstratgeno ";
+$command .= " -a ../CONVERTF/con.snp ";
+$command .= " -b ../CONVERTF/con.ind " ;
+$command .= " -k 10 ";
+$command .= " -o con.pca ";
+$command .= " -p con.plot ";
+$command .= " -e con.eval ";
+$command .= " -l con-pca.log ";
+$command .= " -m 0 ";
+$command .= " -t 20 ";
+$command .= " -s 7.0 ";
+print("$command\n");
+system("$command");
+
+$command = "smarteigenstrat.perl "; 
+$command .= " -i ../CONVERTF/con.eigenstratgeno ";
+$command .= " -a ../CONVERTF/con.snp ";
+$command .= " -b ../CONVERTF/con.ind ";
+$command .= " -p con.pca ";
+$command .= " -k 10 ";
+$command .= " -o con.chisq ";
+$command .= " -l con-eig.log ";
+print("$command\n");
+system("$command");
+
+#$command = "gc.perl con.chisq qc-camgwas.chisq.GC";
 #print("$command\n");
 #system("$command");
 
-$command = "smarteigenstrat.perl "; 
-$command .= " -i ../CONVERTF/qc-camgwas.eigenstratgeno ";
-$command .= " -a ../CONVERTF/qc-camgwas.snp ";
-$command .= " -b ../CONVERTF/qc-camgwas.ind ";
-$command .= " -p qc-camgwas.pca ";
-$command .= " -k 20 ";
-$command .= " -o qc-camgwas.chisq ";
-$command .= " -l qc-camgwas-eig.log ";
-print("$command\n");
-system("$command");
-
-$command = "gc.perl qc-camgwas.chisq qc-camgwas.chisq.GC";
-print("$command\n");
-system("$command");
-
-#$command = "evec2pca.perl 30 qc-camgwas.pca.evec ../CONVERTF/qc-camgwas.ind qc-camgwas.pca";
+#$command = "evec2pca.perl 30 con.pca.evec ../CONVERTF/qc-camgwas.ind qc-camgwas.pca";
 #print("$command\n");
 #system("$command");
 

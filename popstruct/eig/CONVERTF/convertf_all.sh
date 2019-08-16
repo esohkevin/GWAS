@@ -6,7 +6,7 @@
 vcf="$1"
 outname="$2"
 
-if [[ $# == 2 ]]; then
+if [[ $# == 3 ]]; then
 
 # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
 plink \
@@ -14,7 +14,9 @@ plink \
         --indep-pairwise 5k 5 0.05 \
         --allow-no-sex \
 	--hwe 1e-8 \
+	--keep $3 \
         --autosome \
+	--double-id \
         --biallelic-only \
         --out qc-ldPruned
 
@@ -23,7 +25,9 @@ plink \
         --extract qc-ldPruned.prune.in \
         --allow-no-sex \
         --autosome \
+	--keep $3 \
         --make-bed \
+	--double-id \
         --out qc-camgwas-ldPruned
 
 plink \
@@ -53,6 +57,6 @@ convertf -p par.ANCESTRYMAP.EIGENSTRAT >>convertf.log
 
 else
 	echo """
-	Usage: ./convertf_all.sh <in-vcf> <outname>
+	Usage: ./convertf_all.sh <in-vcf> <outname> <keep>
 	"""
 fi
