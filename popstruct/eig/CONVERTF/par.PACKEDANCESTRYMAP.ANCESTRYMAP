@@ -1,9 +1,9 @@
-genotypename:    qc-camgwas.packedancestrymapgeno
-snpname:         qc-camgwas.snp
-indivname:       qc-camgwas.ind
+genotypename:    con.packedancestrymapgeno
+snpname:         con.snp
+indivname:       con.ind
 outputformat:    ANCESTRYMAP
-genotypeoutname: qc-camgwas.ancestrymapgeno
-snpoutname:      qc-camgwas.snp
-indivoutname:    qc-camgwas.ind
+genotypeoutname: con.ancestrymapgeno
+snpoutname:      con.snp
+indivoutname:    con.ind
 phasedmode:      YES
 #numthreads:      16
