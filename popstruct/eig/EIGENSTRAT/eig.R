@@ -92,7 +92,7 @@ png(filename = eth_image, width = 16, height = 17, units = "cm", pointsize = 14,
     bg = "white",  res = 300, type = c("cairo"))
 plot(evecthn$C1, evecthn$C2, col=as.factor(evecthn$ethnicity),
      xlab="PC1", ylab="PC2", pch=20)
-legend("topleft", legend=levels(as.factor(evecthn$ethnicity)), 
+legend("bottomright", legend=levels(as.factor(evecthn$ethnicity)),
        col=1:length(levels(as.factor(evecthn$ethnicity))), pch=20, bty="n")
 dev.off()
 

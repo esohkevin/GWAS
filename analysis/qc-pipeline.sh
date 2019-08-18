@@ -79,7 +79,7 @@ plink1.9 \
 plink1.9 \
         --bfile raw-camgwas \
         --allow-no-sex \
-        --indep-pairwise 50 5 0.2 \
+        --indep-pairwise 5kb 10 0.2 \
 	--set-hh-missing \
         --out prunedsnplist
 
@@ -144,7 +144,7 @@ plink1.9 \
 plink1.9 \
 	--bfile frequent \
 	--allow-no-sex \
-	--indep-pairwise 50 5 0.2 \
+	--indep-pairwise 5kb 10 0.2 \
 	--out prunedsnplist
 
 # Now generate the IBD report with the set of pruned SNPs (prunedsnplist.prune.in - IN because they're the ones we're interested in)
@@ -217,7 +217,7 @@ plink1.9 \
 	--exclude fail-diffmiss.qc \
 	--allow-no-sex \
 	--maf 0.01 \
-	--hwe 1e-20 \
+	--hwe 1e-8 \
 	--geno 0.04 \
 	--make-bed \
 	--merge-x \
@@ -294,7 +294,7 @@ plink1.9 \
         --exclude fail-Xdiffmiss.qc \
         --allow-no-sex \
         --maf 0.01 \
-        --hwe 1e-20 \
+        --hwe 1e-8 \
         --geno 0.04 \
         --make-bed \
         --biallelic-only \
@@ -340,8 +340,8 @@ echo """
 """
 rm raw-camGwas.* *~ raw-camgwas.gen
 mv check-sex-data.sexcheck sexcheck.txt
-#rm raw-camgwas.* 
-#rm qc-camgwas-autosome.* qc-camgwas-chr* 
+rm raw-camgwas.* 
+rm qc-camgwas-autosome.* qc-camgwas-chr* 
 rm check-sex-data* qc-camgwas-ids-pos.txt qc-camgwas.pos
 rm *.hh qc-camgwas.ids
 rm frequent.* ind-qc-camgwas*

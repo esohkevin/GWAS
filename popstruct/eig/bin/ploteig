@@ -135,7 +135,7 @@ $psfile = "$stem.ps" ;
   $psfile  =~ s/xtxt/ps/ ;
  }
 system "gnuplot < $gnfile > $psfile" ;
-##system "/home/np29/bin/fixgreen  $psfile" ;
+system "/home/np29/bin/fixgreen  $psfile" ;
 system "ps2pdf  $psfile " ;
 }
 unlink (@T) unless $keepflag ;

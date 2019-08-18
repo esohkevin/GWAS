@@ -1,8 +1,8 @@
-genotypename: ../CONVERTF/eig-corr-camgwas.eigenstratgeno
-snpname: ../CONVERTF/eig-corr-camgwas.snp
-indivname: ../CONVERTF/eig-corr-camgwas.ind
-evecoutname: eig-corr-camgwas.pca.evec
-evaloutname: eig-corr-camgwas.eval
+genotypename: ../CONVERTF/con.eigenstratgeno
+snpname: ../CONVERTF/con.snp
+indivname: ../CONVERTF/con.ind
+evecoutname: con.pca.evec
+evaloutname: con.eval
 altnormstyle: NO
 numoutevec: 20
 numoutlieriter: 5

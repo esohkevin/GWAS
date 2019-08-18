@@ -1,10 +1,10 @@
-genotypename:    qc-camgwas.bed
-snpname:         qc-camgwas.pedsnp # or example.map, either works
-indivname:       qc-camgwas.pedind # or example.ped, either works
+genotypename:    con.bed
+snpname:         con.pedsnp # or example.map, either works
+indivname:       con.pedind # or example.ped, either works
 outputformat:    PACKEDANCESTRYMAP
-genotypeoutname: qc-camgwas.packedancestrymapgeno
-snpoutname:      qc-camgwas.snp
-indivoutname:    qc-camgwas.ind
+genotypeoutname: con.packedancestrymapgeno
+snpoutname:      con.snp
+indivoutname:    con.ind
 familynames:     NO
 phasedmode:      YES
 #numthreads:      16
