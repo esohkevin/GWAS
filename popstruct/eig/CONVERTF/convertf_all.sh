@@ -3,7 +3,7 @@
 #analysis="../../../analysis/"
 #phase="../../../phase/"
 
-vcf="$2"
+bfile="$2"
 samfile="$3"
 outname="$4"
 
@@ -13,7 +13,7 @@ if [[ $1 == "sub" ]]; then
     
         # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
         plink \
-            --vcf "${vcf}" \
+            --bfile "${bfile}" \
             --indep-pairwise 5k 5 0.05 \
             --allow-no-sex \
             --hwe 1e-8 \
@@ -25,7 +25,7 @@ if [[ $1 == "sub" ]]; then
             --out qc-ldPruned
         
         plink \
-            --vcf "${vcf}" \
+            --bfile "${bfile}" \
             --extract qc-ldPruned.prune.in \
             --allow-no-sex \
             --autosome \
@@ -56,7 +56,7 @@ if [[ $1 == "sub" ]]; then
     
     else
     	echo """
-    	Usage: ./convertf_all.sh sub <in-vcf> <outname> <sample-file>
+    	Usage: ./convertf_all.sh sub <in-bfile> <outname> <sample-file>
     
     	"""
     fi
@@ -68,7 +68,7 @@ elif [[ $1 == "all" ]]; then
     
         # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
         plink \
-            --vcf "${vcf}" \
+            --bfile "${bfile}" \
             --indep-pairwise 5k 5 0.05 \
             --allow-no-sex \
 	    --hwe 1e-8 \
@@ -79,7 +79,7 @@ elif [[ $1 == "all" ]]; then
 	    --out qc-ldPruned
         
         plink \
-            --vcf "${vcf}" \
+            --bfile "${bfile}" \
             --extract qc-ldPruned.prune.in \
             --allow-no-sex \
             --autosome \
@@ -109,7 +109,7 @@ elif [[ $1 == "all" ]]; then
     
     else
     	echo """
-    	Usage: ./convertf_all.sh all <in-vcf> <outname>
+    	Usage: ./convertf_all.sh all <in-bfile> <outname>
     
     	"""
     
