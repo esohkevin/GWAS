@@ -4,7 +4,7 @@ args <- commandArgs(TRUE)
 
 assoc_dat <- args[1]
 
-calc_fdr <- function(assoc.data = assoc_result) {
+calc_fdr <- function(assoc.dat = assoc_result) {
 	
 	out_name <- paste(assoc.dat,".adj",sep="")
 
