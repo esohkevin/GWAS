@@ -4,8 +4,8 @@
 #phase="../../../phase/"
 
 bfile="$2"
-samfile="$3"
-outname="$4"
+outname="$3"
+samfile="$4"
 
 if [[ $1 == "sub" ]]; then
 
