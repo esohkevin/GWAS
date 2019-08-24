@@ -1,7 +1,0 @@
-genotypename:  ../CONVERTF/eig-corr-camgwas.eigenstratgeno
-snpname:       ../CONVERTF/eig-corr-camgwas.snp
-indivname:     ../CONVERTF/eig-corr-camgwas.ind
-pcaname:       eig-corr-camgwas.pca
-outputname:    eig-corr-camgwas.chisq
-numpc:         10
-qtmode:        NO

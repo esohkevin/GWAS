@@ -1,13 +1,15 @@
-genotypename:    afr-data.ped
-snpname:         afr-data.map # or example.map, either works 
-indivname:       afr-data.ped # or example.ped, either works
+
+genotypename:    qc-world.ped
+snpname:         qc-world.map # or example.map, either works 
+indivname:       qc-world.ped # or example.ped, either works
 outputformat:    EIGENSTRAT
-genotypeoutname: afr-data.eigenstratgeno
-snpoutname:      afr-data.snp
-indivoutname:    afr-data.ind
+genotypeoutname: qc-world.eigenstratgeno
+snpoutname:      qc-world.snp
+indivoutname:    qc-world.ind
 xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES
 familynames:     NO
-phasedmode:	 YES
+phasedmode:	 NO
 #numthreads:      16
+

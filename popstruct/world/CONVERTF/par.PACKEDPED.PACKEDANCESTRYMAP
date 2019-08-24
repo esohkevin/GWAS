@@ -1,3 +1,4 @@
+
 genotypename:    qc-world.bed
 snpname:         qc-world.pedsnp # or example.map, either works
 indivname:       qc-world.pedind # or example.ped, either works
@@ -5,7 +6,7 @@ outputformat:    PACKEDANCESTRYMAP
 genotypeoutname: qc-world.packedancestrymapgeno
 snpoutname:      qc-world.snp
 indivoutname:    qc-world.ind
-phasedmode:	 YES
 familynames:     NO
+phasedmode:      YES
 #numthreads:      16
-xregionname:     high-ld-regions.b37
+

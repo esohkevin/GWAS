@@ -1,13 +1,15 @@
-genotypename:    con.ped
-snpname:         con.map # or example.map, either works
-indivname:       con.ped # or example.ped, either works
+
+genotypename:    qc-camgwas.ped
+snpname:         qc-camgwas.map # or example.map, either works
+indivname:       qc-camgwas.ped # or example.ped, either works
 outputformat:    PACKEDPED
-genotypeoutname: con.bed
-snpoutname:      con.pedsnp
-indivoutname:    con.pedind
+genotypeoutname: qc-camgwas.bed
+snpoutname:      qc-camgwas.pedsnp
+indivoutname:    qc-camgwas.pedind
 #xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES
 phasedmode:	 YES
 familynames:     NO
 #numthreads:	 16
+

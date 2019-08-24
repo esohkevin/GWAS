@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [[ $# != 4 ]]; then
+if [[ $# != 5 ]]; then
    echo """
-	Usage: mafCam.sh <chr#> <from-kb> <to-kb> <gene-name>
+	Usage: mafCam.sh <chr#> <from-kb> <to-kb> <gene-name> <in-bfile>
 """
 else
 #	for eth in bantu semibantu; do
@@ -28,9 +28,10 @@ else
 #		--out cam30
 	
 	plink \
-	        --bfile cam \
+	        --bfile $5 \
 	        --freq \
 		--chr $1 \
+		--filter-controls \
 		--from-kb $2 \
 		--to-kb $3 \
 	        --keep-allele-order \
