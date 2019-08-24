@@ -19,15 +19,15 @@ if [[ $1 == "1" ]]; then
           --vcfRef=${ref_path}/ALL.chr${chr}.phase3_integrated.20130502.genotypes.bcf \
           --vcfTarget=${base}.vcf.gz \
           --geneticMapFile=tables/genetic_map_hg19_withX.txt.gz \
-          --outPrefix=${base}_chr${chr}-phased_wref \
+          --outPrefix=chr${chr}-phased_wref \
           --chrom=${chr} \
           --pbwtIters=10 \
           --numThreads=90 \
           --Kpbwt=${Kpbwt} \
           --vcfOutFormat=z \
-          2>&1 | tee ${base}_chr${chr}-phased_wref.log
+          2>&1 | tee chr${chr}-phased_wref.log
       
-        echo "`tabix -f -p vcf ${base}_chr${chr}-phased_wref.vcf.gz`"
+        echo "`tabix -f -p vcf chr${chr}-phased_wref.vcf.gz`"
       
       done
       
