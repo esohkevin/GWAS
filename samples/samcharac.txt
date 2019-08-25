@@ -3,13 +3,19 @@ Age
 Children
 Adults
 Gender
-Female	169
-Male	338
+Female	191
+Male	372
 Ethnicity
-Bantu	262
-Fulbe	238
-Semi-Bantu	9
+Bantu	266
+Fulbe	286
+Semi-Bantu	11
 Location
-Centre	247
+Centre	259
 Littoral	0
-South_West	260
+South_West	304
+
+
+MAF	Bantu	Semi-Bantu	Fulbe
+present	1608084	1608113		1337542
+absent	77	48		270619
+only	

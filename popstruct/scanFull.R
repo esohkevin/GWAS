@@ -55,9 +55,9 @@ ihs <- na.omit(wg.ihs$ihs)
 mapF <- snpInfo
 map <- data.frame(ID=mapF$V1, POSITION=mapF$V3, Anc=mapF$V4, Der=mapF$V5)
 ihsMerge <- merge(map, ihs, by = "POSITION")
-signals <- ihsMerge[ihsMerge[,7]>=thresh,]
+signals <- ihsMerge[ihsMerge[,7]>=4,]
 signals <- signals[order(signals[,5]),]
-sigpos <- signals[,2]
+sigpos <- signals[,4]
 
 ##################################################################################
 ##             			 Save results 
@@ -71,8 +71,8 @@ write.table(signals, file = sigOut, col.names=T, row.names=F, quote=F, sep="\t")
 # Manhattan PLot of iHS results
 png(iHSplot, height = 700, width = 640, res = NA, units = "px")
 layout(matrix(1:2,2,1))
-manhattanplot(wg.ihs, pval = F, main = iHSmain, threshold = c(-2, 2))
-manhattanplot(wg.ihs, pval = T, main = iHSmain, threshold = c(-2, 2))
+manhattanplot(wg.ihs, pval = F, main = iHSmain, threshold = c(-4, 4))
+manhattanplot(wg.ihs, pval = T, main = iHSmain, threshold = c(-4, 4))
 dev.off()
 
 # Gaussian Distribution and Q-Q plots
