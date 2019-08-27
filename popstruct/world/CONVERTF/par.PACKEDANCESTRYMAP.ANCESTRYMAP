@@ -1,3 +1,4 @@
+
 genotypename:    qc-world.packedancestrymapgeno
 snpname:         qc-world.snp
 indivname:       qc-world.ind
@@ -5,6 +6,6 @@ outputformat:    ANCESTRYMAP
 genotypeoutname: qc-world.ancestrymapgeno
 snpoutname:      qc-world.snp
 indivoutname:    qc-world.ind
-phasedmode:	 YES
+phasedmode:      YES
 #numthreads:      16
-xregionname:     high-ld-regions.b37
+

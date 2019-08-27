@@ -14,8 +14,12 @@ pcaDat <- read.table(fn, header=F, as.is=T)
 
 evecDat <- data.frame(FID=pcaDat[,1], IID=pcaDat[,1], C1=pcaDat[,2], C2=pcaDat[,3], C3=pcaDat[,4], 
 			C4=pcaDat[,5], C5=pcaDat[,6], C6=pcaDat[,7], C7=pcaDat[,8], C8=pcaDat[,9], 
-			C9=pcaDat[,10], C10=pcaDat[,11], Status=pcaDat[,12])
-fm <- evecDat[,1:12]
+			C9=pcaDat[,10], C10=pcaDat[,11], C11=pcaDat[,12], C12=pcaDat[,13], C13=pcaDat[,14],
+                        C14=pcaDat[,15], C15=pcaDat[,16], C16=pcaDat[,17], C17=pcaDat[,18], C18=pcaDat[,19],
+                        C19=pcaDat[,20], C20=pcaDat[,21], C21=pcaDat[,22], C22=pcaDat[,23], C23=pcaDat[,24],
+                        C24=pcaDat[,25], C25=pcaDat[,26], C26=pcaDat[,27], C27=pcaDat[,28], C28=pcaDat[,29],
+                        C29=pcaDat[,30], C30=pcaDat[,31], Status=pcaDat[,32])
+fm <- evecDat
 write.table(fm, file = out_text, col.names=T, row.names=F, quote=F, sep="\t")
 
 ethnicity <- read.table("../../../samples/qc-camgwas.eth", header = T, as.is = T)
@@ -92,7 +96,7 @@ png(filename = eth_image, width = 16, height = 17, units = "cm", pointsize = 14,
     bg = "white",  res = 300, type = c("cairo"))
 plot(evecthn$C1, evecthn$C2, col=as.factor(evecthn$ethnicity),
      xlab="PC1", ylab="PC2", pch=20)
-legend("topleft", legend=levels(as.factor(evecthn$ethnicity)), 
+legend("bottomright", legend=levels(as.factor(evecthn$ethnicity)),
        col=1:length(levels(as.factor(evecthn$ethnicity))), pch=20, bty="n")
 dev.off()
 

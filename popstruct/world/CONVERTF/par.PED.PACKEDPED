@@ -1,14 +1,15 @@
-genotypename:    merged-data-pruned.ped
-snpname:         merged-data-pruned.map # or example.map, either works
-indivname:       merged-data-pruned.ped # or example.ped, either works
+
+genotypename:    qc-world.ped
+snpname:         qc-world.map # or example.map, either works
+indivname:       qc-world.ped # or example.ped, either works
 outputformat:    PACKEDPED
 genotypeoutname: qc-world.bed
 snpoutname:      qc-world.pedsnp
 indivoutname:    qc-world.pedind
-xregionname:	 high-ld-regions.b37
+#xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
-phasedmode:	 YES
 strandcheck:	 YES
+phasedmode:	 YES
 familynames:     NO
-#poplistname:	 ethlist.txt
 #numthreads:	 16
+

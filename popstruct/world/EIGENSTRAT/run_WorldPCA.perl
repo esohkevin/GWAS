@@ -16,16 +16,16 @@ $command .= " -m 0 ";
 print("$command\n");
 system("$command");
 
-$command = "smarteigenstrat.perl "; 
-$command .= " -i ../CONVERTF/qc-world.eigenstratgeno ";
-$command .= " -a ../CONVERTF/qc-world.snp ";
-$command .= " -b ../CONVERTF/qc-world.ind ";
-$command .= " -p qc-world.pca ";
-$command .= " -k 10 ";
-$command .= " -o qc-world.chisq ";
-$command .= " -l qc-world-eig.log ";
-print("$command\n");
-system("$command");
+#$command = "smarteigenstrat.perl "; 
+#$command .= " -i ../CONVERTF/qc-world.eigenstratgeno ";
+#$command .= " -a ../CONVERTF/qc-world.snp ";
+#$command .= " -b ../CONVERTF/qc-world.ind ";
+#$command .= " -p qc-world.pca ";
+#$command .= " -k 10 ";
+#$command .= " -o qc-world.chisq ";
+#$command .= " -l qc-world-eig.log ";
+#print("$command\n");
+#system("$command");
 
 #$command = "gc.perl qc-world.chisq qc-world.chisq.GC";
 #print("$command\n");

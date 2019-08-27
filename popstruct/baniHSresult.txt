@@ -1,1 +1,0 @@
-CHR	POSITION	iHS	-log10(p-value)

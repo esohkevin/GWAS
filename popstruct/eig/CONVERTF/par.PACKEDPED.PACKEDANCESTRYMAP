@@ -1,3 +1,4 @@
+
 genotypename:    qc-camgwas.bed
 snpname:         qc-camgwas.pedsnp # or example.map, either works
 indivname:       qc-camgwas.pedind # or example.ped, either works
@@ -8,3 +9,4 @@ indivoutname:    qc-camgwas.ind
 familynames:     NO
 phasedmode:      YES
 #numthreads:      16
+

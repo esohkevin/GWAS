@@ -1,0 +1,11 @@
+genotypename: ../CONVERTF/qc-camgwas.eigenstratgeno
+snpname: ../CONVERTF/qc-camgwas.snp
+indivname: ../CONVERTF/qc-camgwas.ind
+evecoutname: qc-camgwas.pca.evec
+evaloutname: qc-camgwas.eval
+altnormstyle: NO
+numoutevec: 30
+numoutlieriter: 10
+numoutlierevec: 30
+outliersigmathresh: 8.0
+qtmode: 0

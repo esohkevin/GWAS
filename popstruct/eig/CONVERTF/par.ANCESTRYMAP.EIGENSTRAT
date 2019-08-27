@@ -1,3 +1,4 @@
+
 genotypename:    qc-camgwas.ancestrymapgeno
 snpname:         qc-camgwas.snp
 indivname:       qc-camgwas.ind
@@ -7,3 +8,4 @@ snpoutname:      qc-camgwas.snp
 indivoutname:    qc-camgwas.ind
 phasedmode:      YES
 #numthreads:      16
+
