@@ -15,3 +15,11 @@ Workflow
 - IBD (hmmIBD)/isoRelate
 - iHS, EHH, Rsb, XEHH
 
+Design
+---
+- Get recent ensembl release for [human allele frequencies](ftp://ftp.ensembl.org/pub/release-97/variation/vcf/homo_sapiens/)
+to ascertain for anc/der allele assignment.
+- Extract allele frequencies of variants from QCed dataset
+```
+vcftools --gzvcf file.vcf.gz --freq --stdout | gzip -c > file.frq.gz
+```
