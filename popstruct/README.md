@@ -9,8 +9,9 @@ Workflow
 - Fst: Hudson + WC
 - LD
 - Recombination map - LDHat
-- Admixture
+- Admixture - admixture, alder, malder
 - Structurama/Structure
 - fsStructure
 - IBD (hmmIBD)/isoRelate
 - iHS, EHH, Rsb, XEHH
+
