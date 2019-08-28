@@ -17,7 +17,7 @@ Workflow
 
 Design
 ---
-- Get recent ensembl release for [human allele frequencies](ftp://ftp.ensembl.org/pub/release-97/variation/vcf/homo_sapiens/)
+- Get recent ensembl release for human allele frequencies (ftp://ftp.ensembl.org/pub/release-97/variation/vcf/homo_sapiens/)
 to ascertain for anc/der allele assignment.
 - Extract allele frequencies of variants from QCed dataset
 ```
