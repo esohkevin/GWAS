@@ -21,20 +21,8 @@ Type 'q()' to quit R.
 
 > #!/usr/bin/env R
 > 
-> # Check installation of qqman and load it if installed
-> if (!requireNamespace("qqman"))
-+         install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
-Loading required namespace: qqman
-> library(qqman)
-
-For example usage please run: vignette('qqman')
-
-Citation appreciated but not required:
-Turner, S.D. qqman: an R package for visualizing GWAS results using Q-Q and manhattan plots. biorXiv DOI: 10.1101/005165 (2014).
-
-> 
 > # Extract palindromic SNPs
-> bim = read.table("qc-camgwas.bim", header=F, as.is=T)
+> bim = read.table("qc-camgwas-eig-corr.bim", header=F, as.is=T)
 > # Get indices of A/T and G/C SNPs
 > w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="A" & bim$V6=="T") | (bim$V5=="A" & bim$V6=="T"))
 > 
@@ -47,4 +35,4 @@ Turner, S.D. qqman: an R package for visualizing GWAS results using Q-Q and manh
 > 
 > proc.time()
    user  system elapsed 
- 35.445   0.892  36.338 
+ 13.251   0.320  13.580 

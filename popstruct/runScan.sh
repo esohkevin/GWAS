@@ -17,18 +17,19 @@ if [[ $param == [12] ]]; then
 
         Rscript scanPart.R $2 $3 $4
 
-   elif [[ $param == "2" && $# != 4 ]]; then
+   elif [[ $param == "2" && $# != 5 ]]; then
         echo """
-             Usage: ./scanFull.R 2 <.hap+.map-root> <output> <#chr>
+             Usage: ./scanFull.R 2 <.hap+.map-root> <output> <#chr> <threads>
 
 	        .hap+.map-root: The hap and map file prefix (e.g. for chrA.hap and chrA.map, enter chrA)
 		        output: The output file name
-		 	  #chr: The total number of chromosomes 
+		 	  #chr: The total number of chromosomes
+		       threads: Number of threads (integer)
         """
 
-   elif [[ $param == "2" && $# == 4 ]]; then
+   elif [[ $param == "2" && $# == 5 ]]; then
 
-        Rscript scanFull.R $2 $3 $4
+        Rscript scanFull.R $2 $3 $4 $5
   
    fi
 
