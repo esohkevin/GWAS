@@ -36,7 +36,7 @@ if [[ $1 == "sub" ]]; then
             --out qc-camgwas-ldPruned
         
         plink \
-            --vcf qc-camgwas-ldPruned \
+            --bfile qc-camgwas-ldPruned \
             --recode \
             --keep-allele-order \
             --allow-no-sex \
@@ -89,7 +89,7 @@ elif [[ $1 == "all" ]]; then
             --out qc-camgwas-ldPruned
         
         plink \
-       	    --vcf qc-camgwas-ldPruned \
+       	    --bfile qc-camgwas-ldPruned \
        	    --recode \
        	    --keep-allele-order \
        	    --allow-no-sex \
