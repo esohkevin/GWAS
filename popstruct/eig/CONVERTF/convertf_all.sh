@@ -38,6 +38,7 @@ if [[ $1 == "sub" ]]; then
         plink \
             --bfile qc-camgwas-ldPruned \
             --recode \
+	    --maf 0.05 \
             --keep-allele-order \
             --allow-no-sex \
             --double-id \
@@ -69,7 +70,7 @@ elif [[ $1 == "all" ]]; then
         # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
         plink \
             --vcf "${vcf}" \
-            --indep-pairwise 5k 5 0.05 \
+            --indep-pairwise 5k 100 0.1 \
             --allow-no-sex \
 	    --hwe 1e-8 \
             --autosome \
@@ -91,6 +92,7 @@ elif [[ $1 == "all" ]]; then
         plink \
        	    --bfile qc-camgwas-ldPruned \
        	    --recode \
+	    --maf 0.05 \
        	    --keep-allele-order \
        	    --allow-no-sex \
        	    --double-id \
