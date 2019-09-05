@@ -1,0 +1,8 @@
+genotypename:  	qc-world.ancestrymapgeno
+snpname:       	qc-world.snp
+indivname:     	qc-world-cam.ind
+admixpop:      	CAM
+refpops:	LWK;GWD
+raw_outname:	rawLD.txt
+checkmap:	NO
+approx_ld_corr:	NO
