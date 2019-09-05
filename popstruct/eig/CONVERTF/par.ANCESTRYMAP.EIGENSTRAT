@@ -1,11 +1,11 @@
 
-genotypename:    qc-camgwas.ancestrymapgeno
-snpname:         qc-camgwas.snp
-indivname:       qc-camgwas.ind
+genotypename:    pop.ancestrymapgeno
+snpname:         pop.snp
+indivname:       pop.ind
 outputformat:    EIGENSTRAT
-genotypeoutname: qc-camgwas.eigenstratgeno
-snpoutname:      qc-camgwas.snp
-indivoutname:    qc-camgwas.ind
+genotypeoutname: pop.eigenstratgeno
+snpoutname:      pop.snp
+indivoutname:    pop.ind
 phasedmode:      YES
 #numthreads:      16
 

@@ -1,11 +1,11 @@
 
-genotypename:    qc-camgwas.ped
-snpname:         qc-camgwas.map # or example.map, either works
-indivname:       qc-camgwas.ped # or example.ped, either works
+genotypename:    pop.ped
+snpname:         pop.map # or example.map, either works
+indivname:       pop.ped # or example.ped, either works
 outputformat:    PACKEDPED
-genotypeoutname: qc-camgwas.bed
-snpoutname:      qc-camgwas.pedsnp
-indivoutname:    qc-camgwas.pedind
+genotypeoutname: pop.bed
+snpoutname:      pop.pedsnp
+indivoutname:    pop.pedind
 #xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES

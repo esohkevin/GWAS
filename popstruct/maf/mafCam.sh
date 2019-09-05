@@ -7,15 +7,15 @@
 #		--within cam1185.eth \
 #		--out cam30
 
-vcftools \
-	--gzvcf raw-camgwas.vcf.gz \
-	--freq \
-	--stdout | \
-	    gzip -c > raw-camgwas.frq.gz
+#vcftools \
+#	--gzvcf raw-camgwas.vcf.gz \
+#	--freq \
+#	--stdout | \
+#	    gzip -c > raw-camgwas.frq.gz
 
 zcat raw-camgwas.frq.gz | \
     sed '1d' | \
     awk '{print $1"\t"$2"\t"$5"\t"$6}' | \
     sed 's/:/\t/g' | \
-    awk '{print $1"\t"$2"\t"$4"\t"$6}' > freqs_camgwas.txt
+    awk '$6!=0 {print $1"\t"$2"\t"$4"\t"$6}' > freqs_camgwas.txt
 

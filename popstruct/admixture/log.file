@@ -1,80 +1,47 @@
-PLINK v1.90b6.7 64-bit (2 Dec 2018)
+PLINK v1.90b4 64-bit (20 Mar 2017)
 Options in effect:
   --allow-no-sex
-  --bfile merge
-  --indep-pairwise 50 5 0.2
+  --bfile temp
+  --indep-pairwise 5k 50 0.2
   --out prune
 
 Hostname: delgemebioserver
 Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct/admixture
-Start time: Sun Jun  2 09:32:52 2019
+Start time: Thu Sep  5 17:08:05 2019
 
-Random number seed: 1559467972
+Random number seed: 1567703285
 967454 MB RAM detected; reserving 483727 MB for main workspace.
-Allocated 272096 MB successfully, after larger attempt(s) failed.
-480316 variants loaded from .bim file.
-964 people (507 males, 457 females) loaded from .fam.
-964 phenotype values loaded from .fam.
+1593186 variants loaded from .bim file.
+1070 people (0 males, 0 females, 1070 ambiguous) loaded from .fam.
+Ambiguous sex IDs written to prune.nosex .
 Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 964 founders and 0 nonfounders present.
+Before main variant filters, 1070 founders and 0 nonfounders present.
 Calculating allele frequencies... done.
-Total genotyping rate is 0.788914.
-480316 variants and 964 people pass filters and QC.
-Among remaining phenotypes, 136 are cases and 828 are controls.
-Pruned 30093 variants from chromosome 1, leaving 6848.
-Pruned 33054 variants from chromosome 2, leaving 6654.
-Pruned 27832 variants from chromosome 3, leaving 5896.
-Pruned 28221 variants from chromosome 4, leaving 5602.
-Pruned 25788 variants from chromosome 5, leaving 5146.
-Pruned 25414 variants from chromosome 6, leaving 5149.
-Pruned 23434 variants from chromosome 7, leaving 4981.
-Pruned 22050 variants from chromosome 8, leaving 4523.
-Pruned 16817 variants from chromosome 9, leaving 4185.
-Pruned 19992 variants from chromosome 10, leaving 4439.
-Pruned 20362 variants from chromosome 11, leaving 4133.
-Pruned 17640 variants from chromosome 12, leaving 4384.
-Pruned 14583 variants from chromosome 13, leaving 3177.
-Pruned 12725 variants from chromosome 14, leaving 3092.
-Pruned 11419 variants from chromosome 15, leaving 3137.
-Pruned 12288 variants from chromosome 16, leaving 3333.
-Pruned 10816 variants from chromosome 17, leaving 3078.
-Pruned 10899 variants from chromosome 18, leaving 3000.
-Pruned 8688 variants from chromosome 19, leaving 2717.
-Pruned 8584 variants from chromosome 20, leaving 2449.
-Pruned 5406 variants from chromosome 21, leaving 1505.
-Pruned 5051 variants from chromosome 22, leaving 1732.
-Pruning complete.  391156 of 480316 variants removed.
+1593186 variants and 1070 people pass filters and QC.
+Note: No phenotypes present.
+Pruned 101808 variants from chromosome 1, leaving 22520.
+Pruned 112418 variants from chromosome 2, leaving 24606.
+Pruned 95640 variants from chromosome 3, leaving 20882.
+Pruned 89524 variants from chromosome 4, leaving 19805.
+Pruned 83064 variants from chromosome 5, leaving 18288.
+Pruned 88820 variants from chromosome 6, leaving 19595.
+Pruned 72999 variants from chromosome 7, leaving 16153.
+Pruned 72868 variants from chromosome 8, leaving 16035.
+Pruned 57585 variants from chromosome 9, leaving 12902.
+Pruned 67602 variants from chromosome 10, leaving 14845.
+Pruned 64843 variants from chromosome 11, leaving 14121.
+Pruned 63345 variants from chromosome 12, leaving 14112.
+Pruned 49139 variants from chromosome 13, leaving 10970.
+Pruned 43746 variants from chromosome 14, leaving 9578.
+Pruned 41753 variants from chromosome 15, leaving 9271.
+Pruned 40586 variants from chromosome 16, leaving 8856.
+Pruned 32604 variants from chromosome 17, leaving 7273.
+Pruned 40995 variants from chromosome 18, leaving 9047.
+Pruned 21228 variants from chromosome 19, leaving 4701.
+Pruned 31576 variants from chromosome 20, leaving 6946.
+Pruned 17978 variants from chromosome 21, leaving 3998.
+Pruned 15191 variants from chromosome 22, leaving 3370.
+Pruning complete.  1305312 of 1593186 variants removed.
 Marker lists written to prune.prune.in and prune.prune.out .
 
-End time: Sun Jun  2 09:32:53 2019
-PLINK v1.90b6.7 64-bit (2 Dec 2018)
-Options in effect:
-  --autosome
-  --bfile merge
-  --extract prune.prune.in
-  --maf 0.35
-  --make-bed
-  --out adm-data
-
-Hostname: delgemebioserver
-Working directory: /BIODATA/StudentsHome/kevine/GWAS/Git/GWAS/popstruct/admixture
-Start time: Sun Jun  2 09:32:53 2019
-
-Random number seed: 1559467973
-967454 MB RAM detected; reserving 483727 MB for main workspace.
-Allocated 272096 MB successfully, after larger attempt(s) failed.
-480316 variants loaded from .bim file.
-964 people (507 males, 457 females) loaded from .fam.
-964 phenotype values loaded from .fam.
---extract: 89160 variants remaining.
-Using 1 thread (no multithreaded calculations invoked).
-Before main variant filters, 964 founders and 0 nonfounders present.
-Calculating allele frequencies... done.
-Total genotyping rate is 0.826543.
-4446 variants removed due to minor allele threshold(s)
-(--maf/--max-maf/--mac/--max-mac).
-84714 variants and 964 people pass filters and QC.
-Among remaining phenotypes, 136 are cases and 828 are controls.
---make-bed to adm-data.bed + adm-data.bim + adm-data.fam ... done.
-
-End time: Sun Jun  2 09:32:54 2019
+End time: Thu Sep  5 17:08:07 2019
