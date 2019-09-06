@@ -1,8 +1,0 @@
-popGrp	CAM	GWD	LWK	YRI
-CAM	0	
-
-GWD		0
-
-LWK			0
-
-YRI				0

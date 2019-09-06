@@ -1,12 +1,17 @@
-genotypename:    ../CONVERTF/qc-camgwas.ancestrymapgeno
-snpname:         ../CONVERTF/qc-camgwas.snp
-indivname:       ../CONVERTF/qc-camgwas-eth.ind
-evecoutname:     qc-camgwas-eth.evec
-evaloutname:     qc-camgwas-eth.eval
-altnormstyle:    NO 
-outlieroutname:	 smartpca-fst-eth.outlier
+
+genotypename:    ../CONVERTF/pop.ancestrymapgeno
+snpname:         ../CONVERTF/pop.snp
+indivname:       ../CONVERTF/pop-eth.ind
+evecoutname:     pop-eth.evec
+evaloutname:     pop-eth.eval
+altnormstyle:    NO
+outlieroutname:  pop.outlier
 familynames:     NO
-#snpweightoutname:	qc-camgwas-snpwt
-deletesnpoutname:	qc-camgwas-eth-badsnps
-#numthreads:	 2
-fstonly:	 YES
+#snpweightoutname:      pop-snpwt
+deletesnpoutname:       pop-eth-badsnps
+#numthreads:     2
+ldregress:       200
+phylipoutname:   pop.phy
+fstonly:         YES
+
+

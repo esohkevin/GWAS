@@ -1,6 +1,6 @@
 
-R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
-Copyright (C) 2018 The R Foundation for Statistical Computing
+R version 3.6.1 (2019-07-05) -- "Action of the Toes"
+Copyright (C) 2019 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -21,20 +21,8 @@ Type 'q()' to quit R.
 
 > #!/usr/bin/env R
 > 
-> # Check installation of qqman and load it if installed
-> if (!requireNamespace("qqman"))
-+         install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
-Loading required namespace: qqman
-> library(qqman)
-
-For example usage please run: vignette('qqman')
-
-Citation appreciated but not required:
-Turner, S.D. qqman: an R package for visualizing GWAS results using Q-Q and manhattan plots. biorXiv DOI: 10.1101/005165 (2014).
-
-> 
 > # Extract palindromic SNPs
-> bim = read.table("qc-camgwas.bim", header=F, as.is=T)
+> bim = read.table("qc-camgwas-eig-corr.bim", header=F, as.is=T)
 > # Get indices of A/T and G/C SNPs
 > w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="A" & bim$V6=="T") | (bim$V5=="A" & bim$V6=="T"))
 > 
@@ -47,4 +35,4 @@ Turner, S.D. qqman: an R package for visualizing GWAS results using Q-Q and manh
 > 
 > proc.time()
    user  system elapsed 
- 35.445   0.892  36.338 
+ 13.521   0.481  14.007 

@@ -13,6 +13,7 @@ args <- commandArgs(TRUE)
 #mapFile <- paste(args[1],".map", sep="")
 numchr <- args[3]
 thresh <- args[4]
+thread <- as.integer(args[5])
 snpInfo <- read.table("snp.info", header = F, as.is = T)
 iHSplot <- paste(args[2],"iHS.png", sep="")
 iHSresult <- paste(args[2],"iHSresult.txt", sep="")
@@ -20,7 +21,6 @@ iHSfrq <- paste(args[2],"iHSfrq.txt", sep="")
 qqPlot <- paste(args[2],"qqDist.png", sep="")
 iHSmain <- paste(args[2],"-iHS", sep="")
 sigOut <- paste(args[2],"Signals.txt",sep="")
-
 
 ##################################################################################
 ##              Load .hap and .map files to create hap dataframe
@@ -39,7 +39,7 @@ for(i in 1:numchr) {
   data <- data2haplohh(hap_file=hapFile, map_file=mapFile, recode.allele = F,
 		       min_perc_geno.hap=100, min_maf=0.05, 
 		       haplotype.in.columns=TRUE, chr.name=i)
-  res <- scan_hh(data)
+  res <- scan_hh(data, threads = 10)
   if(i==1){wg.res<-res}else{wg.res<-rbind(wg.res,res)}
 
 }
