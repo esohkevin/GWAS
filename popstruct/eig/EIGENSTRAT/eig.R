@@ -1,5 +1,11 @@
 #!/usr/bin/Rscript
 
+library("colorspace")
+
+#----Define Colors
+n <- 3
+pcol <- qualitative_hcl(n, h =200, c = 50, l = 90, alpha = 0.9)
+
 # Save evec data into placeholder
 args <- commandArgs(TRUE)
 
@@ -40,17 +46,18 @@ mergedEvecDat <- merge(evecDat, popGroups, by="FID")
 ####################### Plot for top 2 vectors ##################################
 png(filename = "evec1vc2.png", width = 450, height = 750, units = "px", pointsize = 12, 
     bg = "white",  res = NA, type = c("quartz"))
-# type =c("cairo", "cairo-png", "Xlib", "quartz")
+n <- 1:length(levels(mergedEvecDat$Status))
 par(mfrow=c(2,1))
-plot(evecDat$C1, evecDat$C2, xlab="eigenvalue1", ylab="eigenvalue2", main="Eigenanalysis With Sample Status")
+plot(evecDat$C1, evecDat$C2, xlab="PC1", ylab="PC2", main="Eigenanalysis With Sample Status")
 d <- evecDat[evecDat$Status=="Case",]
 points(d$C1, d$C2, col=2, pch=20)
 d <- evecDat[evecDat$Status=="Control",]
 points(d$C1, d$C2, col=1, pch=20)
-legend("topleft", c("Case", "Control"), col=c(2,1), pch=20)
-plot(mergedEvecDat$C1, mergedEvecDat$C2, col=mergedEvecDat$PopGroup, 
-	main="Eigenanalysis With Sample Region", xlab="eigenvalue1", ylab="eigenvalue2", pch=20)
-legend("topleft", legend=levels(mergedEvecDat$PopGroup), col=1:length(levels(mergedEvecDat$PopGroup)), pch=20)
+legend("topleft", c("Case", "Control"), col=pcol, pch=20)
+plot(mergedEvecDat$C1, mergedEvecDat$C2, col=pcol, 
+	main="Eigenanalysis With Sample Region", xlab="PC1", ylab="PC2", pch=20)
+n <- 1:length(levels(mergedEvecDat$PopGroup))
+legend("topleft", legend=levels(mergedEvecDat$PopGroup), col=pcol, pch=20)
 dev.off()
 
 ################### Plot for 6 pairs of eigenvalues #######################
@@ -100,11 +107,13 @@ dev.off()
 
 ######### Plot First 2 evecs with ethnicity distinction ##########
 png(filename = eth_image, width = 16, height = 17, units = "cm", pointsize = 14,
-    bg = "white",  res = 300, type = c("cairo"))
-plot(evecthn$C1, evecthn$C2, col=as.factor(evecthn$ethnicity),
+    bg = "white",  res = 100, type = c("cairo"))
+n <- 1:length(levels(as.factor(evecthn$ethnicity)))
+pcol <- qualitative_hcl(n, h = c(0, 360 * (n - 1)/n), c = 50, l = c(30, 90), alpha = 0.9)
+plot(evecthn$C1, evecthn$C2, col=pcol,
      xlab="PC1", ylab="PC2", pch=20)
-legend("bottomright", legend=levels(as.factor(evecthn$ethnicity)),
-       col=1:length(levels(as.factor(evecthn$ethnicity))), pch=20, bty="n")
+legend("topright", legend=levels(as.factor(evecthn$ethnicity)),
+       col=pcol, pch=c(18, 20, +:), bty="n")
 dev.off()
 
 ##### Project Case-Control status and Ethnicity Along the three interesting eigenvalues ######

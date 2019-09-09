@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for k in {5..7}; do
+for k in {1..5}; do
     Rscript plotQestimate.R adm-data.${k}.Q adm-data.${k}.png
 done
 
@@ -12,3 +12,5 @@ echo "K CVE" > adm-k-parameters.txt; grep -h CV log*.out | \
 Rscript plotCV.R
 
 mv *.png ../../images/
+
+rm prune*
