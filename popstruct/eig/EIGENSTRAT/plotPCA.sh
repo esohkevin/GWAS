@@ -6,12 +6,12 @@ if [[ $# == 1 ]]; then
 
 #   mv *.png ../../../images/
 
-   cut -f4 -d' ' ${1} | sed '1d' > eig.id1
-   cut -f4 -d' ' ${1} | sed '1d' > eig.id2
-   paste eig.id1 eig.id2 > eig.ids
-   rm eig.id1 eig.id2
-   
-   mv ${1}.pca.txt ${1/.pca*/.pcs}
+#   cut -f4 -d' ' ${1} | sed '1d' > eig.id1
+#   cut -f4 -d' ' ${1} | sed '1d' > eig.id2
+#   paste eig.id1 eig.id2 > eig.ids
+#   rm eig.id1 eig.id2
+#   
+#   mv ${1}.pca.txt ${1/.pca*/.pcs}
 
 else 
    echo """

@@ -20,6 +20,7 @@ if [[ $# == 1 ]]; then
         --allow-no-sex \
         --autosome \
 	--double-id \
+	--extract fstbest.snps \
     	--indiv-sort f adm.order \
     	--make-bed \
         --out temp
@@ -27,7 +28,7 @@ if [[ $# == 1 ]]; then
     # Prune to get only SNPs at linkage equilibrium (independent SNPs - no LD between them)
     plink \
     	--bfile temp \
-    	--indep-pairwise 5k 50 0.2 \
+    	--indep-pairwise 50 10 0.2 \
     	--allow-no-sex \
     	--out prune
     cat prune.log >> log.file
@@ -35,7 +36,7 @@ if [[ $# == 1 ]]; then
     plink \
     	--bfile temp \
     	--autosome \
-    	--maf 0.35 \
+    	--maf 0.01 \
     	--extract prune.prune.in \
     	--make-bed \
     	--out adm-data
