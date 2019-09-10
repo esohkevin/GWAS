@@ -8,7 +8,6 @@ plink \
 	--file ${in_file} \
 	--fst \
 	--autosome \
-	--aperm 5 1000000 \
 	--within plink_fst.pops \
 	--out all
 
