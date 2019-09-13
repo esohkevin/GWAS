@@ -15,6 +15,7 @@ plink \
         --keep ${samples}eig.ids \
         --make-bed \
 	--autosome \
+	--keep-allele-order \
         --out qc-camgwas-eig-corr
 
 echo -e """\e[1m\e[38;5;40m 
@@ -26,6 +27,7 @@ echo -e """\e[1m\e[38;5;40m
 plink \
 	--bfile qc-camgwas-eig-corr \
 	--allow-no-sex \
+	--keep-allele-order \
 	--freq \
 	--out qc-camgwas-eig-corr
 
@@ -44,10 +46,10 @@ echo -e """\e[1m\e[38;5;40m
 ./checkstrand.sh
 
 # Add command line to remove at-cg SNPs
-plink --bfile qc-camgwas-eig-corr --exclude at-cg.snps --make-bed --out TEMP0
-plink --bfile TEMP0 --allow-no-sex --exclude Exclude-qc-camgwas-eig-corr-1000G.txt --make-bed --out TEMP1
-plink --bfile TEMP1 --update-chr Chromosome-qc-camgwas-eig-corr-1000G.txt 2 1 --make-bed --out TEMP2
-plink --bfile TEMP2 --update-map Position-qc-camgwas-eig-corr-1000G.txt 2 1 --make-bed --out TEMP3
+plink --bfile qc-camgwas-eig-corr --keep-allele-order --exclude at-cg.snps --make-bed --out TEMP0
+plink --bfile TEMP0 --allow-no-sex --keep-allele-order --exclude Exclude-qc-camgwas-eig-corr-1000G.txt --make-bed --out TEMP1
+plink --bfile TEMP1 --keep-allele-order --update-chr Chromosome-qc-camgwas-eig-corr-1000G.txt 2 1 --make-bed --out TEMP2
+plink --bfile TEMP2 --keep-allele-order --update-map Position-qc-camgwas-eig-corr-1000G.txt 2 1 --make-bed --out TEMP3
 plink --bfile TEMP3 --flip Strand-Flip-qc-camgwas-eig-corr-1000G.txt --make-bed --out TEMP4
 #plink2 --bfile TEMP4 --ref-allele force refSites.txt 4 1 --make-bed --out qc-camgwas-updated
 plink2 --bfile TEMP4 --ref-allele force chimp_anc.txt 3 2 --make-bed --out TEMP5
@@ -64,6 +66,7 @@ echo -e """\e[1m\e[38;5;40m
 plink \
 	--bfile qc-camgwas-updated \
 	--recode vcf-fid bgz \
+	--keep-allele-order \
 	--real-ref-alleles \
 	--out qc-camgwas-updated
 
