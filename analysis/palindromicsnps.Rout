@@ -1,7 +1,7 @@
 
 R version 3.6.1 (2019-07-05) -- "Action of the Toes"
 Copyright (C) 2019 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+Platform: x86_64-conda_cos6-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -22,7 +22,7 @@ Type 'q()' to quit R.
 > #!/usr/bin/env R
 > 
 > # Extract palindromic SNPs
-> bim = read.table("qc-camgwas-eig-corr.bim", header=F, as.is=T)
+> bim = read.table("qc-camgwas.bim", header=F, as.is=T)
 > # Get indices of A/T and G/C SNPs
 > w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="A" & bim$V6=="T") | (bim$V5=="A" & bim$V6=="T"))
 > 
@@ -35,4 +35,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
- 13.521   0.481  14.007 
+ 21.508   0.620  22.110 

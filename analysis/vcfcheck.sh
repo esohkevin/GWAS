@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 #vcfcheck() {
 #for i in "$@"; do
@@ -8,9 +8,9 @@
 
 echo "`tabix -f -p vcf "${vcfbase}".vcf.gz`"
 echo "`bcftools sort "${vcfbase}".vcf.gz -Oz -o "${vcfbase}".vcf.gz`"
-echo "`checkVCF.py -r "$ref" -o out "${vcfbase}".vcf.gz`"
-echo "`bcftools index "${vcfbase}".vcf.gz`"
-mv "${vcfbase}".vcf.gz ../phase/
+echo "`checkVCF.py -r ${ref} -o out "${vcfbase}".vcf.gz`"
+echo "`bcftools index --tbi "${vcfbase}".vcf.gz`"
+#mv "${vcfbase}".vcf.gz ../phase/
 
 
 
@@ -37,4 +37,4 @@ mv "${vcfbase}".vcf.gz ../phase/
 #done
 #}
 
-mv qc-camgwas-*.vcf.gz* ../phase/
+#mv qc-camgwas-*.vcf.gz* ../phase/

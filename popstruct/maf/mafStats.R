@@ -7,7 +7,7 @@ colnames(maf) <- c("CHR","POS","RAF","MAF")
 attach(maf)
 
 png("maf.png", height=15, width=15, units="cm", res=100, points=12)
-hist(MAF, ylim = c(0,150000), breaks = 100, main = "MAF Spectrum")
+hist(MAF, ylim = c(0,150000), breaks = 100, xlab="MAF bin", main = "MAF Spectrum")
 abline(v=c(0.01,0.05,0.50), col=c(2,4,1), lty=2)
 dev.off()
 

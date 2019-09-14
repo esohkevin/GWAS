@@ -6,11 +6,8 @@
 #			from: 
 
 #runplink1.9() {
-cd ../;
-baseDir=`pwd`
-cd -;
-images="$baseDir/images/"
-samples="$baseDir/samples/"
+images="../images/"
+samples="../samples/"
 mkdir -p ../images
 #read -p 'Please provide your genotype vcf file: ' vcf
 

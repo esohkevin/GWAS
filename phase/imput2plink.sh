@@ -35,6 +35,7 @@ for chr in {1..22}; do
 	--sample phasedWref.sample \
 	--make-bed \
 	--hwe 1e-8 \
+	--keep-allele-order \
 	--extract chr${chr}inclusion.list \
 	--hard-call-threshold 0.01 \
 	--out chr$chr-temp
@@ -43,7 +44,8 @@ for chr in {1..22}; do
     plink \
         --bfile chr${chr}-temp \
         --exclude chr${chr}exclusion.list \
-	--make-bed \
+	--make-bed \i
+	--keep-allele-order \
 	--out chr${chr}
 done
 

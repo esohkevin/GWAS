@@ -1,6 +1,6 @@
-genotypename:  	qc-world.ancestrymapgeno
-snpname:       	qc-world.snp
-indivname:     	qc-world-cam.ind
+genotypename:  	../eig/CONVERTF/cam.ancestrymapgeno
+snpname:       	../eig/CONVERTF/cam.snp
+indivname:     	../eig/CONVERTF/cam-cam.ind
 admixpop:      	CAM
 refpops:	LWK;GWD
 raw_outname:	rawLD.txt

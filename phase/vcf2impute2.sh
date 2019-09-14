@@ -20,6 +20,7 @@ for chr in {1..22}; do
 	   --chr ${chr} \
 	   --covar ${assocResults}eig-corr-camgwas.pca.txt \
 	   --covar-name C1-C10 \
+	   --keep-allele-order \
 	   --pheno ${analysis}qc-camgwas-updated.fam \
 	   --pheno-col-nums 6 \
 	   --update-sex ${analysis}qc-camgwas-updated.fam col-num=5 \
