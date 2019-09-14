@@ -4,7 +4,7 @@ chrSize="252000000 246000000 202000000 194000000 185000000 174000000 163000000 1
 
 for size in ${chrSize}; do 
 
-   for interval in `seq 1 2000000 $size`; do 
+   for interval in $(seq 1 2000000 $size); do 
 
       echo $(($interval)) >> chr"${size}".tmp1; 
       echo $(($interval-1)) >> chr"${size}".tmp2; 

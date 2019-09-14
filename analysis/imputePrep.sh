@@ -5,31 +5,32 @@ eig="${baseDir}/popstruct/eig/"
 samples="../samples/"
 k="../1000G/"
 
-echo -e """\e[1m\e[38;5;40m
-	 Extracting eigen-corrected samples
-	------------------------------------
-	\e[0m
-"""
-plink \
-        --bfile qc-camgwas \
-        --keep ${samples}eig.ids \
-        --make-bed \
-	--autosome \
-	--keep-allele-order \
-        --out qc-camgwas-eig-corr
+#echo -e """\e[1m\e[38;5;40m
+#	 Extracting eigen-corrected samples
+#	------------------------------------
+#	\e[0m
+#"""
+#plink \
+#        --bfile qc-camgwas \
+#        --keep ${samples}eig.ids \
+#        --make-bed \
+#	--autosome \
+#	--keep-allele-order \
+#        --out qc-camgwas-eig-cor
+#
+#echo -e """\e[1m\e[38;5;40m 
+#	 Getting Palimcromic SNPs
+#	--------------------------
+#	\e[0m
+#"""
 
-echo -e """\e[1m\e[38;5;40m 
-	 Getting Palimcromic SNPs
-	--------------------------
-	\e[0m
-"""
 # Compute allel frequencies
 plink \
-	--bfile qc-camgwas-eig-corr \
+	--bfile qc-camgwas \
 	--allow-no-sex \
 	--keep-allele-order \
 	--freq \
-	--out qc-camgwas-eig-corr
+	--out qc-camgwas
 
 echo -e """\e[1m\e[38;5;40m
 	 Extracting palindromic SNPs in R for subsequent exclusion
@@ -46,11 +47,11 @@ echo -e """\e[1m\e[38;5;40m
 ./checkstrand.sh
 
 # Add command line to remove at-cg SNPs
-plink --bfile qc-camgwas-eig-corr --keep-allele-order --exclude at-cg.snps --make-bed --out TEMP0
-plink --bfile TEMP0 --allow-no-sex --keep-allele-order --exclude Exclude-qc-camgwas-eig-corr-1000G.txt --make-bed --out TEMP1
-plink --bfile TEMP1 --keep-allele-order --update-chr Chromosome-qc-camgwas-eig-corr-1000G.txt 2 1 --make-bed --out TEMP2
-plink --bfile TEMP2 --keep-allele-order --update-map Position-qc-camgwas-eig-corr-1000G.txt 2 1 --make-bed --out TEMP3
-plink --bfile TEMP3 --flip Strand-Flip-qc-camgwas-eig-corr-1000G.txt --make-bed --out TEMP4
+plink --bfile qc-camgwas --keep-allele-order --exclude at-cg.snps --make-bed --out TEMP0
+plink --bfile TEMP0 --allow-no-sex --keep-allele-order --exclude Exclude-qc-camgwas-1000G.txt --make-bed --out TEMP1
+plink --bfile TEMP1 --keep-allele-order --update-chr Chromosome-qc-camgwas-1000G.txt 2 1 --make-bed --out TEMP2
+plink --bfile TEMP2 --keep-allele-order --update-map Position-qc-camgwas-1000G.txt 2 1 --make-bed --out TEMP3
+plink --bfile TEMP3 --flip Strand-Flip-qc-camgwas-1000G.txt --make-bed --out TEMP4
 #plink2 --bfile TEMP4 --ref-allele force refSites.txt 4 1 --make-bed --out qc-camgwas-updated
 plink2 --bfile TEMP4 --ref-allele force chimp_anc.txt 3 2 --make-bed --out TEMP5
 plink2 --bfile TEMP5 --ref-allele force ancSites.txt 4 3 --make-bed --out qc-camgwas-updated
@@ -61,7 +62,6 @@ echo -e """\e[1m\e[38;5;40m
 	--------------------------------------
 	\e[0m
 """
-#./plink2vcf.sh
 
 plink \
 	--bfile qc-camgwas-updated \
@@ -74,12 +74,21 @@ tabix -f -p vcf qc-camgwas-updated.vcf.gz
 bcftools sort qc-camgwas-updated.vcf.gz -Oz -o qc-camgwas-updated.vcf.gz
 #bcftools index qc-camgwas-updated.vcf.gz
 
-mv qc-camgwas-updated.vcf.gz ../phase/
+#mv qc-camgwas-updated.vcf.gz ../phase/
+
+./plink2vcf.sh
 
 #echo -e """
 #	 Chechk VCF for errors using the checkVCF.py script
 #	----------------------------------------------------
 #"""
-#./vcfcheck.sh
 
-rm TEMP* qc-camgwas-eig-corr*
+#----Activate Python2.7 env for checkVCF
+conda activate py2
+
+./vcfcheck.sh
+
+conda deactivate
+
+
+rm TEMP*

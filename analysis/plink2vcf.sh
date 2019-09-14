@@ -7,9 +7,9 @@ prefix="qc-camgwas-updated-chr"
 vcfCooker \
         --in-bfile qc-camgwas-updated \
         --ref human_g1k_v37.fasta \
-        --out qc-camgwas-updated.vcf \
+        --out qc-camgwas-updated1.vcf \
         --write-vcf
-bgzip -f qc-camgwas-updated.vcf
+bgzip -f qc-camgwas-updated1.vcf
 
 
 #########################################################################

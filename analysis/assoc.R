@@ -1,16 +1,16 @@
 #!/usr/bin/Rscript
 
-setwd("~/esohdata/GWAS/analysis/")
+#setwd("~/esohdata/GWAS/analysis/")
 
 
-?iconv()
+#?iconv()
 
 library(qqman)
 
-con <- file(description = "qc-camgwas-updated.stats.gz", "r+b")
+#con <- file(description = "qc-camgwas-updated.stats.gz", "r+b")
 #con <- socketConnection(host = "kevine@delgeme.icermali.org", port = 22, server = T, 
 #                 blocking = F, open = "w+", encoding = "", timeout = 100000)
-con <- gzfile(description = "qc-camgwas-updated.stats.gz", "w+b")
+con <- gzfile(description = "qc-camgwas-updated.stats.gz", "r+b")
 
 
 
