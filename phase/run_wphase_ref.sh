@@ -12,7 +12,7 @@ if [[ $1 == "1" ]]; then
    
    if [[ $1 == "1" && $# == "3" ]]; then
 
-      echo "`tabix -f -p vcf ${base}.vcf.gz`"
+#      echo "`tabix -f -p vcf ${base}.vcf.gz`"
       
       for chr in {1..22}; do
         eagle \
