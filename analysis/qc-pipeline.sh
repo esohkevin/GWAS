@@ -15,7 +15,6 @@ mkdir -p ../images
 plink1.9 \
 	--vcf CamGWASMerged.vcf.gz \
 	--recode oxford \
-	--keep-allele-order \
 	--remove ${samples}missingEthnicity.ids \
 	--allow-no-sex \
 	--double-id \
@@ -27,7 +26,6 @@ cp ${samples}raw-camgwas.sample .
 plink1.9 \
 	--data raw-camgwas \
 	--allow-no-sex \
-	--keep-allele-order \
 	--list-duplicate-vars ids-only suppress-first \
 	--out dups
 
@@ -36,7 +34,6 @@ plink1.9 \
 plink1.9 \
 	--data raw-camgwas \
 	--make-bed \
-	--keep-allele-order \
 	--exclude dups.dupvar \
 	--split-x b37 \
 	--allow-no-sex \
@@ -52,14 +49,12 @@ plink1.9 \
         --update-name allMysnps.txt 1 2 \
         --allow-no-sex \
         --make-bed \
-	--keep-allele-order \
         --out raw-camgwas
 
 #-------- LD-prune the raw data before sex check
 plink1.9 \
         --bfile raw-camgwas \
         --allow-no-sex \
-	--keep-allele-order \
         --indep-pairwise 5kb 10 0.2 \
 	--set-hh-missing \
         --out prunedsnplist
@@ -68,7 +63,6 @@ plink1.9 \
 plink1.9 \
         --bfile raw-camgwas \
         --allow-no-sex \
-	--keep-allele-order \
         --extract prunedsnplist.prune.in \
         --make-bed \
         --out check-sex-data
@@ -77,7 +71,6 @@ plink1.9 \
 plink1.9 \
 	--bfile check-sex-data \
 	--check-sex \
-	--keep-allele-order \
 	--set-hh-missing \
 	--allow-no-sex \
 	--out check-sex-data
@@ -90,7 +83,6 @@ grep "PROBLEM" check-sex-data.sexcheck > fail-checksex.qc
 plink1.9 \
 	--bfile raw-camgwas \
 	--missing \
-	--keep-allele-order \
 	--allow-no-sex \
 	--set-hh-missing \
 	--out raw-camgwas
@@ -99,7 +91,6 @@ plink1.9 \
 plink1.9 \
 	--bfile raw-camgwas \
 	--het \
-	--keep-allele-order \
 	--allow-no-sex \
 	--set-hh-missing \
 	--out raw-camgwas
@@ -122,7 +113,6 @@ plink1.9 \
 	--maf 0.35 \
 	--geno 0.05 \
 	--hwe 1e-8 \
-	--keep-allele-order \
 	--allow-no-sex \
 	--make-bed \
 	--out frequent
@@ -131,7 +121,6 @@ plink1.9 \
 #-------- 50bp with r^2 > 0.2 using a window size of 5bp
 plink1.9 \
 	--bfile frequent \
-	--keep-allele-order \
 	--allow-no-sex \
 	--indep-pairwise 5kb 10 0.2 \
 	--out prunedsnplist
@@ -141,7 +130,6 @@ plink1.9 \
 plink1.9 \
 	--bfile frequent \
 	--allow-no-sex \
-	--keep-allele-order \
 	--extract prunedsnplist.prune.in \
 	--genome \
 	--out caseconpruned
@@ -163,7 +151,6 @@ cat fail-checksex.qc  fail-het.qc  fail-mis.qc duplicate.ids1 | sort | uniq > fa
 plink1.9 \
 	--bfile raw-camgwas \
 	--make-bed \
-	--keep-allele-order \
 	--allow-no-sex \
 	--set-hh-missing \
 	--remove fail-ind.qc \
@@ -176,14 +163,12 @@ plink1.9 \
 	--allow-no-sex \
 	--set-hh-missing \
 	--missing \
-	--keep-allele-order \
 	--out ind-qc-camgwas
 
 # Compute MAF
 plink1.9 \
 	--bfile ind-qc-camgwas \
 	--allow-no-sex \
-	--keep-allele-order \
 	--set-hh-missing \
 	--freq \
 	--out ind-qc-camgwas
@@ -193,7 +178,6 @@ plink1.9 \
 	--bfile ind-qc-camgwas \
 	--allow-no-sex \
 	--set-hh-missing \
-	--keep-allele-order \
 	--test-missing \
 	--out ind-qc-camgwas
 
@@ -212,7 +196,6 @@ plink1.9 \
 	--bfile ind-qc-camgwas \
 	--exclude fail-diffmiss.qc \
 	--allow-no-sex \
-	--keep-allele-order \
 	--maf 0.01 \
 	--hwe 1e-8 \
 	--geno 0.04 \
@@ -232,7 +215,6 @@ echo -e "\n\e[38;5;40mNow generating plots for per SNP QC in R. Please wait...\e
 plink \
 	--bfile qc-camgwas \
 	--allow-no-sex \
-	--keep-allele-order \
 	--make-bed \
 	--autosome \
 	--out qc-camgwas-autosome
@@ -265,7 +247,6 @@ plink \
 plink \
 	--bfile qc-camgwas \
 	--allow-no-sex \
-	--keep-allele-order \
 	--make-bed \
 	--chr X \
 	--out qc-camgwas-chrX \
@@ -277,7 +258,6 @@ plink1.9 \
         --allow-no-sex \
         --set-hh-missing \
         --test-missing \
-	--keep-allele-order \
         --out qc-camgwas-chrX
 
 echo -e """\e[38;5;40m
@@ -298,7 +278,6 @@ plink1.9 \
         --maf 0.01 \
         --hwe 1e-8 \
         --geno 0.04 \
-	--keep-allele-order \
         --make-bed \
         --biallelic-only \
 	--out qc-camgwas-chr23 
@@ -307,7 +286,6 @@ plink1.9 \
 plink \
 	--bfile qc-camgwas-autosome \
 	--allow-no-sex \
-	--keep-allele-order \
 	--bmerge qc-camgwas-chr23 \
 	--set-hh-missing \
 	--out qc-camgwas
@@ -328,7 +306,6 @@ plink \
 	--bfile qc-camgwas \
 	--update-name qc-camgwas-ids-pos.txt 2 1 \
 	--allow-no-sex \
-	--keep-allele-order \
 	--make-bed \
 	--out qc-camgwas
 
@@ -336,7 +313,6 @@ plink \
 	--bfile qc-camgwas \
 	--update-name updateName.txt 1 2 \
 	--allow-no-sex \
-	--keep-allele-order \
 	--make-bed \
 	--out qc-camgwas
 
