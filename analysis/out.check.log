@@ -1,0 +1,156 @@
+09-15 09:12 checkVCF.py -- check validity of VCF file for meta-analysis
+09-15 09:12 version 1.4 (20140115)
+09-15 09:12 contact zhanxw@umich.edu or dajiang@umich.edu for problems.
+09-15 09:12 Python version is [ 2.7.15.final.0 ] 
+09-15 09:12 Begin checking vcfFile [ qc-camgwas-updated.vcf.gz ]
+09-15 09:12 [ 10000 ] lines processed 
+09-15 09:12 [ 20000 ] lines processed 
+09-15 09:13 [ 30000 ] lines processed 
+09-15 09:13 [ 40000 ] lines processed 
+09-15 09:14 [ 50000 ] lines processed 
+09-15 09:14 [ 60000 ] lines processed 
+09-15 09:15 [ 70000 ] lines processed 
+09-15 09:15 [ 80000 ] lines processed 
+09-15 09:16 [ 90000 ] lines processed 
+09-15 09:16 [ 100000 ] lines processed 
+09-15 09:17 [ 110000 ] lines processed 
+09-15 09:17 [ 120000 ] lines processed 
+09-15 09:18 [ 130000 ] lines processed 
+09-15 09:18 [ 140000 ] lines processed 
+09-15 09:18 [ 150000 ] lines processed 
+09-15 09:19 [ 160000 ] lines processed 
+09-15 09:19 [ 170000 ] lines processed 
+09-15 09:20 [ 180000 ] lines processed 
+09-15 09:20 [ 190000 ] lines processed 
+09-15 09:21 [ 200000 ] lines processed 
+09-15 09:21 [ 210000 ] lines processed 
+09-15 09:22 [ 220000 ] lines processed 
+09-15 09:22 [ 230000 ] lines processed 
+09-15 09:22 [ 240000 ] lines processed 
+09-15 09:23 [ 250000 ] lines processed 
+09-15 09:23 [ 260000 ] lines processed 
+09-15 09:24 [ 270000 ] lines processed 
+09-15 09:24 [ 280000 ] lines processed 
+09-15 09:25 [ 290000 ] lines processed 
+09-15 09:25 [ 300000 ] lines processed 
+09-15 09:26 [ 310000 ] lines processed 
+09-15 09:26 [ 320000 ] lines processed 
+09-15 09:27 [ 330000 ] lines processed 
+09-15 09:27 [ 340000 ] lines processed 
+09-15 09:27 [ 350000 ] lines processed 
+09-15 09:28 [ 360000 ] lines processed 
+09-15 09:28 [ 370000 ] lines processed 
+09-15 09:29 [ 380000 ] lines processed 
+09-15 09:29 [ 390000 ] lines processed 
+09-15 09:30 [ 400000 ] lines processed 
+09-15 09:30 [ 410000 ] lines processed 
+09-15 09:31 [ 420000 ] lines processed 
+09-15 09:31 [ 430000 ] lines processed 
+09-15 09:32 [ 440000 ] lines processed 
+09-15 09:32 [ 450000 ] lines processed 
+09-15 09:32 [ 460000 ] lines processed 
+09-15 09:33 [ 470000 ] lines processed 
+09-15 09:33 [ 480000 ] lines processed 
+09-15 09:34 [ 490000 ] lines processed 
+09-15 09:34 [ 500000 ] lines processed 
+09-15 09:35 [ 510000 ] lines processed 
+09-15 09:35 [ 520000 ] lines processed 
+09-15 09:36 [ 530000 ] lines processed 
+09-15 09:36 [ 540000 ] lines processed 
+09-15 09:37 [ 550000 ] lines processed 
+09-15 09:37 [ 560000 ] lines processed 
+09-15 09:37 [ 570000 ] lines processed 
+09-15 09:38 [ 580000 ] lines processed 
+09-15 09:38 [ 590000 ] lines processed 
+09-15 09:39 [ 600000 ] lines processed 
+09-15 09:39 [ 610000 ] lines processed 
+09-15 09:40 [ 620000 ] lines processed 
+09-15 09:40 [ 630000 ] lines processed 
+09-15 09:41 [ 640000 ] lines processed 
+09-15 09:41 [ 650000 ] lines processed 
+09-15 09:42 [ 660000 ] lines processed 
+09-15 09:42 [ 670000 ] lines processed 
+09-15 09:42 [ 680000 ] lines processed 
+09-15 09:43 [ 690000 ] lines processed 
+09-15 09:43 [ 700000 ] lines processed 
+09-15 09:44 [ 710000 ] lines processed 
+09-15 09:44 [ 720000 ] lines processed 
+09-15 09:45 [ 730000 ] lines processed 
+09-15 09:45 [ 740000 ] lines processed 
+09-15 09:46 [ 750000 ] lines processed 
+09-15 09:46 [ 760000 ] lines processed 
+09-15 09:47 [ 770000 ] lines processed 
+09-15 09:47 [ 780000 ] lines processed 
+09-15 09:47 [ 790000 ] lines processed 
+09-15 09:48 [ 800000 ] lines processed 
+09-15 09:48 [ 810000 ] lines processed 
+09-15 09:49 [ 820000 ] lines processed 
+09-15 09:49 [ 830000 ] lines processed 
+09-15 09:50 [ 840000 ] lines processed 
+09-15 09:50 [ 850000 ] lines processed 
+09-15 09:51 [ 860000 ] lines processed 
+09-15 09:51 [ 870000 ] lines processed 
+09-15 09:51 [ 880000 ] lines processed 
+09-15 09:52 [ 890000 ] lines processed 
+09-15 09:52 [ 900000 ] lines processed 
+09-15 09:53 [ 910000 ] lines processed 
+09-15 09:53 [ 920000 ] lines processed 
+09-15 09:54 [ 930000 ] lines processed 
+09-15 09:54 [ 940000 ] lines processed 
+09-15 09:55 [ 950000 ] lines processed 
+09-15 09:55 [ 960000 ] lines processed 
+09-15 09:56 [ 970000 ] lines processed 
+09-15 09:56 [ 980000 ] lines processed 
+09-15 09:56 [ 990000 ] lines processed 
+09-15 09:57 [ 1000000 ] lines processed 
+09-15 09:57 [ 1010000 ] lines processed 
+09-15 09:58 [ 1020000 ] lines processed 
+09-15 09:58 [ 1030000 ] lines processed 
+09-15 09:59 [ 1040000 ] lines processed 
+09-15 09:59 [ 1050000 ] lines processed 
+09-15 10:00 [ 1060000 ] lines processed 
+09-15 10:00 [ 1070000 ] lines processed 
+09-15 10:01 [ 1080000 ] lines processed 
+09-15 10:01 [ 1090000 ] lines processed 
+09-15 10:01 [ 1100000 ] lines processed 
+09-15 10:02 [ 1110000 ] lines processed 
+09-15 10:02 [ 1120000 ] lines processed 
+09-15 10:03 [ 1130000 ] lines processed 
+09-15 10:03 [ 1140000 ] lines processed 
+09-15 10:04 [ 1150000 ] lines processed 
+09-15 10:04 [ 1160000 ] lines processed 
+09-15 10:05 [ 1170000 ] lines processed 
+09-15 10:05 [ 1180000 ] lines processed 
+09-15 10:05 [ 1190000 ] lines processed 
+09-15 10:06 [ 1200000 ] lines processed 
+09-15 10:06 [ 1210000 ] lines processed 
+09-15 10:07 [ 1220000 ] lines processed 
+09-15 10:07 [ 1230000 ] lines processed 
+09-15 10:08 [ 1240000 ] lines processed 
+09-15 10:08 [ 1250000 ] lines processed 
+09-15 10:09 [ 1260000 ] lines processed 
+09-15 10:09 [ 1270000 ] lines processed 
+09-15 10:09 [ 1280000 ] lines processed 
+09-15 10:10 [ 1290000 ] lines processed 
+09-15 10:10 [ 1300000 ] lines processed 
+09-15 10:11 [ 1310000 ] lines processed 
+09-15 10:11 [ 1320000 ] lines processed 
+09-15 10:12 [ 1330000 ] lines processed 
+09-15 10:12 [ 1340000 ] lines processed 
+09-15 10:13 [ 1350000 ] lines processed 
+09-15 10:13 [ 1360000 ] lines processed 
+09-15 10:13 [ 1370000 ] lines processed 
+09-15 10:14 [ 1380000 ] lines processed 
+09-15 10:14 [ 1390000 ] lines processed 
+09-15 10:14 ---------------     REPORT     ---------------
+09-15 10:14 Total [ 1393078 ] lines processed
+09-15 10:14 Examine [ 29 ] VCF header lines, [ 1393049 ] variant sites, [ 1185 ] samples
+09-15 10:14 [ 0 ] duplicated sites
+09-15 10:14 [ 0 ] NonSNP site are outputted to [ out.check.nonSnp ]
+09-15 10:14 [ 226097 ] Inconsistent reference sites are outputted to [ out.check.ref ]
+09-15 10:14 [ 0 ] Variant sites with invalid genotypes are outputted to [ out.check.geno ]
+09-15 10:14 [ 36326 ] Alternative allele frequency > 0.5 sites are outputted to [ out.check.af ]
+09-15 10:14 [ 0 ] Monomorphic sites are outputted to [ out.check.mono ]
+09-15 10:14 ---------------     ACTION ITEM     ---------------
+09-15 10:14 * Read out.check.ref, for autosomal sites, make sure the you are using the forward strand
+09-15 10:14 * Upload these files to the ftp server (so we can double check): out.check.log out.check.dup out.check.noSnp out.check.ref out.check.geno out.check.af out.check.mono
