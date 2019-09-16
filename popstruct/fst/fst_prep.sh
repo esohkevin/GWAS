@@ -31,6 +31,21 @@ if [[ $# == 3 ]]; then
         --recode A \
 	--double-id \
         --out ${outname}
+
+    #-------- Get .map file to use for updating adegent input PLINK raw file
+    plink \
+        --vcf ${in_vcf} \
+        --allow-no-sex \
+        --maf ${maf} \
+        --aec \
+        --threads 4 \
+        --autosome \
+        --keep-allele-order \
+        --extract pruned.prune.in \
+        --recode \
+        --double-id \
+        --out ${outname}
+
     
     #-------- Pull sample IDs based on column number
     #awk '{print $1, $1, $17}' ../eig/EIGENSTRAT/merged.pca.evec | sed '1d' | grep -v NA > stat.txt
@@ -39,7 +54,7 @@ if [[ $# == 3 ]]; then
     #awk '{print $1, $1, $20}' ../eig/EIGENSTRAT/merged.pca.evec | sed '1d' | grep -v NA > age.txt
     #awk '{print $1, $1, $21}' ../eig/EIGENSTRAT/merged.pca.evec | sed '1d' | grep -v NA > para.txt
 
-    rm pruned* *.nosex
+    rm pruned* *.nosex *.ped
 
 else
     echo """
