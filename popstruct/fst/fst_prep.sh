@@ -11,6 +11,7 @@ if [[ $# == 3 ]]; then
         --vcf ${in_vcf} \
         --allow-no-sex \
 	--aec \
+	--threads 4 \
 	--autosome \
 	--double-id \
 	--keep-allele-order \
@@ -23,6 +24,7 @@ if [[ $# == 3 ]]; then
         --allow-no-sex \
 	--maf ${maf} \
 	--aec \
+	--threads 4 \
 	--autosome \
 	--keep-allele-order \
         --extract pruned.prune.in \
