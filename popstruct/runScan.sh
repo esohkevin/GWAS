@@ -17,6 +17,8 @@ if [[ $param == [12] ]]; then
 
         Rscript scanPart.R $2 $3 $4
 
+	awk '$6<=0.05' ${3}iHSresult.txt > ${3}Signals.txt
+
    elif [[ $param == "2" && $# != 5 ]]; then
         echo """
              Usage: ./scanFull.R 2 <.hap+.map-root> <output> <#chr> <threads>
@@ -30,6 +32,8 @@ if [[ $param == [12] ]]; then
    elif [[ $param == "2" && $# == 5 ]]; then
 
         Rscript scanFull.R $2 $3 $4 $5
+
+	awk '$6<=0.05' ${3}iHSresult.txt > ${3}Signals.txt
   
    fi
 
