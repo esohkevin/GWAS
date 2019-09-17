@@ -12,6 +12,7 @@ args <- commandArgs(TRUE)
 
 numchr <- args[3]
 thresh <- args[4]
+threds <- args[5]
 snpInfo <- read.table("snp.info", header = F, as.is = T)
 iHSplot <- paste(args[2],"iHS.png", sep="")
 iHSresult <- paste(args[2],"iHSresult.txt", sep="")
@@ -32,7 +33,7 @@ for(i in 1:numchr) {
   data <- data2haplohh(hap_file=hapFile, map_file=mapFile, recode.allele = F,
 		       min_perc_geno.hap=100, min_maf=0.05, 
 		       haplotype.in.columns=TRUE, chr.name=i)
-  res <- scan_hh(data)
+  res <- scan_hh(data, threads = threds)
   if(i==1){wg.res<-res}else{wg.res<-rbind(wg.res,res)}
 
 }
@@ -55,7 +56,7 @@ thr <- as.numeric(-log10(0.05/ns))
 
 if (thr >= 8) {
 	thresh <- 8
-} else { thresh <- thr }
+} else {thresh <- thr}
 
 print("", quote=F)
 print("Bonferoni Corrected threshold", quote=F)
@@ -86,7 +87,7 @@ write.table(lopP, file = iHSresult, col.names=T, row.names=F, quote=F, sep='\t')
 # Manhattan PLot of iHS results
 png(iHSplot, height = 700, width = 640, res = NA, units = "px")
 layout(matrix(1:2,2,1))
-manhattanplot(wg.ihs, pval = F, main = iHSmain, threshold = c(-3, 3))
+manhattanplot(wg.ihs, pval = F, main = iHSmain, threshold = c(-4, 4))
 manhattanplot(wg.ihs, pval = T, main = iHSmain, threshold = c(-thresh, thresh))
 dev.off()
 

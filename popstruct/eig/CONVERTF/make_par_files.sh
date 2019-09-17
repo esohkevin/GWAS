@@ -60,6 +60,3 @@ phasedmode:      YES
 #numthreads:      16
 """ > par.ANCESTRYMAP.EIGENSTRAT
 
-awk '{print $1}' ${base}.ind > ${base}.ids
-grep -f ${base}.ids ${samples}qc-camgwas_sex_eth.txt > ${base}-ald.ind
-

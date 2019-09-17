@@ -54,6 +54,9 @@ if [[ $1 == "sub" ]]; then
         convertf -p par.PACKEDPED.PACKEDANCESTRYMAP	
         convertf -p par.PACKEDANCESTRYMAP.ANCESTRYMAP
         convertf -p par.ANCESTRYMAP.EIGENSTRAT
+
+	awk '{print $1}' ${base}.ind > ${base}.ids
+	grep -f ${base}.ids ${samples}qc-camgwas_sex_eth.txt > ${base}-ald.ind
     
     else
     	echo """
@@ -108,7 +111,10 @@ elif [[ $1 == "all" ]]; then
         convertf -p par.PACKEDPED.PACKEDANCESTRYMAP	
         convertf -p par.PACKEDANCESTRYMAP.ANCESTRYMAP
         convertf -p par.ANCESTRYMAP.EIGENSTRAT
-    
+
+	awk '{print $1}' ${base}.ind > ${base}.ids
+	grep -f ${base}.ids ${samples}qc-camgwas_sex_eth.txt > ${base}-ald.ind
+
     else
     	echo """
     	Usage: ./convertf_all.sh all <in-vcf> <outname>

@@ -14,7 +14,7 @@ $s_param=$ARGV[4];
 
 if ($num_args == 5) {
 
-	print "\nNB: Arguument order matters!\n";
+	print "\nNB: Argument order matters!\n";
 
 	$command = "smartpca.perl";
 	$command .= " -i ../CONVERTF/$base.eigenstratgeno ";
@@ -38,13 +38,13 @@ if ($num_args == 5) {
 	$command .= " -p $base.pca ";
 	$command .= " -k $k_param ";
 	$command .= " -o $base.chisq ";
-	$command .= " -l $base-eig.log ";
+	$command .= " -l $base-strat.log ";
 	print("$command\n");
 	system("$command");
 	
-	#$command = "gc.perl $base.chisq $base.chisq.GC";
-	#print("$command\n");
-	#system("$command");
+	$command = "gc.perl $base.chisq $base.chisq.GC";
+	print("$command\n");
+	system("$command");
 	
 	#$command = "evec2pca.perl $t_param $base.pca.evec ../CONVERTF/$base.ind $base.pca";
 	#print("$command\n");

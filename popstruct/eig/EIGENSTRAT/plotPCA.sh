@@ -2,16 +2,21 @@
 
 
 if [[ $# == 1 ]]; then
-   Rscript eig.R $1
 
-#   mv *.png ../../../images/
+    Rscript ps.R $1
+   
+    #Rscript eig.R $1
 
-#   cut -f4 -d' ' ${1} | sed '1d' > eig.id1
-#   cut -f4 -d' ' ${1} | sed '1d' > eig.id2
-#   paste eig.id1 eig.id2 > eig.ids
-#   rm eig.id1 eig.id2
-#   
-#   mv ${1}.pca.txt ${1/.pca*/.pcs}
+    #mv *.png ../../../images/
+
+    #cut -f4 -d' ' ${1} | sed '1d' > eig.id1
+    #cut -f4 -d' ' ${1} | sed '1d' > eig.id2
+    #paste eig.id1 eig.id2 > eig.ids
+    #rm eig.id1 eig.id2
+   
+    #mv ${1}.pca.txt ${1/.pca*/.pcs}
+
+    awk '{print $1}' $1 | sed '1d' > pca.ids
 
 else 
    echo """

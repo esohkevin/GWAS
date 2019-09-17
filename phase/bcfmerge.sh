@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#for i in chr*-phased_wref.vcf.gz; do
-#    tabix -f -p vcf ${i}
-#done
+for i in chr*-phased_wref.vcf.gz; do
+    tabix -f -p vcf ${i}
+done
 
 
 # bcftools concat -a -d snps -Oz \
