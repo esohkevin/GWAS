@@ -1,6 +1,6 @@
 #!/usr/bin/Rscritp
 
-setwd("~/esohdata/GWAS/popstruct/fst")
+#setwd("~/esohdata/GWAS/popstruct/fst")
 #setwd("~/Git/popgen/fst/")
 
 #------- Load packages

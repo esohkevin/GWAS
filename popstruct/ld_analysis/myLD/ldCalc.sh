@@ -28,7 +28,8 @@ do
 #	--out chr$i
 
 ## calculate LD
-vcftools --gzvcf $vcf2use \
+vcftools \
+	--gzvcf $vcf2use \
 	--hap-r2 \
 	--keep $2 \
 	--ld-window-bp 100000 \

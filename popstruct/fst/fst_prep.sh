@@ -12,8 +12,9 @@ if [[ $# == 3 ]]; then
         --allow-no-sex \
 	--keep-allele-order \
 	--aec \
+	--autosome \
 	--threads 4 \
-        --indep-pairwise 5k 5 0.1 \
+        --indep-pairwise 5k 100 0.1 \
         --out pruned
 
     #-------- Now extract the pruned SNPs to perform check-sex on
@@ -23,6 +24,7 @@ if [[ $# == 3 ]]; then
 	--keep-allele-order \
 	--maf ${maf} \
 	--aec \
+	--autosome \
 	--threads 4 \
 	--double-id \
         --extract pruned.prune.in \
@@ -30,28 +32,11 @@ if [[ $# == 3 ]]; then
 	--real-ref-alleles \
         --out ${outname}
 
-<<<<<<< HEAD
     #-------- Get 
     #plink \
 	#--bfile fst-ready
 	#--out fst-ready
 	#--recode 12
-
-=======
-    #-------- Get .map file to use for updating adegent input PLINK raw file
-    plink \
-        --vcf ${in_vcf} \
-        --allow-no-sex \
-        --maf ${maf} \
-        --aec \
-        --threads 4 \
-        --autosome \
-        --keep-allele-order \
-        --extract pruned.prune.in \
-        --recode \
-        --double-id \
-        --out ${outname}
->>>>>>> 2b1155561634a3980da6699e2cbb53d0b7a283c7
 
     
     #-------- Pull sample IDs based on column number
@@ -61,7 +46,6 @@ if [[ $# == 3 ]]; then
     #awk '{print $1, $1, $20}' ../eig/EIGENSTRAT/merged.pca.evec | sed '1d' | grep -v NA > age.txt
     #awk '{print $1, $1, $21}' ../eig/EIGENSTRAT/merged.pca.evec | sed '1d' | grep -v NA > para.txt
 
-<<<<<<< HEAD
     #awk '{print $1,$4}' ${outname}.bim | sed 's/ /:/' > temp.txt
     #tr "\n" "," < temp.txt | sed 's/,$//' > snps.txt
     #snps=$(cat snps.txt)
@@ -71,9 +55,6 @@ if [[ $# == 3 ]]; then
     #./get_hier.sh
 
     rm pruned* *.nosex temp*
-=======
-    rm pruned* *.nosex *.ped
->>>>>>> 2b1155561634a3980da6699e2cbb53d0b7a283c7
 
 else
     echo """
