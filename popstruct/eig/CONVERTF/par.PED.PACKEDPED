@@ -1,11 +1,11 @@
 
-genotypename:    pop.ped
-snpname:         pop.map # or example.map, either works
-indivname:       pop.ped # or example.ped, either works
+genotypename:    cor.ped
+snpname:         cor.map # or example.map, either works
+indivname:       cor.ped # or example.ped, either works
 outputformat:    PACKEDPED
-genotypeoutname: pop.bed
-snpoutname:      pop.pedsnp
-indivoutname:    pop.pedind
+genotypeoutname: cor.bed
+snpoutname:      cor.pedsnp
+indivoutname:    cor.pedind
 #xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES

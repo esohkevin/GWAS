@@ -7,6 +7,8 @@ in_file="$1"
 plink \
 	--file ${in_file} \
 	--fst \
+	--keep-allele-order \
+	--keep pca.ids \
 	--autosome \
 	--within plink_fst.pops \
 	--out all
