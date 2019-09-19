@@ -1,6 +1,6 @@
 #!/usr/bin/Rscritp
 
-#setwd("~/esohdata/GWAS/popstruct/fst")
+setwd("~/esohdata/GWAS/popstruct/fst")
 #setwd("~/Git/popgen/fst/")
 
 #------- Load packages
@@ -10,12 +10,14 @@ require(parallel)
 require(data.table)
 require(pegas)
 
+
 #------- Read in files
-pheno <- "pheno.txt"
-fpheno <- as.data.frame(fread(pheno, nThread = 4))
+pheno <- "perm1.txt"
+fpheno <- as.data.frame(fread(pheno, nThread = 4, header = F))
+colnames(fpheno) <- c("FID", "IID", "ETH")
 
 #-------- Load VCF
-fn <- "hier.vcf.gz"
+fn <- "hier-1.vcf.gz"
 x.1 <- VCFloci(fn)
 base <- c("A","T","G","C")
 snps <- which(x.1$REF %in% base & x.1$ALT %in% base)
@@ -28,6 +30,8 @@ para_bstat <- basic.stats(na.omit(para_dat))
 print("Ethnicity", quote = FALSE)
 para_bstat$overall
 
+para_bstat$perloc$Fst
+
 #-------- Test Between levels
 #para_tb <- test.between(alt_dat[,-c(1)], test.lev = fpheno$ALTCAT, 
 #                        rand.unit = fpheno$PARACAT)
@@ -35,6 +39,25 @@ para_bstat$overall
 #-------- Test significance of the effect of level on differentiation
 para_g <- test.g(para_dat[,-c(1)], level = fpheno$ETH, nperm = 1000)
 para_g$p.val
+
+#-------- Variance component
+para_vc <-hierfstat::varcomp.glob(data.frame(fpheno$ETH), para_dat[,-c(1)])
+para_vc$F
+fwrite(para_vc$loc, file = "hier-vcomp.loc", buffMB = 10, nThread = 30, sep = " ")
+
+#-----------------------------------------------------------------------------#
+#plot(para_vc$loc[,1], para_vc$loc[,2], pch = 16)
+#hist(para_vc$loc[,1])
+
+png("vc_dens.png", height = 16, width = 16, units = "cm", res = 100, points = 14)
+plot(density(para_vc$loc[,2]))
+dev.off()
+
+#para_boot <- boot.vc(data.frame(fpheno$ETH), para_dat[,-c(1)], nboot = 100)
+#para_boot
+#-----------------------------------------------------------------------------#
+
+#require(shuffleSet)
 
 
 #-------- Plot NJ tree
