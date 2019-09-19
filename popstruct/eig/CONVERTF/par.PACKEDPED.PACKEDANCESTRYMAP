@@ -1,11 +1,11 @@
 
-genotypename:    cor.bed
-snpname:         cor.pedsnp # or example.map, either works
-indivname:       cor.pedind # or example.ped, either works
+genotypename:    cam.bed
+snpname:         cam.pedsnp # or example.map, either works
+indivname:       cam.pedind # or example.ped, either works
 outputformat:    PACKEDANCESTRYMAP
-genotypeoutname: cor.packedancestrymapgeno
-snpoutname:      cor.snp
-indivoutname:    cor.ind
+genotypeoutname: cam.packedancestrymapgeno
+snpoutname:      cam.snp
+indivoutname:    cam.ind
 familynames:     NO
 phasedmode:      YES
 #numthreads:      16

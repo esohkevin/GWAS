@@ -1,11 +1,11 @@
 
-genotypename:    cor.ancestrymapgeno
-snpname:         cor.snp
-indivname:       cor.ind
+genotypename:    cam.ancestrymapgeno
+snpname:         cam.snp
+indivname:       cam.ind
 outputformat:    EIGENSTRAT
-genotypeoutname: cor.eigenstratgeno
-snpoutname:      cor.snp
-indivoutname:    cor.ind
+genotypeoutname: cam.eigenstratgeno
+snpoutname:      cam.snp
+indivoutname:    cam.ind
 phasedmode:      YES
 #numthreads:      16
 
