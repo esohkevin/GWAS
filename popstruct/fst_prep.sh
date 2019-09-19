@@ -1,10 +1,11 @@
 #!/bin/bash
 
-kgp="../phase/1000GP_Phase3/"
-analysis="../analysis/"
-phase="../phase/"
+if [[ $# == 3 ]]; then
+   
+    in_vcf="$1"
+    maf="$2"
+    outname="$3"
 
-if [[ $# == ]]
     #-------- LD-prune the raw data
     plink \
         --vcf ${in_vcf} \
@@ -13,7 +14,7 @@ if [[ $# == ]]
 	--aec \
 	--autosome \
 	--threads 4 \
-        --indep-pairwise 5k 50 0.1 \
+        --indep-pairwise 5k 50 0.2 \
         --out pruned
 
     #-------- Now extract the pruned SNPs to perform check-sex on
@@ -31,3 +32,14 @@ if [[ $# == ]]
 	--real-ref-alleles \
         --out ${outname}
 
+    rm pruned* *.nosex temp*
+
+else
+    echo """
+    Usage:./fst_prep.sh <in-vcf(plus path)> <maf> <bfile-outname>
+    """
+fi
+
+#in_vcf=Phased-pca-filtered
+#maf=0.05
+#outname=""

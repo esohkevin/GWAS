@@ -6,8 +6,16 @@ if [[ $# == 3 ]]; then
     maf="$2"
     outname="$3"
 
+    #---- Shuffle samples to get random perm for BA and SB (50 each)
+    shuf -n 50 sbantu.txt -o sbantu50.txt; awk '{print $1,$1,$2}' sbantu50.txt > perm.txt
+    shuf -n 50 bantu.txt -o bantu50.txt; awk '{print $1,$1,$2}' bantu50.txt >> perm.txt
+
+    #---- Combine subsamples with 28 Fulbe individuals
+    awk '{print $1,$1,$2}' fulbe.txt >> perm.txt
+
+
     #-------- LD-prune the raw data
-    plink1.9 \
+    plink \
         --vcf ${in_vcf} \
         --allow-no-sex \
 	--keep-allele-order \
@@ -18,12 +26,13 @@ if [[ $# == 3 ]]; then
         --out pruned
 
     #-------- Now extract the pruned SNPs to perform check-sex on
-    plink1.9 \
+    plink \
         --vcf ${in_vcf} \
         --allow-no-sex \
 	--keep-allele-order \
 	--maf ${maf} \
 	--aec \
+	--keep perm.txt \
 	--autosome \
 	--threads 4 \
 	--double-id \
