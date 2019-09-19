@@ -61,65 +61,6 @@ evecthn <- merge(evecDat, eth, by="FID")
 popGroups <- read.table(qc_pops, col.names=c("FID", "PopGroup"))
 mergedEvecDat <- merge(evecDat, popGroups, by="FID")
 
-#-------Plot for top 2 vectors for casecontrol status
-png(filename = evec2, width = 450, height = 750, units = "px", pointsize = 12, 
-    bg = "white",  res = NA, type = c("quartz"))
-n <- 1:length(levels(mergedEvecDat$Status))
-par(mfrow=c(2,1))
-plot(evecDat$C1, evecDat$C2, xlab="PC1", ylab="PC2", main="Eigenanalysis With Sample Status")
-d <- evecDat[evecDat$Status=="Case",]
-points(d$C1, d$C2, col=2, pch=20)
-d <- evecDat[evecDat$Status=="Control",]
-points(d$C1, d$C2, col=1, pch=20)
-legend("topleft", c("Case", "Control"), col=pcol, pch=20)
-plot(mergedEvecDat$C1, mergedEvecDat$C2, col=pcol, 
-	main="Eigenanalysis With Sample Region", xlab="PC1", ylab="PC2", pch=20)
-n <- 1:length(levels(mergedEvecDat$PopGroup))
-legend("topleft", legend=levels(mergedEvecDat$PopGroup), col=pcol, pch=20)
-dev.off()
-
-#-------Plot for 6 pairs of eigenvalues for casecontrol status
-png(filename = evec10, width = 890, height = 600, units = "px", pointsize = 12,
-    bg = "white",  res = NA, type = c("cairo-png"))
-par(mfrow=c(2,3))
-plot(evecDat$C1, evecDat$C2, xlab="C1", ylab="C2", pch=20, main="C1 Vs C2")
-d <- evecDat[evecDat$Status=="Case",]
-points(d$C1, d$C2, col=2, pch=20)
-d <- evecDat[evecDat$Status=="Control",]
-points(d$C1, d$C2, col=1, pch=20)
-legend("topleft", c("Case", "Control"), col=c(2,1), pch=20, bty="n")
-plot(evecDat$C3, evecDat$C4, xlab="C3", ylab="C4", pch=20, main="C3 Vs C4")
-d <- evecDat[evecDat$Status=="Case",]
-points(d$C3, d$C4, col=2, pch=20)
-d <- evecDat[evecDat$Status=="Control",]
-points(d$C3, d$C4, col=1, pch=20)
-legend("topright", c("Case", "Control"), col=c(2,1), pch=20, bty="n")
-plot(evecDat$C5, evecDat$C6, xlab="C5", ylab="C6", pch=20, main="C5 Vs C6")
-d <- evecDat[evecDat$Status=="Case",]
-points(d$C5, d$C6, col=2, pch=20)
-d <- evecDat[evecDat$Status=="Control",]
-points(d$C5, d$C6, col=1, pch=20)
-legend("topright", c("Case", "Control"), col=c(2,1), pch=20, bty="n")
-plot(evecDat$C7, evecDat$C8, xlab="C7", ylab="C8", pch=20, main="C7 Vs C8")
-d <- evecDat[evecDat$Status=="Case",]
-points(d$C7, d$C8, col=2, pch=20)
-d <- evecDat[evecDat$Status=="Control",]
-points(d$C7, d$C8, col=1, pch=20)
-legend("topright", c("Case", "Control"), col=c(2,1), pch=20, bty="n")
-plot(evecDat$C9, evecDat$C10, xlab="C9", ylab="C10", pch=20, main="C9 Vs C10")
-d <- evecDat[evecDat$Status=="Case",]
-points(d$C9, d$C10, col=2, pch=20)
-d <- evecDat[evecDat$Status=="Control",]
-points(d$C9, d$C10, col=1, pch=20)
-legend("topright", c("Case", "Control"), col=c(2,1), pch=20, bty="n")
-plot(evecDat$C1, evecDat$C5, xlab="C1", ylab="C5", pch=20, main="C1 Vs C5")
-d <- evecDat[evecDat$Status=="Case",]
-points(d$C1, d$C5, col=2, pch=20)
-d <- evecDat[evecDat$Status=="Control",]
-points(d$C1, d$C5, col=1, pch=20)
-legend("topleft", c("Case", "Control"), col=c(2,1), pch=20, bty="n")
-dev.off()
-
 #--------Import the data file containing ethnicity column
 #evecthn=read.table("qc-camgwas-ethni.evec", header=T, as.is=T)
 evecthn <- evecthn[order(ethnicity),]
