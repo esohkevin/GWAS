@@ -10,9 +10,13 @@ require(parallel)
 require(data.table)
 require(pegas)
 
+args <- commandArgs(TRUE)
 
 #------- Read in files
-for (i in 1:2) {
+#for (i in 1:2) {
+
+  i <- args[1]
+
   ph <- paste0("perm",i,".txt")
   pheno <- ph
   fpheno <- as.data.frame(fread(pheno, nThread = 4, header = F))
@@ -20,12 +24,12 @@ for (i in 1:2) {
   
   #-------- Load VCF
   f <- paste0("hier-",i,".vcf.gz")
-  fn <- "hier-1.vcf.gz"
+  fn <- f
   x.1 <- VCFloci(fn)
   base <- c("A","T","G","C")
   snps <- which(x.1$REF %in% base & x.1$ALT %in% base)
   x <- read.vcf(fn, which.loci = snps)
-  para_dat <- genind2hierfstat(loci2genind(x), pop = fpheno$ETH)
+  eth_dat <- genind2hierfstat(loci2genind(x), pop = fpheno$ETH)
   
   #-------- Initialize Output
   bstat1 <- paste0("bstats",i,".txt")
@@ -35,38 +39,41 @@ for (i in 1:2) {
 
 
   #-------- Variance component
-  para_vc <-hierfstat::varcomp.glob(data.frame(fpheno$ETH), para_dat[,-c(1)])
-  para_vc$F
-  fwrite(para_vc$loc, file = hvc, buffMB = 10, nThread = 30, sep = " ")
+  eth_vc <-hierfstat::varcomp.glob(data.frame(fpheno$ETH), eth_dat[,-c(1)])
+  eth_vc$F
+  write.table(eth_vc$loc, file = hvc, col.names = F, 
+  		row.names = T, quote = F, sep = " ")
+  #fwrite(eth_vc$loc, file = hvc, buffMB = 10, nThread = 30, sep = " ")
 
   #-----------------------------------------------------------------------------#
-  #plot(para_vc$loc[,1], para_vc$loc[,2], pch = 16)
-  #hist(para_vc$loc[,1])
+  #plot(eth_vc$loc[,1], eth_vc$loc[,2], pch = 16)
+  #hist(eth_vc$loc[,1])
 
   png(hvcpng, height = 16, width = 16, units = "cm", res = 100, points = 14)
-  plot(density(para_vc$loc[,2]))
+  plot(density(eth_vc$loc[,2]))
   dev.off()
   
   #-------- Compute basic stat
-  para_bstat <- basic.stats(na.omit(para_dat))
+  eth_bstat <- basic.stats(na.omit(eth_dat))
   print("Ethnicity", quote = FALSE)
-  fwrite(para_bstat$overall, file = bstat1, buffMB = 10, nThread = 30, sep = " ")
-  
-  fwrite(para_bstat$perloc$Fst, file = bstat2, buffMB = 10, nThread = 30, sep = " ")
+  eth_bstat$overall
+  write.table(eth_bstat$perloc, file = bstat1, row.names = T, 
+  		col.names = T, quote = F, sep = " ")
+  #fwrite(eth_bstat$perloc[,c(1:3,7)], file = bstat2, buffMB = 10, nThread = 30, sep = " ")
   
   
   #-------- Test Between levels
-  #para_tb <- test.between(alt_dat[,-c(1)], test.lev = fpheno$ALTCAT, 
+  #eth_tb <- test.between(alt_dat[,-c(1)], test.lev = fpheno$ALTCAT, 
   #                        rand.unit = fpheno$PARACAT)
   
   #-------- Test significance of the effect of level on differentiation
-  #para_g <- test.g(para_dat[,-c(1)], level = fpheno$ETH, nperm = 1000)
-  #para_g$p.val
+  #eth_g <- test.g(eth_dat[,-c(1)], level = fpheno$ETH, nperm = 1000)
+  #eth_g$p.val
 
-}
+#}
 
-#para_boot <- boot.vc(data.frame(fpheno$ETH), para_dat[,-c(1)], nboot = 100)
-#para_boot
+#eth_boot <- boot.vc(data.frame(fpheno$ETH), eth_dat[,-c(1)], nboot = 100)
+#eth_boot
 #-----------------------------------------------------------------------------#
 
 #require(shuffleSet)
@@ -74,20 +81,20 @@ for (i in 1:2) {
 
 #-------- Plot NJ tree
 #png("bionj.png", height = 15, width = 15, units = "cm", res = 100, points = 12)
-#for (i in c("para_dat")) {
-#  if (i == "para_dat") {
+#for (i in c("eth_dat")) {
+#  if (i == "eth_dat") {
 #    i.name <- "ETH"
 #    i.main <- "Ethnicity"
-#    d <- genet.dist(na.omit(para_dat))
+#    d <- genet.dist(na.omit(eth_dat))
 #    d <- as.matrix(d)
-#    dimnames(d)[[1]] <- dimnames(d)[[2]] <- as.character(levels(para_dat[,1]))
+#    dimnames(d)[[1]] <- dimnames(d)[[2]] <- as.character(levels(eth_dat[,1]))
 #    my.col <- as.integer(fpheno$i.name)
 #    x <- table(fpheno$i.name, my.col)
 #    my.col <- apply(x,1, function(y) which(y>0))
 #    plot(bionj(d), type = "unrooted", lab4ut = "axial", 
 #         cex = 0.8, tip.color = my.col, main = i.main)
-#    mtext(paste0("p-value ",para_g$p.val), side = 3)
-#    #text(6, 2, paste0("p-value ", para_g$p.val),
+#    mtext(paste0("p-value ",eth_g$p.val), side = 3)
+#    #text(6, 2, paste0("p-value ", eth_g$p.val),
 #    #     cex = 0.8)
 #    
 #  }
@@ -96,6 +103,6 @@ for (i in 1:2) {
 #  
 #
 #png("boxplots.png", height = 13, width = 18, units = "cm", res = 100, points = 14)
-#boxplot(para_bstat$perloc[,c(1:3)], main = "Ethnicity")
-#mtext(paste0("p-value ",para_g$p.val), side = 3)
+#boxplot(eth_bstat$perloc[,c(1:3)], main = "Ethnicity")
+#mtext(paste0("p-value ",eth_g$p.val), side = 3)
 #dev.off()

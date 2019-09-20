@@ -20,7 +20,7 @@ if [[ $# == 1 ]]; then
         --allow-no-sex \
         --autosome \
 	--double-id \
-	--extract fstbest.snps \
+	--extract fstsnps.txt \
     	--indiv-sort f adm.order \
     	--make-bed \
         --out temp
@@ -37,6 +37,7 @@ if [[ $# == 1 ]]; then
     	--bfile temp \
     	--autosome \
     	--maf 0.01 \
+	--hwe 1e-8 \
     	--extract prune.prune.in \
     	--make-bed \
     	--out adm-data

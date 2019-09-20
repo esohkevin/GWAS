@@ -7,10 +7,10 @@ done
 echo "K CVE" > adm-k-parameters.txt; grep -h CV log*.out | \
 	cut -f3,4 -d' ' | \
 	sed 's/(K\=//g' | \
-	sed 's/)://g' >> adm-k-parameters.txt
+	sed 's/)://g' | sort >> adm-k-parameters.txt
 
 Rscript plotCV.R
 
-mv *.png ../../images/
+#mv *.png ../../images/
 
-rm prune*
+#rm prune*

@@ -1,15 +1,16 @@
 #!/bin/bash
 
 analysis="../analysis/"
+pop="../popstruct/"
 
 for chr in {1..22}; do
     plink \
-        --vcf Phased_wref.vcf.gz \
+        --vcf ${pop}Phased-pca-filtered.vcf.gz \
         --allow-no-sex \
         --pheno "${analysis}"raw-camgwas.fam \
         --update-sex "${analysis}"raw-camgwas.fam 3 \
         --mpheno 4 \
-	--maf 0.05 \
+	--maf 0.35 \
         --recode12 \
         --chr ${chr} \
         --double-id \
