@@ -3,6 +3,8 @@
 analysis="../analysis/"
 pop="../popstruct/"
 
+../popstruct/fst/fvcf/
+
 for chr in {1..22}; do
     plink \
         --vcf ${pop}Phased-pca-filtered.vcf.gz \
