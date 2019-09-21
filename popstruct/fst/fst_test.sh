@@ -6,7 +6,7 @@ if [[ $# == 3 ]]; then
     maf="$2"
     outname="$3"
 
-    for i in {1..10}; do
+    for i in {1..30}; do
         #---- Shuffle samples to get random perm for BA and SB (50 each)
         shuf -n 50 sbantu.txt -o sbantu50.txt; awk '{print $1,$1,$2}' sbantu50.txt > perm${i}.txt
         shuf -n 50 bantu.txt -o bantu50.txt; awk '{print $1,$1,$2}' bantu50.txt >> perm${i}.txt
