@@ -7,9 +7,9 @@ evaloutname:     pop-eth.eval
 altnormstyle:    NO
 outlieroutname:  pop.outlier
 familynames:     NO
-#snpweightoutname:      pop-snpwt
+snpweightoutname:      pop-snpwt
 deletesnpoutname:       pop-eth-badsnps
-#numthreads:     2
+numthreads:      15
 ldregress:       200
 phylipoutname:   pop.phy
 fstonly:         YES

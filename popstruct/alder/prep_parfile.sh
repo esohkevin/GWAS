@@ -16,6 +16,8 @@ indivname:      ${base}-ald.ind
 admixpop:       ${admpop}
 refpops:        ${refpopA};${refpopB}
 checkmap:       NO
+raw_outname: 	raw.ld.txt
+num_threads: 	15
 
 """ > ${bname}-alder.par
 

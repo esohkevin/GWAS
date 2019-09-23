@@ -1,11 +1,11 @@
 
-genotypename:    cam.packedancestrymapgeno
-snpname:         cam.snp
-indivname:       cam.ind
+genotypename:    pop.packedancestrymapgeno
+snpname:         pop.snp
+indivname:       pop.ind
 outputformat:    ANCESTRYMAP
-genotypeoutname: cam.ancestrymapgeno
-snpoutname:      cam.snp
-indivoutname:    cam.ind
+genotypeoutname: pop.ancestrymapgeno
+snpoutname:      pop.snp
+indivoutname:    pop.ind
 phasedmode:      YES
 #numthreads:      16
 
