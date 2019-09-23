@@ -1,18 +1,18 @@
 #!/bin/bash
 
-analysis="../analysis/"
-pop="../popstruct/"
+analysis="../../../analysis/"
+pop="../../../popstruct/"
 
 ../popstruct/fst/fvcf/
 
 for chr in {1..22}; do
     plink \
-        --vcf ${pop}Phased-pca-filtered.vcf.gz \
+        --vcf ../fs.vcf.gz \
         --allow-no-sex \
         --pheno "${analysis}"raw-camgwas.fam \
         --update-sex "${analysis}"raw-camgwas.fam 3 \
         --mpheno 4 \
-	--maf 0.35 \
+	--maf 0.05 \
         --recode12 \
         --chr ${chr} \
         --double-id \
@@ -26,4 +26,10 @@ for chr in {1..22}; do
 	-o=chr${chr}_phasedWref.phase \
 	-d=chr${chr}_phasedWref.cp.sample \
 	-g=10e6
+
+    makeuniformrecfile.pl chr${chr}_phasedWref.phase chr${chr}_phasedWref.recombfile
+    rm chr${chr}_phasedWref.map chr${chr}_phasedWref.ped chr${chr}_phasedWref.nosex chr${chr}_phasedWref.log
 done
+
+mv chr1_phasedWref.cp.sample camgwasPhasedWref.ids
+rm chr*_phasedWref.cp.sample

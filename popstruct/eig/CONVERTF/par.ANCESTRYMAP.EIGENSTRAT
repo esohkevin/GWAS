@@ -1,11 +1,11 @@
 
-genotypename:    cam.ancestrymapgeno
-snpname:         cam.snp
-indivname:       cam.ind
+genotypename:    pop.ancestrymapgeno
+snpname:         pop.snp
+indivname:       pop.ind
 outputformat:    EIGENSTRAT
-genotypeoutname: cam.eigenstratgeno
-snpoutname:      cam.snp
-indivoutname:    cam.ind
+genotypeoutname: pop.eigenstratgeno
+snpoutname:      pop.snp
+indivoutname:    pop.ind
 phasedmode:      YES
 #numthreads:      16
 
