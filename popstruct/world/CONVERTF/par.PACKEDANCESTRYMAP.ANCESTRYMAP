@@ -1,11 +1,11 @@
 
-genotypename:    qc-world.packedancestrymapgeno
-snpname:         qc-world.snp
-indivname:       qc-world.ind
+genotypename:    afr.packedancestrymapgeno
+snpname:         afr.snp
+indivname:       afr.ind
 outputformat:    ANCESTRYMAP
-genotypeoutname: qc-world.ancestrymapgeno
-snpoutname:      qc-world.snp
-indivoutname:    qc-world.ind
+genotypeoutname: afr.ancestrymapgeno
+snpoutname:      afr.snp
+indivoutname:    afr.ind
 phasedmode:      YES
 #numthreads:      16
 

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+samples="../../../samples/"
 base="$1"
 
 # ==> par.PED.PACKEDPED <==
@@ -59,19 +60,3 @@ phasedmode:      YES
 #numthreads:      16
 """ > par.ANCESTRYMAP.EIGENSTRAT
 
-# ==> par.PED.EIGENSTRAT <==
-echo -e """
-genotypename:    ${base}.ped
-snpname:         ${base}.map # or example.map, either works 
-indivname:       ${base}.ped # or example.ped, either works
-outputformat:    EIGENSTRAT
-genotypeoutname: ${base}.eigenstratgeno
-snpoutname:      ${base}.snp
-indivoutname:    ${base}.ind
-xregionname:	 high-ld-regions.b37
-pordercheck:	 YES
-strandcheck:	 YES
-familynames:     NO
-phasedmode:	 NO
-#numthreads:      16
-""" > par.PED.EIGENSTRAT

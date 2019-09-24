@@ -18,6 +18,8 @@ if [[ $# == 1 ]]; then
 
     awk '{print $1}' $1 | sed '1d' > pca.ids
 
+    cut -f1 pca.ids > pca_bcf.ids
+
 else 
    echo """
 	Usage: ./plotPCA.sh <evec-input>

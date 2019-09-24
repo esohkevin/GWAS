@@ -3,7 +3,7 @@
 analysis="../../analysis/"
 samples="../../samples/"
 kgp="../../1000G/"
-world="../eig/world/"
+world="../world/"
 phase="../../phase/"
 
 # Extract only a subset of world Pops to use (YRI+LWK+GWD+GBR+CHS+BEB+PUR). 
@@ -11,16 +11,17 @@ phase="../../phase/"
 #cat cam.ids yri.ids adm.txt > adm.pops
 #cut -f2 ${world}yri.bim > yri.rsids
 
-if [[ $# == 1 ]]; then
+if [[ $# == 2 ]]; then
 
     in_vcf="$1"
+    snps="$2"
     
     plink \
         --vcf ${in_vcf} \
         --allow-no-sex \
         --autosome \
 	--double-id \
-	--extract fstsnps.txt \
+	--extract ${snps} \
     	--indiv-sort f adm.order \
     	--make-bed \
         --out temp
@@ -36,8 +37,7 @@ if [[ $# == 1 ]]; then
     plink \
     	--bfile temp \
     	--autosome \
-    	--maf 0.01 \
-	--hwe 1e-8 \
+    	--maf 0.05 \
     	--extract prune.prune.in \
     	--make-bed \
     	--out adm-data
@@ -49,7 +49,7 @@ Rscript prep-adm.R
 
 else
     echo """
-	Usage:./prep-adm.sh <in_vcf>
+	Usage:./prep-adm.sh <in_vcf> <fst-snp-file> (specify paths)
     """
 
 fi

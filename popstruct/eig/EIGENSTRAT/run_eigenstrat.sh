@@ -24,13 +24,13 @@ if [[ $# == 6 ]]; then
     outliersigmathresh: ${s}
     qtmode: 0
     xregionname: high-ld-regions.b37
-    lsqproject: YES
+    #lsqproject: YES
     outlieroutname: ${base}.outlier
     familynames: NO
-    snpweightoutname: ${base}-snpwt
-    deletesnpoutname: ${base}-eth-badsnps
+    #snpweightoutname: ${base}-snpwt
+    #deletesnpoutname: ${base}-eth-badsnps
     numthreads: ${th}
-    ldregress: 200
+    #ldregress: 200
     phylipoutname: ${base}.phy
     """ > ${base}.pca.par
     
@@ -46,10 +46,13 @@ if [[ $# == 6 ]]; then
     
     
     #------- Run the jobs
+    echo "smartpca -p ${base}.pca.par >${base}-pca.log"
     echo `smartpca -p ${base}.pca.par >${base}-pca.log`
     
+    echo "smarteigenstrat -p ${base}.chisq.par >${base}.chisq.log"
     echo `smarteigenstrat -p ${base}.chisq.par >${base}.chisq.log`
     
+    echo "gc.perl $base.chisq $base.chisq.GC"
     echo `gc.perl $base.chisq $base.chisq.GC`
 
 else 

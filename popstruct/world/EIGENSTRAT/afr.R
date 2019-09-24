@@ -2,13 +2,13 @@
 
 library("colorspace") 
 
-evecDat <- read.table("afr-data.pca.evec", col.names=c("Sample","PC1","PC2","PC3","PC4","PC5","PC6","PC7","PC8","PC9","PC10","Status"), as.is=T)
-popGrps <- read.table("africaGrops.txt", col.names=c("Sample","Pop","PopGroup"), as.is=T)
-pcaDat <- merge(evecDat, popGrps, by="Sample")
-write.table(pcaDat, file="afr-data.pca.txt", col.names=T, row.names=F, quote=F, sep="\t")
+#evecDat <- read.table("afr-data.pca.evec", col.names=c("Sample","PC1","PC2","PC3","PC4","PC5","PC6","PC7","PC8","PC9","PC10","Status"), as.is=T)
+#popGrps <- read.table("africaGrops.txt", col.names=c("Sample","Pop","PopGroup"), as.is=T)
+#pcaDat <- merge(evecDat, popGrps, by="Sample")
+#write.table(pcaDat, file="afr-data.pca.txt", col.names=T, row.names=F, quote=F, sep="\t")
 
-evecDat <- read.table("afr-data.pca.txt", header=T, as.is=T)
-png("AfrPCA.png", height=640, width=550, units="px", points=16, res=NA)
+evecDat <- read.table("afr.pca.txt", header=T, as.is=T)
+png("AfrPCA.png", height=18, width=18, units="cm", points=14, res=100)
 par(mfrow=c(2,1), cex=0.8, cex.axis=1, cex.lab=1.2)
 par(fig=c(0,1,0.35,1), bty="o", mar=c(4,4,3,2))
 plot(evecDat[,2], evecDat[,3], xlab="PC1 (Africa-only)", ylab="PC2", type="n")

@@ -1,11 +1,11 @@
 
-genotypename:    qc-world.ped
-snpname:         qc-world.map # or example.map, either works
-indivname:       qc-world.ped # or example.ped, either works
+genotypename:    afr.ped
+snpname:         afr.map # or example.map, either works
+indivname:       afr.ped # or example.ped, either works
 outputformat:    PACKEDPED
-genotypeoutname: qc-world.bed
-snpoutname:      qc-world.pedsnp
-indivoutname:    qc-world.pedind
+genotypeoutname: afr.bed
+snpoutname:      afr.pedsnp
+indivoutname:    afr.pedind
 #xregionname:	 high-ld-regions.b37
 pordercheck:	 YES
 strandcheck:	 YES
