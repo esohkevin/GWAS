@@ -11,8 +11,8 @@ args <- commandArgs(TRUE)
 
 #----Initialize files
 #fn <- "cor.pca.evec"
-fn <- "pop.pca.evec"
-#fn <- args[1]
+#fn <- "pop.pca.evec"
+fn <- args[1]
 fbase <- gsub(".pca.evec", "", fn)
 out_text <- paste0(fbase, ".pca.txt")
 qc_eth <- "../../../samples/qc-camgwas.eth"
