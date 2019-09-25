@@ -1,7 +1,9 @@
 #!/usr/bin/Rscript
 
-famFile <- read.table("merged-data-pruned.fam", col.names=c("FID", "IID", "missing", "het", "sex", "pheno"), as.is=T)
-ethFile <- read.table("merged-data-eth_template.txt", col.names=c("FID", "eth"), as.is=T)
-popList <- merge(data.frame(FID=famFile[,1]), data.frame(ethFile[,1:2]), by="FID")
-write.table(popList[,2], file="poplist.txt", col.names=T, row.names=F, quote=F)
+wld <- read.table("igsr_pops.txt", header=T, as.is=T)
+cam_all <- read.table("qc-camgwas1185.eth", header=T, as.is=T)
 
+all <- rbind(wld,cam)
+all_sorted <- all[order(all[,4], all[,3]),]
+
+write.table(all_sorted, file = "eth_world_pops.txt", col.names=T, row.names=F, quote=F, sep="\t")
