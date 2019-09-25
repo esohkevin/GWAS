@@ -96,7 +96,7 @@
 
 library("colorspace") 
 
-evecDat <- read.table("qc-world-evecDat.txt", header=T, as.is=T)
+evecDat <- read.table("world-evecDat.txt", header=T, as.is=T)
 png("WorldPCA.png", height=15, width=14, units="cm", points=14, res=300)
 par(mfrow=c(2,1), cex=0.6, cex.axis=0.7, cex.lab=0.7)
 par(fig=c(0,1,0.35,1), bty="o", mar=c(1,1,1,1))

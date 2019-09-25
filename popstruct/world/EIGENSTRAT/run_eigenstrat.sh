@@ -34,26 +34,26 @@ if [[ $# == 6 ]]; then
     phylipoutname: ${base}.phy
     """ > ${base}.pca.par
     
-    echo """
-    genotypename:  ../CONVERTF/${base}.eigenstratgeno
-    snpname:       ../CONVERTF/${base}.snp
-    indivname:     ../CONVERTF/${base}.ind
-    pcaname:       ${base}.pca
-    outputname:    ${base}.chisq
-    numpc:         ${k}
-    qtmode:        NO
-    """ > ${base}.chisq.par
+    #echo """
+    #genotypename:  ../CONVERTF/${base}.eigenstratgeno
+    #snpname:       ../CONVERTF/${base}.snp
+    #indivname:     ../CONVERTF/${base}.ind
+    #pcaname:       ${base}.pca
+    #outputname:    ${base}.chisq
+    #numpc:         ${k}
+    #qtmode:        NO
+    #""" > ${base}.chisq.par
     
     
     #------- Run the jobs
     echo "smartpca -p ${base}.pca.par >${base}-pca.log"
-    echo `smartpca -p ${base}.pca.par >${base}-pca.log`
+          smartpca -p ${base}.pca.par >${base}-pca.log
     
-    echo "smarteigenstrat -p ${base}.chisq.par >${base}.chisq.log"
-    echo `smarteigenstrat -p ${base}.chisq.par >${base}.chisq.log`
-    
-    echo "gc.perl $base.chisq $base.chisq.GC"
-    echo `gc.perl $base.chisq $base.chisq.GC`
+    #echo "smarteigenstrat -p ${base}.chisq.par >${base}.chisq.log"
+    #      smarteigenstrat -p ${base}.chisq.par >${base}.chisq.log
+    #
+    #echo "gc.perl $base.chisq $base.chisq.GC"
+    #      gc.perl $base.chisq $base.chisq.GC
 
 else 
     echo """

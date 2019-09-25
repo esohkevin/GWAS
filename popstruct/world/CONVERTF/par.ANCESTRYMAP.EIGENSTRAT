@@ -1,11 +1,11 @@
 
-genotypename:    qc-world.ancestrymapgeno
-snpname:         qc-world.snp
-indivname:       qc-world.ind
+genotypename:    afr.ancestrymapgeno
+snpname:         afr.snp
+indivname:       afr.ind
 outputformat:    EIGENSTRAT
-genotypeoutname: qc-world.eigenstratgeno
-snpoutname:      qc-world.snp
-indivoutname:    qc-world.ind
+genotypeoutname: afr.eigenstratgeno
+snpoutname:      afr.snp
+indivoutname:    afr.ind
 phasedmode:      YES
 #numthreads:      16
 

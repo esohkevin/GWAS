@@ -2,10 +2,10 @@
 
 # Prepare alternative individual files with ethnicity status
 eth <- read.table("../merged-data-eth_template.txt", col.names=c("FID", "ETH"), as.is=T)
-eigAnceMapInd <- read.table("../CONVERTF/qc-world.ind", col.names=c("FID", "SEX", "Status"), as.is=T)
+eigAnceMapInd <- read.table("../CONVERTF/world.ind", col.names=c("FID", "SEX", "Status"), as.is=T)
 eigAnceMapIndNoStatus <- data.frame(FID=eigAnceMapInd[,1], SEX=eigAnceMapInd[,2])
 neweth <- merge(eigAnceMapIndNoStatus, eth, by="FID")
-write.table(neweth, file="../CONVERTF/qc-world-eth.txt", col.names=T, row.names=F, quote=F)
+write.table(neweth, file="../CONVERTF/world-eth.txt", col.names=T, row.names=F, quote=F)
 
 # With region of sample collection
 #region <- read.table("../merged-data-eth_template.txt", col.names=c("FID", "IID", "REGION"), as.is=T)

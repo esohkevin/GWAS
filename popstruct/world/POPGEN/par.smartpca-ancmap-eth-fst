@@ -1,11 +1,11 @@
-genotypename:    ../CONVERTF/qc-world.eigenstratgeno
-snpname:         ../CONVERTF/qc-world.snp
-indivname:       ../CONVERTF/qc-world-eth.ind
+genotypename:    ../CONVERTF/world.eigenstratgeno
+snpname:         ../CONVERTF/world.snp
+indivname:       ../CONVERTF/world-eth.ind
 altnormstyle:    NO 
 ldregress:	 200
 #outlieroutname:	 smartpca-fst-eth.outlier
 familynames:     NO
-snpweightoutname:	qc-world-snpwt
-deletesnpoutname:	qc-world-eth-badsnps
+snpweightoutname:	world-snpwt
+deletesnpoutname:	world-eth-badsnps
 #numthreads:	 2
 fstonly:	 YES
