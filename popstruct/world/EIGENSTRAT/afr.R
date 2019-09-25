@@ -24,7 +24,7 @@ if(evecDat[i,13]=='MSL') points(evecDat[i,2], evecDat[i,3], col="deepskyblue", p
 if(evecDat[i,13]=='GWD') points(evecDat[i,2], evecDat[i,3], col="deepskyblue4", pch=15)
 if(evecDat[i,13]=='LWK') points(evecDat[i,2], evecDat[i,3], col="goldenrod2", pch=15)
 }
-par(fig=c(0,1,0,0.45), new=T, bty="o", mar=c(5,4,4,2))
+par(fig=c(0,1,0,0.45), new=T, bty="o", mar=c(1,2,4,1))
 plot.new()
 legend("center", c("BA=BANTU","SB=SEMI-BANTU","FO=FULBE","ACB=African Caribbean in Barbados",
 		   "ASW=African-American SW","ESN=ESAN in Nigeria","YRI=Yoruba in Ibadan, Nigeria",
