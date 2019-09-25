@@ -10,13 +10,14 @@ require(ggbiplot)
 args <- commandArgs(TRUE)
 
 #----Initialize files
-fn <- "cor.pca.evec"
+#fn <- "cor.pca.evec"
 fn <- "pop.pca.evec"
-fn <- args[1]
+#fn <- args[1]
 fbase <- gsub(".pca.evec", "", fn)
 out_text <- paste0(fbase, ".pca.txt")
 qc_eth <- "../../../samples/qc-camgwas.eth"
 qc_pops <- "../../../samples/qc-camgwas.pops"
+ps_image <- paste0(fbase, ".png")
 
 #----Define Colors
 #n <- 3
@@ -67,11 +68,11 @@ mergedEvecDat <- merge(evecDat, popGroups, by="FID")
 evecthn <- evecthn[order(ethnicity),]
 
 #----Plot First 2 evecs with ethnicity distinction
-png(filename = "ps.png", width = 23, height = 25, 
+png(filename = ps_image, width = 23, height = 19, 
     units = "cm", pointsize = 14,
     bg = "white",  res = 100, type = c("cairo"))
 par(mfrow = c(2,2))
-par(mar=c(4,5,1,2), cex = 0.8)
+par(mar=c(4,5,1,1), cex = 0.8)
 
 #----Set Colors
 hcl_palettes(type = "qualitative")
@@ -145,7 +146,7 @@ points(d$C2,d$C3, col=pcol[3], pch = 18)
 legend("bottomleft", 
        legend=levels(as.factor(evecthn$ethnicity)),
        col=pcol, pch=18, bty="n", cex = 1)
-#dev.off()
+dev.off()
 
 #n <- length(levels(as.factor(evecthn$ethnicity)))
 #pcol <- qualitative_hcl(n, h=c(0,360*(n-1)/n), c = 80, l = 60)
