@@ -5,7 +5,7 @@
 #----Load libraries
 require(colorspace)
 require(data.table)
-require(ggbiplot)
+#require(ggbiplot)
 # Save evec data into placeholder
 args <- commandArgs(TRUE)
 
