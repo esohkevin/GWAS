@@ -78,7 +78,7 @@ par(mar=c(4,5,1,1), cex = 0.8)
 hcl_palettes(type = "qualitative")
 n <- length(levels(as.factor(evecthn$ethnicity)))
 pcol <- qualitative_hcl(n, palette = "Dark 2", 
-                        h = c(0,200), c = 80,l = 50, rev = F)
+                        h = c(0,200), c = 80,l = 55, rev = F)
 
 plot(evecthn$C1, evecthn$C2, xlab="PC1", 
      ylab="PC2", pch = 20, col = "white")
