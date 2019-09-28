@@ -1,11 +1,11 @@
 
-genotypename:    afr.ancestrymapgeno
-snpname:         afr.snp
-indivname:       afr.ind
+genotypename:    world.ancestrymapgeno
+snpname:         world.snp
+indivname:       world.ind
 outputformat:    EIGENSTRAT
-genotypeoutname: afr.eigenstratgeno
-snpoutname:      afr.snp
-indivoutname:    afr.ind
+genotypeoutname: world.eigenstratgeno
+snpoutname:      world.snp
+indivoutname:    world.ind
 phasedmode:      YES
 #numthreads:      16
 

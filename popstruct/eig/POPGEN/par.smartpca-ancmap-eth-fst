@@ -1,17 +1,18 @@
 
-genotypename:    ../CONVERTF/pop.ancestrymapgeno
-snpname:         ../CONVERTF/pop.snp
-indivname:       ../CONVERTF/pop-eth.ind
-evecoutname:     pop-eth.evec
-evaloutname:     pop-eth.eval
-altnormstyle:    NO
-outlieroutname:  pop.outlier
-familynames:     NO
-snpweightoutname:      pop-snpwt
-deletesnpoutname:       pop-eth-badsnps
-numthreads:      15
-ldregress:       200
-phylipoutname:   pop.phy
-fstonly:         YES
-
-
+   genotypename:    ../CONVERTF/cor.ancestrymapgeno
+   snpname:         ../CONVERTF/cor.snp
+   indivname:       ../CONVERTF/cor-ald.ind
+   evecoutname:     cor-eth.evec
+   evaloutname:     cor-eth.eval
+   altnormstyle:    NO
+   outlieroutname:  cor.outlier
+   familynames:     NO
+   snpweightoutname:      cor-snpwt
+   deletesnpoutname:       cor-eth-badsnps
+   numthreads:      30
+   fstdetailsname:  mybig.out
+   fstz:  YES
+   ldregress:       200
+   phylipoutname:   cor.phy
+   fstonly:         YES
+   

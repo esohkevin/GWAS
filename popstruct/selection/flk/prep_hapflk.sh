@@ -1,8 +1,9 @@
 #!/bin/bash
 
-if [[ $# == 1 ]]; then
+if [[ $# == [2] ]]; then
 
-    strap="$1"
+    maf="$1"
+    outgrp="$2"
 
     mkdir -p boot
 
@@ -15,12 +16,15 @@ if [[ $# == 1 ]]; then
         #---- Combine subsamples with 28 Fulbe individuals
         #awk '{print $1,$1,$2}' fulbe.txt >> perm${i}.txt
 
+        grep -wi -e "BA" -e "FO" -e "SB" -e $outgrp ../../world/pca_eth_world_pops.txt | awk '{print $1,$1,$3}' > cam_$outgrp.ids
+
         #---- LD prune to retain partially linked loci
             plink \
                 --vcf ../../Phased-pca-filtered.vcf.gz \
-                --indep-pairwise 5k 50 0.3 \
+                --indep-pairwise 50 10 0.5 \
                 --keep-allele-order \
                 --threads 30 \
+                --keep cam_$outgrp.ids \
                 --out pruned \
                 --autosome \
                 --double-id \
@@ -30,6 +34,7 @@ if [[ $# == 1 ]]; then
                 --vcf ../../Phased-pca-filtered.vcf.gz \
                 --allow-no-sex \
                 --keep-allele-order \
+                --keep cam_$outgrp.ids \
                 --aec \
                 --autosome \
                 --threads 30 \
@@ -43,50 +48,49 @@ if [[ $# == 1 ]]; then
             plink \
                 --bfile cam \
                 --make-bed \
-                --keep pheno.txt \
-                --maf 0.1 \
-                --hwe 1e-8 \
+                --keep cam_$outgrp.ids \
+                --maf $maf \
                 --keep-allele-order \
                 --threads 30 \
                 --out boot/cam \
                 --double-id \
                 --update-sex ../../../analysis/qc-camgwas-updated.fam 3
 
-            Rscript prep.R pheno.txt boot/cam
+            Rscript prep.R cam_$outgrp.ids boot/cam
 
             mv boot/cam.bed boot/camflk.bed
             mv boot/cam.bim boot/camflk.bim
             rm boot/cam.fam *.nosex pruned*
 
-#	for chr in {1..22}; do
-#        
-#        #---- Make hapflk input with subsample and MAF >= 0.05
-#            plink \
-#                --bfile cam \
-#                --make-bed \
-#                --chr ${chr} \
-#                --hwe 1e-8 \
-#                --keep pheno.txt \
-#                --maf 0.05 \
-#                --keep-allele-order \
-#                --threads 30 \
-#                --out boot/cam-chr${chr} \
-#                --double-id \
-#                --update-sex ../../../analysis/qc-camgwas-updated.fam 3
-#            
-#            Rscript prep.R pheno.txt boot/cam-chr${chr}
-#
-#            cp boot/cam-chr${chr}.bed boot/cam-chr${chr}flk.bed
-#            cp boot/cam-chr${chr}.bim boot/cam-chr${chr}flk.bim
-#
-#	    rm boot/cam-chr${chr}.bed boot/cam-chr${chr}.bim boot/cam-chr${chr}.fam boot/cam-chr${chr}.nosex
-#    
-#        done
+	#for chr in {1..22}; do
+        #
+        ##---- Make hapflk input with subsample and MAF >= 0.05
+        #    plink \
+        #        --bfile cam \
+        #        --make-bed \
+        #        --chr ${chr} \
+        #        --keep-allele-order \
+        #        --threads 30 \
+        #        --out boot/cam-chr${chr} \
+        #        --double-id \
+        #        --update-sex ../../../analysis/qc-camgwas-updated.fam 3
+        #    
+        #    Rscript prep.R cam_$outgrp.ids boot/cam-chr${chr}
+
+        #    cp boot/cam-chr${chr}.bed boot/cam-chr${chr}flk.bed
+        #    cp boot/cam-chr${chr}.bim boot/cam-chr${chr}flk.bim
+
+	#    rm boot/cam-chr${chr}.bed boot/cam-chr${chr}.bim boot/cam-chr${chr}.fam boot/cam-chr${chr}.nosex
+    
+        #done
 
     #done
 
 else
-    echo """
-	Usage:./prep_hapflk.sh <#bootstrap>
+    echo -e """
+	Usage:./prep_hapflk.sh <maf> <outgrp [e.g. gbr]>
+
+	      \e[33;5;38mImportant!\e[0m
+	     If no outgroup, use the pop code of any of your pops (e.g. sb)
     """
 fi

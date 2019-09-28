@@ -1,11 +1,11 @@
 
-genotypename:    afr.bed
-snpname:         afr.pedsnp # or example.map, either works
-indivname:       afr.pedind # or example.ped, either works
+genotypename:    world.bed
+snpname:         world.pedsnp # or example.map, either works
+indivname:       world.pedind # or example.ped, either works
 outputformat:    PACKEDANCESTRYMAP
-genotypeoutname: afr.packedancestrymapgeno
-snpoutname:      afr.snp
-indivoutname:    afr.ind
+genotypeoutname: world.packedancestrymapgeno
+snpoutname:      world.snp
+indivoutname:    world.ind
 familynames:     NO
 phasedmode:      YES
 #numthreads:      16
