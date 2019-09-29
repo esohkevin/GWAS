@@ -33,4 +33,6 @@ for chr in {1..22}; do
 done
 
 mv chr1_phasedWref.cp.sample camgwasPhasedWref.ids
-rm chr*_phasedWref.cp.sample
+awk '{print $1}' camgwasPhasedWref.ids > temp1.txt
+grep -f temp1.txt world.pops | awk '{print $1,$5,$4}' > camgwasPhasedWref.ids
+rm chr*_phasedWref.cp.sample temp1.txt

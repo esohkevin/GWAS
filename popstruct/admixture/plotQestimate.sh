@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for k in {1..5}; do
-    Rscript plotQestimate.R adm-data.${k}.Q adm-data.${k}.png
+for k in {1..8}; do
+    Rscript plotQestimate.R afr-data.${k}.Q afr-data.${k}.png
 done
 
 echo "K CVE" > adm-k-parameters.txt; grep -h CV $1 | \

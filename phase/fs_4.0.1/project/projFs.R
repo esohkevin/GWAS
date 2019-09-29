@@ -45,7 +45,7 @@ mcmcdata<-as.data.frame.myres(mcmcxml) ## convert this into a data frame
 
 ###### DO A 'LIKELIHOOD-BASED' TREE EXTRACTION, SO THAT CUTTING THE TREE IS MEANINGFUL
 ## (This is similar to that done in the Leslie 2015 Peopling of the British Isles paper)
-system("fs fs -m T -k 2 camgwas_linked.chunkcounts.out camgwas_linked_mcmc.xml camgwas_linked_tree_wh.xml")
+system("fs fs -X -Y -m T -k 2 camgwas_linked.chunkcounts.out camgwas_linked_mcmc.xml camgwas_linked_tree_wh.xml")
 
 ###### READ IN THE TREE FILES
 
