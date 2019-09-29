@@ -32,7 +32,7 @@ if [[ $# == 4 ]]; then
     
     else 
         echo """
-    	Usage:./create_force.sh <SIDs> <PRIDs>
+    	Usage:./create_force.sh <SIDs> <PRIDs> <C1> <C2>
     	   
     	     SIDs: Sample ID list for the current fs project (Single column)
     	    PRIDs: Super list of all individual IDs plust their associated ethnicityes or continents
