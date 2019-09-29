@@ -15,6 +15,7 @@ outfa <- paste0(pr, "flk.fam")
 
 eth <- as.data.frame(fread(fn, header=F, nThread = 15))
 fam <- as.data.frame(fread(fa, header = F, nThread = 20))
+fam$V5 <- as.integer("1")
 eth <- data.frame(V3=eth$V3,V2=eth$V2)
 hap <- merge(eth, fam, by = "V2")
 hap <- hap[,-c(1)]

@@ -11,7 +11,7 @@ args <- commandArgs(TRUE)
 
 #----Initialize files
 #fn <- "cor.pca.evec"
-#fn <- "pop.pca.evec"
+#fn <- "cor-fst.pca.evec"
 fn <- args[1]
 fbase <- gsub(".pca.evec", "", fn)
 out_text <- paste0(fbase, ".pca.txt")
@@ -78,7 +78,7 @@ par(mar=c(4,5,1,1), cex = 0.8)
 hcl_palettes(type = "qualitative")
 n <- length(levels(as.factor(evecthn$ethnicity)))
 pcol <- qualitative_hcl(n, palette = "Dark 2", 
-                        c = c(60,60), l = 50, rev = F)
+                        h = c(0,200), c = 80,l = 55, rev = F)
 
 plot(evecthn$C1, evecthn$C2, xlab="PC1", 
      ylab="PC2", pch = 20, col = "white")
@@ -92,7 +92,7 @@ points(d$C1,d$C2, col=pcol[3], pch = 18)
 #points(d$C1,d$C3, col=pcol[4], pch = 18)
 #d <- evecthn[evecthn$ethnicity=="SBM",]
 #points(d$C1,d$C3, col=pcol[5], pch = 18)
-legend("bottomleft", 
+legend("topleft", 
        legend=levels(as.factor(evecthn$ethnicity)),
        col=pcol, pch=18, bty="n", cex = 1)
 #dev.off()
@@ -143,7 +143,7 @@ points(d$C2,d$C3, col=pcol[3], pch = 18)
 #points(d$C1,d$C3, col=pcol[4], pch = 18)
 #d <- evecthn[evecthn$ethnicity=="SBM",]
 #points(d$C1,d$C3, col=pcol[5], pch = 18)
-legend("bottomleft", 
+legend("bottomright", 
        legend=levels(as.factor(evecthn$ethnicity)),
        col=pcol, pch=18, bty="n", cex = 1)
 dev.off()

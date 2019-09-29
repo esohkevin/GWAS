@@ -1,29 +1,42 @@
 #!/bin/bash
 
-if [[ $# == 1 ]]; then
+if [[ $# == 2 ]]; then
 
-    Rscript prepIndFile.R
-    
-    sed 's/FID/\#FID/g' ../CONVERTF/world-eth.txt > ../CONVERTF/world-eth.ind
-    rm ../CONVERTF/world-eth.txt 
-    
-    smartpca -p par.smartpca-ancmap-eth-fst > smartpca-eth-fst$1.log
-    #smartpca -p par.smartpca-pca-grm > smartpca-pca-grm.log
-    #./../run_twstatsperl
-    
-    if [[ -f "fstMatrix$1.txt" ]]; then
-       rm fstMatrix$1.txt
-    fi
-    
-    if [[ -f "smartpca-eth-fst$1.log" && -s "smartpca-eth-fst$1.log" ]]; then
-       tail -64 smartpca-eth-fst$1.log | head -30 | sed '1d' >> tmp2.txt
-       tail -65 smartpca-eth-fst$1.log | head -31 | sed '1d' > tmp2.txt; Rscript -e 'fn <- read.table("tmp2.txt", header=T, as.is=T, row.names=c("SB", "BA", "FO", "GBR", "FIN", "CHS", "PUR", "CDX", "CLM", "IBS", "PEL", "PJL", "KHV", "ACB", "GWD", "ESN", "BEB", "MSL", "STU", "ITU", "CEU", "YRI", "CHB", "JPT", "LWK", "ASW", "MXL", "TSI", "GIH")); write.table(fn[,2:30], file="tmp.txt", col.names=c("SB", "BA", "FO", "GBR", "FIN", "CHS", "PUR", "CDX", "CLM", "IBS", "PEL", "PJL", "KHV", "ACB", "GWD", "ESN", "BEB", "MSL", "STU", "ITU", "CEU", "YRI", "CHB", "JPT", "LWK", "ASW", "MXL", "TSI", "GIH"), row.names=F, quote=F, sep="\t")' 
-       paste tmp1.txt tmp.txt > fstMatrix$1.txt
-       rm tmp2.txt tmp.txt
-    fi
+    poplist="$1"
+    base="${poplist/-pop.list/}"
+    thr="$2"
+
+echo """
+genotypename:    ../CONVERTF/world.eigenstratgeno
+snpname:         ../CONVERTF/world.snp
+indivname:       ../CONVERTF/world-ald.ind
+altnormstyle:    NO
+ldregress:       200
+fstdetailsname:  $base.fst.snps.txt
+#fstz:  YES
+numthreads:   $thr
+#outlieroutname:         smartpca-fst-eth.outlier
+poplistname: $poplist
+familynames:     NO
+#snpweightoutname:       world-snpwt
+#deletesnpoutname:       world-eth-badsnps
+#numthreads:     2
+fstonly:         YES
+""" > par.fst.txt
+
+    smartpca -p par.fst.txt > fst.${base}.txt
+    sed '1d' $base.fst.snps.txt | awk '$6>0.05 {print $3}' | sort | uniq > ${base}.fstsnps.txt
+
+    #tail -63 fst.${base}.txt | head -30 | awk '$1=""; {print $0}' > temp1.txt
+
+    ##echo "Pop" > temp2.txt
+    #grep -w population fst.${base}.txt | awk '{print $3}' > temp2.txt
+    #paste temp1.txt temp2.txt > fstMatrix${base}.txt
+
+    #Rscript fstHeatmap.R fstMatrix${base}.txt
 
 else 
     echo """
-	Usage:./run_popgen.sh <MAF>
+	Usage:./run_popgen.sh <pop-list> <threads>
     """
 fi

@@ -1,11 +1,11 @@
 
-genotypename:    pop.packedancestrymapgeno
-snpname:         pop.snp
-indivname:       pop.ind
+genotypename:    cor-fst.packedancestrymapgeno
+snpname:         cor-fst.snp
+indivname:       cor-fst.ind
 outputformat:    ANCESTRYMAP
-genotypeoutname: pop.ancestrymapgeno
-snpoutname:      pop.snp
-indivoutname:    pop.ind
+genotypeoutname: cor-fst.ancestrymapgeno
+snpoutname:      cor-fst.snp
+indivoutname:    cor-fst.ind
 phasedmode:      YES
 #numthreads:      16
 

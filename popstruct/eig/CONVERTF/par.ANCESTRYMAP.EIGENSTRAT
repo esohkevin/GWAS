@@ -1,11 +1,11 @@
 
-genotypename:    pop.ancestrymapgeno
-snpname:         pop.snp
-indivname:       pop.ind
+genotypename:    cor-fst.ancestrymapgeno
+snpname:         cor-fst.snp
+indivname:       cor-fst.ind
 outputformat:    EIGENSTRAT
-genotypeoutname: pop.eigenstratgeno
-snpoutname:      pop.snp
-indivoutname:    pop.ind
+genotypeoutname: cor-fst.eigenstratgeno
+snpoutname:      cor-fst.snp
+indivoutname:    cor-fst.ind
 phasedmode:      YES
 #numthreads:      16
 

@@ -1,11 +1,11 @@
 
-genotypename:    afr.packedancestrymapgeno
-snpname:         afr.snp
-indivname:       afr.ind
+genotypename:    world.packedancestrymapgeno
+snpname:         world.snp
+indivname:       world.ind
 outputformat:    ANCESTRYMAP
-genotypeoutname: afr.ancestrymapgeno
-snpoutname:      afr.snp
-indivoutname:    afr.ind
+genotypeoutname: world.ancestrymapgeno
+snpoutname:      world.snp
+indivoutname:    world.ind
 phasedmode:      YES
 #numthreads:      16
 

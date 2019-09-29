@@ -9,13 +9,15 @@ samfile="$4"
 
 if [[ $1 == "sub" ]]; then
 
-    if [[ $1 == "sub" && $# == 5 ]]; then
+    if [[ $1 == "sub" && $# == 6 ]]; then
     
         maf="$5"
+	sl="$6"
+
         # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
         plink \
             --vcf "${vcf}" \
-            --indep-pairwise 5k 50 0.2 \
+            --indep-pairwise 50kb 50 0.1 \
             --allow-no-sex \
             --keep ${samfile} \
             --keep-allele-order \
@@ -38,7 +40,7 @@ if [[ $1 == "sub" ]]; then
         plink \
             --bfile qc-camgwas-ldPruned \
             --recode \
-            --extract ../../world/msl.rsids \
+            --extract $sl \
             --threads 15 \
 	    --maf ${maf} \
             --autosome \
@@ -64,7 +66,7 @@ if [[ $1 == "sub" ]]; then
     
     else
     	echo """
-    	Usage: ./convertf_all.sh sub <in-vcf> <outname> <sample-file>
+    	Usage: ./convertf_all.sh sub <in-vcf> <outname> <sample-file> <maf> <snplist (e.g. .././world/msl.rsids)>
     
     	"""
     fi
@@ -72,16 +74,18 @@ if [[ $1 == "sub" ]]; then
 
 elif [[ $1 == "all" ]]; then
 
-    if [[ $1 == "all" && $# == 4 ]]; then
+    if [[ $1 == "all" && $# == 5 ]]; then
     
-        maf="$5"
+        maf="$4"
+	sl="$5"
         
         # Prune the qc-dataset for SNPs within 50bp with r^2 < 0.2 using a window of 5 SNPs
         plink \
             --vcf "${vcf}" \
-            --indep-pairwise 5k 50 0.2 \
+            --indep-pairwise 50k 50 0.1 \
             --allow-no-sex \
             --autosome \
+            --extract $sl \
 	    --double-id \
     	    --keep-allele-order \
 	    --biallelic-only \
@@ -124,7 +128,7 @@ elif [[ $1 == "all" ]]; then
 
     else
     	echo """
-    	Usage: ./convertf_all.sh all <in-vcf> <outname> <MAF>
+    	Usage: ./convertf_all.sh all <in-vcf> <outname> <MAF> <snplist (e.g. .././world/msl.rsids) OR ../POPGEN/fstsnps.txt>
     
     	"""
     
