@@ -24,7 +24,7 @@ Type 'q()' to quit R.
 > # Extract palindromic SNPs
 > bim = read.table("qc-camgwas.bim", header=F, as.is=T)
 > # Get indices of A/T and G/C SNPs
-> w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="A" & bim$V6=="T") | (bim$V5=="A" & bim$V6=="T"))
+> w = which((bim$V5=="A" & bim$V6=="T") | (bim$V5=="T" & bim$V6=="A") | (bim$V5=="G" & bim$V6=="C") | (bim$V5=="C" & bim$V6=="G"))
 > 
 > # Extract A/T and G/C SNPs
 > at.cg.snps = bim[w,]
@@ -35,4 +35,4 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
- 21.530   0.803  22.314 
+ 22.481   0.894  23.368 
