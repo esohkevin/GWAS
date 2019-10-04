@@ -1,12 +1,9 @@
 #!/bin/bash
 
-cd ../
-baseDir="`pwd`"
-cd -
-phase_path="${baseDir}/phase/"
-sample_path="${baseDir}/samples/"
-analysis="${baseDir}/analysis/"
-assocResults="${baseDir}/assoc_results/"
+sample_path="../samples/"
+analysis="../analysis/"
+assocResults="../assoc_results/"
+pop="../popstruct/"
 
 # Convert phased haplotypes in vcf format to IMPUTE2 .haps + .sample format
 
@@ -15,7 +12,7 @@ for chr in {1..22}; do
   if [[ -f "${phase_path}""chr${chr}-phased_wref.vcf.gz" ]]; then
      if [[ ! -f "chr${chr}-phased_wref.haps" ]]; then
         plink2 \
-	   --vcf ${phase_path}Phased_wref.vcf.gz \
+	   --vcf ${pop}Phased-pca-filtered.vcf.gz \
 	   --export haps \
 	   --chr ${chr} \
 	   --covar ${assocResults}eig-corr-camgwas.pca.txt \
