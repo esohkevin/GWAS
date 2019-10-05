@@ -15,13 +15,13 @@ fi
 
   if [[ -f "chr${chr}-phased_wref.haps" ]]; then
 
-     for interval in `cat chr${chr}intervals.txt`; do
+     for interval in $(cat chr${chr}intervals.txt); do
 
           echo """chr"${chr}"_"${interval/=*/_imputed.gen.gz}"""" >> concat_chr"${chr}"_Chunks.txt
 
      done
 
-  for chunk in `cat concat_chr"${chr}"_Chunks.txt`; do
+  for chunk in $(cat concat_chr"${chr}"_Chunks.txt); do
       
       zcat ${chunk} >> chr"${chr}"_imputed.gen
 
