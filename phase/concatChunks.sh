@@ -5,7 +5,7 @@ imputed_path="imputed/"
 for chr in {1..22}; do
 
 if [[ -f "concat_chr"${chr}"_Chunks.txt" || -f "chr"${chr}"_imputed.gen.gz" ]]; then
-   rm concat_chr"${chr}"_Chunks.txt chr"${chr}"_imputed.gen.gz
+   rm concat_chr"${chr}"_Chunks.txt chr"${chr}"_imputed.gen.gz chr"${chr}"_imputed.gen
 fi
 
 #   rm concat_chr"${chr}"_Chunks.txt
@@ -22,9 +22,17 @@ fi
      done
 
   for chunk in $(cat concat_chr"${chr}"_Chunks.txt); do
-      
-      zcat ${chunk} >> chr"${chr}"_imputed.gen
 
+      zcat $chunk | \
+	awk '$4=="A" || $4=="T" || $4=="G" || $4=="C"' | \
+	awk '$5=="A" || $5=="T" || $5=="G" || $5=="C"' | \
+	awk -v chr="$chr" '$1=$2=""; {print "---",chr":"$3,"_"$4,"_"$5,$0}' | \
+	sed 's/  //g' | \
+	sed 's/ _A/_A/g' | \
+	sed 's/ _T/_T/g' | \
+	sed 's/ _C/_C/g' | \
+	sed 's/ _G/_G/g' >> chr"${chr}"_imputed.gen
+      
   done
 
       bgzip -i chr"${chr}"_imputed.gen
