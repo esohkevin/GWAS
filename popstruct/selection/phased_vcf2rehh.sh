@@ -48,7 +48,7 @@ if [[ $data == "sub" ]]; then
 
                        sed '1d' ${6/.*}${7}_chr${3}.legend | \
 			       awk -f awkProgFile.txt >  ${6/.*}${7}_chr${3}.map
-                       sed 's/0/2/g'  ${6/.*}${7}_chr${3}.haps >  ${6/.*}${7}_chr${3}.hap
+                       mv ${6/.*}${7}_chr${3}.haps ${6/.*}${7}_chr${3}.hap
                     
                 elif [[ "$param" == "2" && $# != 5 ]]; then
              
@@ -75,7 +75,7 @@ if [[ $data == "sub" ]]; then
 
                        sed '1d' ${4/.*}_chr${3}.legend | \
 			       awk -f awkProgFile.txt > ${4/.*}_chr${3}.map
-                       sed 's/0/2/g' ${4/.*}_chr${3}.haps > ${4/.*}_chr${3}.hap
+                       mv ${4/.*}_chr${3}.haps ${4/.*}_chr${3}.hap
                        
                 elif [[ "$param" == "3" && $# != 6 ]]; then
              
@@ -104,7 +104,7 @@ if [[ $data == "sub" ]]; then
                   
                                 sed '1d' ${3}_chr${chr}.legend | \
                                         awk -f awkProgFile.txt > ${3}_chr${chr}.map
-                                sed 's/0/2/g' ${3}_chr${chr}.haps > ${3}_chr${chr}.hap
+                                mv ${3}_chr${chr}.haps ${3}_chr${chr}.hap
                        done
              
              	       for chr in $(seq 1 $4); do
@@ -166,7 +166,7 @@ elif [[ $data == "all" ]]; then
 
                         sed '1d' ${6}${7}_chr${3}.legend | \
 				awk -f awkProgFile.txt > ${6}${7}_chr${3}.map
-                        sed 's/0/2/g' ${6}${7}_chr${3}.haps > ${6}${7}_chr${3}.hap
+                        mv ${6}${7}_chr${3}.haps ${6}${7}_chr${3}.hap
           
                 elif [[ "$param" == "2" && $# != 5 ]]; then
          
@@ -192,7 +192,7 @@ elif [[ $data == "all" ]]; then
 
                         sed '1d' $3_chr$4.legend | \
 				awk -f awkProgFile.txt > $3_chr$4.map
-                        sed 's/0/2/g' $3_chr$4.haps > $3_chr$4.hap          
+                        mv $3_chr$4.haps $3_chr$4.hap          
           
                 elif [[ "$param" == "3" && $# != 5 ]]; then
          
@@ -220,7 +220,7 @@ elif [[ $data == "all" ]]; then
                
                          sed '1d' $3_chr${chr}.legend | \
 				 awk -f awkProgFile.txt > $3_chr${chr}.map
-                         sed 's/0/2/g' $3_chr${chr}.haps > $3_chr${chr}.hap
+                         mv $3_chr${chr}.haps $3_chr${chr}.hap
 
                    done
        
