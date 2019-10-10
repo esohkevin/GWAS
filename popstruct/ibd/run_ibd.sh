@@ -15,12 +15,16 @@ elif [[ $1 == 2 ]]; then
     frq2="$5"
     outn="$6"
     #---- Cross-pop IBD
-    hmmIBD \
-    	-i $pop1 \
-    	-f $frq1 \
-    	-I $pop2 \
-    	-F $frq2 \
-    	-o $outn
+    #hmmIBD \
+    #	-i $pop1 \
+    #	-f $frq1 \
+    #	-I $pop2 \
+    #	-F $frq2 \
+    #	-o $outn
+
+    #--Run hmmIBD in parallel
+    for i in BA FO; do echo $i; done | parallel hmmIBD "-i SB.gt -f frq.SB.txt -I {}.gt -F frq.{}.txt -o sb_{}"
+    for i in SB FO; do echo $i; done | parallel hmmIBD "-i BA.gt -f frq.BA.txt -I {}.gt -F frq.{}.txt -o ba_{}"               
 
 else
     echo """
