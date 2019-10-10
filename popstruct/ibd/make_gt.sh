@@ -32,4 +32,3 @@ for i in SB BA FO; do \
       sed 's/nan/1/g' > frq.$i.txt;
       rm $i.frq $i.sites
 done
-
