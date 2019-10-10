@@ -9,8 +9,8 @@ nh="$5"
 if [[ $# == 2 && $p == "flk" ]]; then
 
     #--- Whole Genome flk
-    hapflk --bfile boot/${prfx} -p flkout/${prfx}
-    Rscript flk.R $prfx
+    hapflk --bfile boot/${prfx} --outgroup=MSL --phased -p flkout/${prfx}
+    Rscript flk.R flkout/$prfx.flk
 
 elif [[ $# == 5 && $p == "hflk" ]]; then
         

@@ -205,6 +205,19 @@ rsb.res <- ines2rsb(scan_pop1=scan_sb,
 		     scan_pop2=scan_b, 
 		     popname1="SB", 
 		     popname2="BA")
+
+#-- Make threshold
+ns <- length(rsb.res$POSITION)
+print("", quote=F)
+print("Effive number of SNPs (Total Number of SNPs that passed rehh filters)", quote=F)
+print(ns, quote=F)
+print("", quote=F)
+thr <- as.numeric(-log10(0.05/ns))
+
+if (thr >= 8) {
+	sbb_thr <- as.numeric(8)
+} else {sbb_thr <- thr}
+
 rsb.sb_b <- na.omit(rsb.res)
 cr.sbb <- calc_candidate_regions(rsb.sb_b, 
                                  threshold=4, 
@@ -218,6 +231,18 @@ rsb.res <- ines2rsb(scan_pop1=scan_sb,
                      scan_pop2=scan_fu,
                      popname1="SB",
                      popname2="FO")
+#-- Make threshold
+ns <- length(rsb.res$POSITION)
+print("", quote=F)
+print("Effive number of SNPs (Total Number of SNPs that passed rehh filters)", quote=F)
+print(ns, quote=F)
+print("", quote=F)
+thr <- as.numeric(-log10(0.05/ns))
+
+if (thr >= 8) {
+        sbfu_thr <- 8
+} else {sbfu_thr <- thr}
+
 rsb.sb_fu <- na.omit(rsb.res)
 cr.sbfu <- calc_candidate_regions(rsb.sb_fu, 
                                   threshold=4, 
@@ -231,6 +256,18 @@ rsb.res <- ines2rsb(scan_pop1=scan_b,
                      scan_pop2=scan_fu,
                      popname1="BA",
                      popname2="FO")
+#-- Make threshold
+ns <- length(rsb.res$POSITION)
+print("", quote=F)
+print("Effive number of SNPs (Total Number of SNPs that passed rehh filters)", quote=F)
+print(ns, quote=F)
+print("", quote=F)
+thr <- as.numeric(-log10(0.05/ns))
+
+if (thr >= 8) {
+        bfu_thr <- 8
+} else {bfu_thr <- thr}
+
 rsb.b_fu <- na.omit(rsb.res)
 cr.bfu <- calc_candidate_regions(rsb.b_fu, 
                                  threshold=4, 
@@ -248,26 +285,38 @@ write.table(rsb.b_fu, file = "bfuRsb.txt", col.names=T, row.names=F, quote=F, se
 write.table(cr.bfu, file = "bfuCR.txt", col.names=T, row.names=F, quote=F, sep="\t")
 
 #--Plot manhattan
-png("sbbRsb.png", height = 480, width = 640, res = NA, units = "px")
+png("sbbRsb.png", height = 700, width = 640, res = NA, units = "px")
+layout(matrix(1:2,2,1))
 manhattanplot(rsb.sb_b, 
-              pval = T, 
+              pval = F, 
               main = "Rsb: SB vs BA", 
-              threshold = thresh, 
-              cr = cr.sbb)
+              threshold = c(-4,4))
+manhattanplot(rsb.sb_b,
+              pval = T,
+              main = "Rsb: SB vs BA",
+              threshold = c(-sbb_thr,sbb_thr))
 dev.off()
 
-png("sbfuRsb.png", height = 480, width = 640, res = NA, units = "px")
+png("sbfuRsb.png", height = 700, width = 640, res = NA, units = "px")
+layout(matrix(1:2,2,1))
 manhattanplot(rsb.sb_fu, 
-              pval = T, 
+              pval = F, 
               main = "Rsb: SB vs FO", 
-              threshold = thresh, 
-              cr = cr.sbfu)
+              threshold = c(-4,4))
+manhattanplot(rsb.sb_fu,
+              pval = T,
+              main = "Rsb: SB vs FO",
+              threshold = c(-sbfu_thr,sbfu_thr))
 dev.off()
 
-png("bfuRsb.png", height = 480, width = 640, res = NA, units = "px")
+png("bfuRsb.png", height = 700, width = 640, res = NA, units = "px")
+layout(matrix(1:2,2,1))
 manhattanplot(rsb.b_fu, 
-              pval = T, 
+              pval = F, 
               main = "Rsb: BA vs FO", 
-              threshold = thresh, 
-              cr = cr.bfu)
+              threshold = c(-4,4))
+manhattanplot(rsb.b_fu,
+              pval = T,
+              main = "Rsb: BA vs FO",
+              threshold = c(-bfu_thr,bfu_thr))
 dev.off()
