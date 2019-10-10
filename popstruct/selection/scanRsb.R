@@ -247,4 +247,27 @@ write.table(cr.sbfu, file = "sbfuCR.txt", col.names=T, row.names=F, quote=F, sep
 write.table(rsb.b_fu, file = "bfuRsb.txt", col.names=T, row.names=F, quote=F, sep="\t")
 write.table(cr.bfu, file = "bfuCR.txt", col.names=T, row.names=F, quote=F, sep="\t")
 
+#--Plot manhattan
+png("sbbRsb.png", height = 480, width = 640, res = NA, units = "px")
+manhattanplot(rsb.sb_b, 
+              pval = T, 
+              main = "Rsb: SB vs BA", 
+              threshold = c(-thresh, thresh), 
+              cr = cr.sbb)
+dev.off()
 
+png("sbfuRsb.png", height = 480, width = 640, res = NA, units = "px")
+manhattanplot(rsb.sb_fu, 
+              pval = T, 
+              main = "Rsb: SB vs FO", 
+              threshold = c(-thresh, thresh), 
+              cr = cr.sbfu)
+dev.off()
+
+png("bfuRsb.png", height = 480, width = 640, res = NA, units = "px")
+manhattanplot(rsb.b_fu, 
+              pval = T, 
+              main = "Rsb: BA vs FO", 
+              threshold = c(-thresh, thresh), 
+              cr = cr.bfu)
+dev.off()
