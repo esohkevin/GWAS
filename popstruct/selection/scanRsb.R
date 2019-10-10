@@ -252,7 +252,7 @@ png("sbbRsb.png", height = 480, width = 640, res = NA, units = "px")
 manhattanplot(rsb.sb_b, 
               pval = T, 
               main = "Rsb: SB vs BA", 
-              threshold = c(-thresh, thresh), 
+              threshold = thresh, 
               cr = cr.sbb)
 dev.off()
 
@@ -260,7 +260,7 @@ png("sbfuRsb.png", height = 480, width = 640, res = NA, units = "px")
 manhattanplot(rsb.sb_fu, 
               pval = T, 
               main = "Rsb: SB vs FO", 
-              threshold = c(-thresh, thresh), 
+              threshold = thresh, 
               cr = cr.sbfu)
 dev.off()
 
@@ -268,6 +268,6 @@ png("bfuRsb.png", height = 480, width = 640, res = NA, units = "px")
 manhattanplot(rsb.b_fu, 
               pval = T, 
               main = "Rsb: BA vs FO", 
-              threshold = c(-thresh, thresh), 
+              threshold = thresh, 
               cr = cr.bfu)
 dev.off()
