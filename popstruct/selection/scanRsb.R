@@ -153,7 +153,7 @@ for(i in 1:numchr) {
   if(i==1){scan_sb<-res}else{scan_sb<-rbind(scan_sb,res)}
 
 }
-scan_sb <- scan_sb
+scan_sb <- na.omit(scan_sb)
 
 #----------------------------Second Pop------------------------------------------
 #--------------------------------------------------------------------------------
@@ -175,7 +175,7 @@ for(i in 1:numchr) {
   if(i==1){scan_b<-res}else{scan_b<-rbind(scan_b,res)}
 
 }
-scan_b <- scan_b
+scan_b <- na.omit(scan_b)
 
 #--------------------------Third Pop--------------------------------------------
 #--------------------------------------------------------------------------------
@@ -197,7 +197,7 @@ for(i in 1:numchr) {
   if(i==1){scan_fu<-res}else{scan_fu<-rbind(scan_fu,res)}
 
 }
-scan_fu <- scan_fu
+scan_fu <- na.omit(scan_fu)
 
 ##-------------------------Run Rsb---------------------------------------------
 #--SB vs BA
@@ -205,31 +205,46 @@ rsb.res <- ines2rsb(scan_pop1=scan_sb,
 		     scan_pop2=scan_b, 
 		     popname1="SB", 
 		     popname2="BA")
-res.sb_b <- na.omit(rsb.res)
-cr.sbb <- calc_candidate_regions(rsb.sb_b)
+rsb.sb_b <- na.omit(rsb.res)
+cr.sbb <- calc_candidate_regions(rsb.sb_b, 
+                                 threshold=4, 
+                                 pval=T, 
+                                 window_size=1E6, 
+                                 overlap=1E5, 
+                                 min_n_extr_mrk=2)
 
 #--SB vs FU
 rsb.res <- ines2rsb(scan_pop1=scan_sb, 
                      scan_pop2=scan_fu,
                      popname1="SB",
                      popname2="FO")
-res.sb_fu <- na.omit(rsb.res)
-cr.sbfu <- calc_candidate_regions(rsb.sb_fu)
+rsb.sb_fu <- na.omit(rsb.res)
+cr.sbfu <- calc_candidate_regions(rsb.sb_fu, 
+                                  threshold=4, 
+                                  pval=T, 
+                                  window_size=1E6, 
+                                  overlap=1E5, 
+                                  min_n_extr_mrk=2)
 
 #--BA vs FU
 rsb.res <- ines2rsb(scan_pop1=scan_b,
                      scan_pop2=scan_fu,
                      popname1="BA",
                      popname2="FO")
-res.b_fu <- na.omit(rsb.res)
-cr.bfu <- calc_candidate_regions(rsb.b_fu)
+rsb.b_fu <- na.omit(rsb.res)
+cr.bfu <- calc_candidate_regions(rsb.b_fu, 
+                                 threshold=4, 
+                                 pval=T, 
+                                 window_size=1E6, 
+                                 overlap=1E5, 
+                                 min_n_extr_mrk=2)
 
 #--Write results files
-write.table(res.sb_b, file = "sbbRsb.txt", col.names=T, row.names=F, quote=F, sep="\t")
+write.table(rsb.sb_b, file = "sbbRsb.txt", col.names=T, row.names=F, quote=F, sep="\t")
 write.table(cr.sbb, file = "sbbCR.txt", col.names=T, row.names=F, quote=F, sep="\t")
-write.table(res.sb_fu, file = "sbfuRsb.txt", col.names=T, row.names=F, quote=F, sep="\t")
+write.table(rsb.sb_fu, file = "sbfuRsb.txt", col.names=T, row.names=F, quote=F, sep="\t")
 write.table(cr.sbfu, file = "sbfuCR.txt", col.names=T, row.names=F, quote=F, sep="\t")
-write.table(res.b_fu, file = "bfuRsb.txt", col.names=T, row.names=F, quote=F, sep="\t")
+write.table(rsb.b_fu, file = "bfuRsb.txt", col.names=T, row.names=F, quote=F, sep="\t")
 write.table(cr.bfu, file = "bfuCR.txt", col.names=T, row.names=F, quote=F, sep="\t")
 
 
