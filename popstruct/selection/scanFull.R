@@ -41,6 +41,14 @@ for(i in 1:numchr) {
 
 wg.ihs<-ihh2ihs(wg.res)
 
+# Candidate regions
+cr.cam <- calc_candidate_regions(wg.ihs, 
+                                  threshold=4, 
+                                  pval=T, 
+                                  window_size=1E6, 
+                                  overlap=1E5, 
+                                  min_n_extr_mrk=2)
+
 #--------------------------------------------------------------------------------
 ##              Extract iHS results ommitting missing value rows
 ##              Merge iHS results with .map file information
@@ -100,4 +108,5 @@ distribplot(IHS, main="iHS", qqplot = F)
 distribplot(IHS, main="iHS", qqplot = T)
 dev.off()
 
-
+# Frequency bin plot
+freqbinplot(wg.ihs)
