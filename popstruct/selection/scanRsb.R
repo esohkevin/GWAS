@@ -288,7 +288,7 @@ write.table(cr.bfu, file = "bfuCR.txt", col.names=T, row.names=F, quote=F, sep="
 png("sbbRsb.png", height = 700, width = 640, res = NA, units = "px")
 layout(matrix(1:2,2,1))
 manhattanplot(rsb.sb_b, 
-              pval = F, 
+              pval = F,
               main = "Rsb: SB vs BA", 
               threshold = c(-4,4))
 manhattanplot(rsb.sb_b,
@@ -300,7 +300,7 @@ dev.off()
 png("sbfuRsb.png", height = 700, width = 640, res = NA, units = "px")
 layout(matrix(1:2,2,1))
 manhattanplot(rsb.sb_fu, 
-              pval = F, 
+              pval = F,
               main = "Rsb: SB vs FO", 
               threshold = c(-4,4))
 manhattanplot(rsb.sb_fu,
@@ -312,7 +312,7 @@ dev.off()
 png("bfuRsb.png", height = 700, width = 640, res = NA, units = "px")
 layout(matrix(1:2,2,1))
 manhattanplot(rsb.b_fu, 
-              pval = F, 
+              pval = F,
               main = "Rsb: BA vs FO", 
               threshold = c(-4,4))
 manhattanplot(rsb.b_fu,

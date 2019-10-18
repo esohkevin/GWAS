@@ -5,6 +5,7 @@ sort -nr --key=4 camSignals.txt | \
    sort -n > signals.bp
 zgrep -f signals.bp ../../analysis/updateName.txt.gz | \
    cut -f1 > signals.rsids
+rm signals.bp
 
 plink \
    --vcf ../Phased-pca-filtered.vcf.gz \

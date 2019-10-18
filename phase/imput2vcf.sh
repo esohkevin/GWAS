@@ -51,18 +51,23 @@
 #--- Convert the IMPUTE2 output to VCF
 #for i in $(seq 1 22); do echo $i; done | parallel echo convert --threads 10 -G chr{}_imputed.gen.gz,phasedWref.sample -Oz -o chr{}_imputed.vcf.gz | xargs -P22 -n8 bcftools
 
-#--- Extract SNPs with infor >= 0.75
-for i in $(seq 1 22); do echo $i; done | parallel echo view --threads 10 -R chr{}.info75.txt -Oz -o temp{}_imputed.vcf.gz chr{}_imputed.vcf.gz | xargs -P22 -n9 bcftools
+# for chr in {1..22} X Y; do
+#   bcftools view --no-version -Ou -c 2 chr{}_imputed.vcf.gz | \
+#   bcftools norm --no-version -Ou -m -any | \
+#   bcftools norm --no-version -Ob -o chr{}_imputed.bcf -d none -f ${ref_path}/human_g1k_v37.fasta && \
+#   bcftools index -f chr{}_imputed.bcf
+# done
 
-bcftools view \
-  -h temp22_imputed.vcf.gz > imputed_updated.vcf; 
-bcftools query \
-  -f '%CHROM\t%POS\t%CHROM:%POS\t%REF\t%ALT\t%QUAL\t%FILTER\t.\tGT:GP\t[ %GT:%GP\t]\n' \
-  -i 'MAF[0]>0.001' chr{1..22}_imputed.vcf.gz >> imputed_updated.vcf
-bgzip imputed_updated.vcf
-bcftools sort -m 2000M -Oz -o imputed.vcf.gz imputed_updated.vcf.gz
-bcftools index -t -f --threads 30 imputed.vcf.gz
+
+# seq 22 | parallel echo "view -h chr{}_imputed.vcf.gz -o chr{}_imputed_updated.vcf" | xargs -P5 -n5 bcftools
+# for chr in {1..22}; do 
+#     bcftools query -f '%CHROM\t%POS\t%CHROM:%POS\t%REF\t%ALT\t%QUAL\t%FILTER\t.\tGT:GP\t[ %GT:%GP\t]\n' -i 'MAF[0]>0.001' chr${chr}_imputed.vcf.gz >> chr${chr}_imputed_updated.vcf
+# done
+# seq 22 | parallel echo "-f -@ 10 chr{}_imputed_updated.vcf" | xargs -P5 -n4 bgzip
+#seq 22 | parallel echo "-f -p vcf chr{}_imputed_updated.vcf.gz" | xargs -P5 -n4 tabix
+#seq 22 | parallel echo "sort -m 1000M -Ou -o chr{}_imputed.bcf chr{}_imputed_updated.vcf.gz" | xargs -P5 -n7 bcftools
+#seq 22 | parallel echo "index -f --threads 10 chr{}_imputed.bcf" | xargs -P5 -n5 bcftools
 
 #--- Extract SNPs with infor >= 0.75
-#for i in $(seq 1 22); do echo $i; done | parallel echo view --threads 10 -R chr{}.info75.txt -Oz -o temp{}_imputed.vcf.gz chr{}_imputed.vcf.gz | xargs -P22 -n9 bcftools 
-#bcftools concat -a -D --threads 30 chr{1..22}_imputed.vcf.gz -Oz -o camgwas_imputed.vcf.gz
+#seq 22 | parallel echo view --threads 5 -R chr{}.info75.txt -Oz -o chr{}_imputed075.vcf.gz chr{}_imputed_updated.vcf.gz | xargs -P5 -n9 bcftools 
+bcftools concat -a -d all --threads 10 chr{1..22}_imputed_updated.vcf.gz -Oz -o camgwas_imputed.vcf.gz

@@ -92,7 +92,7 @@
 fs=`which fs`
 
 #for chr in {1..22}; do
-    time $fs camgwas.cp -v -n -phasefiles chr{1..22}_phasedWref.phase -recombfiles chr{1..22}_phasedWref.recombfile -idfile camgwasPhasedWref.ids -import example2_bestpractice.settings -s34args:"-X -Y" -numthreads 50 -go
+    time $fs camgwas.cp -v -n -phasefiles chr{1..22}_phasedWref.phase -recombfiles chr{1..22}_phasedWref.recombfile -idfile camgwasPhasedWref.ids -import example2_bestpractice.settings -s34args:"-X -Y" -numthreads 5 -go
 #done
 
 # Although the chunkcounts are on a different scale in an unlinked analysis, these SNPs have been thinned and therefore the pairwise coincidence is almost identical (with just a little less evidence of substructure within the Orcadians, but it is the same structure.)
