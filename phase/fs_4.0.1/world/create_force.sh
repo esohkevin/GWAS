@@ -40,3 +40,6 @@ if [[ $# == 4 ]]; then
                C2: Column number of the individual ethnicity or continent
         """
 fi
+
+#--- Make Sample groupings for 1 iteration mcmc file
+#tr '\n' ' ' < cam-afr50_force.txt | sed 's/BA//g' | sed 's/\ FO//g' | sed 's/\ SB//g' | sed 's/\ YRI//g' | sed 's/\ ESN//g' | sed 's/\ MSL//g' | sed 's/\ GWD//g' | sed 's/\ LWK//g' | awk '{print "<Pop>"$0"</Pop>"}' >> camgwas_linked_mcmc2.xml

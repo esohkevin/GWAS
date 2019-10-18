@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript
 
-#setwd("/home/esoh/esohdata/GWAS/popstruct/eig/EIGENSTRAT")
+setwd("/home/esoh/esohdata/GWAS/popstruct/eig/EIGENSTRAT")
 
 #----Load libraries
 require(colorspace)
@@ -10,8 +10,9 @@ require(data.table)
 args <- commandArgs(TRUE)
 
 #----Initialize files
-#fn <- "cor.pca.evec"
-#fn <- "cor-fst.pca.evec"
+#fa <- "cor.pca.evec"
+#fb <- "cor-fst.pca.evec"
+fn <- "cor-fst.pca.evec"
 fn <- args[1]
 fbase <- gsub(".pca.evec", "", fn)
 out_text <- paste0(fbase, ".pca.txt")
@@ -68,9 +69,9 @@ mergedEvecDat <- merge(evecDat, popGroups, by="FID")
 evecthn <- evecthn[order(ethnicity),]
 
 #----Plot First 2 evecs with ethnicity distinction
-png(filename = ps_image, width = 23, height = 19, 
-    units = "cm", pointsize = 14,
-    bg = "white",  res = 100, type = c("cairo"))
+png(filename = ps_image, width = 18, height = 15, 
+    units = "cm", pointsize = 10,
+    bg = "white",  res = 200, type = c("cairo"))
 par(mfrow = c(2,2))
 par(mar=c(4,5,1,1), cex = 0.8)
 
@@ -78,20 +79,20 @@ par(mar=c(4,5,1,1), cex = 0.8)
 hcl_palettes(type = "qualitative")
 n <- length(levels(as.factor(evecthn$ethnicity)))
 pcol <- qualitative_hcl(n, palette = "Dark 2", 
-                        h = c(0,200), c = 80,l = 55, rev = F)
+                        h = c(0,200), c = 85,l = 45, rev = F)
 
 plot(evecthn$C1, evecthn$C2, xlab="PC1", 
      ylab="PC2", pch = 20, col = "white")
 d <- evecthn[evecthn$ethnicity=="BA",]
-points(d$C1,d$C2, col=pcol[1], pch = 18)
+points(d$C1,d$C2, col=pcol[1], pch = 20)
 d <- evecthn[evecthn$ethnicity=="FO",]
-points(d$C1,d$C2, col=pcol[2], pch = 18)
+points(d$C1,d$C2, col=pcol[2], pch = 20)
 d <- evecthn[evecthn$ethnicity=="SB",]
-points(d$C1,d$C2, col=pcol[3], pch = 18)
+points(d$C1,d$C2, col=pcol[3], pch = 20)
 #d <- evecthn[evecthn$ethnicity=="SB",]
-#points(d$C1,d$C3, col=pcol[4], pch = 18)
+#points(d$C1,d$C3, col=pcol[4], pch = 20)
 #d <- evecthn[evecthn$ethnicity=="SBM",]
-#points(d$C1,d$C3, col=pcol[5], pch = 18)
+#points(d$C1,d$C3, col=pcol[5], pch = 20)
 legend("topleft", 
        legend=levels(as.factor(evecthn$ethnicity)),
        col=pcol, pch=18, bty="n", cex = 1)
@@ -100,16 +101,16 @@ legend("topleft",
 plot(evecthn$C1, evecthn$C3, xlab="PC1", 
      ylab="PC3", pch = 20, col = "white")
 d <- evecthn[evecthn$ethnicity=="BA",]
-points(d$C1,d$C3, col=pcol[1], pch = 18)
+points(d$C1,d$C3, col=pcol[1], pch = 20)
 d <- evecthn[evecthn$ethnicity=="FO",]
-points(d$C1,d$C3, col=pcol[2], pch = 18)
+points(d$C1,d$C3, col=pcol[2], pch = 20)
 d <- evecthn[evecthn$ethnicity=="SB",]
-points(d$C1,d$C3, col=pcol[3], pch = 18)
+points(d$C1,d$C3, col=pcol[3], pch = 20)
 #d <- evecthn[evecthn$ethnicity=="SB",]
-#points(d$C1,d$C3, col=pcol[4], pch = 18)
+#points(d$C1,d$C3, col=pcol[4], pch = 20)
 #d <- evecthn[evecthn$ethnicity=="SBM",]
-#points(d$C1,d$C3, col=pcol[5], pch = 18)
-legend("bottomleft", 
+#points(d$C1,d$C3, col=pcol[5], pch = 20)
+legend("topleft", 
        legend=levels(as.factor(evecthn$ethnicity)),
        col=pcol, pch=18, bty="n", cex = 1)
 #dev.off()
@@ -117,15 +118,15 @@ legend("bottomleft",
 plot(evecthn$C1, evecthn$C4, xlab="PC1", 
      ylab="PC4", pch = 20, col = "white")
 d <- evecthn[evecthn$ethnicity=="BA",]
-points(d$C1,d$C4, col=pcol[1], pch = 18)
+points(d$C1,d$C4, col=pcol[1], pch = 20)
 d <- evecthn[evecthn$ethnicity=="FO",]
-points(d$C1,d$C4, col=pcol[2], pch = 18)
+points(d$C1,d$C4, col=pcol[2], pch = 20)
 d <- evecthn[evecthn$ethnicity=="SB",]
-points(d$C1,d$C4, col=pcol[3], pch = 18)
+points(d$C1,d$C4, col=pcol[3], pch = 20)
 #d <- evecthn[evecthn$ethnicity=="SB",]
-#points(d$C1,d$C3, col=pcol[4], pch = 18)
+#points(d$C1,d$C3, col=pcol[4], pch = 20)
 #d <- evecthn[evecthn$ethnicity=="SBM",]
-#points(d$C1,d$C3, col=pcol[5], pch = 18)
+#points(d$C1,d$C3, col=pcol[5], pch = 20)
 legend("bottomright", 
        legend=levels(as.factor(evecthn$ethnicity)),
        col=pcol, pch=18, bty="n", cex = 1)
@@ -134,22 +135,22 @@ legend("bottomright",
 plot(evecthn$C2, evecthn$C3, xlab="PC2", 
      ylab="PC3", pch = 20, col = "white")
 d <- evecthn[evecthn$ethnicity=="BA",]
-points(d$C2,d$C3, col=pcol[1], pch = 18)
+points(d$C2,d$C3, col=pcol[1], pch = 20)
 d <- evecthn[evecthn$ethnicity=="FO",]
-points(d$C2,d$C3, col=pcol[2], pch = 18)
+points(d$C2,d$C3, col=pcol[2], pch = 20)
 d <- evecthn[evecthn$ethnicity=="SB",]
-points(d$C2,d$C3, col=pcol[3], pch = 18)
+points(d$C2,d$C3, col=pcol[3], pch = 20)
 #d <- evecthn[evecthn$ethnicity=="SB",]
-#points(d$C1,d$C3, col=pcol[4], pch = 18)
+#points(d$C1,d$C3, col=pcol[4], pch = 20)
 #d <- evecthn[evecthn$ethnicity=="SBM",]
-#points(d$C1,d$C3, col=pcol[5], pch = 18)
-legend("bottomright", 
+#points(d$C1,d$C3, col=pcol[5], pch = 20)
+legend("topright", 
        legend=levels(as.factor(evecthn$ethnicity)),
        col=pcol, pch=18, bty="n", cex = 1)
 dev.off()
 
-#n <- length(levels(as.factor(evecthn$ethnicity)))
-#pcol <- qualitative_hcl(n, h=c(0,360*(n-1)/n), c = 80, l = 60)
-#plot(evecDat[,-c(1:2,13)], pch = 20, cex = 0.6, bty = "n", col = pcol)
+n <- length(levels(as.factor(evecthn$ethnicity)))
+pcol <- qualitative_hcl(n, h=c(0,360*(n-1)/n), c = 80, l = 60)
+plot(evecDat[,-c(1:2,13)], pch = 20, cex = 0.6, bty = "n", col = pcol)
 
 
