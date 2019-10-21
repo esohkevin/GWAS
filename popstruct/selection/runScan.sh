@@ -16,8 +16,8 @@ if [[ $param == [123] ]]; then
    elif [[ $param == "1" && $# == 4 ]]; then
 
         Rscript scanPart.R $2 $3 $4
-
-	awk '$6<=0.05' ${3}iHSresult.txt > ${3}Signals.txt
+	head -1 ${3}iHSresult.txt > ${3}Signals.txt
+	awk '$6<=0.05' ${3}iHSresult.txt >> ${3}Signals.txt
 
    elif [[ $param == "2" && $# != 5 ]]; then
         echo """
@@ -32,8 +32,8 @@ if [[ $param == [123] ]]; then
    elif [[ $param == "2" && $# == 5 ]]; then
 
         Rscript scanFull.R $2 $3 $4 $5
-
-	awk '$6<=0.05' ${3}iHSresult.txt > ${3}Signals.txti
+	head -1 ${3}iHSresult.txt > ${3}Signals.txt
+	awk '$6<=0.05' ${3}iHSresult.txt > ${3}Signals.txt
 
    elif [[ $param == "3" && $# != 8 ]]; then
         echo """

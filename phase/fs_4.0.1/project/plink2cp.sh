@@ -12,6 +12,7 @@ for chr in {1..22}; do
         --pheno "${analysis}"raw-camgwas.fam \
         --update-sex "${analysis}"raw-camgwas.fam 3 \
         --mpheno 4 \
+	--remove fs_outliers.txt \
 	--maf 0.05 \
         --recode12 \
         --chr ${chr} \
