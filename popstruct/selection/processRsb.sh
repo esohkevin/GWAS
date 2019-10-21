@@ -1,16 +1,18 @@
 #!/bin/bash
 
-# for i in sbbRsb.txt sbfuRsb.txt bfuRsb.txt; do 
-#     sed -i 's/\t/:/1' ${i/.txt/.updated.txt};
-#     awk '$2>4' ${i/.txt/.updated.txt} | \
-# 	    sort -nr --key=3 > ${i/.updated.txt/.POSITIVE}; 
-#     awk '$2<-4' $i | \
-# 	    sort -nr --key=3 > ${i/.txt/.NEGATIVE}; 
-# done
+for i in sbbRsb.txt sbfuRsb.txt bfuRsb.txt; do 
+    sed 's/\t/:/1' ${i} > ${i/.txt/.updated.txt}
+
+    awk '$2>4' ${i/.txt/.updated.txt} | \
+	    sort -nr --key=3 > ${i/.txt/.POSITIVE}; 
+
+    awk '$2<-4' ${i/.txt/.updated.txt} | \
+	    sort -nr --key=3 > ${i/.txt/.NEGATIVE};
+done
 
 for i in ./*.POSITIVE ./*.NEGATIVE; do 
-    #cut -f1 $i > ${i}.pos; 
-    #grep -w -f ${i}.pos ../../analysis/updateName.txt > ${i}.rsids 
+    cut -f1 $i > ${i}.pos; 
+    grep -w -f ${i}.pos ../../analysis/updateName.txt > ${i}.rsids 
 
   plink \
    --vcf ../Phased-pca-filtered.vcf.gz \

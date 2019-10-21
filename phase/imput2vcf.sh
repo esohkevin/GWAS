@@ -70,4 +70,5 @@
 
 #--- Extract SNPs with infor >= 0.75
 #seq 22 | parallel echo view --threads 5 -R chr{}.info75.txt -Oz -o chr{}_imputed075.vcf.gz chr{}_imputed_updated.vcf.gz | xargs -P5 -n9 bcftools 
-bcftools concat -a -d all --threads 10 chr{1..22}_imputed_updated.vcf.gz -Oz -o camgwas_imputed.vcf.gz
+#bcftools concat -a -d all --threads 10 chr{1..22}_imputed_updated.vcf.gz -Oz -o camgwas_imputed.vcf.gz
+vcftools --gzvcf camgwas_imputed.vcf.gz --positions allinfo75.txt --recode --stdout | bgzip -c > imputed.vcf.gz
