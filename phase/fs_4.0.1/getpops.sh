@@ -10,4 +10,4 @@
 # 
 # bcftools view -S cam-afr50.txt --threads 15 -Oz -o msl.fs.vcf.gz ../qc1kgp_merge.vcf.gz
 
-bcftools view -S sam.ids --threads 15 -Oz -o fs.vcf.gz ../qc1kgp_merge.vcf.gz
+bcftools view -S pca.ids --threads 15 -Oz -o fs.vcf.gz ../qc1kgp_merge.vcf.gz
