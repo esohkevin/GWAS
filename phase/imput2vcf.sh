@@ -72,3 +72,9 @@
 #seq 22 | parallel echo view --threads 5 -R chr{}.info75.txt -Oz -o chr{}_imputed075.vcf.gz chr{}_imputed_updated.vcf.gz | xargs -P5 -n9 bcftools 
 #bcftools concat -a -d all --threads 10 chr{1..22}_imputed_updated.vcf.gz -Oz -o camgwas_imputed.vcf.gz
 vcftools --gzvcf camgwas_imputed.vcf.gz --positions allinfo75.txt --recode --stdout | bgzip -c > imputed.vcf.gz
+
+for chr in {1..22}; do awk '$4=="A" || $4=="T" || $4=="G" || $4=="C"' chr${chr}ImputSuccessful.txt | awk '$5=="A" || $5=="T" || $5=="G" || $5=="C"' | awk -v chr="$chr" '$1=$2=""; {print "---",chr":"$3,"_"$4,"_"$5,$0}' | sed 's/  //g' | sed 's/ _A/_A/g' | sed 's/ _T/_T/g' | sed 's/ _C/_C/g' | sed 's/ _G/_G/g' | uniq > chr${chr}.info; done
+
+for i in {1..22}; do awk '$7>=0.75' chr${i}.info | cut -f2 -d' ' > extractchr${i}info75.txt; done
+
+
