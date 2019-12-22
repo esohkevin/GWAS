@@ -18,3 +18,5 @@
 ./concatChunks.sh
 
 
+# Convert GEN file to VCF and PLINK format using qctool and PLINK2
+./qct2gen.sh
