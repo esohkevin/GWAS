@@ -1,8 +1,8 @@
 #!/usr/bin/Rscript
 
-setwd("~/esohdata/GWAS/analysis/")
-
-
+#setwd("~/esohdata/GWAS/analysis/")
+args <- commandArgs(TRUE)
+f <- args[1]
 #?iconv()
 
 library(qqman)
@@ -25,10 +25,19 @@ require(data.table)
 #head(assoc)
 #View(assoc)
 
-assoc <- fread("qc-camgwas-updated.stats", header = T, data.table = F)
+#assoc <- fread("qc-camgwas-updated.stats", header = T, data.table = F)
+#attach(assoc)
+#assoc$P <- assoc$P_BOLT_LMM
+#png("bolt_assoc.png", height = 480, width = 700, units = "px", res = NA, pointsize = 12)
+#manhattan(assoc)
+#dev.off()
+#qq(assoc$P)
+
+assoc <- fread(f, h=T, data.table=F, nThread = 30)
 attach(assoc)
-assoc$P <- assoc$P_BOLT_LMM
-png("bolt_assoc.png", height = 480, width = 700, units = "px", res = NA, pointsize = 12)
+png("test_assoc.png", height = 480, width = 700, units = "px", res = NA, pointsize = 12)
 manhattan(assoc)
 dev.off()
+png("test_qq.png", height = 480, width = 500, units = "px", res = NA, pointsize = 12)
 qq(assoc$P)
+dev.off()

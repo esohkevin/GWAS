@@ -10,8 +10,8 @@ if [[ $# == 2 ]]; then
 
 #   for pop in $(cat pop.list); do shuf -n50 ../../samples/${pop}.ids; done > wthinned.txt
 
-   wmaf="$1"
-   amaf="$2"
+   pop="${1/.*/}"
+   maf="$2"
 
    #----- Prepare world pops for pca and fst
    plink \
@@ -28,61 +28,61 @@ if [[ $# == 2 ]]; then
        --make-bed \
        --indiv-sort f worldPops/cam_igsr_sort.txt \
        --double-id \
-       --maf ${wmaf} \
+       --maf ${maf} \
        --threads 30 \
-       --keep world.ids \
+       --keep ${pop}.ids \
        --keep-allele-order \
        --autosome \
-       --out temp-wld
+       --out temp-${pop}
    
    plink \
-       --bfile temp-wld \
+       --bfile temp-${pop} \
        --recode \
        --keep-allele-order \
        --autosome \
        --threads 30 \
-       --out CONVERTF/world
+       --out CONVERTF/${pop}
 
 
-   #for pop in $(cat afr-pop.list | tr '[:upper:]' '[:lower:]'); do shuf -n50 ../../samples/${pop}.ids; done > athinned.txt
-   
-   #----- Prepare world pops for pca and fst
-   plink \
-       --vcf ${phase}qc1kgp_merge.vcf.gz \
-       --extract msl.rsids \
-       --indep-pairwise 5kb 50 0.1 \
-       --keep-allele-order \
-       --out pruned
-
-   #---- Prepare Africa pops for pca and fst
-   plink \
-       --vcf ${phase}qc1kgp_merge.vcf.gz \
-       --extract msl.rsids \
-       --make-bed \
-       --indiv-sort f worldPops/cam_igsr_sort.txt \
-       --keep afr.ids \
-       --double-id \
-       --maf ${amaf} \
-       --keep-allele-order \
-       --autosome \
-       --threads 30 \
-       --out temp-afr
-   
-   plink \
-       --bfile temp-afr \
-       --recode \
-       --keep-allele-order \
-       --autosome \
-       --threads 30 \
-       --out CONVERTF/afr
+#   #for pop in $(cat afr-pop.list | tr '[:upper:]' '[:lower:]'); do shuf -n50 ../../samples/${pop}.ids; done > athinned.txt
+#   
+#   #----- Prepare world pops for pca and fst
+#   plink \
+#       --vcf ${phase}qc1kgp_merge.vcf.gz \
+#       --extract msl.rsids \
+#       --indep-pairwise 5kb 50 0.1 \
+#       --keep-allele-order \
+#       --out pruned
+#
+#   #---- Prepare Africa pops for pca and fst
+#   plink \
+#       --vcf ${phase}qc1kgp_merge.vcf.gz \
+#       --extract msl.rsids \
+#       --make-bed \
+#       --indiv-sort f worldPops/cam_igsr_sort.txt \
+#       --keep afr.ids \
+#       --double-id \
+#       --maf ${amaf} \
+#       --keep-allele-order \
+#       --autosome \
+#       --threads 30 \
+#       --out temp-afr
+#   
+#   plink \
+#       --bfile temp-afr \
+#       --recode \
+#       --keep-allele-order \
+#       --autosome \
+#       --threads 30 \
+#       --out CONVERTF/afr
 
 
    rm CONVERTF/*.nosex *.nosex pruned.* temp*
    else 
        echo """
-  	Usage:./prepWorldpops.sh <wmaf> <amaf>
+  	Usage:./prepWorldpops.sh <pop.ids> <amaf>
 
-   	wmaf: MAF for PCA and Fst with World pops
+     pop.ids: Individual ID list for pop to analyze
    	amaf: MAF for PCA and Fst with Afr pops
    """
 fi
