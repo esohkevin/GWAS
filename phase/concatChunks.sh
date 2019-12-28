@@ -5,7 +5,7 @@ imputed_path="imputed/"
 for chr in {1..22}; do
 
    if [[ -f "concat_chr"${chr}"_Chunks.txt" || -f "chr"${chr}"_imputed.gen.gz" ]]; then
-      rm concat_chr"${chr}"_Chunks.txt chr"${chr}"_imputed.gen.gz chr"${chr}"_imputed.gen
+      rm concat_chr"${chr}"_Chunks.txt chr"${chr}"_imputed.gen.gz
    fi
    if [[ -f "chr${chr}-phased_wref.haps" ]]; then
       for interval in $(cat chr${chr}intervals.txt); do
