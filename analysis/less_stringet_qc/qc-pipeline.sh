@@ -313,7 +313,7 @@ plink \
 
 plink \
 	--bfile qc-camgwas \
-	--update-name ${data}updateName.txt.gz 1 2 \
+	--update-name ${data}updateName.txt 1 2 \
 	--allow-no-sex \
 	--make-bed \
 	--out qc-camgwas
