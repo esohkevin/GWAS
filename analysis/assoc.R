@@ -35,7 +35,7 @@ require(data.table)
 
 assoc <- fread(f, h=T, data.table=F, nThread = 30)
 attach(assoc)
-png("test_assoc.png", height = 480, width = 700, units = "px", res = NA, pointsize = 12)
+png("test_assoc.png", height = 440, width = 700, units = "px", res = NA, pointsize = 12)
 manhattan(assoc)
 dev.off()
 png("test_qq.png", height = 480, width = 500, units = "px", res = NA, pointsize = 12)
