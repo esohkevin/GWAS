@@ -12,185 +12,185 @@ data="../"
 mkdir -p ../../images
 #read -p 'Please provide your genotype vcf file: ' vcf
 
-#--------
-plink1.9 \
-	--vcf ${data}CamGWASMerged.vcf.gz \
-	--recode oxford \
-	--remove ${samples}missingEthnicity.ids \
-	--allow-no-sex \
-	--double-id \
-	--out raw-camgwas
-cp ${samples}raw-camgwas.sample .
-
-
-#-------- Check for duplicate SNPs
-plink1.9 \
-	--data raw-camgwas \
-	--allow-no-sex \
-	--list-duplicate-vars ids-only suppress-first \
-	--out dups
-
-#-------- Make plink binary files from Oxford .gen + .sample files spliting chrX 
-#-------- by the PARs using the b37 coordinates while removing duplicate SNPs
-plink1.9 \
-	--data raw-camgwas \
-	--make-bed \
-	--exclude dups.dupvar \
-	--split-x b37 \
-	--allow-no-sex \
-	--out raw-camGwas
-
-#-------- Update SNPID names with rsids
-cut -f2 raw-camGwas.bim > all.snps.ids
-cut -f1 -d',' all.snps.ids > all.rs.ids
-paste all.rs.ids all.snps.ids > allMysnps.txt
-
-plink1.9 \
-        --bfile raw-camGwas \
-        --update-name allMysnps.txt 1 2 \
-        --allow-no-sex \
-        --make-bed \
-        --out raw-camgwas
-
-#-------- LD-prune the raw data before sex check
-plink1.9 \
-        --bfile raw-camgwas \
-        --allow-no-sex \
-        --indep-pairwise 5kb 10 0.2 \
-	--set-hh-missing \
-        --out prunedsnplist
-
-#-------- Now extract the pruned SNPs to perform check-sex on
-plink1.9 \
-        --bfile raw-camgwas \
-        --allow-no-sex \
-        --extract prunedsnplist.prune.in \
-        --make-bed \
-        --out check-sex-data
-
-#-------- Check for sex concordance
-plink1.9 \
-	--bfile check-sex-data \
-	--check-sex \
-	--set-hh-missing \
-	--allow-no-sex \
-	--out check-sex-data
-
-#-------- Extract FIDs and IIDs of individuals flagged with error 
-#-------- (PROBLEM) in the .sexcheck file (failed sex check)
-grep "PROBLEM" check-sex-data.sexcheck > fail-checksex.qc
-
-#-------- Compute missing data stats
-plink1.9 \
-	--bfile raw-camgwas \
-	--missing \
-	--allow-no-sex \
-	--set-hh-missing \
-	--out raw-camgwas
-
-#-------- Compute heterozygosity stats
-plink1.9 \
-	--bfile raw-camgwas \
-	--het \
-	--allow-no-sex \
-	--set-hh-missing \
-	--out raw-camgwas
-
-echo -e """\e[38;5;40m
-	##########################################################################
-	##	    Perform per individual missing rate QC in R			##
-	##########################################################################
-	\e[0m
-	"""
-echo -e "\n\e[38;5;40mNow generating plots for per individual missingness in R. Please wait...\e[0m"
-
-Rscript ${data}indmissing.R raw-camgwas.het raw-camgwas.imiss
-
-#-------- Extract a subset of frequent individuals to produce an IBD 
-#-------- report to check duplicate or related individuals baseDird on autosomes
-plink1.9 \
-	--bfile raw-camgwas \
-	--autosome \
-	--maf 0.35 \
-	--geno 0.05 \
-	--hwe 1e-8 \
-	--allow-no-sex \
-	--make-bed \
-	--out frequent
-
-#-------- Prune the list of frequent SNPs to remove those that fall within 
-#-------- 50bp with r^2 > 0.2 using a window size of 5bp
-plink1.9 \
-	--bfile frequent \
-	--allow-no-sex \
-	--indep-pairwise 5kb 10 0.2 \
-	--out prunedsnplist
-
-#-------- Now generate the IBD report with the set of pruned SNPs 
-#-------- (prunedsnplist.prune.in - IN because they're the ones we're interested in)
-plink1.9 \
-	--bfile frequent \
-	--allow-no-sex \
-	--extract prunedsnplist.prune.in \
-	--genome \
-	--out caseconpruned
-
-echo -e """\e[38;5;40m
-	#########################################################################
-	#              Perform IBD analysis (relatedness) in R                  #
-	#########################################################################
-	\e[0m
-	"""
-echo -e "\n\e[38;5;40mNow generating plots for IBD analysis in R. Please wait...\e[0m"
-
-Rscript ${data}ibdana.R
-
-#------- Merge IDs of all individuals that failed per individual qc
-cat fail-checksex.qc  fail-het.qc  fail-mis.qc duplicate.ids1 | sort | uniq > fail-ind.qc
-
-#-------- Remove individuals who failed per individual QC
-plink1.9 \
-	--bfile raw-camgwas \
-	--make-bed \
-	--allow-no-sex \
-	--set-hh-missing \
-	--remove fail-ind.qc \
-	--out ind-qc-camgwas
-
-#-------- Per SNP QC
-#-------- Compute missing data rate for ind-qc-camgwas data
-plink1.9 \
-	--bfile ind-qc-camgwas \
-	--allow-no-sex \
-	--set-hh-missing \
-	--missing \
-	--out ind-qc-camgwas
-
-# Compute MAF
-plink1.9 \
-	--bfile ind-qc-camgwas \
-	--allow-no-sex \
-	--set-hh-missing \
-	--freq \
-	--out ind-qc-camgwas
-
-#-------- Compute differential missing genotype call rates (in cases and controls)
-plink1.9 \
-	--bfile ind-qc-camgwas \
-	--allow-no-sex \
-	--set-hh-missing \
-	--test-missing \
-	--out ind-qc-camgwas
-
-echo -e """\e[38;5;40m
-	#########################################################################
-	#                        Perform per SNP QC in R                        #
-	#########################################################################
-	\e[0m
-	"""
-echo -e "\n\e[38;5;40mNow generating plots for per SNP QC in R. Please wait...\e[0m"
-
-Rscript ${data}snpmissing.R ind-qc-camgwas.lmiss ind-qc-camgwas.frq ind-qc-camgwas.missing
+# #--------
+# plink1.9 \
+# 	--vcf ${data}CamGWASMerged.vcf.gz \
+# 	--recode oxford \
+# 	--remove ${samples}missingEthnicity.ids \
+# 	--allow-no-sex \
+# 	--double-id \
+# 	--out raw-camgwas
+# cp ${samples}raw-camgwas.sample .
+# 
+# 
+# #-------- Check for duplicate SNPs
+# plink1.9 \
+# 	--data raw-camgwas \
+# 	--allow-no-sex \
+# 	--list-duplicate-vars ids-only suppress-first \
+# 	--out dups
+# 
+# #-------- Make plink binary files from Oxford .gen + .sample files spliting chrX 
+# #-------- by the PARs using the b37 coordinates while removing duplicate SNPs
+# plink1.9 \
+# 	--data raw-camgwas \
+# 	--make-bed \
+# 	--exclude dups.dupvar \
+# 	--split-x b37 \
+# 	--allow-no-sex \
+# 	--out raw-camGwas
+# 
+# #-------- Update SNPID names with rsids
+# cut -f2 raw-camGwas.bim > all.snps.ids
+# cut -f1 -d',' all.snps.ids > all.rs.ids
+# paste all.rs.ids all.snps.ids > allMysnps.txt
+# 
+# plink1.9 \
+#         --bfile raw-camGwas \
+#         --update-name allMysnps.txt 1 2 \
+#         --allow-no-sex \
+#         --make-bed \
+#         --out raw-camgwas
+# 
+# #-------- LD-prune the raw data before sex check
+# plink1.9 \
+#         --bfile raw-camgwas \
+#         --allow-no-sex \
+#         --indep-pairwise 5kb 10 0.2 \
+# 	--set-hh-missing \
+#         --out prunedsnplist
+# 
+# #-------- Now extract the pruned SNPs to perform check-sex on
+# plink1.9 \
+#         --bfile raw-camgwas \
+#         --allow-no-sex \
+#         --extract prunedsnplist.prune.in \
+#         --make-bed \
+#         --out check-sex-data
+# 
+# #-------- Check for sex concordance
+# plink1.9 \
+# 	--bfile check-sex-data \
+# 	--check-sex \
+# 	--set-hh-missing \
+# 	--allow-no-sex \
+# 	--out check-sex-data
+# 
+# #-------- Extract FIDs and IIDs of individuals flagged with error 
+# #-------- (PROBLEM) in the .sexcheck file (failed sex check)
+# grep "PROBLEM" check-sex-data.sexcheck > fail-checksex.qc
+# 
+# #-------- Compute missing data stats
+# plink1.9 \
+# 	--bfile raw-camgwas \
+# 	--missing \
+# 	--allow-no-sex \
+# 	--set-hh-missing \
+# 	--out raw-camgwas
+# 
+# #-------- Compute heterozygosity stats
+# plink1.9 \
+# 	--bfile raw-camgwas \
+# 	--het \
+# 	--allow-no-sex \
+# 	--set-hh-missing \
+# 	--out raw-camgwas
+# 
+# echo -e """\e[38;5;40m
+# 	##########################################################################
+# 	##	    Perform per individual missing rate QC in R			##
+# 	##########################################################################
+# 	\e[0m
+# 	"""
+# echo -e "\n\e[38;5;40mNow generating plots for per individual missingness in R. Please wait...\e[0m"
+# 
+# Rscript ${data}indmissing.R raw-camgwas.het raw-camgwas.imiss
+# 
+# #-------- Extract a subset of frequent individuals to produce an IBD 
+# #-------- report to check duplicate or related individuals baseDird on autosomes
+# plink1.9 \
+# 	--bfile raw-camgwas \
+# 	--autosome \
+# 	--maf 0.35 \
+# 	--geno 0.05 \
+# 	--hwe 1e-8 \
+# 	--allow-no-sex \
+# 	--make-bed \
+# 	--out frequent
+# 
+# #-------- Prune the list of frequent SNPs to remove those that fall within 
+# #-------- 50bp with r^2 > 0.2 using a window size of 5bp
+# plink1.9 \
+# 	--bfile frequent \
+# 	--allow-no-sex \
+# 	--indep-pairwise 5kb 10 0.2 \
+# 	--out prunedsnplist
+# 
+# #-------- Now generate the IBD report with the set of pruned SNPs 
+# #-------- (prunedsnplist.prune.in - IN because they're the ones we're interested in)
+# plink1.9 \
+# 	--bfile frequent \
+# 	--allow-no-sex \
+# 	--extract prunedsnplist.prune.in \
+# 	--genome \
+# 	--out caseconpruned
+# 
+# echo -e """\e[38;5;40m
+# 	#########################################################################
+# 	#              Perform IBD analysis (relatedness) in R                  #
+# 	#########################################################################
+# 	\e[0m
+# 	"""
+# echo -e "\n\e[38;5;40mNow generating plots for IBD analysis in R. Please wait...\e[0m"
+# 
+# Rscript ${data}ibdana.R
+# 
+# #------- Merge IDs of all individuals that failed per individual qc
+# cat fail-checksex.qc  fail-het.qc  fail-mis.qc duplicate.ids1 | sort | uniq > fail-ind.qc
+# 
+# #-------- Remove individuals who failed per individual QC
+# plink1.9 \
+# 	--bfile raw-camgwas \
+# 	--make-bed \
+# 	--allow-no-sex \
+# 	--set-hh-missing \
+# 	--remove fail-ind.qc \
+# 	--out ind-qc-camgwas
+# 
+# #-------- Per SNP QC
+# #-------- Compute missing data rate for ind-qc-camgwas data
+# plink1.9 \
+# 	--bfile ind-qc-camgwas \
+# 	--allow-no-sex \
+# 	--set-hh-missing \
+# 	--missing \
+# 	--out ind-qc-camgwas
+# 
+# # Compute MAF
+# plink1.9 \
+# 	--bfile ind-qc-camgwas \
+# 	--allow-no-sex \
+# 	--set-hh-missing \
+# 	--freq \
+# 	--out ind-qc-camgwas
+# 
+# #-------- Compute differential missing genotype call rates (in cases and controls)
+# plink1.9 \
+# 	--bfile ind-qc-camgwas \
+# 	--allow-no-sex \
+# 	--set-hh-missing \
+# 	--test-missing \
+# 	--out ind-qc-camgwas
+# 
+# echo -e """\e[38;5;40m
+# 	#########################################################################
+# 	#                        Perform per SNP QC in R                        #
+# 	#########################################################################
+# 	\e[0m
+# 	"""
+# echo -e "\n\e[38;5;40mNow generating plots for per SNP QC in R. Please wait...\e[0m"
+# 
+# Rscript ${data}snpmissing.R ind-qc-camgwas.lmiss ind-qc-camgwas.frq ind-qc-camgwas.missing
 
 #-------- Remove SNPs that failed per marker QC
 plink1.9 \
@@ -269,7 +269,8 @@ echo -e """\e[38;5;40m
 	"""
 echo -e "\n\e[38;5;40mPerforming ChrX per SNP QC in R. Please wait...\e[0m"
 
-Rscript ${data}xsnpmissing.R
+awk '$5<1e-06 {print $2}' qc-camgwas-chrX.missing > fail-Xdiffmiss.qc
+#Rscript ${data}xsnpmissing.R
 
 #-------- Now remove SNPs that failed chrX QC
 plink1.9 \
@@ -312,7 +313,7 @@ plink \
 
 plink \
 	--bfile qc-camgwas \
-	--update-name ${data}updateName.txt 1 2 \
+	--update-name ${data}updateName.txt.gz 1 2 \
 	--allow-no-sex \
 	--make-bed \
 	--out qc-camgwas
@@ -336,7 +337,7 @@ rm pruned* dups*
 rm allMysnps.txt
 rm all.rs.ids all.snps.ids
 
-mv *.png ${images}
+#mv *.png ${images}
 
 # Perform Population Structure
 #cd ../../popstruct/
