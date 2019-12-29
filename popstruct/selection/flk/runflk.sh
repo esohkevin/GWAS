@@ -15,7 +15,7 @@ if [[ $# == 2 && $p == "flk" ]]; then
 elif [[ $# == 5 && $p == "hflk" ]]; then
         
     #--- Per chromosome hapflk
-    seq $nl $nh | parallel echo --bfile boot/cam-chr{}flk -K 30 --kinship flkout/camflk_fij.txt --ncpu=15 -p flkout/cam-chr{}flk | xargs -P$n -n9 hapflk
+    seq $nl $nh | parallel echo --bfile boot/cam-chr{}flk -K 15 --kinship flkout/camflk_fij.txt --ncpu=15 -p flkout/cam-chr{}flk | xargs -P$n -n9 hapflk
 
     #Rscript flk.R
 
