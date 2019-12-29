@@ -15,7 +15,7 @@ concatChunks() {
                zcat $chunk | \
                  awk '$4=="A" || $4=="T" || $4=="G" || $4=="C"' | \
                  awk '$5=="A" || $5=="T" || $5=="G" || $5=="C"' | bgzip -c >> chr"${chr}"_imputed.gen.gz
-               zcat ${chunk/.gz/_info} | \
+               cat ${chunk/.gz/_info} | \
                  awk '$4=="A" || $4=="T" || $4=="C" || $4=="G"' | \
                  awk '$5=="A" || $5=="T" || $5=="C" || $5=="G"' | \
                  awk '$7>=0.75 {print $2}' > chr${chr}_imputed.gen.include
