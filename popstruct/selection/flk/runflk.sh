@@ -15,9 +15,10 @@ if [[ $# == 2 && $p == "flk" ]]; then
 elif [[ $# == 5 && $p == "hflk" ]]; then
         
     #--- Per chromosome hapflk
-    seq $nl $nh | parallel echo --bfile boot/cam-chr{}flk -K 15 --kinship flkout/camflk_fij.txt --ncpu=15 -p flkout/cam-chr{}flk | xargs -P$n -n9 hapflk
-
-    #Rscript flk.R
+    seq $nl $nh | parallel echo --bfile boot/${prfx}{}flk -K 15 --kinship flkout/camflk_fij.txt --ncpu=15 --phased --kfrq -p flkout/${prfx}{}flk | xargs -P$n -n11 hapflk
+    seq $nl $nh | parallel echo "hapflk-clusterplot.R flkout/${prfx}{}flk.kfrq.fit_1.bz2" | xargs -P5 -n2 Rscript
+    seq $nl $nh | parallel echo "scaling_chi2_hapflk.py flkout/${prfx}{}flk.hapflk 15 3" | xargs -P5 -n4 python
+    ./hflkman.R flkout/${prfx} 22
 
 else
     echo """
