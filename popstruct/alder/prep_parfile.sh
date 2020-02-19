@@ -20,7 +20,7 @@ refpops:        ${refpopA};${refpopB};${refpopC}
 checkmap:       NO
 bootstrap: 	300
 binsize:	$bs
-nochrom:	6;11
+#nochrom:	6;11
 #poplistname:	${refpopA}
 raw_outname: 	raw.ld.txt
 num_threads: 	15
