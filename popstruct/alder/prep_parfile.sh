@@ -16,13 +16,14 @@ genotypename:   ${base}.eigenstratgeno
 snpname:        ${base}.snp
 indivname:      ${base}-ald.ind
 admixpop:       ${admpop}
-refpops:        ${refpopA};${refpopB};${refpopC}
+#refpops:        ${refpopA};${refpopB};${refpopC}
 checkmap:       NO
 bootstrap: 	300
+jackknife:	NO
 binsize:	$bs
-#nochrom:	6;11
-#poplistname:	${refpopA}
-raw_outname: 	raw.ld.txt
+nochrom:	6
+poplistname:	${refpopA}
+#raw_outname: 	raw.ld.txt
 num_threads: 	15
 
 """ > ${bname}-alder.par
@@ -33,7 +34,7 @@ else
 	
 		 input-root: basename of eigenstrat format files with path to the files
 		     admpop: for admixpoppulation
-		 	 p1: for first reference population
+		 	 p1: for first reference population OR poplistname (one per line). If provide enter anything on p2 and p3
 			 p2: for second reference population
                          p3: for third reference population
                     binsize: genetic distance resolution (in Morgans) at which SNPs are
