@@ -5,7 +5,7 @@ prfx="$2"
 n="$3"
 nl="$4"
 nh="$5"
-
+conda activate py2
 if [[ $# == 2 && $p == "flk" ]]; then
 
     #--- Whole Genome flk
