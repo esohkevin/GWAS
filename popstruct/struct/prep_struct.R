@@ -2,6 +2,6 @@
 
 require(data.table)
 f <- fread("cam.gen.col12.txt",h=F, data.table=F)
-s <- fread("/home/esoh/Git/GWAS/popstruct/world/cam1073.eth", h=F, data.table=F)
+s <- fread("../world/cam1073.eth", h=F, data.table=F)
 fs <- merge(f,s,by="V1")
 write.table(fs[,c(1,4)], file="cam.struct", col.names=F,row.names=F,quote=F,sep=" ")
