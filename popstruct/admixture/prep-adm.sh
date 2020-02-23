@@ -11,19 +11,21 @@ phase="../../phase/"
 #cat cam.ids yri.ids adm.txt > adm.pops
 #cut -f2 ${world}yri.bim > yri.rsids
 
-if [[ $# == 5 ]]; then
+if [[ $# == 6 ]]; then
 
     in_vcf="$1"
     snps="$2"
     maf="$3"
     out="$4"
     inord="$5"
+    ids="$6"
     
     plink \
         --vcf ${in_vcf} \
         --allow-no-sex \
         --autosome \
 	--double-id \
+        --keep $ids \
 	--extract ${snps} \
     	--indiv-sort f ${inord} \
     	--make-bed \
@@ -52,7 +54,7 @@ Rscript prep-adm.R
 
 else
     echo """
-	Usage:./prep-adm.sh <in_vcf> <fst-snp-file> (specify paths) <MAF> <outname> <list [indiv-sort-order]>
+	Usage:./prep-adm.sh <in_vcf> <fst-snp-file> (specify paths) <MAF> <outname> <list [indiv-sort-order]> <sample-idlist>
     """
 
 fi

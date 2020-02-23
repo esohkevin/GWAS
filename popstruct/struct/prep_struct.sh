@@ -23,7 +23,7 @@ for i in $(cat ../world/pop.list); do
 
 #--- CAM
 plink \
-   --vcf ${HOME}/Git/GWAS/popstruct/alder/alder.vcf.gz \
+   --vcf ../alder/alder.vcf.gz \
    --recode structure \
    --extract ../eig/POPGEN/fstsnps.txt \
    --keep-allele-order \
@@ -42,7 +42,7 @@ cut -f1-2 -d' ' cam.gen  > cam.gen.col12.txt
 
 #--- WORLD
 plink \
-   --vcf ${HOME}/Git/GWAS/popstruct/alder/alder.vcf.gz \
+   --vcf ../alder/alder.vcf.gz \
    --recode structure \
    --extract ../world/POPGEN/wld.fstsnps.txt \
    --keep-allele-order \
@@ -111,4 +111,6 @@ ws=$(grep "pass filters" world.log | awk '{print $4}');
 wl=$(grep "pass filters" world.log | awk '{print $1}');
 
 
-preparams.sh ${cs} ${cl} ${ws} ${wl}
+for k in {1..14}; do
+  ./preparams.sh ${cs} ${cl} ${ws} ${wl} $k
+done

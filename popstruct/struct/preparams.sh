@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 cs="$1"; cl="$2"
 ws="$3"; wl="$4"
+k="$5"
 
 echo -e """KEY PARAMETERS FOR THE PROGRAM structure.  YOU WILL NEED TO SET THESE
 IN ORDER TO RUN THE PROGRAM.  VARIOUS OPTIONS CAN BE ADJUSTED IN THE
@@ -22,7 +23,7 @@ Basic Program Parameters
 Input/Output files
 
 #define INFILE   cam.struct.in   // (str) name of input data file
-#define OUTFILE  cam.struct.out  //(str) name of output data file
+#define OUTFILE  cam.struct.out${k}  //(str) name of output data file
 
 Data file format
 
@@ -70,7 +71,7 @@ Command line options:
 -N NUMINDS
 -i input file
 -o output file
--D SEED""" > camparams
+-D SEED""" > camparams${k}
 
 
 
@@ -94,7 +95,7 @@ Basic Program Parameters
 Input/Output files
 
 #define INFILE   world.struct.in   // (str) name of input data file
-#define OUTFILE  world.struct.out  //(str) name of output data file
+#define OUTFILE  world.struct.out${k}  //(str) name of output data file
 
 Data file format
 
@@ -142,4 +143,4 @@ Command line options:
 -N NUMINDS
 -i input file
 -o output file
--D SEED""" > worldparams
+-D SEED""" > worldparams${k}
