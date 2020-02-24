@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+#PBS -l select=1:ncpus=24
+#PBS -l walltime=24:00:00
+#PBS -q smp
+#PBS -P CBBI1243
+#PBS -o /mnt/lustre/groups/CBBI1243/KEVIN/git/GWAS/popstruct/struct/stdout.txt
+#PBS -e /mnt/lustre/groups/CBBI1243/KEVIN/git/GWAS/popstruct/struct/stderr.txt
+#PBS -N PRSTRUCT
+#PBS -M kevin.esoh@students.jkuat.ac.ke
+#PBS -m b
+
+module add chpc/BIOMODULES
+module add gnu/parallel-20160422
+module load plink/1.90 
+module load R/3.6.0-gcc7.2.0
+module load structure/2.3.4
+
+cd /mnt/lustre/groups/CBBI1243/KEVIN/git/GWAS/popstruct/struct
+
+./prep_struct.sh 2>&1 | tee prep.struct.log
+

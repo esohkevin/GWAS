@@ -21,7 +21,7 @@ checkmap:       NO
 bootstrap: 	300
 jackknife:	NO
 binsize:	$bs
-nochrom:	6
+nochrom:	6;8;11
 poplistname:	${refpopA}
 #raw_outname: 	raw.ld.txt
 num_threads: 	15

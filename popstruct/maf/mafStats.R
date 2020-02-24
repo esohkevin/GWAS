@@ -1,29 +1,30 @@
 #!/bin/bash
 
-setwd("~/esohdata/GWAS/popstruct/maf/")
+#setwd("~/esohdata/GWAS/popstruct/maf/")
 
 require(data.table)
 require(colorspace)
 require(RColorBrewer)
 
-hcl_palettes(type = "sequential", plot = T)
-pcol <- RColorBrewer::brewer.pal(3, "Set3")
+#hcl_palettes(type = "sequential", plot = T)
+#pcol <- RColorBrewer::brewer.pal(3, "Set3")
 
 frq <- fread("cam.frq.strat.txt")
-frq <- fread("maf.frq")
+#frq <- fread("maf.frq")
 #colnames(maf) <- c("CHR","POS","RAF","MAF")
 
-hist(frq$MAF)
+#hist(frq$MAF)
 
 attach(frq)
-pcol <- sequential_hcl(3, h=260, c=80, l=c(0,200))
+pcol <- qualitative_hcl(3, "Dark3")
 png("maf.png", height=15, width=15, units="cm", res=100, points=12)
-hist(frq$MAF[frq$CLST=="BA"], xlim = c(0,0.50), breaks = 200, xlab="MAF bin", main = "MAF Spectrum", col = pcol)
-hist(frq$MAF[frq$CLST=="FO"], xlim=c(0,0.50),breaks=100, labels =F, add=T, col = pcol)
-hist(frq$MAF[frq$CLST=="SB"], xlim=c(0,0.50),breaks=200, labels =F, add=T, col = pcol)
-abline(v=c(0.01,0.05), col=c(2,4,1), lty=2)
+hist(frq$MAF[frq$CLST=="SB"], breaks=40, xlim = c(0,0.50), ylim=c(0,300000), xlab="MAF bin", main = "MAF Spectrum", col = pcol[1])
+hist(frq$MAF[frq$CLST=="BA"], breaks=40, xlim=c(0,0.50), labels =F, add=T, col = pcol[2]) #breaks = 200,
+hist(frq$MAF[frq$CLST=="FO"], breaks=40, xlim=c(0,0.50), labels =F, add=T, col = pcol[3])
+#abline(v=c(0.01,0.05), col=c(2,4,1), lty=2)
+legend("topright", legend=c("SB","BA","FO"), col=c(pcol[1],pcol[2],pcol[3]), lty=1)
 dev.off()
-plot(density(frq$MAF[frq$CLST=="FO"]))
+#plot(density(frq$MAF[frq$CLST=="FO"]))
 
 
 #frq <- read.table("camall.frq.txt", header = T, as.is = T)

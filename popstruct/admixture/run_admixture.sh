@@ -5,17 +5,18 @@ convert="../world/CONVERTF/"
 
 # Perform admixture cross-validation to determine the appropriate k value to use
 
-if [[ $# == 2 ]]; then
+if [[ $# == 3 ]]; then
 
    inbed="$1"
-   nseq="$2"
+   fnseq="$2"
+   tnseq="$3"
 
-   seq $nseq | parallel echo --cv ${inbed}.bed {} -B300 -j15 | xargs -P5 -n5 admixture
+   seq $fnseq $tnseq | parallel echo --cv ${inbed}.bed {} -B300 -j15 | xargs -P3 -n5 admixture
    
    
    #./plotQestimate.sh log.out
 else
     echo """
-	Usage:./run_admixture.sh <input-bed-root> <#K [number of K params]>
+	Usage:./run_admixture.sh <input-bed-root> <from K> <to K> [from ? to ? number of K params]
     """
 fi
