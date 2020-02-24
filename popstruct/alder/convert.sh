@@ -5,7 +5,7 @@
 #      shuf -n50; done | \
 #      awk '{print $1,$1}' > world50.ids
 #plink --vcf alder.vcf.gz --indep-pairwise 5kb 10 0.01 --keep-allele-order --extract ../world/POPGEN/wld.fstsnps.txt --double-id --out prune
-#plink --vcf alder.vcf.gz --recode --keep-allele-order --geno 0.05 --double-id --extract prune.prune.in --keep qc-world-pop.ids --out world
+plink --vcf alder.vcf.gz --recode --keep-allele-order --geno 0.05 --double-id --extract ../world/POPGEN/wld.fstsnps.txt --keep qc-world-pop.ids --out world
 
 convertf -p par.PED.PACKEDPED
 convertf -p par.PACKEDPED.PACKEDANCESTRYMAP
