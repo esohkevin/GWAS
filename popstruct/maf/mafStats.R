@@ -2,9 +2,9 @@
 
 args <- commandArgs(TRUE)
 
-if (length(args) < 2 ) {
+if (length(args) < 3 ) {
    print("",quote=F)
-   print("Usage: ./mafStats.R [ maf_file] [out_prefix]",quote=F)
+   print("Usage: ./mafStats.R [ maf_file] [out_prefix] [threads]",quote=F)
    print("",quote=F)
    print("maf_file: File with three columns with PLINK freq-type header [SNP CLST MAF]",quote=F)
    print("(col1=snpid/rsid, col2=PopName, col3=MAF)",quote=F)
@@ -31,8 +31,8 @@ if (length(args) < 2 ) {
      f <- args[1]
      fout <- paste0(args[2],".txt")
      fimage <- paste0(args[2],".png")
-     
-     frq <- fread(f,h=T,nThread=10)
+     thr <- as.numeric(args[3])
+     frq <- fread(f,h=T,nThread=thr)
 
      #png("maf.png", height=15, width=15, units="cm", res=100, points=12)
      #hist(frq$MAF[frq$CLST=="SB"], breaks=40, xlim = c(0,0.50), ylim=c(0,300000), xlab="MAF bin", main = "MAF Spectrum", col = pcol[1])
