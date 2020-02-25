@@ -13,7 +13,7 @@ Running PCA
 
 `./run_eigenstrat.sh` for CHPC `qsub run_eigenstrat.qsub`
 
-4) 3) Run POPGEN (FST)
+4) Run POPGEN (FST)
 
 `./run_popgenstats.sh` for CHPC `qsub run_popgenstats.qsub`
 
