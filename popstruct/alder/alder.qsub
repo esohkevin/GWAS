@@ -20,5 +20,5 @@ module load R/3.6.0-gcc7.2.0
 
 cd /mnt/lustre/groups/CBBI1243/KEVIN/git/GWAS/popstruct/alder/
 
-bash -i alder.sh
+./alder.sh
 #malder -p world-alder.par 2>&1 | tee alder.log.out
