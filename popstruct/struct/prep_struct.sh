@@ -27,7 +27,8 @@ plink \
    --recode structure \
    --extract ../eig/POPGEN/fstsnps.txt \
    --keep-allele-order \
-   --maf 0.35 \
+   --maf 0.05 \
+   --thin-count 50000 \
    --keep cam30.ids \
    --double-id \
    --out cam
@@ -46,8 +47,9 @@ plink \
    --recode structure \
    --extract ../world/POPGEN/wld.fstsnps.txt \
    --keep-allele-order \
-   --maf 0.35 \
+   --maf 0.05 \
    --keep world30.ids \
+   --thin-count 50000 \
    --double-id \
    --out world
 

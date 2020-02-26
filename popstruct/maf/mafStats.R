@@ -50,7 +50,7 @@ if (length(args) < 3 ) {
      print(paste0("# Populations: ", length(pops)), quote=F)
      n <- length(pops)
      #pcol <- RColorBrewer::brewer.pal(n, "Dark2")
-     pcol <- rainbow(n)
+     pcol <- rainbow(n+2)
      for (popindex in 1:n) {
 	     frqbins[,pops[popindex]] <- c(length(unique(frq$SNP[frq$MAF < 0.1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
                 length(unique(frq$SNP[frq$MAF >= 0.1 & frq$MAF < 0.2 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),

@@ -23,7 +23,7 @@ jackknife:	NO
 binsize:	$bs
 nochrom:	6;8;11
 poplistname:	${refpopA}
-#raw_outname: 	raw.ld.txt
+raw_outname: 	malder.${admpop}.raw.ld.txt
 num_threads: 	15
 
 """ > ${bname}-alder.par

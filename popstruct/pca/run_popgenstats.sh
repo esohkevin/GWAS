@@ -18,7 +18,7 @@ fstz:  YES
 #fsthiprecision: YES
 numthreads:   $thr
 #outlieroutname:         ${odir}/${base}.outlier
-phylipoutname: ${odir}/${base}.phy
+#phylipoutname: ${odir}/${base}.phy
 poplistname: $poplist
 #killr2: YES
 familynames:     NO

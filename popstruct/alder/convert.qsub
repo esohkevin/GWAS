@@ -24,4 +24,4 @@ cd /mnt/lustre/groups/CBBI1243/KEVIN/git/GWAS/popstruct/alder/
 
 ./convert.sh
 
-Rscript prep_indfile.R
+#Rscript prep_indfile.R
