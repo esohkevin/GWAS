@@ -55,31 +55,31 @@ if (length(args) < 4 ) {
      pcol <- rainbow(n+2)
      if (resp == "daf") {
         for (popindex in 1:n) {
-   	     frqbins[,pops[popindex]] <- c(length(unique(frq$SNP[frq$MAF < 0.1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.1 & frq$MAF < 0.2 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.2 & frq$MAF < 0.3 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.3 & frq$MAF < 0.4 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.4 & frq$MAF < 0.5 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.5 & frq$MAF < 0.6 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.6 & frq$MAF < 0.7 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.7 & frq$MAF < 0.8 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.8 & frq$MAF <= 1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)))
+   	     frqbins[,pops[popindex]] <- c(length(unique(frq$SNP[frq$MAF < 0.1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.1 & frq$MAF < 0.2 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.2 & frq$MAF < 0.3 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.3 & frq$MAF < 0.4 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.4 & frq$MAF < 0.5 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.5 & frq$MAF < 0.6 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.6 & frq$MAF < 0.7 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.7 & frq$MAF < 0.8 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.8 & frq$MAF <= 1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])))
         }
      }
      else if (resp == "maf") {
              bin <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50)
              frqbins <- as.data.frame(bin)
              for (popindex in 1:n) {
-             frqbins[,pops[popindex]] <- c(length(unique(frq$SNP[frq$MAF < 0.05 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.05 & frq$MAF < 0.10 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.10 & frq$MAF < 0.15 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.15 & frq$MAF < 0.20 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.20 & frq$MAF < 0.25 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.25 & frq$MAF < 0.30 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.30 & frq$MAF < 0.35 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.35 & frq$MAF < 0.40 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.40 & frq$MAF < 0.45 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)),
-                   length(unique(frq$SNP[frq$MAF >= 0.45 & frq$MAF <= 0.50 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP)))
+             frqbins[,pops[popindex]] <- c(length(unique(frq$SNP[frq$MAF < 0.05 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.05 & frq$MAF < 0.10 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.10 & frq$MAF < 0.15 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.15 & frq$MAF < 0.20 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.20 & frq$MAF < 0.25 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.25 & frq$MAF < 0.30 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.30 & frq$MAF < 0.35 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.35 & frq$MAF < 0.40 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.40 & frq$MAF < 0.45 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                   length(unique(frq$SNP[frq$MAF >= 0.45 & frq$MAF <= 0.50 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])))
              }
 
      } else {
