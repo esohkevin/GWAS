@@ -1,17 +1,20 @@
 #!/bin/bash
 
-for i in BA FO SB; do grep wi $i ../pca/camWorld3577.eth | awk '{print $1,$1,$4}' | shuf -n50; done > cam50.ids 
-
 for i in {1..30}; do
+
+  for pop in BA FO SB; do grep -wi $pop ../pca/camWorld3577.eth | awk '{print $1,$1,$4}' | shuf -n50; done > cam50.ids 
+
   plink \
      --vcf raw-camgwas.vcf.gz \
      --freq \
      --keep cam50.ids \
      --double-id \
+     --threads 30 \
      --keep-allele-order \
      --within cam50.ids \
      --out cam${i}
   awk '$7!="0" {print $2,$3,$6}' cam${i}.frq.strat > cam${i}.maf.frq
+  rm  cam${i}.frq.strat
 done
  
 #vcftools \
