@@ -2,9 +2,9 @@
 
 args <- commandArgs(TRUE)
 
-if (length(args) < 4 ) {
+if (length(args) < 5 ) {
    print("",quote=F)
-   print("Usage: ./mafStats.R [ maf_file] [out_prefix] [threads] [daf|maf]",quote=F)
+   print("Usage: ./mafStats.R [ maf_file] [out_prefix] [threads] [daf|maf] [binsize]",quote=F)
    print("",quote=F)
    print("maf_file: File with three columns with PLINK freq-type header [SNP CLST MAF]",quote=F)
    print("(col1=snpid/rsid, col2=PopName, col3=MAF)",quote=F)
@@ -34,6 +34,7 @@ if (length(args) < 4 ) {
      fimage <- paste0(args[2],".png")
      thr <- as.numeric(args[3])
      resp <- args[4]
+     binsize <- as.numeric(args[5])
      frq <- fread(f,h=T,nThread=thr)
 
      #png("maf.png", height=15, width=15, units="cm", res=100, points=12)
@@ -46,24 +47,29 @@ if (length(args) < 4 ) {
      
      print(paste0("Maximum ", resp, ": ", max(frq$MAF)), quote=F)
      print(paste0("Minimum ", resp, ": ", min(frq$MAF)), quote=F)
-     bin <- c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1)
+     #bin <- c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1)
+     bin <- seq(from=0.00, to=1, by=binsize)
      frqbins <- as.data.frame(bin)
      pops <- unique(frq$CLST)
      print(paste0("# Populations: ", length(pops)), quote=F)
      n <- length(pops)
-     #pcol <- RColorBrewer::brewer.pal(n, "Dark2")
-     pcol <- rainbow(n+2)
+     pcol <- RColorBrewer::brewer.pal(n, "PuBuGn")
+     #pcol <- rainbow(n)
      if (resp == "daf") {
         for (popindex in 1:n) {
-   	     frqbins[,pops[popindex]] <- c(length(unique(frq$SNP[frq$MAF < 0.1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.1 & frq$MAF < 0.2 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.2 & frq$MAF < 0.3 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.3 & frq$MAF < 0.4 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.4 & frq$MAF < 0.5 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.5 & frq$MAF < 0.6 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.6 & frq$MAF < 0.7 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.7 & frq$MAF < 0.8 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.8 & frq$MAF <= 1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])))
+           vc <- c()
+           for(bindex in 1:length(bin)) {
+                vc[bindex] <- (length(unique(frq$SNP[frq$MAF >= bin[bindex] & frq$MAF < bin[(bindex+1)] & frq$CLST == pops[popindex]]))/length(unique(frq$SNP))) #[frq$CLST==pops[popindex]]
+           }
+   	        frqbins[,pops[popindex]] <- vc
+                  # length(unique(frq$SNP[frq$MAF >= 0.1 & frq$MAF < 0.2 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.2 & frq$MAF < 0.3 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.3 & frq$MAF < 0.4 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.4 & frq$MAF < 0.5 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.5 & frq$MAF < 0.6 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.6 & frq$MAF < 0.7 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.7 & frq$MAF < 0.8 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.8 & frq$MAF <= 1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])))
         }
      }
      else if (resp == "maf") {
@@ -113,7 +119,7 @@ if (length(args) < 4 ) {
 
      #-- Plot
      png(fimage, height=10, width=10, units="cm", res=200, points=8)
-     plot(0, 0, xlim=c(0,as.numeric(xmax)), ylim=c(ymin,ymax),
+     plot(0, 0, xlim=c(0,as.numeric(xmax)), ylim=c(0,ymax),
           type="n",xlab=paste0(resp, " bin"), ylab="Proportion of SNPs",
           main=paste0(resp, " spectrum"))
      frqs <- frqbins[,-c(1)]
