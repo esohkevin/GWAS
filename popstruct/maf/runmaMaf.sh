@@ -24,5 +24,5 @@ plink \
    --out world.maf
 
 
-awk '$7!="0" {print $2,$3,$6}' world.maf.frq.strat > world.maf.frq
-
+awk '$7!="0" && $7 <= 0.5 {print $2,$3,$6}' world.maf.frq.strat > world.maf.frq
+rm world.maf.frq.strat world.daf.frq.strat
