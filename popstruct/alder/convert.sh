@@ -5,7 +5,7 @@ for i in $(cat ../pca/pop.list); do
       shuf -n50; done | \
       awk '{print $1,$1}' > world50.ids
 #plink --vcf alder.vcf.gz --double-id --maf 0.05 --indep-pairwise 50 10 0.3 --out prune --keep-allele-order
-plink --vcf alder.vcf.gz --double-id --indep-pairwise 50kb 10 0.0001 --out prune --keep-allele-order
+plink --vcf alder.vcf.gz --double-id --indep-pairwise 500kb 1 0.5 --out prune --keep-allele-order
 plink --vcf alder.vcf.gz --recode --extract prune.prune.in --keep-allele-order --double-id --out world --keep world50.ids
 
 convertf -p par.PED.PACKEDPED
