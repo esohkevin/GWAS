@@ -53,39 +53,42 @@ if (length(args) < 5 ) {
      pops <- unique(frq$CLST)
      print(paste0("# Populations: ", length(pops)), quote=F)
      n <- length(pops)
-     pcol <- RColorBrewer::brewer.pal(n, "PuBuGn")
+     pcol <- RColorBrewer::brewer.pal(n, "Set1")
      #pcol <- rainbow(n)
      if (resp == "daf") {
         for (popindex in 1:n) {
            vc <- c()
            for(bindex in 1:length(bin)) {
-                vc[bindex] <- (length(unique(frq$SNP[frq$MAF >= bin[bindex] & frq$MAF < bin[(bindex+1)] & frq$CLST == pops[popindex]]))/length(unique(frq$SNP))) #[frq$CLST==pops[popindex]]
+                vc[bindex] <- (length(unique(frq$SNP[frq$MAF >= bin[bindex] & 
+					     frq$MAF < bin[(bindex+1)] & 
+					     frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]]))) #[frq$CLST==pops[popindex]]
            }
    	        frqbins[,pops[popindex]] <- vc
-                  # length(unique(frq$SNP[frq$MAF >= 0.1 & frq$MAF < 0.2 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                  # length(unique(frq$SNP[frq$MAF >= 0.2 & frq$MAF < 0.3 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                  # length(unique(frq$SNP[frq$MAF >= 0.3 & frq$MAF < 0.4 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                  # length(unique(frq$SNP[frq$MAF >= 0.4 & frq$MAF < 0.5 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                  # length(unique(frq$SNP[frq$MAF >= 0.5 & frq$MAF < 0.6 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                  # length(unique(frq$SNP[frq$MAF >= 0.6 & frq$MAF < 0.7 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                  # length(unique(frq$SNP[frq$MAF >= 0.7 & frq$MAF < 0.8 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                  # length(unique(frq$SNP[frq$MAF >= 0.8 & frq$MAF <= 1 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])))
         }
      }
      else if (resp == "maf") {
-             bin <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50)
+             #bin <- c(0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50)
+	     bin <- seq(from=0.00, to=0.5, by=binsize)
              frqbins <- as.data.frame(bin)
              for (popindex in 1:n) {
-             frqbins[,pops[popindex]] <- c(length(unique(frq$SNP[frq$MAF < 0.05 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.05 & frq$MAF < 0.10 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.10 & frq$MAF < 0.15 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.15 & frq$MAF < 0.20 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.20 & frq$MAF < 0.25 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.25 & frq$MAF < 0.30 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.30 & frq$MAF < 0.35 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.35 & frq$MAF < 0.40 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.40 & frq$MAF < 0.45 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
-                   length(unique(frq$SNP[frq$MAF >= 0.45 & frq$MAF <= 0.50 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])))
+		vc <- c()
+                for(bindex in 1:length(bin)) {
+                     vc[bindex] <- (length(unique(frq$SNP[frq$MAF >= bin[bindex] & 
+                                             frq$MAF < bin[(bindex+1)] & 
+                                             frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]]))) #[frq$CLST==pops[popindex]]
+                }
+                     frqbins[,pops[popindex]] <- vc
+
+                  # frqbins[,pops[popindex]] <- c(length(unique(frq$SNP[frq$MAF < 0.05 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.05 & frq$MAF < 0.10 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.10 & frq$MAF < 0.15 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.15 & frq$MAF < 0.20 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.20 & frq$MAF < 0.25 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.25 & frq$MAF < 0.30 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.30 & frq$MAF < 0.35 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.35 & frq$MAF < 0.40 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.40 & frq$MAF < 0.45 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])),
+                  # length(unique(frq$SNP[frq$MAF >= 0.45 & frq$MAF <= 0.50 & frq$CLST == pops[popindex]]))/length(unique(frq$SNP[frq$CLST==pops[popindex]])))
              }
 
      } else {
@@ -126,8 +129,8 @@ if (length(args) < 5 ) {
      for (indx in 1:ncol(frqs)) {
 	     print(paste0("Plotting ", pops[indx]), quote=F)
              frqplot = data.frame(c(frqbins[1], frqs[indx])) #data.frame(c(f[1],f[2]))
-             lines(frqplot, col=pcol[indx], type="l", lwd=1, lty=1)
+             lines(frqplot, col=pcol[indx], type="s", lwd=1, lty=1)
      }
-     legend("topright", legend=pops, col=pcol[1:ncol(frqs)], lty=1, lwd=1, bty="n") #legend=as.factor(names(frqbins[,-c(1)]))
+     legend("topright", legend=pops, col=pcol[1:ncol(frqs)], lty=1, lwd=1, bty="n", ncol=3) #legend=as.factor(names(frqbins[,-c(1)]))
      dev.off()
 }
