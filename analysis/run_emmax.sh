@@ -14,7 +14,7 @@ elif [[ $resp == 1 && $# == 2 ]]; then
     						# Make emmax input tped and tfam
     plink \
     	--bfile ${base} \
-    	--recode12 transpose \
+    	--recode 12 transpose \
 	--autosome \
     	--output-missing-genotype 0 \
     	--out ${base}
