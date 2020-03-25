@@ -1,10 +1,17 @@
-#!/us/bin/Rscript
+#!/usr/bin/env Rscript
 
 args <- commandArgs(TRUE)
 
-assoc_dat <- args[1]
+if (length(args) < 1) {
+	print("",quote=F)
+        print("Usage: fdr.R [ file ]",quote=F)
+        print("file: Association test result file with a p-valuse column labaled 'P'",quote=F)
+        print("",quote=F)
+	quit(save="no")
+} else {
+   assoc_dat <- args[1]
 
-calc_fdr <- function(assoc.dat = assoc_result) {
+   calc_fdr <- function(assoc.dat = assoc_result) {
 	
 	out_name <- paste(assoc.dat,".adj.txt",sep="")
 
@@ -17,6 +24,5 @@ calc_fdr <- function(assoc.dat = assoc_result) {
 	#assoc$P_adj_Hochberg <- p.adjust(as.vector(assoc$P), method="hochberg") # Hochberg
 	write.table(assoc, file=out_name, col.names=T, row.names=F, quote=F, sep="\t")
 }
-
 calc_fdr(assoc_dat)
-
+}
