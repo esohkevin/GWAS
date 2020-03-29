@@ -7,6 +7,6 @@
 #plink --bfile ../phase/imputed/imputed --list-duplicate-vars --out dups
 #plink --bfile imputed --exclude dups.dupvar --make-bed --out imputed_temp --geno 0.10
 
-plink --bfile imputed --update-sex ../qc-camgwas-updated.fam 3 --pheno ../qc-camgwas-updated.fam --mpheno 4 --make-bed --out imputed_temp --geno 0.10 --mind 0.10 --maf 0.01
-plink --bfile imputed_temp --make-bed --out imputed_clean --hwe 1e-08
+plink --bfile ../../phase/allimp/imputed --update-sex ../qc-camgwas-updated.fam 3 --pheno ../qc-camgwas-updated.fam --mpheno 4 --make-bed --out imputed_temp --geno 0.10 --mind 0.10 --maf 0.01
+plink --bfile imputed_temp --make-bed --out imputed_clean --hwe 1e-06
 rm imputed_temp*

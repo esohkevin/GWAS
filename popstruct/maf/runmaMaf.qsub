@@ -16,4 +16,4 @@ module load R/3.6.0-gcc7.2.0
 cd /mnt/lustre/groups/CBBI1243/KEVIN/git/GWAS/popstruct/maf/
 
 #./runmaMaf.sh
-Rscript mafStats.R world.daf.frq world.daf 20 daf 0.01
+Rscript mafStats.R world.daf.frq world.daf 20 daf 0.05
