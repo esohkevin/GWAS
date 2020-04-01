@@ -6,13 +6,15 @@ ana="${home}analysis/"
 # chr16_imputed.gen.include_r2_0.5
 
 qct2gen() {
-if [[ $# != 2 ]]; then
+if [[ $# != 4 ]]; then
    echo """
-   Usage: ./qct2gen.sh <hardcall_threshold> <sample_file>
+   Usage: ./qct2gen.sh <hardcall_threshold> <sample_file> <outprefx> <info>
    """
 else
    hc=$1
    sf="$2"
+   op=$3
+   info=$4
    if [[ -f merge.list ]]; then
        rm merge.list
    fi
@@ -26,7 +28,7 @@ else
       -threshold $hc \
       -assume-chromosome $chr \
       -threads 60 \
-      -incl-rsids chr${chr}_imputed.gen.include_r2_0.5 \
+      -incl-rsids chr${chr}_imputed.gen.include_r2_${info} \
       -ofiletype vcf \
       -sort
      bgzip -f -@ 30 chr${chr}_imputed.vcf
@@ -52,6 +54,6 @@ else
   # grep -i warning imputed.log | cut -f2 -d "'" > imputed.exclude
   # grep -i warning imputed.log | cut -f4 -d "'" >> imputed.exclude
 
-   bcftools concat --threads 30 -D -a -Oz -o imputed_r2_0.5.vcf.gz chr{1..22}_imputed.vcf.gz
+   bcftools concat --threads 30 -D -a -Oz -o ${op}.r2_${info}.vcf.gz chr{1..22}_imputed.vcf.gz
 fi
 }
