@@ -1,6 +1,22 @@
 #!/bin/bash
 
+
+#function usage() {
+#	printf "Usage: %s [ freq|bayes ] [ options ]\n" $(basename $0);
+#	echo -e """
+#			SNPTEST ASSOC: freq <-> frequentist | bayes <-> bayesian
+#
+#			Options:
+#			-i,--inprefx	<str>	:GEN + SAMPLE files prefix [Required]
+#			-p,--pheno	<str>	:Phenotype column name in sample file [default: pheno1]
+#			-o,--outprefx	<str>	:Output prefix [default: snptest_assoc]
+#	"""
+#}
+
 sample="../samples/"
+
+
+
 
 # Run SNPTEST Association for Severe Malaria cases only SMA + CM
 snptest_v2.5.4-beta3 \

@@ -7,7 +7,6 @@ vcf2impute2() {
    analysis="${path}analysis/"
    assocResults="${path}assoc_results/"
    #pop="${path}popstruct/" ${pop}Phased-pca-filtered.vcf.gz
-   sf=$1
    if [[ $# != 2 ]]; then
       echo -e "\nUsage: vcf2impute2 <invcf> <sample-file-list>\n"
    else
@@ -15,7 +14,7 @@ vcf2impute2() {
     vcf=$1
     sf=$2
       for chr in {1..22}; do
-        if [[ -f "${phase_path}""chr${chr}-phased_wref.vcf.gz" ]]; then
+        if [[ -f "$vcf" ]]; then
            if [[ ! -f "chr${chr}-phased_wref.haps" ]]; then
               plink2 \
       	        --vcf ${vcf} \

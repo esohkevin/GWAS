@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript
 
-setwd("/home/esoh/esohdata/GWAS/popstruct/eig/EIGENSTRAT")
+#setwd("/home/esoh/esohdata/GWAS/popstruct/eig/EIGENSTRAT")
 
 #----Load libraries
 require(colorspace)

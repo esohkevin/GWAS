@@ -1,4 +1,5 @@
-etwd("~/esohdata/GWAS/analysis/")
+#!/usr/bin/env Rscript
+
 args <- commandArgs(TRUE)
 
 if (length(args) < 1) {
@@ -9,6 +10,8 @@ if (length(args) < 1) {
    quit(save="no")
 } else {
      f <- args[1]
+     oMan <- paste0(f,".assoc.png")
+     oQq <- paste0(f,".qq.png")
      #?iconv()
 
      library(qqman)
@@ -41,10 +44,10 @@ if (length(args) < 1) {
 
      assoc <- fread(f, h=T, data.table=F, nThread = 30)
      attach(assoc)
-     png("test_assoc.png", height = 440, width = 700, units = "px", res = NA, pointsize = 12)
+     png(oMan, height = 480, width = 740, units = "px", res = NA, pointsize = 12)
      manhattan(assoc)
      dev.off()
-     png("test_qq.png", height = 480, width = 500, units = "px", res = NA, pointsize = 12)
+     png(oQq, height = 480, width = 500, units = "px", res = NA, pointsize = 12)
      qq(assoc$P)
      dev.off()
 }
