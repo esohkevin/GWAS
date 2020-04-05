@@ -33,7 +33,7 @@ if [[ $param == [123] ]]; then
 
         Rscript scanFull.R $2 $3 $4 $5
 	head -1 ${3}iHSresult.txt > ${3}Signals.txt
-	awk '$6<=0.05' ${3}iHSresult.txt > ${3}Signals.txt
+	awk '$6<=0.05' ${3}iHSresult.txt >> ${3}Signals.txt
 
    elif [[ $param == "3" && $# != 8 ]]; then
         echo """

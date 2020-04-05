@@ -1,9 +1,0 @@
-# Analysis around known malaria-associated genes
-# All positions and ranges are in b37 coordinate
-Gene	CHR	Analysis_range		rsid		snpid		R-Index			Comment	
-MHC	chr6	28477797-33448354									
-MNS	chr4	144000000-145000000	rs567544458	4:144513361				Dantu_glycophorins
-HBB	chr11	5230000-5300000		rs334		11:5248232	5429-5947		rs78928216 closest snp
-ABO	chr9	135600000-136600000	rs8176719	9:136132908	
-EPHA7	chr6	92000000-95000000	rs62418762	6:93218698				3Mb range - exception - very low LD region
-ATP2B	chr1	203500000-203800000	rs4951377       1:203658471	194105-194364
