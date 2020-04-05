@@ -5,10 +5,10 @@ library(data.table)
 
 ##---------------------------------------------------------------------------------
 ##                                        LOCAL
-setwd("~/esohdata/GWAS/popstruct/selection/")
-hapFile <- "chr_chr6.hap"
-mapFile <- "chr_chr6.map"
-chr <- 6
+#setwd("~/esohdata/GWAS/popstruct/selection/")
+#hapFile <- "chr_chr6.hap"
+#mapFile <- "chr_chr6.map"
+#chr <- 6
 ## iHS and cross-Population or whole genome scans
 
 args <- commandArgs(TRUE)
