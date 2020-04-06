@@ -4,7 +4,7 @@ home="$HOME/Git/GWAS/"
 ref_path="${home}phase/1000GP_Phase3/"
 imputed_path="${home}phase/imputed/"
 
-run_impute2() {
+follup_impute2() {
    if [[ $# == 3 ]]; then   
       nj="$1"
       nl="$2"
@@ -27,7 +27,8 @@ run_impute2() {
               done
               sed 's/1=/1 /g' chr${chr}_imput_chunks.txt > chr${chr}_chunks.txt; 		# Primary aim is to create this file for all chrs to use for parallele jod execution
               rm chr${chr}_imput_chunks.txt
-   	      cat chr${chr}_chunks.txt | xargs -P$nj -n43 impute_v2.3.2 &			# Run IMPUTE2 with the commands in the files previously created
+              echo "Commandline made! Check the Chunk files and edit then run 'run_follupImp.sh' script"  1>&2; exit 1;
+   	      #cat chr${chr}_chunks.txt | xargs -P$nj -n43 impute_v2.3.2 &			# Run IMPUTE2 with the commands in the files previously created
            fi
         else
            echo "chr"${chr}"-phased_wref.haps could not be found!"     
