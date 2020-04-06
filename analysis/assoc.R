@@ -4,7 +4,7 @@ args <- commandArgs(TRUE)
 
 if (length(args) < 1) {
    print("",quote=F)
-   print("Usage: assoc.R [assoc_result]",quote=F)
+   print("Usage: assoc.R [assoc_result] [lambda]",quote=F)
    print("assoc_result: should have the following columns; CHR, SNP, BP, P",quote=F)
    print("",quote=F)
    quit(save="no")
@@ -47,8 +47,10 @@ if (length(args) < 1) {
      png(oMan, height = 480, width = 740, units = "px", res = NA, pointsize = 12)
      manhattan(assoc)
      dev.off()
+     lamd <- as.numeric(median(qchisq(assoc$P, df=1, lower.tail = F), na.rm = T)/0.456)
      png(oQq, height = 480, width = 500, units = "px", res = NA, pointsize = 12)
      qq(assoc$P)
+     text(2, 5, expression(lambda[GC] == as.numeric(lamd)))
      dev.off()
 }
 
