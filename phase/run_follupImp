@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+if [[ $# == 3 ]]; then
+    nj="$1"
+    nl="$2"
+    nh="$3"
+  for chr in $(seq $nl $nh); do
+    cat chr${chr}_chunks.txt | xargs -P$nj -n43 impute_v2.3.2 &
+  done
+else
+   	echo """
+   	Usage: ./run_impute2.sh <NJ> <NL> <NH>
+   	
+   		NJ: Number of jobs to run per chromosome
+		NL: Lower chrom number. CHROM to start with
+                NH: Higher chrom number. CHROM to end with
+     """
+fi
