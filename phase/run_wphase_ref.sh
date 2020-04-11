@@ -3,22 +3,23 @@
 #echo 'If pulling from github, change --geneticMapFile to ../tables/genetic_map_hg19_example.txt.gz'
 #echo
 
-ref_path="../1000G"
+ref_path="${HOME}/Git/GWAS/1000G/"
 data_set="$2"
 base="${data_set/.vcf*/}"
 Kpbwt="$3"
 
 if [[ $1 == "1" ]]; then
    
-   if [[ $1 == "1" && $# == "3" ]]; then
+   if [[ $1 == "1" && $# == "5" ]]; then
 
 #      echo "`tabix -f -p vcf ${base}.vcf.gz`"
+       lc=$4; uc=$5
       
-      for chr in {1..22}; do
+      for chr in $(seq $lc $uc); do
         eagle \
           --vcfRef=${ref_path}/ALL.chr${chr}.phase3_integrated.20130502.genotypes.bcf \
           --vcfTarget=${base}.vcf.gz \
-          --geneticMapFile=tables/genetic_map_hg19_withX.txt.gz \
+          --geneticMapFile="${HOME}/Git/GWAS/phase/"tables/genetic_map_hg19_withX.txt.gz \
           --outPrefix=chr${chr}-phased_wref \
           --chrom=${chr} \
           --pbwtIters=10 \
@@ -38,7 +39,7 @@ if [[ $1 == "1" ]]; then
    
       else
    	  echo """
-   		Usage: ./run_wphase_ref.sh 1 <in-vcf> <Kpbwt[10000]>
+   		Usage: ./run_wphase_ref.sh 1 <in-vcf> <Kpbwt[10000]> <lc [lower chr#]> <uc [upper chr#]>
    	  """
       fi
 
