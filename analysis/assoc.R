@@ -4,7 +4,7 @@ args <- commandArgs(TRUE)
 
 if (length(args) < 1) {
    print("",quote=F)
-   print("Usage: assoc.R [assoc_result] [lambda]",quote=F)
+   print("Usage: assoc.R [assoc_result]",quote=F)
    print("assoc_result: should have the following columns; CHR, SNP, BP, P",quote=F)
    print("",quote=F)
    quit(save="no")
@@ -51,7 +51,7 @@ if (length(args) < 1) {
      print(paste0("Lambda: ", lamd))
      png(oQq, height = 480, width = 500, units = "px", res = NA, pointsize = 12)
      qq(assoc$P)
-     text(2, 5, expression(lambda[GC] == as.numeric(lamd)))
+     text(2, 5, expression(lambda[GC] == paste0(lamd)))
      dev.off()
 }
 
