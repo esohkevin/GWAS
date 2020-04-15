@@ -18,7 +18,7 @@ if (length(args) < 1) {
 	
 	out_name <- paste(assoc.dat,".adj.txt",sep="")
 
-	assoc <- fread(assoc.dat, header=T, data.table=F, nThread=10)
+	assoc <- fread(assoc.dat, header=T, data.table=F, nThread=10, fill=T)
 	assoc$P_adj_BH <- p.adjust(as.vector(assoc$P), method="BH")		# Benjamini & Hochberg
 	assoc$P_adj_Bonf <- p.adjust(as.vector(assoc$P), method="bonferroni")	# Bonferroni
 	assoc$P_adj_BY <- p.adjust(as.vector(assoc$P), method="BY")   		# Benjamini & Yekutieli
