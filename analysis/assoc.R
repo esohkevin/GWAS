@@ -42,7 +42,7 @@ if (length(args) < 1) {
      #dev.off()
      #qq(assoc$P)
 
-     assoc <- fread(f, h=T, data.table=F, nThread = 30)
+     assoc <- fread(f, h=T, data.table=F, fill=T, nThread = 30)
      attach(assoc)
      png(oMan, height = 12, width = 18, units = "cm", res = 100, pointsize = 12)
      manhattan(assoc,genomewideline = -log10(5e-08))
