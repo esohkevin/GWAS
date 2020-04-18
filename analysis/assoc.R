@@ -4,7 +4,7 @@ args <- commandArgs(TRUE)
 
 if (length(args) < 1) {
    print("",quote=F)
-   print("Usage: assoc.R [assoc_result] [lambda]",quote=F)
+   print("Usage: assoc.R [assoc_result]",quote=F)
    print("assoc_result: should have the following columns; CHR, SNP, BP, P",quote=F)
    print("",quote=F)
    quit(save="no")
@@ -42,16 +42,16 @@ if (length(args) < 1) {
      #dev.off()
      #qq(assoc$P)
 
-     assoc <- fread(f, h=T, data.table=F, nThread = 30)
+     assoc <- fread(f, h=T, data.table=F, fill=T, nThread = 30)
      attach(assoc)
-     png(oMan, height = 480, width = 740, units = "px", res = NA, pointsize = 12)
+     png(oMan, height = 12, width = 18, units = "cm", res = 100, pointsize = 12)
      manhattan(assoc,genomewideline = -log10(5e-08))
      dev.off()
      lamd <- as.numeric(median(qchisq(assoc$P, df=1, lower.tail = F), na.rm = T)/0.456)
      print(paste0("Lambda: ", lamd))
-     png(oQq, height = 480, width = 500, units = "px", res = NA, pointsize = 12)
+     png(oQq, height = 12, width = 12, units = "cm", res = 100, pointsize = 12)
      qq(assoc$P)
-     text(2, 5, expression(lambda[GC] == as.numeric(lamd)))
+     text(2, 5, expression(lambda[GC] == lamd))
      dev.off()
 }
 

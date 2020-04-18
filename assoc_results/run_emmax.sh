@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 resp="$1"
+emk="$(which emmax-kin-intel64)"
+emx="$(which emmax-intel64)"
 
 if [[ $resp == "1" && $# != 2 ]]; then
 
@@ -12,19 +14,19 @@ elif [[ $resp == 1 && $# == 2 ]]; then
 
     base="$2"
     						# Make emmax input tped and tfam
-    plink \
-    	--bfile ${base} \
-    	--recode 12 transpose \
-	--autosome \
-    	--output-missing-genotype 0 \
-    	--out ${base}
+#    plink \
+#    	--bfile ${base} \
+#    	--recode 12 transpose \
+#	--autosome \
+#    	--output-missing-genotype 0 \
+#    	--out ${base}
 
 
-    emmax-kin-intel64 -v -d 10 ${base}			# Generate kinship matrix
+    ${emk} -v -d 10 ${base}			# Generate kinship matrix
 
     awk '{print $1,$2,$6}' ${base}.tfam > ${base}.phe	# Generate pheno file
 
-    emmax-intel64 -v -d 10 -t ${base} -p ${base}.phe -k ${base}.aBN.kinf -o ${base}
+    ${emx} -v -d 10 -t ${base} -p ${base}.phe -k ${base}.aBN.kinf -o ${base}
 
 
 elif [[ $resp == "2" && $# != 2 ]]; then
@@ -51,7 +53,7 @@ elif [[ $resp == 2 && $# == 2 ]]; then
 
     awk '{print $1,$2,$6}' ${base}.tfam > ${base}.phe   # Generate pheno file
 
-    emmax-intel64 -v -d 10 -t ${base} -p ${base}.phe -k ${base}.aBN.kinf -c ${base}.cov -o ${base}
+     ${emx} -v -d 10 -t ${base} -p ${base}.phe -k ${base}.aBN.kinf -c ${base}.cov -o ${base}
 
 elif [[ $resp != [12] ]]; then
     echo """
