@@ -51,7 +51,7 @@ if (length(args) < 1) {
      print(paste0("Lambda: ", lamd))
      png(oQq, height = 12, width = 12, units = "cm", res = 100, pointsize = 12)
      qq(assoc$P)
-     text(2, 5, expression(lambda[GC] == lamd))
+     text(2, 5, expression(lambda[GC] == 1.02))
      dev.off()
 }
 
