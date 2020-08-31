@@ -44,14 +44,14 @@ if (length(args) < 1) {
 
      assoc <- fread(f, h=T, data.table=F, fill=T, nThread = 30)
      attach(assoc)
-     png(oMan, height = 12, width = 18, units = "cm", res = 100, pointsize = 12)
-     manhattan(assoc,genomewideline = -log10(5e-08))
+     png(oMan, height = 480, width = 800, units = "px", pointsize = 12)
+     manhattan(assoc,genomewideline = -log10(5e-08), ylim=c(0,9))
      dev.off()
      lamd <- as.numeric(median(qchisq(assoc$P, df=1, lower.tail = F), na.rm = T)/0.456)
      print(paste0("Lambda: ", lamd))
-     png(oQq, height = 12, width = 12, units = "cm", res = 100, pointsize = 12)
+     png(oQq, height = 12, width = 12, units = "cm", res = 100, pointsize = 10)
      qq(assoc$P)
-     text(2, 5, expression(lambda[GC] == 1.02))
+     text(2, 5, expression(lambda[GC] == lamd))
      dev.off()
 }
 
