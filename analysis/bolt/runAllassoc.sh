@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 home="/mnt/lustre/groups/CBBI1243/KEVIN/git/GWAS/"
+boltdir="/mnt/lustre/groups/CBBI1243/KEVIN/bioTools/BOLT-LMM_v2.3.4/"
+bolt="${boltdir}bolt"
+gmap="${boltdir}tables/"
 phase="${home}phase/"
 sb="${phase}sbanimp/"
 ba="${phase}banimp"
@@ -21,3 +24,6 @@ em="${an}emmax/"
 #for i in *.ps.adj.txt; do mv $i ${i/.adj.txt/}; done
 #for i in *.ps; do echo $i; done | parallel echo ${an}emmax2plink_assoc.R {} ${em}qc-camgwas.bim | xargs -I input -P10 sh -c "Rscript input"
 for i in *.assoc.ps; do echo $i; done | parallel echo ${an}assoc.R {} | xargs -I input -P 10 sh -c "Rscript input"
+
+bolt --bfile=${bfile} --phenoUseFam --covarFile=${cov} --covarMaxLevels=10 --LDscoresUseChip --maxModelSnps=8000000 --numThreads=4 --modelSnps=pruned.prune.in --qCovarCol=C{1:6} --geneticMapFile=${HOME}/Git/GWAS/phase/tables/genetic_map_hg19_withX.txt.gz --lmmForceNonInf --statsFile=${bfile}.stats.gz --verboseStats
+
