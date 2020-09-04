@@ -16,7 +16,7 @@ if(length(args)<2) {
      vc <- c(0)
      chrom <- seq(from=1, to=22, by=1)
      for (chr in 1:22) {
-       f <- fread(paste0("chr", chr, ".mich.info.maf.r2"),h=T)
+       f <- fread(paste0("chr", chr, bn),h=T)
        colnames(f) <- c("maf","r2")
        for(bindex in 1:(length(bin)-1)) {
            vc[bindex+1] <- (sum(f$r2[f$maf >= bin[bindex] & f$maf < bin[(bindex+1)]])/length(f$r2[f$maf >= bin[bindex] & f$maf < bin[(bindex+1)]]))
