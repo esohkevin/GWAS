@@ -7,7 +7,7 @@ if(length(args)<2) {
    quit(save="no")
 } else {
      if(!require(data.table))
-        install.packages("data.table", repos="https://cloud.r-project.org")
+        if(!install.packages("data.table", repos="https://cloud.r-project.org"))
      bs <- as.numeric(args[1])
      bn <- args[2]
      outpng <- paste0("imputation",bn,"accuracy.png")
@@ -26,8 +26,8 @@ if(length(args)<2) {
      frqbins <- cbind(bin, frqbins)
      colnames(frqbins) <- c("MAF","Chr1","Chr2","Chr3","Chr4","Chr5","Chr6","Chr7","Chr8","Chr9","Chr10","Chr11","Chr12","Chr3","Chr14","Chr15","Chr16","Chr17","Chr18","Chr19","Chr20","Chr21","Chr22")
      
-     png(outpng, width=17, height=18, units="cm", res=100, points=12)
-       plot(frqbins$MAF, frqbins$Chr1, type="l", lty=4, col=2)
+     png(outpng, width=17, height=16, units="cm", res=100, points=12)
+       plot(frqbins$MAF, frqbins$Chr1, xlab=paste0("Imputed MAF bin: binsize = ", bs), ylab="Mean imputation accuracy", type="l", lty=4, col=2)
        for (chr in 3:23) { 
      	lines(frqbins$MAF, frqbins[,chr], lty=4, col=2)
        }
