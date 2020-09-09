@@ -1,10 +1,5 @@
 #!/usr/bin/Rscript
 
-# Check installation of qqman and load it if installed
-if (!requireNamespace("qqman"))
-        install.packages("qqman", repos="http://cloud.r-project.org", ask = F)
-library(qqman)
-
 ################# IBD Calculation ###########################
 genome=read.table("caseconpruned.genome", header = T, as.is = T)
 genome=genome[genome$PI_HAT > 0.1875, ]

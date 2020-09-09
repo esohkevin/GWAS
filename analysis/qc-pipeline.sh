@@ -113,7 +113,7 @@ plink2 \
 	--autosome \
 	--maf 0.30 \
 	--geno 0.02 \
-	--hwe 1e-6 keep-fewhet \
+	--hwe 1e-50 keep-fewhet \
 	--allow-no-sex \
 	--make-bed \
 	--out frequent
@@ -227,7 +227,6 @@ plink \
         --bfile qc-camgwas \
         --allow-no-sex \
         --make-bed \
-        --autosome \
         --out qc-camgwas
 
 plink \

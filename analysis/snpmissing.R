@@ -13,7 +13,7 @@ png(filename = "snp_qc_missing.png", width = 500, height = 500, units = "px", po
     bg = "white",  res = NA)
 par(mfrow=c(1,1))
 hist(log10(lmiss$F_MISS), ylab = "Number of SNPs", xlab = "log10(lmiss$F_MISS)", main="")
-abline(v=log10(0.04), lty=2) 			# placing a line at 4% missing data point
+abline(v=log10(0.05), lty=2) 			# placing a line at 4% missing data point
 dev.off()
 
 # Examining minor allele frequency
@@ -29,9 +29,9 @@ abline(v=0.01, lty=2, col="red")
 dev.off()
 
 # Assess differential genotype call rate between cases and controls
-diffmiss=read.table(dmis, header = T, as.is = T)
+#diffmiss=read.table(dmis, header = T, as.is = T)
 
 # save SNPs with missing call rate at p-value < 0.000001 (I'll choose to use 1x10^-8 since its the same genome-wide significance threshold I'll use)
-diffmiss=diffmiss[diffmiss$P<0.000001, ]
-write.table(diffmiss$SNP, file = "fail-diffmiss.qc", row.names = F, col.names = F, quote = F)
+#diffmiss=diffmiss[diffmiss$P<0.000001, ]
+#write.table(diffmiss$SNP, file = "fail-diffmiss.qc", row.names = F, col.names = F, quote = F)
 

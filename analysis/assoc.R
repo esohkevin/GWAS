@@ -14,8 +14,11 @@ if (length(args) < 1) {
      oQq <- paste0(f,".qq.png")
      #?iconv()
 
-     library(qqman)
-     require(data.table)
+     if(!require(data.table))
+         install.packages("data.table", repos="https://cloud.r-project.org")
+     if(!require(qqman))
+         install.packages("qqman", repos="https://cloud.r-project.org")
+
      #con <- file(description = "qc-camgwas-updated.stats.gz", "r+b")
      #con <- socketConnection(host = "kevine@delgeme.icermali.org", port = 22, server = T, 
      #                 blocking = F, open = "w+", encoding = "", timeout = 100000)

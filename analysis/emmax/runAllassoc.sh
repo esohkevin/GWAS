@@ -11,13 +11,33 @@ asd="${an}assoc/"
 hm="/home/kesoh/bin/"
 em="${an}emmax/"
 
-#for p in sbba sb ba; do for i in sm sma clean; do echo $i; done | parallel echo "--bfile ${em}qc-camgwas --recode 12 transpose --keep ${asd}${p}.{}.cov --threads 24 --keep-allele-order --maf 0.01 --autosome --out ${p}.{}" | xargs -I input -P5 sh -c "plink input"; done
-#for j in *.tfam; do echo "<<< ${j/.tfam/.cov} >>>"; for i in $(awk '{print $1}' ${j}); do grep -w $i ${asd}pca.glm.cov; done > ${j/.tfam/.cov}; done
-#for p in sbba sb ba; do for i in clean sm sma; do echo $i; done | parallel echo 1 ${p}.{} | xargs -n2 -P10 ${as}run_emmax.sh; done
-#for p in sbba sb ba; do for i in clean sm sma; do mv ${p}.${i}.ps ${p}.${i}.nocov.ps; done; done
-#for p in sbba sb ba; do for i in clean sm sma; do echo ${i}; done | parallel echo 2 ${p}.{} | xargs -n2 -P10 ${as}run_emmax.sh; done
-#for i in *.ps; do sed -i '1 i SNP\tBETA\tSE\tP' ${i}; done
-#for i in *.ps; do echo $i; done | parallel echo ${an}fdr.R {} | xargs -I input -P10 sh -c "Rscript input"
-#for i in *.ps.adj.txt; do mv $i ${i/.adj.txt/}; done
-#for i in *.ps; do echo $i; done | parallel echo ${an}emmax2plink_assoc.R {} ${em}qc-camgwas.bim | xargs -I input -P10 sh -c "Rscript input"
+
+#  for p in sbba sb ba; do echo $p; done | parallel echo "--bfile ${asd}qc-cam --recode 12 transpose --keep ${asd}{}.pca.glm.cov --threads 24 --keep-allele-order --maf 0.01 --autosome --out {}" | xargs -I input -P5 sh -c "plink input"
+#  #for j in *.tfam; do echo "<<< ${j/.tfam/.cov} >>>"; for i in $(awk '{print $1}' ${j}); do grep -w $i ${asd}pca.glm.cov; done > ${j/.tfam/.cov}; done
+#  
+#  cut -f1-4,6- -d' ' ${asd}sbba.pca.glm.cov | sed '1d' > sbba.cov
+#  cut -f1-4,6- -d' ' ${asd}sb.pca.glm.cov | sed '1d' > sb.cov
+#  cut -f1-4,6- -d' ' ${asd}ba.pca.glm.cov | sed '1d' > ba.cov
+#  
+#  for p in sbba sb ba; do echo $p; done | parallel echo 1 {} | xargs -n2 -P10 ${as}run_emmax.sh
+#  #for p in sbba sb ba; do for i in clean sm sma; do mv ${p}.${i}.ps ${p}.${i}.nocov.ps; done; done
+#  for p in sbba sb ba; do echo ${p}; done | parallel echo 2 {} | xargs -n2 -P10 ${as}run_emmax.sh
+#  for i in *.ps; do sed -i '1 i SNP\tBETA\tSE\tP' ${i}; done
+#  for i in *.ps; do echo $i; done | parallel echo ${an}fdr.R {} | xargs -I input -P10 sh -c "Rscript input"
+#  for i in *.ps.adj.txt; do mv $i ${i/.adj.txt/}; done
+#  for i in *.ps; do echo $i; done | parallel echo ${an}emmax2plink_assoc.R {} ${asd}qc-cam.bim | xargs -I input -P10 sh -c "Rscript input"
 for i in *.assoc.ps; do echo $i; done | parallel echo ${an}assoc.R {} | xargs -I input -P 10 sh -c "Rscript input"
+#rm *.tped *.tfam
+
+
+# for p in sbba sb ba; do for i in sm sma clean; do echo $i; done | parallel echo "--bfile ${an}qc-camgwas --recode 12 transpose --keep ${asd}${p}.{}.cov --threads 24 --keep-allele-order --maf 0.01 --autosome --out ${p}.{}" | xargs -I input -P5 sh -c "plink input"; done
+# for j in *.tfam; do echo "<<< ${j/.tfam/.cov} >>>"; for i in $(awk '{print $1}' ${j}); do grep -w $i ${asd}pca.glm.cov; done > ${j/.tfam/.cov}; done
+# for p in sbba sb ba; do for i in clean sm sma; do echo $i; done | parallel echo 1 ${p}.{} | xargs -n2 -P10 ${as}run_emmax.sh; done
+# for p in sbba sb ba; do for i in clean sm sma; do mv ${p}.${i}.ps ${p}.${i}.nocov.ps; done; done
+# for p in sbba sb ba; do for i in clean sm sma; do echo ${i}; done | parallel echo 2 ${p}.{} | xargs -n2 -P10 ${as}run_emmax.sh; done
+# for i in *.ps; do sed -i '1 i SNP\tBETA\tSE\tP' ${i}; done
+# for i in *.ps; do echo $i; done | parallel echo ${an}fdr.R {} | xargs -I input -P10 sh -c "Rscript input"
+# for i in *.ps.adj.txt; do mv $i ${i/.adj.txt/}; done
+# for i in *.ps; do echo $i; done | parallel echo ${an}emmax2plink_assoc.R {} ${an}qc-camgwas.bim | xargs -I input -P10 sh -c "Rscript input"
+# for i in *.assoc.ps; do echo $i; done | parallel echo ${an}assoc.R {} | xargs -I input -P 10 sh -c "Rscript input"
+# rm *.tped *.tfam

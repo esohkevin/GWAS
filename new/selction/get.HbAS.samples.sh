@@ -18,6 +18,9 @@ bcftools query -f '%CHROM\t%POS\t%ID\t%REF\t%ALT[\t%SAMPLE=%GT]\n' haps.vcf.gz >
 
 bcftools query -f '%CHROM\t%POS\t%ID\t%REF\t%ALT[\t%GT]\n' haps.vcf.gz | sed 's/|/,/g' | sed 's/\t/,/g' > haps.csv
 
+bcftools query -S ba.haps.HbS.chroms.samples.txt -f '%CHROM\t%POS\t%ID\t%REF\t%ALT[\t%GT]\n' haps.vcf.gz | sed 's/|/,/g' | sed 's/\t/,/g' > ba.haps.csv
+bcftools query -S sb.haps.HbS.chroms.samples.txt -f '%CHROM\t%POS\t%ID\t%REF\t%ALT[\t%GT]\n' haps.vcf.gz | sed 's/|/,/g' | sed 's/\t/,/g' > sb.haps.csv
+
 #   Haplotype rs3834466 rs28440105 rs10128556 rs968857 
 #   AI        GT        C          T          T
 #   SEN       G         C          T          T
