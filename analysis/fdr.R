@@ -10,7 +10,7 @@ if (length(args) < 1) {
 	quit(save="no")
 } else {
    if(!require(data.table)) {
-        install.packages("data.table", repos='https://cloud.r-project.org', ask=F)
+        install.packages(data.table, dependencies=T, repo='https://cloud.r-project.org', ask=F)
     }
    assoc_dat <- args[1]
 
@@ -20,7 +20,7 @@ if (length(args) < 1) {
 
 	assoc <- fread(assoc.dat, header=T, data.table=F, nThread=10, fill=T)
 	assoc$P_adj_BH <- p.adjust(as.vector(assoc$P), method="BH")		# Benjamini & Hochberg
-	assoc$P_adj_Bonf <- p.adjust(as.vector(assoc$P), method="bonferroni")	# Bonferroni
+	#assoc$P_adj_Bonf <- p.adjust(as.vector(assoc$P), method="bonferroni")	# Bonferroni
 	#assoc$P_adj_BY <- p.adjust(as.vector(assoc$P), method="BY")   		# Benjamini & Yekutieli
 	#assoc$P_adj_Holm <- p.adjust(as.vector(assoc$P), method="holm")   	# Holm
 	#assoc$P_adj_Hommel <- p.adjust(as.vector(assoc$P), method="hommel")  	# Hommel

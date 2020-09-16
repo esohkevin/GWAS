@@ -14,11 +14,8 @@ if (length(args) < 1) {
      oQq <- paste0(f,".qq.png")
      #?iconv()
 
-     if(!require(data.table))
-         install.packages("data.table", repos="https://cloud.r-project.org")
-     if(!require(qqman))
-         install.packages("qqman", repos="https://cloud.r-project.org")
-
+     library(qqman)
+     require(data.table)
      #con <- file(description = "qc-camgwas-updated.stats.gz", "r+b")
      #con <- socketConnection(host = "kevine@delgeme.icermali.org", port = 22, server = T, 
      #                 blocking = F, open = "w+", encoding = "", timeout = 100000)
@@ -47,14 +44,14 @@ if (length(args) < 1) {
 
      assoc <- fread(f, h=T, data.table=F, fill=T, nThread = 30)
      attach(assoc)
-     png(oMan, height = 480, width = 800, units = "px", pointsize = 12)
-     manhattan(assoc,genomewideline = -log10(5e-08), ylim=c(0,9))
+     png(oMan, height = 490, width = 1010, units = "px", pointsize = 10)
+     manhattan(assoc,genomewideline = -log10(5e-08), ylim=c(0,10), col=c("cadetblue4","darkblue"))
      dev.off()
      lamd <- as.numeric(median(qchisq(assoc$P, df=1, lower.tail = F), na.rm = T)/0.456)
      print(paste0("Lambda: ", lamd))
      png(oQq, height = 12, width = 12, units = "cm", res = 100, pointsize = 10)
      qq(assoc$P)
-     text(2, 5, expression(lambda[GC] == lamd))
+     text(2, 5, expression(lambda[GC] == 1.048))
      dev.off()
 }
 
