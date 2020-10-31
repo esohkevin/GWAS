@@ -1,6 +1,11 @@
 #!/usr/bin/Rscript
 
-require(rehh)
+if (!require(rehh)) {
+  print(paste0("Package 'rehh' could not be found! Attempting installation..."), quote = F)
+  install.packages("rehh", repos = 'https://cloud.r-project.org', ask = F, dependencies = T)
+  require(rehh)
+}
+
 #vignette(rehh)
 
 ## iHS and cross-Population or whole genome scans
@@ -94,19 +99,23 @@ lopP$Bonf <- p.adjust(lopP$P, method="bonferroni")
 write.table(lopP, file = iHSresult, col.names=T, row.names=F, quote=F, sep='\t')
 
 # Manhattan PLot of iHS results
-png(iHSplot, height = 700, width = 640, res = NA, units = "px")
+pdf("iHSplot.pdf", paper = "special", colormodel="cmyk", width = 7, height = 5, pointsize = 8)
+#jpeg(iHSplot, width = 12, height = 8, units = "in", res = 1200, pointsize=12)
+#png(iHSplot, height = 600, width = 640, res = NA, units = "px")
 layout(matrix(1:2,2,1))
-manhattanplot(wg.ihs, pval = F, main = iHSmain, threshold = c(-4, 4))
-manhattanplot(wg.ihs, pval = T, main = iHSmain, threshold = c(-thresh, thresh))
+manhattanplot(wg.ihs, pval = F, main = "iHS scores", threshold = c(-4, 4), bty="l")
+manhattanplot(wg.ihs, pval = T, main = "iHS P-values", threshold = c(-thresh, thresh), bty="l")
 dev.off()
 
 # Gaussian Distribution and Q-Q plots
 IHS <- wg.ihs$ihs[["IHS"]]
-png(qqPlot, height = 700, width = 440, res = NA, units = "px", type = "cairo")
-layout(matrix(1:2,2,1))
-distribplot(IHS, main="iHS", qqplot = F)
-distribplot(IHS, main="iHS", qqplot = T)
-dev.off()
-
-# Frequency bin plot
-freqbinplot(wg.ihs)
+#   pdf("iHSqqplot.pdf", paper = "special", colormodel="cmyk", width = 3.5, height = 6, pointsize = 6)
+#   #jpeg(qqPlot, width = 4, height = 6, units = "in", res = 1200, pointsize=6)
+#   #png(qqPlot, height = 700, width = 440, res = NA, units = "px", type = "cairo")
+#   layout(matrix(1:2,2,1))
+#   distribplot(IHS, main="iHS", qqplot = F)
+#   distribplot(IHS, main="iHS", qqplot = T)
+#   dev.off()
+#   
+#   # Frequency bin plot
+#   freqbinplot(wg.ihs)
